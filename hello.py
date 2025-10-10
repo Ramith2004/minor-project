@@ -1,1 +1,2 @@
-fuck u
+# ...existing code...
+print("Fuck U")
