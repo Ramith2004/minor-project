@@ -13,9 +13,13 @@ def main():
     os.makedirs(keys_dir, exist_ok=True)
 
     acct = Account.create()  # generates a new private key & address
+    priv = acct.key.hex()
+    if not priv.startswith("0x"):
+        priv = "0x" + priv
+
     data = {
         "address": acct.address,
-        "private_key": acct.key.hex()
+        "private_key": priv
     }
 
     out_path = os.path.join(keys_dir, "keys.json")
