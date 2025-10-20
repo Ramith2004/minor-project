@@ -1,0 +1,197 @@
+Project overview
+You now have a complete, layered replay-attack defense stack for smart-grid meters:
+Cryptographic authenticity (ECDSA) at the edge
+Anomaly detection (advanced IDS) in the middle
+Immutable audit (smart contracts) as an integrity backstop
+Operational controls (rate limits, forensics, coordinated multi-meter simulation, attacker profiles) for testing and resilience
+Below is a clear, end-to-end report of what each file does, what was enhanced vs. before, how all pieces work together, and how to run and test.
+What’s in each major component
+Meters
+meters/meter_sim.py
+Before: Single meter simulator publishing signed MQTT readings with realistic power curves and occasional flags.
+Now: You can keep using it as a simple single-meter source if you want. Multi-meter scenarios are handled by the new files below.
+meters/multi_meter_sim.py (new)
+Runs many meters concurrently (each with its own key file).
+Profiles per meter: residential, commercial, industrial; randomized publish intervals.
+Publishes signed MQTT messages on grid/readings.
+meters/key_manager.py (new)
+Manages per-meter keys in .keys/keys_<meterID>.json, registry at .keys/registry.json.
+Create/rotate/list/activate/deactivate/remove meter keys.
+Ensures multi-meter sim always has a key for each meter.
+MQTT Forwarder
+concentrator/forwarder.py
+Subscribes to grid/readings.
+Forwards flattened signed payloads to backend /submitReading.
+Attackers
+attacker/attacker.py
+Capture and replay tool (capture to data/captures.json, replay with options).
+attacker/attacker2.py (new) – Signature Bypass Attacker
+Attempts format/padding/truncation/case/injection/timestamp/sequence manipulations on signatures and payloads.
+attacker/attacker3.py (new) – Sequence Manipulation Attacker
+Gap/replay/rollback/flood/overflow/negative/duplicate/timing attacks on sequence numbers.
+attacker/attacker4.py (new) – IDS Evasion Attacker
+Learns patterns, tests gradual escalations, noise injection, adversarial tweaks to reduce IDS suspicion.
+attacker/attacker5.py (new) – Hybrid Attacker
+Combines multi-vector attacks; probes backend/IDS responses; persistence and coordinated attacks.
+IDS
+ids/ids_service.py
+Baseline IDS endpoint /check (simple scoring on ts drift, seq gap, value outliers).
+ids/bayesian_model.py (new)
+Multi-feature Bayesian scoring: value/timing/sequence/signature/pattern features.
+Adaptive thresholds per meter; profiles persisted to SQLite.
+ids/pattern_analyzer.py (new)
+Discovers temporal (daily/weekly), sequential (gaps/rollback/duplication), value trends, signature patterns.
+ids/ensemble_detector.py (new)
+Combines detectors with weighted/confidence/majority voting; returns consensus and reasons.
+Backend
+backend/app.py
+Before: Verify signature, check non-decreasing seq, call IDS, store SQLite.
+Now (enhanced):
+Input validation and timestamp freshness check
+Rate limiting (optional)
+IDS integration (score, confidence, reasons)
+Forensic analysis (optional) with extra anomaly evidence
+Optional blockchain commit for non-suspicious readings
+Rich responses with request ids and processing time
+Status, forensics, stats, health endpoints
+backend/utils.py, backend/init_db.py
+Signature verification/canonical JSON and DB utilities (unchanged, but used by new flows).
+backend/blockchain_integration.py (new)
+Web3 client wrapper to call smart contracts:
+storeReading to MeterStore
+verifyReading
+Check consensus, register meter, tx tracking
+backend/rate_limiter.py (new)
+Token-bucket style with penalties, custom rules, white/blacklists, stats.
+backend/forensics.py (new)
+Evidence recording (sequence/timing/value/signature/cross-meter)
+Attack pattern detection and per-meter risk assessment
+Smart contracts
+contract/contracts/MeterStore.sol (new/implemented)
+Stores readings with IDS score, reasons, verification counting, consensus flag.
+contract/contracts/MeterRegistry.sol (new)
+Registers meters, types, ownership, activation/suspension.
+contract/contracts/Consensus.sol (new)
+Validator set with weights; voting sessions and consensus thresholds.
+What improved vs. before
+Meter source: from 1 meter to scalable multi-meter with key management.
+Attack surface: from basic replay to signature-bypass, sequence abuse, IDS evasion, and hybrid multi-vector attacks.
+IDS: from heuristic checks to Bayesian model, pattern analytics, and ensemble consensuses with confidence.
+Backend: from basic verify+store to layered validation (rate limit, forensics, blockchain commit), plus richer endpoints and telemetry.
+Blockchain: added full on-chain audit hooks and consensus verification points.
+End-to-end workflow
+1) Infrastructure
+MQTT broker (e.g., mosquitto) running on localhost:1883.
+Python env with dependencies:
+  pip install flask flask-cors requests paho-mqtt eth-account web3
+Optional: Hardhat/foundry for contracts; local node or testnet RPC.
+2) IDS
+Start baseline IDS (or replace with your advanced components and route /check):
+  python ids/ids_service.py
+If you later swap to ensemble_detector, expose a /check that returns compatible JSON: {suspicious, score, reasons, confidence}.
+3) Backend
+Environment options:
+RATE_LIMIT_ENABLED=true
+FORENSICS_ENABLED=true
+BLOCKCHAIN_ENABLED=true (only after contracts deployed and env set)
+IDS_URL=http://127.0.0.1:5100/check
+RPC_URL, PRIVATE_KEY, METER_STORE_ADDRESS, METER_REGISTRY_ADDRESS, CONSENSUS_ADDRESS (if blockchain enabled)
+   python backend/app.py
+4) Keys and meters
+Create keys for N meters:
+     python meters/key_manager.py init --meters meter_000,meter_001,meter_002
+    python meters/key_manager.py list
+Start multiple meters:
+     python meters/multi_meter_sim.py --count 3 --profile mixed --broker localhost --topic grid/readings
+Or start specific IDs:
+     python meters/multi_meter_sim.py --meters meter_000,meter_001 --profile residential
+5) Forwarder (optional if you want MQTT->HTTP path)
+If using concentrator/forwarder.py:
+     python concentrator/forwarder.py
+6) Attack testing
+Capture:
+      python attacker/attacker.py --mode capture
+Replay:
+      python attacker/attacker.py --mode replay --index 0 --confirm
+Advanced attacks:
+      # Signature bypass
+  python attacker/attacker2.py --attack all --confirm
+  # Sequence manipulation
+  python attacker/attacker3.py --attack flood --confirm
+  # IDS evasion
+  python attacker/attacker4.py --attack gradual_escalation --confirm
+  # Hybrid
+  python attacker/attacker5.py --attack adaptive --confirm
+7) Smart contracts (optional now, recommended later)
+Deploy MeterRegistry, Consensus, MeterStore (wire addresses).
+Set env vars and run backend with BLOCKCHAIN_ENABLED=true.
+Verify on-chain:
+     curl -X POST http://127.0.0.1:5000/blockchain/verify/<meterAddress>/<sequence> -H 'Content-Type: application/json' -d '{"verified":true}'
+Backend endpoints you’ll use
+Submit reading (done by forwarder/meter): POST /submitReading
+Meter status: GET /status/<meterID>
+System stats: GET /stats
+Forensics summary: GET /forensics/<meterID>
+Health: GET /health
+Blockchain verify: POST /blockchain/verify/<meterID>/<sequence>
+Typical test flows
+Normal flow (no attacker):
+Start IDS, backend, meters.
+Watch backend logs for stored readings and low suspicion scores.
+Query:
+    curl http://127.0.0.1:5000/stats
+    curl http://127.0.0.1:5000/status/<meterID>
+Replay detection (baseline):
+Capture with attacker; replay same message.
+Backend should reject on non-increasing sequence (409) or flag via IDS.
+Check DB log and /status.
+Sequence abuse:
+Run attacker3 flood/rollback.
+Expect backend warnings and IDS high sequence anomaly.
+IDS evasion:
+Run attacker4 gradual_escalation/noise/adversarial.
+Check IDS score & confidence trends; see forensics evidence if enabled.
+Hybrid attacks:
+Run attacker5 adaptive/persistence; observe backend+IDS+forensics response.
+Rate limit:
+Hammer /submitReading; expect 429 with retry info when exceeded.
+Blockchain path:
+With BLOCKCHAIN_ENABLED=true and addresses set, non-suspicious readings commit on-chain.
+Use /blockchain/verify/... to record verifications.
+Data locations and observability
+SQLite: backend/backend.db
+Forensics DB: backend/forensics.db
+IDS Bayesian/patterns DBs: ids_bayesian.db, ids_patterns.db, ids_ensemble.db (if you use those modules directly)
+Captures: data/captures.json
+Logs: backend/backend.log
+Common pitfalls
+Missing keys for meters: run key_manager.py first.
+MQTT broker not running: start mosquitto or change broker host.
+IDS not reachable: backend continues but suspicion logic is limited; fix IDS_URL.
+Blockchain not configured: keep BLOCKCHAIN_ENABLED=false until deployed and env set.
+Minimal quickstart
+Start broker and IDS:
+  mosquitto -v
+  python ids/ids_service.py
+Start backend:
+  python backend/app.py
+Prepare keys and start meters:
+  python meters/key_manager.py init --meters meter_000,meter_001
+  python meters/multi_meter_sim.py --meters meter_000,meter_001
+Observe:
+  curl http://127.0.0.1:5000/stats
+  curl http://127.0.0.1:5000/status/<meterAddressFromKeyFile>
+Attack:
+    python attacker/attacker.py --mode capture
+  # In another terminal, stop capture and replay:
+  python attacker/attacker.py --mode replay --index 0 --confirm
+Advanced attack:
+    python attacker/attacker3.py --attack flood --confirm
+Forensics and stats:
+    curl http://127.0.0.1:5000/forensics/<meterAddress>
+  curl http://127.0.0.1:5000/stats
+Optional blockchain later:
+Deploy contracts, set env vars, enable BLOCKCHAIN_ENABLED=true, restart backend.
+Summary
+We added multi-meter scaling, advanced attackers, rich IDS modules, a hardened backend, and blockchain hooks.
+You can now realistically simulate, attack, detect, and audit smart-grid meter traffic end to end.
