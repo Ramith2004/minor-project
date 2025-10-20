@@ -1,0 +1,97 @@
+# Core dependencies for smart meter replay attack detection system
+# Install with: pip install -r requirements.txt
+
+# Web framework and HTTP handling
+flask>=2.3.0
+flask-cors>=4.0.0
+requests>=2.31.0
+
+# MQTT communication
+paho-mqtt>=1.6.1
+
+# Blockchain and cryptography
+eth-account>=0.9.0
+web3>=6.15.0
+
+# Database
+sqlite3  # Built-in with Python, but listed for clarity
+
+# Data processing and analysis
+numpy>=1.24.0
+pandas>=2.0.0
+
+# Scientific computing and statistics
+scipy>=1.11.0
+
+# Machine learning (for advanced IDS components)
+scikit-learn>=1.3.0
+
+# Date and time handling
+python-dateutil>=2.8.0
+
+# JSON handling (built-in, but explicit for clarity)
+# json - built-in
+
+# Threading and concurrency (built-in)
+# threading - built-in
+
+# File system operations (built-in)
+# os - built-in
+# pathlib - built-in
+
+# Mathematical operations (built-in)
+# math - built-in
+# statistics - built-in
+
+# Collections and data structures (built-in)
+# collections - built-in
+# dataclasses - built-in (Python 3.7+)
+
+# Enum support (built-in)
+# enum - built-in
+
+# Time operations (built-in)
+# time - built-in
+
+# Random number generation (built-in)
+# random - built-in
+
+# Regular expressions (built-in)
+# re - built-in
+
+# Logging (built-in)
+# logging - built-in
+
+# Argument parsing (built-in)
+# argparse - built-in
+
+# Signal handling (built-in)
+# signal - built-in
+
+# Development and testing dependencies (optional)
+pytest>=7.4.0
+pytest-cov>=4.1.0
+
+# Code formatting and linting (optional)
+black>=23.0.0
+flake8>=6.0.0
+
+# Type checking (optional)
+mypy>=1.5.0
+
+# Documentation generation (optional)
+sphinx>=7.1.0
+sphinx-rtd-theme>=1.3.0
+
+# Performance monitoring (optional)
+psutil>=5.9.0
+
+# Configuration management (optional)
+python-dotenv>=1.0.0
+
+# HTTP testing (optional)
+httpx>=0.24.0
+
+# Additional utilities
+click>=8.1.0
+rich>=13.0.0
