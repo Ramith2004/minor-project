@@ -1,3 +1,22 @@
+Setup and Environment (Read First!)
+-----------------------------------
+1. **Make the setup script executable (first time only):**
+   chmod +x setup.sh
+
+2. **Run the setup script to create a virtual environment and install dependencies:**
+   ./setup.sh
+
+3. **Activate the virtual environment before running any project scripts:**
+   source venv/bin/activate
+
+4. **(Optional) If you add new dependencies to requirements.txt, re-run:**
+   pip install -r requirements.txt
+
+5. **Always activate the virtual environment before running any Python file in this project.**
+
+---
+
+
 Project overview
 You now have a complete, layered replay-attack defense stack for smart-grid meters:
 Cryptographic authenticity (ECDSA) at the edge

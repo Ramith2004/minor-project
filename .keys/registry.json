@@ -1,0 +1,12 @@
+{
+  "meters": {
+    "METER123": {
+      "address": "0xAaa01b9aAD69F674C05D997d67595BB6007BE364",
+      "keyfile": "keys_METER123.json",
+      "created_at": 1760982144,
+      "rotations": 0,
+      "active": true
+    }
+  },
+  "created_at": 1760982144
+}

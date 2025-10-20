@@ -20,11 +20,6 @@ At least 300 readings per meter over the run; <1% failed MQTT publishes.
 All payloads include meterID, seq, ts, value, signature; signature length ~132 chars, 0x-prefixed.
 Table of per-meter stats: total readings, success/fail, average interval, min/max power.
 Sample 10 payloads captured showing correctness.
-Research/improvement
-Propose a deterministic seed/config file for reproducible meter behavior.
-Add optional jitter and packet loss models; configurable from CLI.
-Add “maintenance mode” behavior (pauses, calibration drift sequences).
-Draft a JSON schema for meter config and profiles.
 2) Attackers (Replay, Sig/Seq Abuse, IDS Evasion, Hybrid) (Owner: Member B)
 Scope
 attacker/attacker.py, attacker2.py, attacker3.py, attacker4.py, attacker5.py
@@ -43,10 +38,6 @@ Expected output/results
 Matrix mapping attacks to defenses: Pass/Fail, HTTP status, IDS score, reasons.
 At least 5 successful detections and 2 evasions; attach payload samples.
 List of false negatives with proposed mitigations.
-Research/improvement
-Propose content-binding countermeasures (signing structured canonical subset with domain separator).
-Add “slow-and-low” coordinated timing attack scenarios across meters.
-Explore adversarial perturbations for ensemble detector and mitigations (feature smoothing, rate caps).
 3) IDS Suite (Bayesian, Pattern Analyzer, Ensemble) (Owner: Member C)
 Scope
 ids/ids_service.py, ids/bayesian_model.py, ids/pattern_analyzer.py, ids/ensemble_detector.py
@@ -62,10 +53,6 @@ Expected output/results
 Report with confusion matrix on at least 500 samples (balanced across classes).
 Feature importance/ablation notes: which features contribute most (value, timing, seq, signature).
 Final tuned thresholds and config snapshot; IDS latency <50ms p95.
-Research/improvement
-Propose incremental online learning for priors with forgetting factor.
-Add per-meter seasonality modeling (time-of-day/week) into Bayesian priors.
-Evaluate simple ML baseline (isolation forest/one-class SVM) and how to ensemble it with current stack.
 4) Backend, Rate Limiter, Forensics (Owner: Member D)
 Scope
 backend/app.py (enhanced), backend/rate_limiter.py, backend/forensics.py, existing backend/utils.py, backend/init_db.py
@@ -84,11 +71,6 @@ Expected output/results
 Endpoints verified: /submitReading, /status/<meterID>, /stats, /forensics/<meterID>, /health.
 Metrics: throughput, median/95p latency, rate-limited counts, suspicious count, DB growth.
 Forensics evidence types observed for each attack scenario.
-Research/improvement
-Add “quarantine” path: suspicious readings stored with a flag and separate review endpoint.
-Implement structured logging (JSON) and correlation ids; dashboards (Grafana/Prometheus).
-Add HMAC on HTTP hop (forwarder->backend) to prevent in-path tampering.
-DB indices/compaction and retention policy proposals.
 5) Blockchain Contracts & Integration (Owner: Member E)
 Scope
 contract/contracts/MeterStore.sol, MeterRegistry.sol, Consensus.sol, backend/blockchain_integration.py
@@ -115,6 +97,9 @@ Research/improvement
 Consider off-chain rollups or calldata compression for high-frequency readings.
 Store only commitments (Merkle root) per batch; keep raw off-chain for privacy and cost.
 Add slashing/incentives for validators and registry-based role controls.
+
+
+
 Cross-cutting guidance
 Environment sanity
 MQTT broker running (localhost:1883).

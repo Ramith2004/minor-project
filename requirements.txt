@@ -13,8 +13,7 @@ paho-mqtt>=1.6.1
 eth-account>=0.9.0
 web3>=6.15.0
 
-# Database
-sqlite3  # Built-in with Python, but listed for clarity
+
 
 # Data processing and analysis
 numpy>=1.24.0
