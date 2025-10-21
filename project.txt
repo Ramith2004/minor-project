@@ -1,18 +1,24 @@
 Setup and Environment (Read First!)
 -----------------------------------
-1. **Make the setup script executable (first time only):**
-   chmod +x setup.sh
+**Windows:**
+1. Open the project folder.
+2. Double-click the `setup.bat` file.
+3. Wait for the setup to finish.  
+   This will create a virtual environment and install all dependencies.
 
-2. **Run the setup script to create a virtual environment and install dependencies:**
-   ./setup.sh
+**Linux/Mac:**
+1. Make the setup script executable (first time only):  
+   `chmod +x setup.sh`
+2. Run the setup script to create a virtual environment and install dependencies:  
+   `./setup.sh`
 
-3. **Activate the virtual environment before running any project scripts:**
-   source venv/bin/activate
-
-4. **(Optional) If you add new dependencies to requirements.txt, re-run:**
-   pip install -r requirements.txt
-
-5. **Always activate the virtual environment before running any Python file in this project.**
+**After setup (all platforms):**
+- Activate the virtual environment before running any project scripts:  
+  - **Windows:** `venv\Scripts\activate`
+  - **Linux/Mac:** `source venv/bin/activate`
+- (Optional) If you add new dependencies to requirements.txt, re-run:  
+  `pip install -r requirements.txt`
+- Always activate the virtual environment before running any Python file in this project.
 
 ---
 
