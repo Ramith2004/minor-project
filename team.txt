@@ -1,0 +1,121 @@
+Team split and responsibilities (5 modules, 1 per member)
+Assign each person a focused module with clear deliverables: functional testing, metrics, and a short research note on improvements.
+1) Meter Simulation & Key Management (Owner: Member A)
+Scope
+meters/key_manager.py, meters/multi_meter_sim.py, meters/meter_sim.py
+What to do
+Generate keys for 10 meters and verify .keys/registry.json correctness.
+Run 5–10 meters concurrently with mixed profiles; verify MQTT publication reliability.
+Validate signature format produced by meters matches backend expectations.
+Stress-test variable intervals and long runs (≥30 minutes).
+How to run
+Create keys:
+python meters/key_manager.py init --meters meter_000,...,meter_009
+Start meters (mixed profiles):
+python meters/multi_meter_sim.py --count 6 --profile mixed
+Or specific IDs:
+python meters/multi_meter_sim.py --meters meter_000,meter_001
+Expected output/results
+At least 300 readings per meter over the run; <1% failed MQTT publishes.
+All payloads include meterID, seq, ts, value, signature; signature length ~132 chars, 0x-prefixed.
+Table of per-meter stats: total readings, success/fail, average interval, min/max power.
+Sample 10 payloads captured showing correctness.
+2) Attackers (Replay, Sig/Seq Abuse, IDS Evasion, Hybrid) (Owner: Member B)
+Scope
+attacker/attacker.py, attacker2.py, attacker3.py, attacker4.py, attacker5.py
+What to do
+Generate dataset with attacker.py capture. Run each attacker mode against live system.
+Measure backend responses: HTTP codes, reasons, IDS scores, forensics flags.
+Identify which attacks are blocked by which layer (backend seq/timestamp, IDS, forensics).
+How to run (examples)
+Capture: python attacker/attacker.py --mode capture
+Replay: python attacker/attacker.py --mode replay --index 0 --confirm
+Signature bypass: python attacker2.py --attack all --confirm
+Sequence flood: python attacker3.py --attack flood --confirm
+IDS evasion: python attacker4.py --attack gradual_escalation --confirm
+Hybrid: python attacker5.py --attack adaptive --confirm
+Expected output/results
+Matrix mapping attacks to defenses: Pass/Fail, HTTP status, IDS score, reasons.
+At least 5 successful detections and 2 evasions; attach payload samples.
+List of false negatives with proposed mitigations.
+3) IDS Suite (Bayesian, Pattern Analyzer, Ensemble) (Owner: Member C)
+Scope
+ids/ids_service.py, ids/bayesian_model.py, ids/pattern_analyzer.py, ids/ensemble_detector.py
+What to do
+Swap /check to use the ensemble detector output format or run side-by-side; compare accuracy.
+Build labeled test sets: normal vs. replay/seq abuse/sig anomalies/gradual-escalation.
+Tune feature weights and thresholds; record ROC/AUC, precision/recall, F1.
+How to run
+Baseline:
+python ids/ids_service.py
+For advanced evaluation: call EnsembleDetector().analyze_reading(reading) offline on captured data.
+Expected output/results
+Report with confusion matrix on at least 500 samples (balanced across classes).
+Feature importance/ablation notes: which features contribute most (value, timing, seq, signature).
+Final tuned thresholds and config snapshot; IDS latency <50ms p95.
+4) Backend, Rate Limiter, Forensics (Owner: Member D)
+Scope
+backend/app.py (enhanced), backend/rate_limiter.py, backend/forensics.py, existing backend/utils.py, backend/init_db.py
+What to do
+Run the backend with rate limiting and forensics enabled. Validate:
+Signature check, timestamp freshness, non-decreasing seq path.
+IDS integration with reasons and confidence.
+Forensics evidence stored and /forensics/<meterID> summaries.
+Rate limiting behavior under burst tests; correct 429 with retry_after.
+Perform a 30–60 min soak test with 6–10 meters.
+How to run
+export RATE_LIMIT_ENABLED=true; export FORENSICS_ENABLED=true
+python backend/app.py
+Hammer test (in another shell): wrk/ab/locust or a simple Python loop sending POSTs.
+Expected output/results
+Endpoints verified: /submitReading, /status/<meterID>, /stats, /forensics/<meterID>, /health.
+Metrics: throughput, median/95p latency, rate-limited counts, suspicious count, DB growth.
+Forensics evidence types observed for each attack scenario.
+5) Blockchain Contracts & Integration (Owner: Member E)
+Scope
+contract/contracts/MeterStore.sol, MeterRegistry.sol, Consensus.sol, backend/blockchain_integration.py
+What to do
+Deploy contracts locally or on testnet; record addresses.
+Register a subset of meters; attempt to store non-suspicious readings on-chain via backend.
+Validate verifyReading and consensus flow; simulate validator votes.
+How to run
+Deploy (Hardhat): compile/deploy all three; capture ABIs and addresses.
+Backend env:
+export BLOCKCHAIN_ENABLED=true
+export RPC_URL=...
+export PRIVATE_KEY=...
+export METER_STORE_ADDRESS=...
+export METER_REGISTRY_ADDRESS=...
+export CONSENSUS_ADDRESS=...
+Trigger verification:
+curl -X POST http://127.0.0.1:5000/blockchain/verify/<meterAddress>/<sequence> -H 'Content-Type: application/json' -d '{"verified":true}'
+Expected output/results
+Tx hashes for storeReading and verifyReading; on-chain events decoded (ReadingStored, ReadingVerified).
+Gas usage measurements; failure cases (unregistered meters, duplicate signatures) captured.
+Consensus demo: threshold set, votes cast, consensus reached flag observed.
+Research/improvement
+Consider off-chain rollups or calldata compression for high-frequency readings.
+Store only commitments (Merkle root) per batch; keep raw off-chain for privacy and cost.
+Add slashing/incentives for validators and registry-based role controls.
+
+
+
+Cross-cutting guidance
+Environment sanity
+MQTT broker running (localhost:1883).
+IDS reachable at IDS_URL.
+Backend logs to backend/backend.log.
+Databases: backend/backend.db, forensic/IDS DBs.
+Data/metrics to collect (each member)
+Functional pass/fail summary.
+Performance (latency/throughput) and error rates.
+Detection efficacy: detection rate, false positives/negatives.
+At least 3 specific improvement proposals with rough effort estimate.
+Deliverables (each member)
+1–2 page report with:
+What was tested, commands used, datasets.
+Screenshots/log snippets/JSON examples.
+Metrics and observations.
+Proposed improvements and prioritized next steps.
+PRs or snippets for small fixes/configs discovered during testing.
+This split ensures end-to-end verification: data generation (A), adversarial pressure (B), decisioning quality (C), operational robustness (D), and trust/immutability (E).

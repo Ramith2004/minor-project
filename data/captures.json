@@ -1,0 +1,224 @@
+[
+  {
+    "captured_at": 1761045901,
+    "topic": "grid/readings",
+    "payload": {
+      "meterID": "meter_000",
+      "seq": 475,
+      "ts": 1761045901,
+      "reading": {
+        "voltage": 230.52,
+        "current": 3.36,
+        "power": 312.56381620136915,
+        "signature": "0x7c50bf2fc5734f6e19542754bb2911f0bbe256aa145c1691a63f19b2d56a00f04f8c5ae7fee52acc74de1007f6c4348f2f99b00f527c8add059e02f1368de7ee1b",
+        "status": {
+          "tamper": false,
+          "reverse_flow": false,
+          "low_voltage": false,
+          "high_voltage": false,
+          "equipment_failure": true,
+          "network_issue": false,
+          "calibration_drift": false
+        },
+        "energy_kWh": 0.084
+      },
+      "status": {
+        "tamper": false,
+        "reverse_flow": false,
+        "low_voltage": false,
+        "high_voltage": false,
+        "equipment_failure": true,
+        "network_issue": false,
+        "calibration_drift": false
+      },
+      "billing_period": "2025-10",
+      "value": 312.56381620136915,
+      "signature": "0x7c50bf2fc5734f6e19542754bb2911f0bbe256aa145c1691a63f19b2d56a00f04f8c5ae7fee52acc74de1007f6c4348f2f99b00f527c8add059e02f1368de7ee1b"
+    }
+  },
+  {
+    "captured_at": 1761045909,
+    "topic": "grid/readings",
+    "payload": {
+      "meterID": "meter_000",
+      "seq": 479,
+      "ts": 1761045909,
+      "reading": {
+        "voltage": 231.94,
+        "current": 3.0,
+        "power": 241.70279557007566,
+        "signature": "0xba08248151e2c78bc15667223080d34f9142db6df75a04880a1db25fae1ae4a437a0442b07e0736daf3458d70fd024b4e1cb76dbc460746d88054f1dab4a713b1b",
+        "status": {
+          "tamper": false,
+          "reverse_flow": false,
+          "low_voltage": false,
+          "high_voltage": false,
+          "equipment_failure": true,
+          "network_issue": false,
+          "calibration_drift": true
+        },
+        "energy_kWh": 0.084
+      },
+      "status": {
+        "tamper": false,
+        "reverse_flow": false,
+        "low_voltage": false,
+        "high_voltage": false,
+        "equipment_failure": true,
+        "network_issue": false,
+        "calibration_drift": true
+      },
+      "billing_period": "2025-10",
+      "value": 241.70279557007566,
+      "signature": "0xba08248151e2c78bc15667223080d34f9142db6df75a04880a1db25fae1ae4a437a0442b07e0736daf3458d70fd024b4e1cb76dbc460746d88054f1dab4a713b1b"
+    }
+  },
+  {
+    "captured_at": 1761045913,
+    "topic": "grid/readings",
+    "payload": {
+      "meterID": "meter_000",
+      "seq": 481,
+      "ts": 1761045913,
+      "reading": {
+        "voltage": 228.23,
+        "current": 3.19,
+        "power": 720.45,
+        "signature": "0x4c41afd1c4738de2cd7fb5404bc64b422197cf8d7119822f896819102c4781e7014e8155a8150b9d3e164ab773037d5f85305ed95dd5a3c7de8293307d39b08c1c",
+        "status": {
+          "tamper": false,
+          "reverse_flow": false,
+          "low_voltage": false,
+          "high_voltage": false,
+          "equipment_failure": false,
+          "network_issue": false,
+          "calibration_drift": true
+        },
+        "energy_kWh": 0.085
+      },
+      "status": {
+        "tamper": false,
+        "reverse_flow": false,
+        "low_voltage": false,
+        "high_voltage": false,
+        "equipment_failure": false,
+        "network_issue": false,
+        "calibration_drift": true
+      },
+      "billing_period": "2025-10",
+      "value": 720.45,
+      "signature": "0x4c41afd1c4738de2cd7fb5404bc64b422197cf8d7119822f896819102c4781e7014e8155a8150b9d3e164ab773037d5f85305ed95dd5a3c7de8293307d39b08c1c"
+    }
+  },
+  {
+    "captured_at": 1761045915,
+    "topic": "grid/readings",
+    "payload": {
+      "meterID": "meter_000",
+      "seq": 482,
+      "ts": 1761045915,
+      "reading": {
+        "voltage": 230.96,
+        "current": 3.15,
+        "power": 718.47,
+        "signature": "0x30205fe14e0395eaad24a4734416cd27208fd9c1879c4ab1e3ac417d5ec52c3a7d60fc99779cd14ed6036390d6592f019c3bcc3824e9085a0dbd02c3b9491ed11c",
+        "status": {
+          "tamper": false,
+          "reverse_flow": false,
+          "low_voltage": false,
+          "high_voltage": false,
+          "equipment_failure": false,
+          "network_issue": false,
+          "calibration_drift": true
+        },
+        "energy_kWh": 0.086
+      },
+      "status": {
+        "tamper": false,
+        "reverse_flow": false,
+        "low_voltage": false,
+        "high_voltage": false,
+        "equipment_failure": false,
+        "network_issue": false,
+        "calibration_drift": true
+      },
+      "billing_period": "2025-10",
+      "value": 718.47,
+      "signature": "0x30205fe14e0395eaad24a4734416cd27208fd9c1879c4ab1e3ac417d5ec52c3a7d60fc99779cd14ed6036390d6592f019c3bcc3824e9085a0dbd02c3b9491ed11c"
+    }
+  },
+  {
+    "captured_at": 1761045921,
+    "topic": "grid/readings",
+    "payload": {
+      "meterID": "meter_000",
+      "seq": 485,
+      "ts": 1761045921,
+      "reading": {
+        "voltage": 231.84,
+        "current": 2.09,
+        "power": 477.91,
+        "signature": "0x941b7ae14065de89a055e4e95edbd40c389035e69f218d2969783fcc441414fb77f976cd02a83cc211bc1555c24a9fef0558e80627b2853b7a1a25a5e7cc22211c",
+        "status": {
+          "tamper": false,
+          "reverse_flow": false,
+          "low_voltage": false,
+          "high_voltage": false,
+          "equipment_failure": false,
+          "network_issue": false,
+          "calibration_drift": true
+        },
+        "energy_kWh": 0.086
+      },
+      "status": {
+        "tamper": false,
+        "reverse_flow": false,
+        "low_voltage": false,
+        "high_voltage": false,
+        "equipment_failure": false,
+        "network_issue": false,
+        "calibration_drift": true
+      },
+      "billing_period": "2025-10",
+      "value": 477.91,
+      "signature": "0x941b7ae14065de89a055e4e95edbd40c389035e69f218d2969783fcc441414fb77f976cd02a83cc211bc1555c24a9fef0558e80627b2853b7a1a25a5e7cc22211c"
+    }
+  },
+  {
+    "captured_at": 1761045923,
+    "topic": "grid/readings",
+    "payload": {
+      "meterID": "meter_000",
+      "seq": 486,
+      "ts": 1761045923,
+      "reading": {
+        "voltage": 229.2,
+        "current": 2.08,
+        "power": 471.61,
+        "signature": "0x52e397c6af00288baa34f9dc131eb646d443fe3863da74c2323c498a11a2496d4291bacd97671047e9ceff1cbea4a0d40817b8d4620519b01dfb24992bfd78a11c",
+        "status": {
+          "tamper": false,
+          "reverse_flow": false,
+          "low_voltage": false,
+          "high_voltage": false,
+          "equipment_failure": false,
+          "network_issue": false,
+          "calibration_drift": true
+        },
+        "energy_kWh": 0.087
+      },
+      "status": {
+        "tamper": false,
+        "reverse_flow": false,
+        "low_voltage": false,
+        "high_voltage": false,
+        "equipment_failure": false,
+        "network_issue": false,
+        "calibration_drift": true
+      },
+      "billing_period": "2025-10",
+      "value": 471.61,
+      "signature": "0x52e397c6af00288baa34f9dc131eb646d443fe3863da74c2323c498a11a2496d4291bacd97671047e9ceff1cbea4a0d40817b8d4620519b01dfb24992bfd78a11c"
+    }
+  }
+]

@@ -1,0 +1,3 @@
+paho-mqtt
+eth-account
+web3

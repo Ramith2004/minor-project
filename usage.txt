@@ -1,0 +1,121 @@
+
+Usage Examples
+Here are some usage examples for each attacker:
+Signature Bypass Attacker:
+python attacker2.py --attack forge --confirm
+python attacker2.py --attack injection --target-meter "0xAbC..." --confirm
+equence Manipulation Attacker:
+python attacker3.py --attack gap --confirm
+python attacker3.py --attack flood --target-meter "0xAbC..." --confirm
+IDS Evasion Attacker:
+python attacker4.py --attack adaptive_value --confirm
+python attacker4.py --attack gradual_escalation --target-meter "0xAbC..." --confirm
+Hybrid Attack Attacker:
+python attacker5.py --attack adaptive --confirm
+python attacker5.py --attack persistence --duration 5 --confirm
+python attacker5.py --report
+Usage Examples
+Here are some usage examples for each IDS component:
+Bayesian Model:
+from ids.bayesian_model import BayesianModel
+
+model = BayesianModel()
+result = model.analyze_reading(reading, last_reading)
+print(f"Suspicious: {result['suspicious']}, Score: {result['score']}")
+Pattern Analyzer:
+from ids.pattern_analyzer import PatternAnalyzer
+
+analyzer = PatternAnalyzer()
+result = analyzer.analyze_reading_sequence(readings)
+print(f"Anomaly patterns: {len(result['anomaly_patterns'])}")
+Ensemble Detector:
+from ids.ensemble_detector import EnsembleDetector
+
+ensemble = EnsembleDetector()
+result = ensemble.analyze_reading(reading)
+print(f"Consensus: {result['voting_summary']['weighted_consensus']}")
+
+Integration Example
+Here's how to integrate these contracts with your backend:
+# backend/blockchain_integration.py
+from web3 import Web3
+import json
+
+class BlockchainIntegration:
+    def __init__(self, rpc_url, private_key, meter_store_address, meter_registry_address, consensus_address):
+        self.w3 = Web3(Web3.HTTPProvider(rpc_url))
+        self.account = self.w3.eth.account.from_key(private_key)
+        
+        # Load contract ABIs and addresses
+        self.meter_store = self.w3.eth.contract(
+            address=meter_store_address,
+            abi=self.load_abi("MeterStore")
+        )
+        
+        self.meter_registry = self.w3.eth.contract(
+            address=meter_registry_address,
+            abi=self.load_abi("MeterRegistry")
+        )
+        
+        self.consensus = self.w3.eth.contract(
+            address=consensus_address,
+            abi=self.load_abi("Consensus")
+        )
+    
+    def store_reading_on_chain(self, meter_id, sequence, timestamp, value, signature, suspicious_score, reasons):
+        """Store reading on blockchain"""
+        try:
+            tx = self.meter_store.functions.storeReading(
+                meter_id,
+                sequence,
+                timestamp,
+                value,
+                signature,
+                suspicious_score,
+                reasons
+            ).build_transaction({
+                'from': self.account.address,
+                'gas': 500000,
+                'gasPrice': self.w3.eth.gas_price,
+                'nonce': self.w3.eth.get_transaction_count(self.account.address)
+            })
+            
+            signed_tx = self.w3.eth.account.sign_transaction(tx, self.account.key)
+            tx_hash = self.w3.eth.send_raw_transaction(signed_tx.rawTransaction)
+            
+            return tx_hash.hex()
+        except Exception as e:
+            print(f"Error storing reading on chain: {e}")
+            return None
+    
+    def verify_reading(self, meter_id, sequence, verified):
+        """Verify a reading"""
+        try:
+            tx = self.meter_store.functions.verifyReading(
+                meter_id,
+                sequence,
+                verified
+            ).build_transaction({
+                'from': self.account.address,
+                'gas': 200000,
+                'gasPrice': self.w3.eth.gas_price,
+                'nonce': self.w3.eth.get_transaction_count(self.account.address)
+            })
+            
+            signed_tx = self.w3.eth.account.sign_transaction(tx, self.account.key)
+            tx_hash = self.w3.eth.send_raw_transaction(signed_tx.rawTransaction)
+            
+            return tx_hash.hex()
+        except Exception as e:
+            print(f"Error verifying reading: {e}")
+            return None
+To prepare keys for N meters:
+python meters/key_manager.py init --meters meter_000,meter_001,meter_002
+Then run multiple meters:
+python meters/multi_meter_sim.py --count 3 --profile mixed --broker localhost --topic grid/readings
+Or run specific IDs (must have keys):
+python meters/multi_meter_sim.py --meters meter_000,meter_001 --profile residential
+Rotate a key:
+python meters/key_manager.py rotate --meter meter_000
+List:
+python meters/key_manager.py list
