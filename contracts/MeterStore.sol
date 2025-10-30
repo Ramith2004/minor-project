@@ -238,12 +238,7 @@ contract MeterStore {
         }
     }
 
-    /**
-     * @dev Get reading details
-     * @param meterId Address of the meter
-     * @param sequence Sequence number
-     * @return reading details
-     */
+   
     function getReading(address meterId, uint256 sequence) 
         external 
         view 
@@ -292,11 +287,7 @@ contract MeterStore {
         return reading.reasons;
     }
 
-    /**
-     * @dev Get meter statistics
-     * @param meterId Address of the meter
-     * @return stats Meter statistics
-     */
+   
     function getMeterStats(address meterId) 
         external 
         view 

@@ -10,17 +10,21 @@ import * as Contracts from "./index.js";
 
 declare module "@nomicfoundation/hardhat-ethers/types" {
   interface HardhatEthersHelpers extends HardhatEthersHelpersBase {
-  getContractFactory(name: 'Counter', signerOrOptions?: ethers.Signer | FactoryOptions): Promise<Contracts.Counter__factory>
-getContractFactory(name: 'Lock', signerOrOptions?: ethers.Signer | FactoryOptions): Promise<Contracts.Lock__factory>
+  getContractFactory(name: 'Consensus', signerOrOptions?: ethers.Signer | FactoryOptions): Promise<Contracts.Consensus__factory>
+getContractFactory(name: 'MeterRegistry', signerOrOptions?: ethers.Signer | FactoryOptions): Promise<Contracts.MeterRegistry__factory>
+getContractFactory(name: 'MeterStore', signerOrOptions?: ethers.Signer | FactoryOptions): Promise<Contracts.MeterStore__factory>
 
-  getContractAt(name: 'Counter', address: string | ethers.Addressable, signer?: ethers.Signer): Promise<Contracts.Counter>
-getContractAt(name: 'Lock', address: string | ethers.Addressable, signer?: ethers.Signer): Promise<Contracts.Lock>
+  getContractAt(name: 'Consensus', address: string | ethers.Addressable, signer?: ethers.Signer): Promise<Contracts.Consensus>
+getContractAt(name: 'MeterRegistry', address: string | ethers.Addressable, signer?: ethers.Signer): Promise<Contracts.MeterRegistry>
+getContractAt(name: 'MeterStore', address: string | ethers.Addressable, signer?: ethers.Signer): Promise<Contracts.MeterStore>
 
-  deployContract(name: 'Counter', signerOrOptions?: ethers.Signer | DeployContractOptions): Promise<Contracts.Counter>
-deployContract(name: 'Lock', signerOrOptions?: ethers.Signer | DeployContractOptions): Promise<Contracts.Lock>
+  deployContract(name: 'Consensus', signerOrOptions?: ethers.Signer | DeployContractOptions): Promise<Contracts.Consensus>
+deployContract(name: 'MeterRegistry', signerOrOptions?: ethers.Signer | DeployContractOptions): Promise<Contracts.MeterRegistry>
+deployContract(name: 'MeterStore', signerOrOptions?: ethers.Signer | DeployContractOptions): Promise<Contracts.MeterStore>
 
-  deployContract(name: 'Counter', args: any[], signerOrOptions?: ethers.Signer | DeployContractOptions): Promise<Contracts.Counter>
-deployContract(name: 'Lock', args: any[], signerOrOptions?: ethers.Signer | DeployContractOptions): Promise<Contracts.Lock>
+  deployContract(name: 'Consensus', args: any[], signerOrOptions?: ethers.Signer | DeployContractOptions): Promise<Contracts.Consensus>
+deployContract(name: 'MeterRegistry', args: any[], signerOrOptions?: ethers.Signer | DeployContractOptions): Promise<Contracts.MeterRegistry>
+deployContract(name: 'MeterStore', args: any[], signerOrOptions?: ethers.Signer | DeployContractOptions): Promise<Contracts.MeterStore>
 
     // default types
     getContractFactory(

@@ -54,7 +54,14 @@ class AnomalyEvent:
 
 class EnhancedMeterSimulator:
     def __init__(self, meter_id: str, meter_type: MeterType = MeterType.RESIDENTIAL):
-        self.meter_id = meter_id
+        self.meter_alias = meter_id
+        
+        # Load keys first to get the real Ethereum address
+        self.keys = self._load_keys()
+        
+        # IMPORTANT: Use the Ethereum address as the actual meter ID
+        self.meter_id = self.keys["address"]
+        
         self.meter_type = meter_type
         self.profile = self._create_profile(meter_type)
         
@@ -134,7 +141,8 @@ class EnhancedMeterSimulator:
         """Load meter keys"""
         script_dir = os.path.dirname(__file__)
         project_root = os.path.abspath(os.path.join(script_dir, ".."))
-        keyfile = os.path.join(project_root, ".keys", f"keys_{self.meter_id}.json")
+        # Use the alias (meter1, meter2, etc.) to load the keyfile
+        keyfile = os.path.join(project_root, ".keys", f"keys_{self.meter_alias}.json")
         
         if not os.path.exists(keyfile):
             raise FileNotFoundError(f"Keyfile not found: {keyfile}")
@@ -308,14 +316,11 @@ class EnhancedMeterSimulator:
             if not self._simulate_network_conditions():
                 return False
             
-            # Create payload
+            # Create payload that matches backend expectations
             payload = {
                 "meterID": self.meter_id,
                 "seq": self.sequence,
                 "ts": int(time.time()),
-                "reading": reading_data,
-                "status": reading_data.get("status", {}),
-                "billing_period": time.strftime("%Y-%m"),
                 "value": reading_data["power"],
                 "signature": reading_data["signature"]
             }

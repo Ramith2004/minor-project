@@ -3,7 +3,6 @@
 Blockchain Integration Module
 Handles interaction with smart contracts for meter reading storage and verification
 """
-
 import json
 import time
 import logging
@@ -59,11 +58,20 @@ class BlockchainIntegration:
     def _load_abi(self, contract_name: str) -> List[Dict]:
         """Load contract ABI from file"""
         try:
-            abi_path = f"contracts/{contract_name}.json"
-            with open(abi_path, 'r') as f:
-                return json.load(f)
-        except FileNotFoundError:
-            # Fallback to hardcoded ABI (simplified version)
+            # Correct path to compiled artifacts
+            import os
+            from pathlib import Path
+            artifacts_path = Path(__file__).parent.parent / "artifacts" / "contracts" / f"{contract_name}.sol" / f"{contract_name}.json"
+            
+            if not artifacts_path.exists():
+                logging.warning(f"ABI file not found at {artifacts_path}, using fallback")
+                return self._get_fallback_abi(contract_name)
+            
+            with open(artifacts_path, 'r') as f:
+                artifact = json.load(f)
+                return artifact.get('abi', [])
+        except Exception as e:
+            logging.error(f"Failed to load ABI for {contract_name}: {e}")
             return self._get_fallback_abi(contract_name)
     
     def _get_fallback_abi(self, contract_name: str) -> List[Dict]:
@@ -123,8 +131,23 @@ class BlockchainIntegration:
             else:
                 meter_address = meter_id
             
-            # Convert signature to bytes32
-            signature_bytes = self.w3.to_bytes(hexstr=signature) if signature.startswith('0x') else signature.encode()
+            # Convert signature to bytes32 (32 bytes exactly)
+            if signature.startswith('0x'):
+                signature = signature[2:]
+            
+            # Convert hex string to bytes
+            sig_bytes = bytes.fromhex(signature)
+            
+            # Ensure exactly 32 bytes for bytes32 type
+            if len(sig_bytes) > 32:
+                # Take first 32 bytes (truncate)
+                sig_bytes = sig_bytes[:32]
+            elif len(sig_bytes) < 32:
+                # Pad with zeros to reach 32 bytes
+                sig_bytes = sig_bytes + b'\x00' * (32 - len(sig_bytes))
+            
+            # Convert to hex string with 0x prefix for Web3
+            signature_bytes32 = '0x' + sig_bytes.hex()
             
             # Build transaction
             tx = self.meter_store.functions.storeReading(
@@ -132,19 +155,20 @@ class BlockchainIntegration:
                 sequence,
                 timestamp,
                 value,
-                signature_bytes,
+                signature_bytes32,  # Now properly formatted as bytes32
                 suspicious_score,
                 reasons
             ).build_transaction({
                 'from': self.account.address,
                 'gas': 500000,
                 'gasPrice': self.get_gas_price(),
-                'nonce': self.get_nonce()
+                'nonce': self.get_nonce(),
+                'chainId': self.w3.eth.chain_id
             })
             
             # Sign and send transaction
             signed_tx = self.w3.eth.account.sign_transaction(tx, self.private_key)
-            tx_hash = self.w3.eth.send_raw_transaction(signed_tx.rawTransaction)
+            tx_hash = self.w3.eth.send_raw_transaction(signed_tx.raw_transaction)
             
             tx_hash_hex = tx_hash.hex()
             
@@ -189,7 +213,7 @@ class BlockchainIntegration:
             })
             
             signed_tx = self.w3.eth.account.sign_transaction(tx, self.private_key)
-            tx_hash = self.w3.eth.send_raw_transaction(signed_tx.rawTransaction)
+            tx_hash = self.w3.eth.send_raw_transaction(signed_tx.raw_transaction)
             
             tx_hash_hex = tx_hash.hex()
             
@@ -269,7 +293,7 @@ class BlockchainIntegration:
             })
             
             signed_tx = self.w3.eth.account.sign_transaction(tx, self.private_key)
-            tx_hash = self.w3.eth.send_raw_transaction(signed_tx.rawTransaction)
+            tx_hash = self.w3.eth.send_raw_transaction(signed_tx.raw_transaction)
             
             tx_hash_hex = tx_hash.hex()
             

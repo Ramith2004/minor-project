@@ -377,16 +377,7 @@ contract MeterRegistry {
         return registeredMeters[meterId] && meters[meterId].isActive && !meters[meterId].isSuspended;
     }
 
-    /**
-     * @dev Get meter information
-     * @param meterId Address of the meter
-     * @return meterType Type of the meter
-     * @return location Location of the meter
-     * @return owner Owner of the meter
-     * @return registrationTime Registration timestamp
-     * @return isActive Whether the meter is active
-     * @return isSuspended Whether the meter is suspended
-     */
+   
     function getMeterInfo(address meterId) 
         external 
         view 
@@ -395,8 +386,8 @@ contract MeterRegistry {
             string memory location,
             address owner,
             uint256 registrationTime,
-            bool isActive,
-            bool isSuspended
+            bool meterIsActive,
+            bool meterIsSuspended
         )
     {
         require(registeredMeters[meterId], "Meter not registered");

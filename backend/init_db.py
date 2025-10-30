@@ -73,8 +73,10 @@ def get_last_seq(meterID: str) -> int:
         return 0
 
 
-def store_reading(payload: dict, blockchain_hash: str = None, suspicious: bool = False,
-                  score: float = 0.0, reasons: list = None):
+def store_reading(payload: dict, suspicious: bool = False, reasons: list = None,
+                  score: float = 0.0, blockchain_hash: str = None, 
+                  ids_confidence: float = 0.0, forensic_result: dict = None, 
+                  request_id: str = None):
     """
     Store a verified reading in the database.
     Includes optional blockchain reference and IDS results.
@@ -128,3 +130,47 @@ def dump_all_readings(limit: int = 10):
                 print(r)
     except Exception as e:
         logging.error(f"Failed to dump readings: {e}")
+
+
+def get_reading_history(meterID: str, limit: int = 10) -> list:
+    """Get recent reading history for a meter"""
+    try:
+        with sqlite3.connect(DB_PATH) as conn:
+            c = conn.cursor()
+            c.execute("""
+                SELECT meterID, seq, ts, value, raw, blockchain_hash, suspicious, 
+                       score, reasons, received_at
+                FROM readings
+                WHERE meterID = ?
+                ORDER BY seq DESC
+                LIMIT ?
+            """, (meterID, limit))
+            
+            rows = c.fetchall()
+            readings = []
+            
+            for row in rows:
+                try:
+                    raw_data = json.loads(row[4]) if row[4] else {}
+                    reasons = json.loads(row[8]) if row[8] else []
+                except:
+                    raw_data = {}
+                    reasons = []
+                
+                readings.append({
+                    "meterID": row[0],
+                    "seq": row[1],
+                    "ts": row[2],
+                    "value": row[3],
+                    "blockchain_hash": row[5],
+                    "suspicious": bool(row[6]),
+                    "score": row[7],
+                    "reasons": reasons,
+                    "received_at": row[9]
+                })
+            
+            return readings
+            
+    except Exception as e:
+        logging.error(f"Failed to get reading history for {meterID}: {e}")
+        return []

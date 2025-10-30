@@ -6,6 +6,27 @@
       "created_at": 1760982144,
       "rotations": 0,
       "active": true
+    },
+    "meter1": {
+      "address": "0x7e994d1943D223587E713ecBabf9ca1a79cf251b",
+      "keyfile": "keys_meter1.json",
+      "created_at": 1761860378,
+      "rotations": 0,
+      "active": true
+    },
+    "meter2": {
+      "address": "0x4b0a1764c7F3726d128D7cED59680Dcf0153b72f",
+      "keyfile": "keys_meter2.json",
+      "created_at": 1761860378,
+      "rotations": 0,
+      "active": true
+    },
+    "meter3": {
+      "address": "0x633eC30Ff8b6015D33019EbAdDf24Aa203F9ad93",
+      "keyfile": "keys_meter3.json",
+      "created_at": 1761860378,
+      "rotations": 0,
+      "active": true
     }
   },
   "created_at": 1760982144
