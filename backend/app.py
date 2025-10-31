@@ -1,10 +1,10 @@
 #!/usr/bin/env python3
 """
 Enhanced Backend Application
-Advanced smart meter reading validation with blockchain integration, rate limiting, and forensics
+Advanced smart meter reading validation with blockchain integration, rate limiting, forensics, and real-time SSE streaming
 """
 
-from flask import Flask, request, jsonify, g
+from flask import Flask, request, jsonify, g, Response
 from flask_cors import CORS
 from utils import verify_signature, validate_reading_payload, is_timestamp_fresh
 from init_db import init_db, get_last_seq, store_reading, get_reading_history
@@ -19,6 +19,8 @@ import json
 from datetime import datetime, timedelta
 from functools import wraps
 import threading
+from queue import Queue, Empty
+from collections import defaultdict
 
 # ---------------- CONFIG ----------------
 IDS_URL = os.getenv("IDS_URL", "http://127.0.0.1:5100/check")
@@ -47,6 +49,57 @@ SUSPICIOUS_SCORE_THRESHOLD = float(os.getenv("SUSPICIOUS_SCORE_THRESHOLD", "0.7"
 app = Flask(__name__)
 CORS(app)
 init_db()
+
+# ============ SSE PUB/SUB SYSTEM ============
+class SSEPublisher:
+    """Thread-safe SSE event publisher"""
+    def __init__(self):
+        self.subscribers = defaultdict(list)  # stream_name -> [queue1, queue2, ...]
+        self.lock = threading.Lock()
+    
+    def subscribe(self, stream_name: str) -> Queue:
+        """Subscribe to a stream and get a queue for events"""
+        q = Queue(maxsize=100)
+        with self.lock:
+            self.subscribers[stream_name].append(q)
+        logging.info(f"New subscriber to stream: {stream_name}")
+        return q
+    
+    def unsubscribe(self, stream_name: str, queue: Queue):
+        """Unsubscribe from a stream"""
+        with self.lock:
+            if stream_name in self.subscribers:
+                try:
+                    self.subscribers[stream_name].remove(queue)
+                    logging.info(f"Unsubscribed from stream: {stream_name}")
+                except ValueError:
+                    pass
+    
+    def publish(self, stream_name: str, event_type: str, data: dict):
+        """Publish an event to all subscribers of a stream"""
+        with self.lock:
+            dead_queues = []
+            for q in self.subscribers.get(stream_name, []):
+                try:
+                    q.put_nowait({
+                        "event": event_type,
+                        "data": data,
+                        "timestamp": int(time.time())
+                    })
+                except:
+                    dead_queues.append(q)
+            
+            # Clean up dead queues
+            for dq in dead_queues:
+                try:
+                    self.subscribers[stream_name].remove(dq)
+                except ValueError:
+                    pass
+        
+        logging.debug(f"Published {event_type} to {stream_name}: {len(self.subscribers.get(stream_name, []))} subscribers")
+
+sse_publisher = SSEPublisher()
+# ============================================
 
 # Initialize components
 blockchain = None
@@ -135,7 +188,7 @@ def after_request(response):
 @track_request
 @rate_limit_check
 def submit_reading():
-    """Enhanced reading submission with multi-layer validation"""
+    """Enhanced reading submission with multi-layer validation and SSE notifications"""
     payload = request.get_json(force=True)
     if not payload:
         return jsonify({"ok": False, "error": "empty-payload"}), 400
@@ -171,7 +224,6 @@ def submit_reading():
     # Check for large sequence gaps
     if seq - last_seq > MAX_SEQUENCE_GAP:
         logging.warning(f"Large sequence gap: meter={meter} gap={seq - last_seq}")
-        # Don't reject, but flag as suspicious
 
     # 5) Enhanced IDS analysis
     suspicious = False
@@ -200,10 +252,8 @@ def submit_reading():
                 logging.warning(f"Suspicious reading: meter={meter} seq={seq} score={score} reasons={reasons}")
         else:
             logging.warning(f"IDS error: {resp.status_code} {resp.text}")
-            # Continue without IDS if it's down
     except requests.RequestException as e:
         logging.warning(f"IDS unavailable: {e}")
-        # Continue without IDS if it's down
 
     # 6) Forensic analysis
     forensic_result = None
@@ -212,7 +262,7 @@ def submit_reading():
             forensic_result = forensics.analyze_reading(payload, last_seq)
             if forensic_result.get("anomaly_detected", False):
                 logging.warning(f"Forensic anomaly: meter={meter} seq={seq}")
-                if not suspicious:  # If IDS didn't catch it
+                if not suspicious:
                     suspicious = True
                     score = max(score, forensic_result.get("anomaly_score", 0.5))
                     reasons.extend(forensic_result.get("anomaly_reasons", []))
@@ -222,10 +272,10 @@ def submit_reading():
     # 7) Store reading with enhanced metadata
     try:
         blockchain_hash = None
-        if blockchain and not suspicious:  # Only store non-suspicious readings on blockchain
+        if blockchain and not suspicious:
             try:
                 blockchain_hash = blockchain.store_reading_on_chain(
-                    meter, seq, timestamp, int(value * 100),  # Convert to integer (wei-like)
+                    meter, seq, timestamp, int(value * 100),
                     payload.get("signature", ""), int(score * 1000), reasons
                 )
                 if blockchain_hash:
@@ -233,7 +283,6 @@ def submit_reading():
                     logging.info(f"Stored on blockchain: {blockchain_hash}")
             except Exception as e:
                 logging.error(f"Blockchain storage failed: {e}")
-                # Continue without blockchain storage
 
         store_reading(
             payload, 
@@ -270,6 +319,30 @@ def submit_reading():
     if forensic_result:
         response_data["forensic_analysis"] = forensic_result
 
+    # ====== SSE NOTIFICATIONS ======
+    # Publish to different streams based on reading type
+    reading_event = {
+        "meterID": meter,
+        "seq": seq,
+        "ts": timestamp,
+        "value": value,
+        "suspicious": suspicious,
+        "score": score,
+        "reasons": reasons,
+        "blockchain_hash": blockchain_hash
+    }
+    
+    # Publish to all-readings stream
+    sse_publisher.publish("readings", "new_reading", reading_event)
+    
+    # Publish to meter-specific stream
+    sse_publisher.publish(f"meter_{meter}", "new_reading", reading_event)
+    
+    # If suspicious, publish to alerts stream
+    if suspicious:
+        sse_publisher.publish("alerts", "new_alert", reading_event)
+    # ===============================
+
     return jsonify(response_data), 200
 
 @app.route("/status/<meterID>", methods=["GET"])
@@ -278,11 +351,8 @@ def status(meterID):
     """Enhanced meter status endpoint"""
     try:
         last_seq = get_last_seq(meterID)
-        
-        # Get recent reading history
         recent_readings = get_reading_history(meterID, limit=10)
         
-        # Calculate statistics
         stats = {
             "meterID": meterID,
             "last_seq": last_seq,
@@ -342,15 +412,14 @@ def get_stats():
     """Get system statistics"""
     stats = request_stats.copy()
     
-    # Add component status
     stats["components"] = {
         "blockchain": blockchain is not None,
         "rate_limiter": rate_limiter is not None,
         "forensics": forensics is not None,
-        "ids": True  # Assume IDS is running if we're running
+        "ids": True,
+        "sse": True
     }
     
-    # Add rate limiter stats if available
     if rate_limiter:
         stats["rate_limiter_stats"] = rate_limiter.get_stats()
     
@@ -368,25 +437,23 @@ def health_check():
             "ids": True,
             "blockchain": blockchain is not None,
             "rate_limiter": rate_limiter is not None,
-            "forensics": forensics is not None
+            "forensics": forensics is not None,
+            "sse": True
         }
     }
     
-    # Check IDS health
     try:
         resp = requests.get(f"{IDS_URL.replace('/check', '/health')}", timeout=1)
         health_status["components"]["ids"] = resp.status_code == 200
     except:
         health_status["components"]["ids"] = False
     
-    # Check blockchain health
     if blockchain:
         try:
             health_status["components"]["blockchain"] = blockchain.is_healthy()
         except:
             health_status["components"]["blockchain"] = False
     
-    # Overall health
     if not all(health_status["components"].values()):
         health_status["status"] = "degraded"
     
@@ -477,7 +544,6 @@ def get_meter_detail(meterID):
         if not details:
             return jsonify({"ok": False, "error": "meter-not-found"}), 404
         
-        # Add recent readings
         recent = get_reading_history(meterID, limit=20)
         details["recent_readings"] = recent
         
@@ -514,12 +580,12 @@ def get_latest():
 @track_request
 def get_summary():
     """Get dashboard summary statistics"""
-    from init_db import list_meters, list_alerts
+    from init_db import list_alerts
     import sqlite3
+    import init_db as idb
     
     try:
-        # Get overall stats
-        with sqlite3.connect(init_db.DB_PATH) as conn:
+        with sqlite3.connect(idb.DB_PATH) as conn:
             c = conn.cursor()
             c.execute("SELECT COUNT(*) FROM readings")
             total_readings = c.fetchone()[0]
@@ -533,7 +599,6 @@ def get_summary():
             c.execute("SELECT AVG(score) FROM readings WHERE suspicious=1")
             avg_suspicious_score = c.fetchone()[0] or 0
         
-        # Get recent alerts
         recent_alerts = list_alerts(limit=5)
         
         return jsonify({
@@ -552,6 +617,81 @@ def get_summary():
         logging.error(f"Failed to get summary: {e}")
         return jsonify({"ok": False, "error": str(e)}), 500
 
+
+# ========== SSE STREAMING ENDPOINTS ==========
+
+def sse_stream(stream_name: str):
+    """Generator for SSE stream"""
+    queue = sse_publisher.subscribe(stream_name)
+    try:
+        # Send initial connection message
+        yield f"data: {json.dumps({'event': 'connected', 'stream': stream_name})}\n\n"
+        
+        while True:
+            try:
+                # Wait for events with timeout to send keepalive
+                event = queue.get(timeout=30)
+                
+                # FIX: Send with proper event name for addEventListener
+                event_name = event['event']  # 'new_reading' or 'new_alert'
+                event_data = event['data']
+                
+                # Format: event: <name>\ndata: <json>\n\n
+                yield f"event: {event_name}\ndata: {json.dumps(event_data)}\n\n"
+                
+            except Empty:
+                # Send keepalive comment every 30 seconds
+                yield ": keepalive\n\n"
+            except GeneratorExit:
+                break
+    finally:
+        sse_publisher.unsubscribe(stream_name, queue)
+
+
+@app.route("/api/stream/readings")
+def stream_readings():
+    """SSE endpoint for all readings"""
+    return Response(
+        sse_stream("readings"),
+        mimetype="text/event-stream",
+        headers={
+            "Cache-Control": "no-cache",
+            "X-Accel-Buffering": "no",
+            "Connection": "keep-alive"
+        }
+    )
+
+
+@app.route("/api/stream/alerts")
+def stream_alerts():
+    """SSE endpoint for suspicious readings/alerts"""
+    return Response(
+        sse_stream("alerts"),
+        mimetype="text/event-stream",
+        headers={
+            "Cache-Control": "no-cache",
+            "X-Accel-Buffering": "no",
+            "Connection": "keep-alive"
+        }
+    )
+
+
+@app.route("/api/stream/meter/<meterID>")
+def stream_meter(meterID):
+    """SSE endpoint for specific meter readings"""
+    return Response(
+        sse_stream(f"meter_{meterID}"),
+        mimetype="text/event-stream",
+        headers={
+            "Cache-Control": "no-cache",
+            "X-Accel-Buffering": "no",
+            "Connection": "keep-alive"
+        }
+    )
+
+
+# ========== ERROR HANDLERS ==========
+
 @app.errorhandler(404)
 def not_found(error):
     return jsonify({"error": "endpoint-not-found"}), 404
@@ -562,9 +702,10 @@ def internal_error(error):
     return jsonify({"error": "internal-server-error"}), 500
 
 if __name__ == "__main__":
-    logging.info("Starting enhanced backend server...")
+    logging.info("Starting enhanced backend server with SSE support...")
     logging.info(f"Blockchain enabled: {BLOCKCHAIN_ENABLED}")
     logging.info(f"Rate limiting enabled: {RATE_LIMIT_ENABLED}")
     logging.info(f"Forensics enabled: {FORENSICS_ENABLED}")
+    logging.info("SSE streaming enabled for real-time updates")
     
     app.run(host="127.0.0.1", port=5000, debug=False, threaded=True)
