@@ -26,7 +26,7 @@ print(f"   Chain ID: {w3.eth.chain_id}")
 print(f"   Latest Block: {w3.eth.block_number}")
 
 # Account details
-PRIVATE_KEY = "0xd11f8c4a0a7aa9ed7b0c3c91dab32fc1d4279e4dd1893222f8c46657cefe967a"  # Account (0)
+PRIVATE_KEY = "0xcce3f069de3707f0d7376fb023ff2b181d66191d6d49b6ee0636750b6088d40f"  # Account (0)
 account = w3.eth.account.from_key(PRIVATE_KEY)
 print(f"\n✅ Deploying from account: {account.address}")
 print(f"   Balance: {w3.from_wei(w3.eth.get_balance(account.address), 'ether')} ETH")
@@ -34,8 +34,10 @@ print(f"   Balance: {w3.from_wei(w3.eth.get_balance(account.address), 'ether')} 
 def load_contract_data(contract_name):
     """Load compiled contract bytecode and ABI"""
     
-    # For Hardhat compilation (correct path):
-    artifacts_file = f"../artifacts/contracts/{contract_name}.sol/{contract_name}.json"
+    # Get the absolute path to the project root
+    script_dir = os.path.dirname(os.path.abspath(__file__))
+    project_root = os.path.dirname(script_dir)
+    artifacts_file = os.path.join(project_root, "artifacts", "contracts", f"{contract_name}.sol", f"{contract_name}.json")
     
     try:
         with open(artifacts_file, 'r') as f:

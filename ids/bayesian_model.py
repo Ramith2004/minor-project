@@ -383,7 +383,7 @@ class BayesianModel:
         # Value statistics
         value = features["value"]
         profile.value_stats["mean"] = (1 - alpha) * profile.value_stats["mean"] + alpha * value
-        profile.value_stats["min"] = min(profile.value_stats["min"], value)
+        profile.value_stats["min"] = min(profile.value_stats["min"], value) if profile.value_stats["min"] != 0 else value
         profile.value_stats["max"] = max(profile.value_stats["max"], value)
         
         # Timing statistics

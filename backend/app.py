@@ -392,6 +392,166 @@ def health_check():
     
     return jsonify(health_status), 200
 
+
+# ========== DASHBOARD ENDPOINTS ==========
+
+@app.route("/api/dashboard/readings", methods=["GET"])
+@track_request
+def get_readings():
+    """Get paginated readings with filters"""
+    from init_db import list_readings
+    
+    meterID = request.args.get("meterID")
+    limit = int(request.args.get("limit", 50))
+    offset = int(request.args.get("offset", 0))
+    ts_from = request.args.get("ts_from", type=int)
+    ts_to = request.args.get("ts_to", type=int)
+    
+    try:
+        readings = list_readings(meterID, limit, offset, ts_from, ts_to)
+        return jsonify({
+            "ok": True,
+            "readings": readings,
+            "count": len(readings),
+            "offset": offset,
+            "limit": limit
+        }), 200
+    except Exception as e:
+        logging.error(f"Failed to get readings: {e}")
+        return jsonify({"ok": False, "error": str(e)}), 500
+
+
+@app.route("/api/dashboard/alerts", methods=["GET"])
+@track_request
+def get_alerts():
+    """Get suspicious readings (alerts)"""
+    from init_db import list_alerts
+    
+    meterID = request.args.get("meterID")
+    limit = int(request.args.get("limit", 50))
+    offset = int(request.args.get("offset", 0))
+    min_score = float(request.args.get("min_score", 0.0))
+    ts_from = request.args.get("ts_from", type=int)
+    ts_to = request.args.get("ts_to", type=int)
+    
+    try:
+        alerts = list_alerts(limit, offset, meterID, min_score, ts_from, ts_to)
+        return jsonify({
+            "ok": True,
+            "alerts": alerts,
+            "count": len(alerts),
+            "offset": offset,
+            "limit": limit
+        }), 200
+    except Exception as e:
+        logging.error(f"Failed to get alerts: {e}")
+        return jsonify({"ok": False, "error": str(e)}), 500
+
+
+@app.route("/api/dashboard/meters", methods=["GET"])
+@track_request
+def get_meters():
+    """Get all meters with summary statistics"""
+    from init_db import list_meters
+    
+    try:
+        meters = list_meters()
+        return jsonify({
+            "ok": True,
+            "meters": meters,
+            "count": len(meters)
+        }), 200
+    except Exception as e:
+        logging.error(f"Failed to get meters: {e}")
+        return jsonify({"ok": False, "error": str(e)}), 500
+
+
+@app.route("/api/dashboard/meters/<meterID>", methods=["GET"])
+@track_request
+def get_meter_detail(meterID):
+    """Get detailed meter information"""
+    from init_db import get_meter_details, get_reading_history
+    
+    try:
+        details = get_meter_details(meterID)
+        if not details:
+            return jsonify({"ok": False, "error": "meter-not-found"}), 404
+        
+        # Add recent readings
+        recent = get_reading_history(meterID, limit=20)
+        details["recent_readings"] = recent
+        
+        return jsonify({
+            "ok": True,
+            "meter": details
+        }), 200
+    except Exception as e:
+        logging.error(f"Failed to get meter details: {e}")
+        return jsonify({"ok": False, "error": str(e)}), 500
+
+
+@app.route("/api/dashboard/latest", methods=["GET"])
+@track_request
+def get_latest():
+    """Get latest readings across all meters"""
+    from init_db import get_latest_readings
+    
+    limit = int(request.args.get("limit", 20))
+    
+    try:
+        readings = get_latest_readings(limit)
+        return jsonify({
+            "ok": True,
+            "readings": readings,
+            "count": len(readings)
+        }), 200
+    except Exception as e:
+        logging.error(f"Failed to get latest readings: {e}")
+        return jsonify({"ok": False, "error": str(e)}), 500
+
+
+@app.route("/api/dashboard/summary", methods=["GET"])
+@track_request
+def get_summary():
+    """Get dashboard summary statistics"""
+    from init_db import list_meters, list_alerts
+    import sqlite3
+    
+    try:
+        # Get overall stats
+        with sqlite3.connect(init_db.DB_PATH) as conn:
+            c = conn.cursor()
+            c.execute("SELECT COUNT(*) FROM readings")
+            total_readings = c.fetchone()[0]
+            
+            c.execute("SELECT COUNT(*) FROM readings WHERE suspicious=1")
+            total_suspicious = c.fetchone()[0]
+            
+            c.execute("SELECT COUNT(DISTINCT meterID) FROM readings")
+            total_meters = c.fetchone()[0]
+            
+            c.execute("SELECT AVG(score) FROM readings WHERE suspicious=1")
+            avg_suspicious_score = c.fetchone()[0] or 0
+        
+        # Get recent alerts
+        recent_alerts = list_alerts(limit=5)
+        
+        return jsonify({
+            "ok": True,
+            "summary": {
+                "total_readings": total_readings,
+                "total_suspicious": total_suspicious,
+                "total_meters": total_meters,
+                "suspicious_percentage": round((total_suspicious / total_readings * 100) if total_readings > 0 else 0, 2),
+                "avg_suspicious_score": round(avg_suspicious_score, 3),
+                "recent_alerts": recent_alerts,
+                **request_stats
+            }
+        }), 200
+    except Exception as e:
+        logging.error(f"Failed to get summary: {e}")
+        return jsonify({"ok": False, "error": str(e)}), 500
+
 @app.errorhandler(404)
 def not_found(error):
     return jsonify({"error": "endpoint-not-found"}), 404

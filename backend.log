@@ -287,3 +287,51 @@ Argument 7 value `[]` is valid.
 [2025-10-31 03:42:31,061] [INFO] Stored reading: meter=0x7e994d1943D223587E713ecBabf9ca1a79cf251b seq=2 suspicious=False score=0.5
 [2025-10-31 03:42:31,062] [INFO] Request 1761862350986_-5082078385794109858 completed in 0.076s
 [2025-10-31 03:42:31,062] [INFO] 127.0.0.1 - - [31/Oct/2025 03:42:31] "POST /submitReading HTTP/1.1" 200 -
+[2025-10-31 14:21:24,454] [INFO] Database initialized successfully.
+[2025-10-31 14:21:24,455] [INFO] Rate limiter initialized
+[2025-10-31 14:21:24,455] [INFO] Forensic analyzer initialized
+[2025-10-31 14:21:24,459] [INFO] Starting enhanced backend server...
+[2025-10-31 14:21:24,459] [INFO] Blockchain enabled: False
+[2025-10-31 14:21:24,459] [INFO] Rate limiting enabled: True
+[2025-10-31 14:21:24,459] [INFO] Forensics enabled: True
+[2025-10-31 14:21:24,463] [INFO] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+[2025-10-31 14:21:24,463] [INFO] [33mPress CTRL+C to quit[0m
+[2025-10-31 14:21:32,392] [INFO] Request 1761900692388_7103192422452159445 completed in 0.003s
+[2025-10-31 14:21:32,392] [INFO] 127.0.0.1 - - [31/Oct/2025 14:21:32] "[33mGET / HTTP/1.1[0m" 404 -
+[2025-10-31 14:21:32,499] [INFO] Request 1761900692499_7103192422452159445 completed in 0.000s
+[2025-10-31 14:21:32,500] [INFO] 127.0.0.1 - - [31/Oct/2025 14:21:32] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+[2025-10-31 14:30:18,525] [INFO] Stored reading: meter=0x7e994d1943D223587E713ecBabf9ca1a79cf251b seq=1 suspicious=False score=0.21
+[2025-10-31 14:30:18,525] [INFO] Stored reading: meter=0x7e994d1943D223587E713ecBabf9ca1a79cf251b seq=1 suspicious=False score=0.21
+[2025-10-31 14:30:18,526] [INFO] Request 1761901218487_7103192422452159445 completed in 0.039s
+[2025-10-31 14:30:18,526] [INFO] 127.0.0.1 - - [31/Oct/2025 14:30:18] "POST /submitReading HTTP/1.1" 200 -
+[2025-10-31 14:30:28,527] [INFO] Stored reading: meter=0x7e994d1943D223587E713ecBabf9ca1a79cf251b seq=2 suspicious=False score=0.035
+[2025-10-31 14:30:28,527] [INFO] Stored reading: meter=0x7e994d1943D223587E713ecBabf9ca1a79cf251b seq=2 suspicious=False score=0.035
+[2025-10-31 14:30:28,527] [INFO] Request 1761901228493_7103192422452159445 completed in 0.034s
+[2025-10-31 14:30:28,527] [INFO] 127.0.0.1 - - [31/Oct/2025 14:30:28] "POST /submitReading HTTP/1.1" 200 -
+[2025-10-31 14:30:38,533] [INFO] Stored reading: meter=0x7e994d1943D223587E713ecBabf9ca1a79cf251b seq=3 suspicious=False score=0.035
+[2025-10-31 14:30:38,533] [INFO] Stored reading: meter=0x7e994d1943D223587E713ecBabf9ca1a79cf251b seq=3 suspicious=False score=0.035
+[2025-10-31 14:30:38,534] [INFO] Request 1761901238498_7103192422452159445 completed in 0.036s
+[2025-10-31 14:30:38,534] [INFO] 127.0.0.1 - - [31/Oct/2025 14:30:38] "POST /submitReading HTTP/1.1" 200 -
+[2025-10-31 14:30:48,537] [INFO] Stored reading: meter=0x7e994d1943D223587E713ecBabf9ca1a79cf251b seq=4 suspicious=False score=0.035
+[2025-10-31 14:30:48,537] [INFO] Stored reading: meter=0x7e994d1943D223587E713ecBabf9ca1a79cf251b seq=4 suspicious=False score=0.035
+[2025-10-31 14:30:48,538] [INFO] Request 1761901248503_7103192422452159445 completed in 0.034s
+[2025-10-31 14:30:48,538] [INFO] 127.0.0.1 - - [31/Oct/2025 14:30:48] "POST /submitReading HTTP/1.1" 200 -
+[2025-10-31 14:30:58,551] [INFO] Stored reading: meter=0x7e994d1943D223587E713ecBabf9ca1a79cf251b seq=5 suspicious=False score=0.035
+[2025-10-31 14:30:58,551] [INFO] Stored reading: meter=0x7e994d1943D223587E713ecBabf9ca1a79cf251b seq=5 suspicious=False score=0.035
+[2025-10-31 14:30:58,552] [INFO] Request 1761901258510_7103192422452159445 completed in 0.041s
+[2025-10-31 14:30:58,552] [INFO] 127.0.0.1 - - [31/Oct/2025 14:30:58] "POST /submitReading HTTP/1.1" 200 -
+[2025-10-31 14:31:08,566] [INFO] Stored reading: meter=0x7e994d1943D223587E713ecBabf9ca1a79cf251b seq=6 suspicious=False score=0.035
+[2025-10-31 14:31:08,567] [INFO] Stored reading: meter=0x7e994d1943D223587E713ecBabf9ca1a79cf251b seq=6 suspicious=False score=0.035
+[2025-10-31 14:31:08,567] [INFO] Request 1761901268517_7103192422452159445 completed in 0.051s
+[2025-10-31 14:31:08,568] [INFO] 127.0.0.1 - - [31/Oct/2025 14:31:08] "POST /submitReading HTTP/1.1" 200 -
+[2025-10-31 14:31:18,548] [ERROR] Forensic analysis failed: sequence index must be integer, not 'slice'
+[2025-10-31 14:31:18,555] [INFO] Stored reading: meter=0x7e994d1943D223587E713ecBabf9ca1a79cf251b seq=7 suspicious=False score=0.035
+[2025-10-31 14:31:18,555] [INFO] Stored reading: meter=0x7e994d1943D223587E713ecBabf9ca1a79cf251b seq=7 suspicious=False score=0.035
+[2025-10-31 14:31:18,555] [INFO] Request 1761901278522_7103192422452159445 completed in 0.034s
+[2025-10-31 14:31:18,556] [INFO] 127.0.0.1 - - [31/Oct/2025 14:31:18] "POST /submitReading HTTP/1.1" 200 -
+[2025-10-31 14:31:28,555] [ERROR] Forensic analysis failed: sequence index must be integer, not 'slice'
+[2025-10-31 14:31:28,562] [INFO] Stored reading: meter=0x7e994d1943D223587E713ecBabf9ca1a79cf251b seq=8 suspicious=False score=0.035
+[2025-10-31 14:31:28,562] [INFO] Stored reading: meter=0x7e994d1943D223587E713ecBabf9ca1a79cf251b seq=8 suspicious=False score=0.035
+[2025-10-31 14:31:28,563] [INFO] Request 1761901288528_7103192422452159445 completed in 0.035s
+[2025-10-31 14:31:28,563] [INFO] 127.0.0.1 - - [31/Oct/2025 14:31:28] "POST /submitReading HTTP/1.1" 200 -
