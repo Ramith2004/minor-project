@@ -10,6 +10,7 @@ import os
 import signal
 import sys
 from pathlib import Path
+from typing import List
 
 # ANSI colors for terminal output
 class Colors:
@@ -24,7 +25,7 @@ class Colors:
 class ServiceManager:
     def __init__(self):
         self.processes = {}
-        self.project_dir = Path(__file__).parent.parent
+        self.project_dir = Path(__file__).parent
         self.log_dir = self.project_dir / "logs"
         self.log_dir.mkdir(exist_ok=True)
         self.venv_python = self.project_dir / "venv" / "bin" / "python3"
@@ -150,6 +151,130 @@ class ServiceManager:
             time.sleep(1)
         return False
     
+    def deploy_contracts(self):
+        """Deploy smart contracts automatically"""
+        self.print_status("Contracts", "starting", "Deploying smart contracts...")
+        
+        deploy_script = self.project_dir / "scripts" / "deploy.py"
+        
+        try:
+            result = subprocess.run(
+                [str(self.venv_python), str(deploy_script)],
+                cwd=self.project_dir,
+                capture_output=True,
+                text=True,
+                timeout=60
+            )
+            
+            if result.returncode == 0:
+                self.print_status("Contracts", "running", "Deployment successful ✓")
+                
+                # Parse contract addresses from output
+                output = result.stdout
+                if "MeterRegistry:" in output:
+                    for line in output.split('\n'):
+                        if "MeterRegistry:" in line:
+                            addr = line.split(':')[1].strip()
+                            print(f"   {Colors.GREEN}MeterRegistry: {addr}{Colors.END}")
+                        elif "Consensus:" in line:
+                            addr = line.split(':')[1].strip()
+                            print(f"   {Colors.GREEN}Consensus: {addr}{Colors.END}")
+                        elif "MeterStore:" in line:
+                            addr = line.split(':')[1].strip()
+                            print(f"   {Colors.GREEN}MeterStore: {addr}{Colors.END}")
+                
+                return True
+            else:
+                self.print_status("Contracts", "error", "Deployment failed")
+                print(f"{Colors.RED}Error output:{Colors.END}\n{result.stderr}")
+                return False
+                
+        except Exception as e:
+            self.print_status("Contracts", "error", str(e))
+            return False
+    
+    def ensure_meter_keys(self, meter_ids: List[str]):
+        """Ensure keys exist for all meters, create if missing"""
+        import json
+        
+        self.print_status("Meter Keys", "checking", f"Checking keys for {len(meter_ids)} meters...")
+        
+        try:
+            # Check which meters need keys
+            keys_dir = self.project_dir / ".keys"
+            keys_dir.mkdir(exist_ok=True)
+            
+            missing_keys = []
+            existing_keys = []
+            
+            for meter_id in meter_ids:
+                keyfile = keys_dir / f"keys_{meter_id}.json"
+                if keyfile.exists():
+                    existing_keys.append(meter_id)
+                else:
+                    missing_keys.append(meter_id)
+            
+            if existing_keys:
+                self.print_status("Meter Keys", "running", f"Found keys for {len(existing_keys)} meters ✓")
+                for meter_id in existing_keys:
+                    keyfile = keys_dir / f"keys_{meter_id}.json"
+                    with open(keyfile, 'r') as f:
+                        key_data = json.load(f)
+                        print(f"   {Colors.GREEN}{meter_id}: {key_data.get('address', 'N/A')}{Colors.END}")
+            
+            if missing_keys:
+                self.print_status("Meter Keys", "starting", f"Creating keys for {len(missing_keys)} new meters...")
+                
+                # Import key generation
+                from eth_account import Account
+                
+                registry_path = keys_dir / "registry.json"
+                registry = {}
+                if registry_path.exists():
+                    with open(registry_path, 'r') as f:
+                        registry = json.load(f)
+                
+                for meter_id in missing_keys:
+                    # Generate new keypair
+                    acct = Account.create()
+                    priv = acct.key.hex()
+                    if not priv.startswith("0x"):
+                        priv = "0x" + priv
+                    
+                    key_data = {
+                        "meter_id": meter_id,
+                        "address": acct.address,
+                        "private_key": priv
+                    }
+                    
+                    # Save keyfile
+                    keyfile = keys_dir / f"keys_{meter_id}.json"
+                    with open(keyfile, 'w') as f:
+                        json.dump(key_data, f, indent=2)
+                    
+                    # Update registry
+                    registry[meter_id] = {
+                        "address": acct.address,
+                        "created_at": time.time(),
+                        "active": True
+                    }
+                    
+                    print(f"   {Colors.GREEN}{meter_id}: {acct.address}{Colors.END}")
+                
+                # Save registry
+                with open(registry_path, 'w') as f:
+                    json.dump(registry, f, indent=2)
+                
+                self.print_status("Meter Keys", "running", f"Created {len(missing_keys)} meter keys ✓")
+            
+            return True
+            
+        except Exception as e:
+            self.print_status("Meter Keys", "error", str(e))
+            import traceback
+            traceback.print_exc()
+            return False
+    
     def start_all(self):
         """Start all services in correct dependency order"""
         self.print_header("SMART METER SYSTEM LAUNCHER")
@@ -172,20 +297,36 @@ class ServiceManager:
         
         # 3. Start Ganache (Blockchain)
         self.print_status("Ganache", "starting", "Starting local blockchain...")
+        
+        # Fixed mnemonic ensures same accounts every time
+        MNEMONIC = "test test test test test test test test test test test junk"
+        
         ganache_started = self.start_service(
             "Ganache",
-            ["ganache-cli", 
+            ["ganache", 
              "--port", "8545",
-             "--networkId", "1337",
-             "--deterministic",
-             "--mnemonic", "test test test test test test test test test test test junk"],
+             "--chain.networkId", "1337",
+             "--chain.chainId", "1337",
+             "--miner.blockGasLimit", "0x1fffffffffffff",
+             "--miner.defaultGasPrice", "20000000000",
+             "--wallet.mnemonic", MNEMONIC,
+             "--wallet.totalAccounts", "10",
+             "--wallet.defaultBalance", "1000000"],
             shell=False
         )
         
+        # ✅ AUTO-DEPLOY CONTRACTS
         if ganache_started:
             self.print_status("Ganache", "waiting", "Waiting for blockchain to be ready...")
             if self.check_port(8545, max_retries=15):
                 self.print_status("Ganache", "running", "Blockchain ready on port 8545 ✓")
+                
+                print(f"\n{Colors.BOLD}📜 Deploying Smart Contracts...{Colors.END}\n")
+                if self.deploy_contracts():
+                    print(f"\n{Colors.GREEN}✅ Blockchain features enabled{Colors.END}")
+                else:
+                    print(f"\n{Colors.RED}❌ Contract deployment failed{Colors.END}")
+                    print(f"{Colors.YELLOW}⚠️  Continuing without blockchain features{Colors.END}")
             else:
                 self.print_status("Ganache", "error", "Blockchain not responding")
         else:
@@ -219,7 +360,7 @@ class ServiceManager:
             env={
                 "PYTHONUNBUFFERED": "1",
                 "IDS_URL": "http://127.0.0.1:5100/check",
-                "BLOCKCHAIN_ENABLED": "false"  # Disable by default, enable if needed
+                "BLOCKCHAIN_ENABLED": "true" if ganache_started else "false"
             }
         )
         
@@ -253,33 +394,41 @@ class ServiceManager:
             sys.exit(1)
         
         # 7. Start Meter Simulators (optional, can be started manually)
-        print(f"\n{Colors.BOLD}📊 Starting Meter Simulators...{Colors.END}")
+        print(f"\n{Colors.BOLD}📊 Starting Meter Simulators...{Colors.END}\n")
         
-        # Start meter1 (residential)
-        meter1_started = self.start_service(
-            "Meter1",
-            [str(self.venv_python), "meters/meter_sim.py", 
-             "--meter-id", "meter1",
-             "--meter-type", "residential",
-             "--interval", "10.0"],
-            env={"PYTHONUNBUFFERED": "1"}
-        )
-        if meter1_started:
-            time.sleep(1)
-            self.print_status("Meter1", "running", "Residential meter active ✓")
-        
-        # Start meter2 (commercial) 
-        meter2_started = self.start_service(
-            "Meter2",
-            [str(self.venv_python), "meters/meter_sim.py",
-             "--meter-id", "meter2", 
-             "--meter-type", "commercial",
-             "--interval", "20.0"],
-            env={"PYTHONUNBUFFERED": "1"}
-        )
-        if meter2_started:
-            time.sleep(1)
-            self.print_status("Meter2", "running", "Commercial meter active ✓")
+        # ✅ ENSURE METER KEYS EXIST
+        meter_ids = ["meter1", "meter2"]
+        if not self.ensure_meter_keys(meter_ids):
+            print(f"\n{Colors.YELLOW}⚠️  Failed to ensure meter keys. Skipping meter simulators.{Colors.END}")
+            print(f"   You can create keys manually: python3 meters/key_manager.py init --meters meter1,meter2")
+        else:
+            print()  # Add spacing
+            
+            # Start meter1 (residential)
+            meter1_started = self.start_service(
+                "Meter1",
+                [str(self.venv_python), "meters/meter_sim.py", 
+                 "--meter-id", "meter1",
+                 "--meter-type", "residential",
+                 "--interval", "10.0"],
+                env={"PYTHONUNBUFFERED": "1"}
+            )
+            if meter1_started:
+                time.sleep(1)
+                self.print_status("Meter1", "running", "Residential meter active ✓")
+            
+            # Start meter2 (commercial) 
+            meter2_started = self.start_service(
+                "Meter2",
+                [str(self.venv_python), "meters/meter_sim.py",
+                 "--meter-id", "meter2", 
+                 "--meter-type", "commercial",
+                 "--interval", "20.0"],
+                env={"PYTHONUNBUFFERED": "1"}
+            )
+            if meter2_started:
+                time.sleep(1)
+                self.print_status("Meter2", "running", "Commercial meter active ✓")
         
         # 8. Start Dashboard (dev server)
         dashboard_started = self.start_service(
@@ -327,8 +476,8 @@ class ServiceManager:
         
         print(f"\n{Colors.BOLD}⚙️  Controls:{Colors.END}")
         print(f"   Press {Colors.YELLOW}Ctrl+C{Colors.END} to stop all services")
-        print(f"   Or run: {Colors.YELLOW}python3 scripts/run.py --stop{Colors.END}")
-        print(f"   View all logs: {Colors.YELLOW}python3 scripts/run.py --logs{Colors.END}")
+        print(f"   Or run: {Colors.YELLOW}python3 run.py --stop{Colors.END}")
+        print(f"   View all logs: {Colors.YELLOW}python3 run.py --logs{Colors.END}")
         print()
     
     def stop_all(self):
@@ -412,7 +561,7 @@ def main():
             
             if dead_services:
                 print(f"\n{Colors.RED}Critical services died: {', '.join(dead_services)}{Colors.END}")
-                print(f"Check logs for details: {Colors.YELLOW}python3 scripts/run.py --logs{Colors.END}\n")
+                print(f"Check logs for details: {Colors.YELLOW}python3 run.py --logs{Colors.END}\n")
                 manager.stop_all()
                 sys.exit(1)
                     

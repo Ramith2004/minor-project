@@ -1,0 +1,46 @@
+=== Forwarder started at 2025-10-31 21:55:01 ===
+
+/home/rameswar-panda/Desktop/minor/minor-project/concentrator/forwarder.py:34: DeprecationWarning: Callback API version 1 is deprecated, update to latest version
+  client = mqtt.Client()
+Connected to broker with code: 0
+Subscribed to topic: grid/readings
+Received reading: {'meterID': '0x7e994d1943D223587E713ecBabf9ca1a79cf251b', 'seq': 1, 'ts': 1761927904, 'value': 1097.63, 'signature': '0xd379e5276dffb20053f7552808f8ac6b25e0396194cfd9c0d9022fc9b1415c7d04192dc8e3a135d6bc936fe7d0f7813e71492572cd378e70e1c62daefa44960e1b'}
+Forwarded to backend: 409 {"error":"non-increasing-seq","last_seq":8,"ok":false}
+
+Received reading: {'meterID': '0x4b0a1764c7F3726d128D7cED59680Dcf0153b72f', 'seq': 1, 'ts': 1761927906, 'value': 1699.01, 'signature': '0xad2f3910a35c5cedd5774db05de98e8abd84291c7e9b45fae51d6d58cbecc08f3651f9c458ba96a09fcdb2171c3ab92029f7068e7d3531ffa33e7e5dc93591e41b'}
+Forwarded to backend: 409 {"error":"non-increasing-seq","last_seq":1,"ok":false}
+
+Received reading: {'meterID': '0x7e994d1943D223587E713ecBabf9ca1a79cf251b', 'seq': 2, 'ts': 1761927914, 'value': 1056.46, 'signature': '0x6f467da12b34b075e0eb402b02a6c188bb516ebbc4a0ebe3ed8e186047cf4f9b1bf6581d6b1c9647d3c343ac5e30d5e9d01eb8dd3b05e655aacc2e32a11dc6dc1c'}
+Forwarded to backend: 409 {"error":"non-increasing-seq","last_seq":8,"ok":false}
+
+Received reading: {'meterID': '0x7e994d1943D223587E713ecBabf9ca1a79cf251b', 'seq': 3, 'ts': 1761927924, 'value': 912.27, 'signature': '0x6982b7ab6d0c398f3043ef8ff10d1eb19ba91b3057ac42c77a4876723c3ba77310d12cdfff21e5efaa11fd674baaa40808243e4be5ee0acea1dbfb7b9eef4f1f1b'}
+Forwarded to backend: 409 {"error":"non-increasing-seq","last_seq":8,"ok":false}
+
+Received reading: {'meterID': '0x4b0a1764c7F3726d128D7cED59680Dcf0153b72f', 'seq': 2, 'ts': 1761927926, 'value': 1951.38, 'signature': '0xa89354be592dd0940d078b1e88435a7682be89a67f06bed30732a3ec35a4d0a5215a9fb14be6bf3596d64be1e23f30f22b2609ae907f50f02ef0a8403bf610f81b'}
+Forwarded to backend: 200 {"confidence":0.5,"forensic_analysis":{"anomaly_detected":false,"anomaly_reasons":[],"anomaly_score":0.0,"attack_patterns":[],"evidence_count":0,"risk_level":"NORMAL"},"ok":true,"processing_time":0.075,"reasons":["sequence-anomaly (0.800)"],"request_id":"1761927926667_6745156305024208204","score":0.24,"stored_seq":2,"suspicious":false}
+
+Received reading: {'meterID': '0x7e994d1943D223587E713ecBabf9ca1a79cf251b', 'seq': 4, 'ts': 1761927934, 'value': 1047.93, 'signature': '0x0525257e73efec8a9800e345f22961a0bb8f7fe99a330b465e35abec6bd4c593464b8ddd720ae74d3df3518789888683e53f03090821f4a42c26c8ace1252f2c1b'}
+Forwarded to backend: 409 {"error":"non-increasing-seq","last_seq":8,"ok":false}
+
+Received reading: {'meterID': '0x7e994d1943D223587E713ecBabf9ca1a79cf251b', 'seq': 5, 'ts': 1761927944, 'value': 1064.54, 'signature': '0xa862a69d628cb95a8198980c5aac86b8860593473cfb1e413df98381059b53b82fc06ad65763f7913c993f1fcb62e63dbcf615c787388d44ce15e2186df570cc1b'}
+Forwarded to backend: 409 {"error":"non-increasing-seq","last_seq":8,"ok":false}
+
+Received reading: {'meterID': '0x4b0a1764c7F3726d128D7cED59680Dcf0153b72f', 'seq': 3, 'ts': 1761927946, 'value': 2768.5, 'signature': '0x70fcabbe5b0978aff8f5078bbf406ea36960e0aee5ada6c0459a00f52845676c2f6f68b4907bcb647a290337ebe0ad64cd83ecaf2d8160eb141e260b6a999f9f1c'}
+Forwarded to backend: 200 {"confidence":0.5,"forensic_analysis":{"anomaly_detected":false,"anomaly_reasons":[],"anomaly_score":0.0,"attack_patterns":[],"evidence_count":0,"risk_level":"NORMAL"},"ok":true,"processing_time":0.037,"reasons":[],"request_id":"1761927946673_6745156305024208204","score":0.065,"stored_seq":3,"suspicious":false}
+
+Received reading: {'meterID': '0x7e994d1943D223587E713ecBabf9ca1a79cf251b', 'seq': 6, 'ts': 1761927954, 'value': 1039.29, 'signature': '0x8fb20140cec86c6c00420246e321d16a0efd9cffdfc4f797e0958d63a40cdb4e3c0eaf7cb8cba53ecdd8d2818652d78c377340e0d29d36806d32e2756abba3381b'}
+Forwarded to backend: 409 {"error":"non-increasing-seq","last_seq":8,"ok":false}
+
+Received reading: {'meterID': '0x7e994d1943D223587E713ecBabf9ca1a79cf251b', 'seq': 7, 'ts': 1761927964, 'value': 962.24, 'signature': '0x825f4ac7bff241f0f001ac208b985ba75186330f066a8c6bb41cf10c93a478303d2b6b9de1fa78827c8b470d78979beba9c19824838f5a26afdaf6c9f5fe4a9c1b'}
+Forwarded to backend: 409 {"error":"non-increasing-seq","last_seq":8,"ok":false}
+
+Traceback (most recent call last):
+  File "/home/rameswar-panda/Desktop/minor/minor-project/concentrator/forwarder.py", line 39, in <module>
+    client.loop_forever()
+  File "/home/rameswar-panda/Desktop/minor/minor-project/venv/lib/python3.12/site-packages/paho/mqtt/client.py", line 2297, in loop_forever
+    rc = self._loop(timeout)
+         ^^^^^^^^^^^^^^^^^^^
+  File "/home/rameswar-panda/Desktop/minor/minor-project/venv/lib/python3.12/site-packages/paho/mqtt/client.py", line 1663, in _loop
+    socklist = select.select(rlist, wlist, [], timeout)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+KeyboardInterrupt

@@ -1,0 +1,78 @@
+=== Backend started at 2025-10-31 21:55:00 ===
+
+[2025-10-31 21:55:00,834] [INFO] Database initialized successfully.
+[2025-10-31 21:55:00,835] [INFO] Rate limiter initialized
+[2025-10-31 21:55:00,835] [INFO] Forensic analyzer initialized
+[2025-10-31 21:55:00,839] [INFO] Starting enhanced backend server with SSE support...
+[2025-10-31 21:55:00,839] [INFO] Blockchain enabled: True
+[2025-10-31 21:55:00,839] [INFO] Rate limiting enabled: True
+[2025-10-31 21:55:00,839] [INFO] Forensics enabled: True
+[2025-10-31 21:55:00,839] [INFO] SSE streaming enabled for real-time updates
+ * Serving Flask app 'app'
+ * Debug mode: off
+[2025-10-31 21:55:00,844] [INFO] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+[2025-10-31 21:55:00,844] [INFO] [33mPress CTRL+C to quit[0m
+[2025-10-31 21:55:01,399] [INFO] Request 1761927901396_6745156305024208204 completed in 0.003s
+[2025-10-31 21:55:01,400] [INFO] 127.0.0.1 - - [31/Oct/2025 21:55:01] "GET /health HTTP/1.1" 200 -
+[2025-10-31 21:55:01,992] [INFO] Request 1761927901992_6745156305024208204 completed in 0.000s
+[2025-10-31 21:55:01,993] [INFO] New subscriber to stream: readings
+[2025-10-31 21:55:01,993] [INFO] 127.0.0.1 - - [31/Oct/2025 21:55:01] "GET /api/stream/readings HTTP/1.1" 200 -
+[2025-10-31 21:55:01,993] [INFO] Request 1761927901993_6745156305024208204 completed in 0.000s
+[2025-10-31 21:55:01,994] [INFO] New subscriber to stream: alerts
+[2025-10-31 21:55:01,994] [INFO] 127.0.0.1 - - [31/Oct/2025 21:55:01] "GET /api/stream/alerts HTTP/1.1" 200 -
+[2025-10-31 21:55:02,003] [INFO] Request 1761927902003_6745156305024208204 completed in 0.000s
+[2025-10-31 21:55:02,003] [INFO] New subscriber to stream: readings
+[2025-10-31 21:55:02,004] [INFO] Request 1761927902004_6745156305024208204 completed in 0.000s
+[2025-10-31 21:55:02,004] [INFO] 127.0.0.1 - - [31/Oct/2025 21:55:02] "GET /api/stream/readings HTTP/1.1" 200 -
+[2025-10-31 21:55:02,004] [INFO] New subscriber to stream: alerts
+[2025-10-31 21:55:02,004] [INFO] 127.0.0.1 - - [31/Oct/2025 21:55:02] "GET /api/stream/alerts HTTP/1.1" 200 -
+[2025-10-31 21:55:04,665] [WARNING] Non-increasing sequence: meter=0x7e994d1943D223587E713ecBabf9ca1a79cf251b seq=1 last_seq=8
+[2025-10-31 21:55:04,665] [INFO] Request 1761927904659_6745156305024208204 completed in 0.007s
+[2025-10-31 21:55:04,665] [INFO] 127.0.0.1 - - [31/Oct/2025 21:55:04] "[31m[1mPOST /submitReading HTTP/1.1[0m" 409 -
+[2025-10-31 21:55:06,666] [WARNING] Non-increasing sequence: meter=0x4b0a1764c7F3726d128D7cED59680Dcf0153b72f seq=1 last_seq=1
+[2025-10-31 21:55:06,666] [INFO] Request 1761927906660_6745156305024208204 completed in 0.006s
+[2025-10-31 21:55:06,666] [INFO] 127.0.0.1 - - [31/Oct/2025 21:55:06] "[31m[1mPOST /submitReading HTTP/1.1[0m" 409 -
+[2025-10-31 21:55:14,668] [WARNING] Non-increasing sequence: meter=0x7e994d1943D223587E713ecBabf9ca1a79cf251b seq=2 last_seq=8
+[2025-10-31 21:55:14,668] [INFO] Request 1761927914662_6745156305024208204 completed in 0.006s
+[2025-10-31 21:55:14,668] [INFO] 127.0.0.1 - - [31/Oct/2025 21:55:14] "[31m[1mPOST /submitReading HTTP/1.1[0m" 409 -
+[2025-10-31 21:55:24,677] [WARNING] Non-increasing sequence: meter=0x7e994d1943D223587E713ecBabf9ca1a79cf251b seq=3 last_seq=8
+[2025-10-31 21:55:24,677] [INFO] Request 1761927924669_6745156305024208204 completed in 0.008s
+[2025-10-31 21:55:24,678] [INFO] 127.0.0.1 - - [31/Oct/2025 21:55:24] "[31m[1mPOST /submitReading HTTP/1.1[0m" 409 -
+[2025-10-31 21:55:26,742] [INFO] Stored reading: meter=0x4b0a1764c7F3726d128D7cED59680Dcf0153b72f seq=2 suspicious=False score=0.24
+[2025-10-31 21:55:26,742] [INFO] Stored reading: meter=0x4b0a1764c7F3726d128D7cED59680Dcf0153b72f seq=2 suspicious=False score=0.24
+[2025-10-31 21:55:26,743] [INFO] Request 1761927926667_6745156305024208204 completed in 0.076s
+[2025-10-31 21:55:26,743] [INFO] 127.0.0.1 - - [31/Oct/2025 21:55:26] "POST /submitReading HTTP/1.1" 200 -
+[2025-10-31 21:55:26,743] [INFO] Unsubscribed from stream: readings
+[2025-10-31 21:55:26,753] [INFO] Request 1761927926752_6745156305024208204 completed in 0.000s
+[2025-10-31 21:55:26,753] [INFO] Request 1761927926753_6745156305024208204 completed in 0.000s
+[2025-10-31 21:55:26,753] [INFO] New subscriber to stream: readings
+[2025-10-31 21:55:26,753] [INFO] New subscriber to stream: alerts
+[2025-10-31 21:55:26,753] [INFO] 127.0.0.1 - - [31/Oct/2025 21:55:26] "GET /api/stream/readings HTTP/1.1" 200 -
+[2025-10-31 21:55:26,753] [INFO] 127.0.0.1 - - [31/Oct/2025 21:55:26] "GET /api/stream/alerts HTTP/1.1" 200 -
+[2025-10-31 21:55:31,995] [INFO] Unsubscribed from stream: alerts
+[2025-10-31 21:55:32,005] [INFO] Unsubscribed from stream: alerts
+[2025-10-31 21:55:34,683] [WARNING] Non-increasing sequence: meter=0x7e994d1943D223587E713ecBabf9ca1a79cf251b seq=4 last_seq=8
+[2025-10-31 21:55:34,683] [INFO] Request 1761927934675_6745156305024208204 completed in 0.008s
+[2025-10-31 21:55:34,684] [INFO] 127.0.0.1 - - [31/Oct/2025 21:55:34] "[31m[1mPOST /submitReading HTTP/1.1[0m" 409 -
+[2025-10-31 21:55:44,689] [WARNING] Non-increasing sequence: meter=0x7e994d1943D223587E713ecBabf9ca1a79cf251b seq=5 last_seq=8
+[2025-10-31 21:55:44,689] [INFO] Request 1761927944681_6745156305024208204 completed in 0.008s
+[2025-10-31 21:55:44,689] [INFO] 127.0.0.1 - - [31/Oct/2025 21:55:44] "[31m[1mPOST /submitReading HTTP/1.1[0m" 409 -
+[2025-10-31 21:55:46,709] [INFO] Stored reading: meter=0x4b0a1764c7F3726d128D7cED59680Dcf0153b72f seq=3 suspicious=False score=0.065
+[2025-10-31 21:55:46,709] [INFO] Stored reading: meter=0x4b0a1764c7F3726d128D7cED59680Dcf0153b72f seq=3 suspicious=False score=0.065
+[2025-10-31 21:55:46,710] [INFO] Request 1761927946673_6745156305024208204 completed in 0.037s
+[2025-10-31 21:55:46,710] [INFO] 127.0.0.1 - - [31/Oct/2025 21:55:46] "POST /submitReading HTTP/1.1" 200 -
+[2025-10-31 21:55:46,711] [INFO] Unsubscribed from stream: readings
+[2025-10-31 21:55:46,720] [INFO] Request 1761927946720_6745156305024208204 completed in 0.000s
+[2025-10-31 21:55:46,721] [INFO] New subscriber to stream: readings
+[2025-10-31 21:55:46,721] [INFO] Request 1761927946721_6745156305024208204 completed in 0.000s
+[2025-10-31 21:55:46,721] [INFO] 127.0.0.1 - - [31/Oct/2025 21:55:46] "GET /api/stream/readings HTTP/1.1" 200 -
+[2025-10-31 21:55:46,722] [INFO] New subscriber to stream: alerts
+[2025-10-31 21:55:46,722] [INFO] 127.0.0.1 - - [31/Oct/2025 21:55:46] "GET /api/stream/alerts HTTP/1.1" 200 -
+[2025-10-31 21:55:54,690] [WARNING] Non-increasing sequence: meter=0x7e994d1943D223587E713ecBabf9ca1a79cf251b seq=6 last_seq=8
+[2025-10-31 21:55:54,690] [INFO] Request 1761927954684_6745156305024208204 completed in 0.006s
+[2025-10-31 21:55:54,690] [INFO] 127.0.0.1 - - [31/Oct/2025 21:55:54] "[31m[1mPOST /submitReading HTTP/1.1[0m" 409 -
+[2025-10-31 21:55:56,754] [INFO] Unsubscribed from stream: alerts
+[2025-10-31 21:56:04,698] [WARNING] Non-increasing sequence: meter=0x7e994d1943D223587E713ecBabf9ca1a79cf251b seq=7 last_seq=8
+[2025-10-31 21:56:04,698] [INFO] Request 1761927964690_6745156305024208204 completed in 0.008s
+[2025-10-31 21:56:04,698] [INFO] 127.0.0.1 - - [31/Oct/2025 21:56:04] "[31m[1mPOST /submitReading HTTP/1.1[0m" 409 -

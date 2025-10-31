@@ -1,0 +1,15 @@
+=== Meter1 started at 2025-10-31 21:55:04 ===
+
+/home/rameswar-panda/Desktop/minor/minor-project/meters/meter_sim.py:88: DeprecationWarning: Callback API version 1 is deprecated, update to latest version
+  self.client = mqtt.Client(client_id=f"meter_{meter_id}")
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Starting residential meter simulation
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Published reading 1: 1097.63W
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Connected to MQTT broker
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Published reading 2: 1056.46W
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Published reading 3: 912.27W
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Published reading 4: 1047.93W
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Published reading 5: 1064.54W
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Published reading 6: 1039.29W
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Published reading 7: 962.24W
+
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Stopping meter simulation...
