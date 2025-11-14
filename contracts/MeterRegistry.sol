@@ -46,9 +46,9 @@ contract MeterRegistry {
         address meterId;
         string meterType;
         string location;
-        address owner;
+        address meterOwner;  // Changed from 'owner' to 'meterOwner'
         uint256 registrationTime;
-        bool isActive;
+        bool isActiveMeter;  // Changed from 'isActive' to 'isActiveMeter'
         bool isSuspended;
         string suspensionReason;
         address suspendedBy;
@@ -62,7 +62,7 @@ contract MeterRegistry {
         string description;
         uint256 maxValue;
         uint256 minValue;
-        bool isActive;
+        bool isActiveType;  // Changed from 'isActive' to 'isActiveType'
     }
 
     // State variables
@@ -95,7 +95,7 @@ contract MeterRegistry {
     }
     
     modifier onlyMeterOwner(address meterId) {
-        require(meters[meterId].owner == msg.sender, "Only meter owner can call this function");
+        require(meters[meterId].meterOwner == msg.sender, "Only meter owner can call this function");
         _;
     }
     
@@ -105,7 +105,7 @@ contract MeterRegistry {
     }
     
     modifier onlyActiveMeter(address meterId) {
-        require(registeredMeters[meterId] && meters[meterId].isActive && !meters[meterId].isSuspended, "Meter not active");
+        require(registeredMeters[meterId] && meters[meterId].isActiveMeter && !meters[meterId].isSuspended, "Meter not active");
         _;
     }
 
@@ -138,7 +138,7 @@ contract MeterRegistry {
         
         // Check meter type exists
         require(bytes(meterTypes[meterType].name).length > 0, "Invalid meter type");
-        require(meterTypes[meterType].isActive, "Meter type not active");
+        require(meterTypes[meterType].isActiveType, "Meter type not active");
         
         // Check owner meter limit
         require(meterCount[msg.sender] < MAX_METERS_PER_OWNER, "Maximum meters per owner exceeded");
@@ -148,9 +148,9 @@ contract MeterRegistry {
         meter.meterId = meterId;
         meter.meterType = meterType;
         meter.location = location;
-        meter.owner = msg.sender;
+        meter.meterOwner = msg.sender;
         meter.registrationTime = block.timestamp;
-        meter.isActive = true;
+        meter.isActiveMeter = true;
         meter.isSuspended = false;
         meter.authorizedUsers[msg.sender] = true;
         meter.authorizedUserCount = 1;
@@ -183,7 +183,7 @@ contract MeterRegistry {
         require(bytes(meterType).length > 0, "Meter type cannot be empty");
         require(bytes(location).length > 0, "Location cannot be empty");
         require(bytes(meterTypes[meterType].name).length > 0, "Invalid meter type");
-        require(meterTypes[meterType].isActive, "Meter type not active");
+        require(meterTypes[meterType].isActiveType, "Meter type not active");
         
         MeterInfo storage meter = meters[meterId];
         meter.meterType = meterType;
@@ -247,10 +247,10 @@ contract MeterRegistry {
         require(newOwner != msg.sender, "New owner cannot be current owner");
         
         MeterInfo storage meter = meters[meterId];
-        address oldOwner = meter.owner;
+        address oldOwner = meter.meterOwner;
         
         // Update ownership
-        meter.owner = newOwner;
+        meter.meterOwner = newOwner;
         meter.authorizedUsers[oldOwner] = false;
         meter.authorizedUsers[newOwner] = true;
         
@@ -287,7 +287,7 @@ contract MeterRegistry {
         address user
     ) external onlyMeterOwner(meterId) onlyRegisteredMeter(meterId) {
         require(meters[meterId].authorizedUsers[user], "User not authorized");
-        require(user != meters[meterId].owner, "Cannot remove owner");
+        require(user != meters[meterId].meterOwner, "Cannot remove owner");
         
         meters[meterId].authorizedUsers[user] = false;
         meters[meterId].authorizedUserCount--;
@@ -299,16 +299,16 @@ contract MeterRegistry {
      * @param description Description of the meter type
      * @param maxValue Maximum value for this meter type
      * @param minValue Minimum value for this meter type
-     * @param isActive Whether the meter type is active
+     * @param active Whether the meter type is active
      */
     function addMeterType(
         string memory name,
         string memory description,
         uint256 maxValue,
         uint256 minValue,
-        bool isActive
+        bool active
     ) external onlyAdmin {
-        _addMeterType(name, description, maxValue, minValue, isActive);
+        _addMeterType(name, description, maxValue, minValue, active);
     }
 
     /**
@@ -319,7 +319,7 @@ contract MeterRegistry {
         string memory description,
         uint256 maxValue,
         uint256 minValue,
-        bool isActive
+        bool active
     ) internal {
         require(bytes(name).length > 0, "Meter type name cannot be empty");
         require(maxValue > minValue, "Max value must be greater than min value");
@@ -329,7 +329,7 @@ contract MeterRegistry {
         meterType.description = description;
         meterType.maxValue = maxValue;
         meterType.minValue = minValue;
-        meterType.isActive = isActive;
+        meterType.isActiveType = active;
         
         allMeterTypes.push(name);
     }
@@ -340,14 +340,14 @@ contract MeterRegistry {
      * @param description New description
      * @param maxValue New maximum value
      * @param minValue New minimum value
-     * @param isActive New active status
+     * @param active New active status
      */
     function updateMeterType(
         string memory name,
         string memory description,
         uint256 maxValue,
         uint256 minValue,
-        bool isActive
+        bool active
     ) external onlyAdmin {
         require(bytes(meterTypes[name].name).length > 0, "Meter type does not exist");
         require(maxValue > minValue, "Max value must be greater than min value");
@@ -356,13 +356,13 @@ contract MeterRegistry {
         meterType.description = description;
         meterType.maxValue = maxValue;
         meterType.minValue = minValue;
-        meterType.isActive = isActive;
+        meterType.isActiveType = active;
     }
 
     /**
      * @dev Check if meter is registered
      * @param meterId Address of the meter
-     * @return isRegistered Whether the meter is registered
+     * @return Whether the meter is registered
      */
     function isRegistered(address meterId) external view returns (bool) {
         return registeredMeters[meterId];
@@ -371,10 +371,10 @@ contract MeterRegistry {
     /**
      * @dev Check if meter is active
      * @param meterId Address of the meter
-     * @return isActive Whether the meter is active
+     * @return Whether the meter is active
      */
     function isActive(address meterId) external view returns (bool) {
-        return registeredMeters[meterId] && meters[meterId].isActive && !meters[meterId].isSuspended;
+        return registeredMeters[meterId] && meters[meterId].isActiveMeter && !meters[meterId].isSuspended;
     }
 
    
@@ -384,7 +384,7 @@ contract MeterRegistry {
         returns (
             string memory meterType,
             string memory location,
-            address owner,
+            address meterOwner,
             uint256 registrationTime,
             bool meterIsActive,
             bool meterIsSuspended
@@ -396,9 +396,9 @@ contract MeterRegistry {
         return (
             meter.meterType,
             meter.location,
-            meter.owner,
+            meter.meterOwner,
             meter.registrationTime,
-            meter.isActive,
+            meter.isActiveMeter,
             meter.isSuspended
         );
     }
@@ -409,7 +409,7 @@ contract MeterRegistry {
      * @return description Description of the meter type
      * @return maxValue Maximum value
      * @return minValue Minimum value
-     * @return isActive Whether the meter type is active
+     * @return active Whether the meter type is active
      */
     function getMeterType(string memory name) 
         external 
@@ -418,7 +418,7 @@ contract MeterRegistry {
             string memory description,
             uint256 maxValue,
             uint256 minValue,
-            bool isActive
+            bool active
         )
     {
         require(bytes(meterTypes[name].name).length > 0, "Meter type does not exist");
@@ -428,13 +428,13 @@ contract MeterRegistry {
             meterType.description,
             meterType.maxValue,
             meterType.minValue,
-            meterType.isActive
+            meterType.isActiveType
         );
     }
 
     /**
      * @dev Get all registered meters
-     * @return meters Array of all meter addresses
+     * @return Array of all meter addresses
      */
     function getAllMeters() external view returns (address[] memory) {
         return allMeters;
@@ -442,7 +442,7 @@ contract MeterRegistry {
 
     /**
      * @dev Get all meter types
-     * @return types Array of all meter type names
+     * @return Array of all meter type names
      */
     function getAllMeterTypes() external view returns (string[] memory) {
         return allMeterTypes;
@@ -450,7 +450,7 @@ contract MeterRegistry {
 
     /**
      * @dev Get total number of registered meters
-     * @return count Total number of meters
+     * @return Total number of meters
      */
     function getTotalMeterCount() external view returns (uint256) {
         return allMeters.length;
@@ -477,7 +477,7 @@ contract MeterRegistry {
 
     /**
      * @dev Get contract version
-     * @return version Contract version
+     * @return Contract version
      */
     function getVersion() external pure returns (string memory) {
         return "1.0.0";

@@ -1,11 +1,189 @@
-=== Meter2 started at 2025-10-31 21:55:06 ===
+=== Meter2 started at 2025-10-31 22:44:53 ===
 
-/home/rameswar-panda/Desktop/minor/minor-project/meters/meter_sim.py:88: DeprecationWarning: Callback API version 1 is deprecated, update to latest version
+D:\minor\minor-project\meters\meter_sim.py:88: DeprecationWarning: Callback API version 1 is deprecated, update to latest version
   self.client = mqtt.Client(client_id=f"meter_{meter_id}")
 [0x4b0a1764c7F3726d128D7cED59680Dcf0153b72f] Starting commercial meter simulation
 [0x4b0a1764c7F3726d128D7cED59680Dcf0153b72f] Connected to MQTT broker
-[0x4b0a1764c7F3726d128D7cED59680Dcf0153b72f] Published reading 1: 1699.01W
-[0x4b0a1764c7F3726d128D7cED59680Dcf0153b72f] Published reading 2: 1951.38W
-[0x4b0a1764c7F3726d128D7cED59680Dcf0153b72f] Published reading 3: 2768.5W
-
-[0x4b0a1764c7F3726d128D7cED59680Dcf0153b72f] Stopping meter simulation...
+[0x4b0a1764c7F3726d128D7cED59680Dcf0153b72f] Published reading 1: 2330.03W
+[0x4b0a1764c7F3726d128D7cED59680Dcf0153b72f] Published reading 2: 1985.97W
+[0x4b0a1764c7F3726d128D7cED59680Dcf0153b72f] Published reading 3: 2244.83W
+[0x4b0a1764c7F3726d128D7cED59680Dcf0153b72f] Published reading 4: 1594.3W
+[0x4b0a1764c7F3726d128D7cED59680Dcf0153b72f] Published reading 5: 2480.72W
+[0x4b0a1764c7F3726d128D7cED59680Dcf0153b72f] Published reading 6: 1513.99W
+[0x4b0a1764c7F3726d128D7cED59680Dcf0153b72f] Published reading 7: 2529.95W
+[0x4b0a1764c7F3726d128D7cED59680Dcf0153b72f] Published reading 8: 1346.48W
+[0x4b0a1764c7F3726d128D7cED59680Dcf0153b72f] Published reading 9: 2933.77W
+[0x4b0a1764c7F3726d128D7cED59680Dcf0153b72f] Published reading 10: 2876.78W
+[0x4b0a1764c7F3726d128D7cED59680Dcf0153b72f] Published reading 11: 1673.87W
+[0x4b0a1764c7F3726d128D7cED59680Dcf0153b72f] Published reading 12: 2119.25W
+[0x4b0a1764c7F3726d128D7cED59680Dcf0153b72f] Published reading 13: 1437.78W
+[0x4b0a1764c7F3726d128D7cED59680Dcf0153b72f] Published reading 14: 1443.14W
+[0x4b0a1764c7F3726d128D7cED59680Dcf0153b72f] Published reading 15: 1988.12W
+[0x4b0a1764c7F3726d128D7cED59680Dcf0153b72f] Published reading 16: 1893.45W
+[0x4b0a1764c7F3726d128D7cED59680Dcf0153b72f] Published reading 17: 2687.89W
+[0x4b0a1764c7F3726d128D7cED59680Dcf0153b72f] Published reading 18: 1941.09W
+[0x4b0a1764c7F3726d128D7cED59680Dcf0153b72f] Published reading 19: 1213.42W
+[0x4b0a1764c7F3726d128D7cED59680Dcf0153b72f] Published reading 20: 2557.08W
+[0x4b0a1764c7F3726d128D7cED59680Dcf0153b72f] Published reading 21: 1236.68W
+[0x4b0a1764c7F3726d128D7cED59680Dcf0153b72f] Published reading 22: 1293.62W
+[0x4b0a1764c7F3726d128D7cED59680Dcf0153b72f] Published reading 23: 1578.48W
+[0x4b0a1764c7F3726d128D7cED59680Dcf0153b72f] Published reading 24: 1578.17W
+[0x4b0a1764c7F3726d128D7cED59680Dcf0153b72f] Published reading 25: 1997.08W
+[0x4b0a1764c7F3726d128D7cED59680Dcf0153b72f] Published reading 26: 1720.24W
+[0x4b0a1764c7F3726d128D7cED59680Dcf0153b72f] Published reading 27: 2081.8W
+[0x4b0a1764c7F3726d128D7cED59680Dcf0153b72f] Published reading 28: 1833.54W
+[0x4b0a1764c7F3726d128D7cED59680Dcf0153b72f] Published reading 29: 1194.48W
+[0x4b0a1764c7F3726d128D7cED59680Dcf0153b72f] Failed to publish reading 30
+[0x4b0a1764c7F3726d128D7cED59680Dcf0153b72f] Anomaly: network_issue anomaly detected
+[0x4b0a1764c7F3726d128D7cED59680Dcf0153b72f] Failed to publish reading 31
+[0x4b0a1764c7F3726d128D7cED59680Dcf0153b72f] Failed to publish reading 32
+[0x4b0a1764c7F3726d128D7cED59680Dcf0153b72f] Failed to publish reading 33
+[0x4b0a1764c7F3726d128D7cED59680Dcf0153b72f] Failed to publish reading 34
+[0x4b0a1764c7F3726d128D7cED59680Dcf0153b72f] Published reading 35: 1838.58W
+[0x4b0a1764c7F3726d128D7cED59680Dcf0153b72f] Published reading 36: 2744.19W
+[0x4b0a1764c7F3726d128D7cED59680Dcf0153b72f] Failed to publish reading 37
+[0x4b0a1764c7F3726d128D7cED59680Dcf0153b72f] Failed to publish reading 38
+[0x4b0a1764c7F3726d128D7cED59680Dcf0153b72f] Failed to publish reading 39
+[0x4b0a1764c7F3726d128D7cED59680Dcf0153b72f] Failed to publish reading 40
+[0x4b0a1764c7F3726d128D7cED59680Dcf0153b72f] Failed to publish reading 41
+[0x4b0a1764c7F3726d128D7cED59680Dcf0153b72f] Failed to publish reading 42
+[0x4b0a1764c7F3726d128D7cED59680Dcf0153b72f] Failed to publish reading 43
+[0x4b0a1764c7F3726d128D7cED59680Dcf0153b72f] Failed to publish reading 44
+[0x4b0a1764c7F3726d128D7cED59680Dcf0153b72f] Published reading 45: 1540.1W
+[0x4b0a1764c7F3726d128D7cED59680Dcf0153b72f] Published reading 46: 2850.74W
+[0x4b0a1764c7F3726d128D7cED59680Dcf0153b72f] Failed to publish reading 47
+[0x4b0a1764c7F3726d128D7cED59680Dcf0153b72f] Failed to publish reading 48
+[0x4b0a1764c7F3726d128D7cED59680Dcf0153b72f] Failed to publish reading 49
+[0x4b0a1764c7F3726d128D7cED59680Dcf0153b72f] Failed to publish reading 50
+[0x4b0a1764c7F3726d128D7cED59680Dcf0153b72f] Failed to publish reading 51
+[0x4b0a1764c7F3726d128D7cED59680Dcf0153b72f] Failed to publish reading 52
+[0x4b0a1764c7F3726d128D7cED59680Dcf0153b72f] Failed to publish reading 53
+[0x4b0a1764c7F3726d128D7cED59680Dcf0153b72f] Failed to publish reading 54
+[0x4b0a1764c7F3726d128D7cED59680Dcf0153b72f] Failed to publish reading 55
+[0x4b0a1764c7F3726d128D7cED59680Dcf0153b72f] Anomaly: reverse_flow anomaly detected
+[0x4b0a1764c7F3726d128D7cED59680Dcf0153b72f] Failed to publish reading 56
+[0x4b0a1764c7F3726d128D7cED59680Dcf0153b72f] Failed to publish reading 57
+[0x4b0a1764c7F3726d128D7cED59680Dcf0153b72f] Failed to publish reading 58
+[0x4b0a1764c7F3726d128D7cED59680Dcf0153b72f] Failed to publish reading 59
+[0x4b0a1764c7F3726d128D7cED59680Dcf0153b72f] Published reading 60: -2046.56W
+[0x4b0a1764c7F3726d128D7cED59680Dcf0153b72f] Failed to publish reading 61
+[0x4b0a1764c7F3726d128D7cED59680Dcf0153b72f] Failed to publish reading 62
+[0x4b0a1764c7F3726d128D7cED59680Dcf0153b72f] Failed to publish reading 63
+[0x4b0a1764c7F3726d128D7cED59680Dcf0153b72f] Published reading 64: 1323.85W
+[0x4b0a1764c7F3726d128D7cED59680Dcf0153b72f] Failed to publish reading 65
+[0x4b0a1764c7F3726d128D7cED59680Dcf0153b72f] Failed to publish reading 66
+[0x4b0a1764c7F3726d128D7cED59680Dcf0153b72f] Failed to publish reading 67
+[0x4b0a1764c7F3726d128D7cED59680Dcf0153b72f] Failed to publish reading 68
+[0x4b0a1764c7F3726d128D7cED59680Dcf0153b72f] Published reading 69: 1842.38W
+[0x4b0a1764c7F3726d128D7cED59680Dcf0153b72f] Failed to publish reading 70
+[0x4b0a1764c7F3726d128D7cED59680Dcf0153b72f] Failed to publish reading 71
+[0x4b0a1764c7F3726d128D7cED59680Dcf0153b72f] Failed to publish reading 72
+[0x4b0a1764c7F3726d128D7cED59680Dcf0153b72f] Failed to publish reading 73
+[0x4b0a1764c7F3726d128D7cED59680Dcf0153b72f] Failed to publish reading 74
+[0x4b0a1764c7F3726d128D7cED59680Dcf0153b72f] Failed to publish reading 75
+[0x4b0a1764c7F3726d128D7cED59680Dcf0153b72f] Failed to publish reading 76
+[0x4b0a1764c7F3726d128D7cED59680Dcf0153b72f] Published reading 77: 1922.38W
+[0x4b0a1764c7F3726d128D7cED59680Dcf0153b72f] Failed to publish reading 78
+[0x4b0a1764c7F3726d128D7cED59680Dcf0153b72f] Failed to publish reading 79
+[0x4b0a1764c7F3726d128D7cED59680Dcf0153b72f] Failed to publish reading 80
+[0x4b0a1764c7F3726d128D7cED59680Dcf0153b72f] Failed to publish reading 81
+[0x4b0a1764c7F3726d128D7cED59680Dcf0153b72f] Failed to publish reading 82
+[0x4b0a1764c7F3726d128D7cED59680Dcf0153b72f] Published reading 83: 2428.24W
+[0x4b0a1764c7F3726d128D7cED59680Dcf0153b72f] Failed to publish reading 84
+[0x4b0a1764c7F3726d128D7cED59680Dcf0153b72f] Failed to publish reading 85
+[0x4b0a1764c7F3726d128D7cED59680Dcf0153b72f] Failed to publish reading 86
+[0x4b0a1764c7F3726d128D7cED59680Dcf0153b72f] Failed to publish reading 87
+[0x4b0a1764c7F3726d128D7cED59680Dcf0153b72f] Published reading 88: 2475.21W
+[0x4b0a1764c7F3726d128D7cED59680Dcf0153b72f] Failed to publish reading 89
+[0x4b0a1764c7F3726d128D7cED59680Dcf0153b72f] Failed to publish reading 90
+[0x4b0a1764c7F3726d128D7cED59680Dcf0153b72f] Published reading 91: 3048.92W
+[0x4b0a1764c7F3726d128D7cED59680Dcf0153b72f] Failed to publish reading 92
+[0x4b0a1764c7F3726d128D7cED59680Dcf0153b72f] Published reading 93: 1710.97W
+[0x4b0a1764c7F3726d128D7cED59680Dcf0153b72f] Failed to publish reading 94
+[0x4b0a1764c7F3726d128D7cED59680Dcf0153b72f] Failed to publish reading 95
+[0x4b0a1764c7F3726d128D7cED59680Dcf0153b72f] Failed to publish reading 96
+[0x4b0a1764c7F3726d128D7cED59680Dcf0153b72f] Failed to publish reading 97
+[0x4b0a1764c7F3726d128D7cED59680Dcf0153b72f] Published reading 98: 1755.14W
+[0x4b0a1764c7F3726d128D7cED59680Dcf0153b72f] Failed to publish reading 99
+[0x4b0a1764c7F3726d128D7cED59680Dcf0153b72f] Failed to publish reading 100
+[0x4b0a1764c7F3726d128D7cED59680Dcf0153b72f] Failed to publish reading 101
+[0x4b0a1764c7F3726d128D7cED59680Dcf0153b72f] Failed to publish reading 102
+[0x4b0a1764c7F3726d128D7cED59680Dcf0153b72f] Failed to publish reading 103
+[0x4b0a1764c7F3726d128D7cED59680Dcf0153b72f] Published reading 104: 2187.31W
+[0x4b0a1764c7F3726d128D7cED59680Dcf0153b72f] Failed to publish reading 105
+[0x4b0a1764c7F3726d128D7cED59680Dcf0153b72f] Failed to publish reading 106
+[0x4b0a1764c7F3726d128D7cED59680Dcf0153b72f] Failed to publish reading 107
+[0x4b0a1764c7F3726d128D7cED59680Dcf0153b72f] Published reading 108: 1974.69W
+[0x4b0a1764c7F3726d128D7cED59680Dcf0153b72f] Failed to publish reading 109
+[0x4b0a1764c7F3726d128D7cED59680Dcf0153b72f] Failed to publish reading 110
+[0x4b0a1764c7F3726d128D7cED59680Dcf0153b72f] Failed to publish reading 111
+[0x4b0a1764c7F3726d128D7cED59680Dcf0153b72f] Failed to publish reading 112
+[0x4b0a1764c7F3726d128D7cED59680Dcf0153b72f] Failed to publish reading 113
+[0x4b0a1764c7F3726d128D7cED59680Dcf0153b72f] Failed to publish reading 114
+[0x4b0a1764c7F3726d128D7cED59680Dcf0153b72f] Failed to publish reading 115
+[0x4b0a1764c7F3726d128D7cED59680Dcf0153b72f] Published reading 116: 2849.26W
+[0x4b0a1764c7F3726d128D7cED59680Dcf0153b72f] Failed to publish reading 117
+[0x4b0a1764c7F3726d128D7cED59680Dcf0153b72f] Failed to publish reading 118
+[0x4b0a1764c7F3726d128D7cED59680Dcf0153b72f] Failed to publish reading 119
+[0x4b0a1764c7F3726d128D7cED59680Dcf0153b72f] Published reading 120: 1214.4W
+[0x4b0a1764c7F3726d128D7cED59680Dcf0153b72f] Failed to publish reading 121
+[0x4b0a1764c7F3726d128D7cED59680Dcf0153b72f] Failed to publish reading 122
+[0x4b0a1764c7F3726d128D7cED59680Dcf0153b72f] Published reading 123: 2820.74W
+[0x4b0a1764c7F3726d128D7cED59680Dcf0153b72f] Failed to publish reading 124
+[0x4b0a1764c7F3726d128D7cED59680Dcf0153b72f] Failed to publish reading 125
+[0x4b0a1764c7F3726d128D7cED59680Dcf0153b72f] Published reading 126: 2647.19W
+[0x4b0a1764c7F3726d128D7cED59680Dcf0153b72f] Published reading 127: 2747.71W
+[0x4b0a1764c7F3726d128D7cED59680Dcf0153b72f] Failed to publish reading 128
+[0x4b0a1764c7F3726d128D7cED59680Dcf0153b72f] Published reading 129: 1290.27W
+[0x4b0a1764c7F3726d128D7cED59680Dcf0153b72f] Failed to publish reading 130
+[0x4b0a1764c7F3726d128D7cED59680Dcf0153b72f] Failed to publish reading 131
+[0x4b0a1764c7F3726d128D7cED59680Dcf0153b72f] Failed to publish reading 132
+[0x4b0a1764c7F3726d128D7cED59680Dcf0153b72f] Published reading 133: 1331.13W
+[0x4b0a1764c7F3726d128D7cED59680Dcf0153b72f] Failed to publish reading 134
+[0x4b0a1764c7F3726d128D7cED59680Dcf0153b72f] Published reading 135: 1312.48W
+[0x4b0a1764c7F3726d128D7cED59680Dcf0153b72f] Published reading 136: 1695.84W
+[0x4b0a1764c7F3726d128D7cED59680Dcf0153b72f] Published reading 137: 2302.4W
+[0x4b0a1764c7F3726d128D7cED59680Dcf0153b72f] Failed to publish reading 138
+[0x4b0a1764c7F3726d128D7cED59680Dcf0153b72f] Failed to publish reading 139
+[0x4b0a1764c7F3726d128D7cED59680Dcf0153b72f] Failed to publish reading 140
+[0x4b0a1764c7F3726d128D7cED59680Dcf0153b72f] Failed to publish reading 141
+[0x4b0a1764c7F3726d128D7cED59680Dcf0153b72f] Published reading 142: 2275.17W
+[0x4b0a1764c7F3726d128D7cED59680Dcf0153b72f] Failed to publish reading 143
+[0x4b0a1764c7F3726d128D7cED59680Dcf0153b72f] Failed to publish reading 144
+[0x4b0a1764c7F3726d128D7cED59680Dcf0153b72f] Failed to publish reading 145
+[0x4b0a1764c7F3726d128D7cED59680Dcf0153b72f] Failed to publish reading 146
+[0x4b0a1764c7F3726d128D7cED59680Dcf0153b72f] Failed to publish reading 147
+[0x4b0a1764c7F3726d128D7cED59680Dcf0153b72f] Failed to publish reading 148
+[0x4b0a1764c7F3726d128D7cED59680Dcf0153b72f] Failed to publish reading 149
+[0x4b0a1764c7F3726d128D7cED59680Dcf0153b72f] Failed to publish reading 150
+[0x4b0a1764c7F3726d128D7cED59680Dcf0153b72f] Failed to publish reading 151
+[0x4b0a1764c7F3726d128D7cED59680Dcf0153b72f] Failed to publish reading 152
+[0x4b0a1764c7F3726d128D7cED59680Dcf0153b72f] Failed to publish reading 153
+[0x4b0a1764c7F3726d128D7cED59680Dcf0153b72f] Anomaly: high_voltage anomaly detected
+[0x4b0a1764c7F3726d128D7cED59680Dcf0153b72f] Failed to publish reading 154
+[0x4b0a1764c7F3726d128D7cED59680Dcf0153b72f] Failed to publish reading 155
+[0x4b0a1764c7F3726d128D7cED59680Dcf0153b72f] Failed to publish reading 156
+[0x4b0a1764c7F3726d128D7cED59680Dcf0153b72f] Failed to publish reading 157
+[0x4b0a1764c7F3726d128D7cED59680Dcf0153b72f] Failed to publish reading 158
+[0x4b0a1764c7F3726d128D7cED59680Dcf0153b72f] Failed to publish reading 159
+[0x4b0a1764c7F3726d128D7cED59680Dcf0153b72f] Failed to publish reading 160
+[0x4b0a1764c7F3726d128D7cED59680Dcf0153b72f] Published reading 161: 1618.05W
+[0x4b0a1764c7F3726d128D7cED59680Dcf0153b72f] Published reading 162: 2873.16W
+[0x4b0a1764c7F3726d128D7cED59680Dcf0153b72f] Failed to publish reading 163
+[0x4b0a1764c7F3726d128D7cED59680Dcf0153b72f] Failed to publish reading 164
+[0x4b0a1764c7F3726d128D7cED59680Dcf0153b72f] Failed to publish reading 165
+[0x4b0a1764c7F3726d128D7cED59680Dcf0153b72f] Failed to publish reading 166
+[0x4b0a1764c7F3726d128D7cED59680Dcf0153b72f] Failed to publish reading 167
+[0x4b0a1764c7F3726d128D7cED59680Dcf0153b72f] Failed to publish reading 168
+[0x4b0a1764c7F3726d128D7cED59680Dcf0153b72f] Failed to publish reading 169
+[0x4b0a1764c7F3726d128D7cED59680Dcf0153b72f] Failed to publish reading 170
+[0x4b0a1764c7F3726d128D7cED59680Dcf0153b72f] Failed to publish reading 171
+[0x4b0a1764c7F3726d128D7cED59680Dcf0153b72f] Failed to publish reading 172
+[0x4b0a1764c7F3726d128D7cED59680Dcf0153b72f] Failed to publish reading 173
+[0x4b0a1764c7F3726d128D7cED59680Dcf0153b72f] Failed to publish reading 174
+[0x4b0a1764c7F3726d128D7cED59680Dcf0153b72f] Published reading 175: 1546.86W
+[0x4b0a1764c7F3726d128D7cED59680Dcf0153b72f] Failed to publish reading 176
+[0x4b0a1764c7F3726d128D7cED59680Dcf0153b72f] Failed to publish reading 177
+[0x4b0a1764c7F3726d128D7cED59680Dcf0153b72f] Failed to publish reading 178
+[0x4b0a1764c7F3726d128D7cED59680Dcf0153b72f] Published reading 179: 2757.83W
+[0x4b0a1764c7F3726d128D7cED59680Dcf0153b72f] Failed to publish reading 180

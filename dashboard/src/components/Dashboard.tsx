@@ -8,7 +8,7 @@ export const Dashboard: React.FC = () => {
   const { data: summary, isLoading } = useQuery({
     queryKey: ["summary"],
     queryFn: api.getSummary,
-    refetchInterval: 30000, // Refresh every 30s
+    refetchInterval: 100000000000, // Refresh every 30s
   });
 
   if (isLoading) {

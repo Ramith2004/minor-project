@@ -9,11 +9,66 @@ import time
 import argparse
 from typing import List, Dict, Optional
 from eth_account import Account
+from datetime import datetime
 
 SCRIPT_DIR = os.path.dirname(__file__)
 PROJECT_ROOT = os.path.abspath(os.path.join(SCRIPT_DIR, ".."))
 KEYS_DIR = os.path.join(PROJECT_ROOT, ".keys")
 REGISTRY_PATH = os.path.join(KEYS_DIR, "registry.json")
+
+# ANSI color codes for terminal output
+class Colors:
+    HEADER = '\033[95m'
+    BLUE = '\033[94m'
+    CYAN = '\033[96m'
+    GREEN = '\033[92m'
+    YELLOW = '\033[93m'
+    RED = '\033[91m'
+    BOLD = '\033[1m'
+    UNDERLINE = '\033[4m'
+    END = '\033[0m'
+
+def print_banner(text: str, color=Colors.CYAN):
+    """Print a stylized banner"""
+    width = 80
+    print(f"\n{color}{'=' * width}")
+    print(f"{text.center(width)}")
+    print(f"{'=' * width}{Colors.END}\n")
+
+def print_box(title: str, content: Dict, color=Colors.GREEN):
+    """Print content in a box format"""
+    max_key_len = max(len(k) for k in content.keys()) if content else 0
+    width = max(60, max_key_len + 40)
+    
+    print(f"\n{color}┌{'─' * (width - 2)}┐")
+    print(f"│ {Colors.BOLD}{title}{Colors.END}{color}{' ' * (width - len(title) - 3)}│")
+    print(f"├{'─' * (width - 2)}┤")
+    
+    for key, value in content.items():
+        key_str = f"{key}:".ljust(max_key_len + 2)
+        value_str = str(value)
+        # Handle long values
+        if len(value_str) > width - max_key_len - 8:
+            value_str = value_str[:width - max_key_len - 11] + "..."
+        print(f"│ {Colors.BOLD}{key_str}{Colors.END}{color} {value_str}{' ' * (width - len(key_str) - len(value_str) - 3)}│")
+    
+    print(f"└{'─' * (width - 2)}┘{Colors.END}\n")
+
+def print_success(message: str):
+    print(f"{Colors.GREEN}✓ {message}{Colors.END}")
+
+def print_info(message: str):
+    print(f"{Colors.CYAN}ℹ {message}{Colors.END}")
+
+def print_warning(message: str):
+    print(f"{Colors.YELLOW}⚠ {message}{Colors.END}")
+
+def print_error(message: str):
+    print(f"{Colors.RED}✗ {message}{Colors.END}")
+
+def format_timestamp(ts: int) -> str:
+    """Convert Unix timestamp to readable format"""
+    return datetime.fromtimestamp(ts).strftime('%Y-%m-%d %H:%M:%S')
 
 def _ensure_dirs():
     os.makedirs(KEYS_DIR, exist_ok=True)
@@ -109,7 +164,7 @@ def rotate_key(meter_id: str) -> Dict[str, str]:
         reg["meters"][meter_id]["rotations"] = reg["meters"][meter_id].get("rotations", 0) + 1
         _save_registry(reg)
 
-    return {"path": path, "address": k["address"]}
+    return {"path": path, "address": k["address"], "old_address": old["address"] if old else None}
 
 def deactivate_meter(meter_id: str) -> bool:
     reg = _load_registry()
@@ -144,13 +199,36 @@ def remove_meter(meter_id: str, keep_keyfile: bool = True) -> bool:
 
 def print_table(rows: List[Dict]):
     if not rows:
-        print("No meters found.")
+        print_warning("No meters found in registry.")
         return
-    headers = ["meter_id", "address", "keyfile", "active", "created_at", "rotations"]
-    widths = [max(len(str(x[h])) for x in rows + [{h: h}]) for h in headers]
-    print("  ".join(h.ljust(w) for h, w in zip(headers, widths)))
+    
+    print_banner("REGISTERED METERS OVERVIEW", Colors.CYAN)
+    
+    headers = ["Meter ID", "Address", "Status", "Created", "Rotations"]
+    widths = [15, 42, 10, 20, 10]
+    
+    # Print header
+    header_line = "  ".join(h.ljust(w) for h, w in zip(headers, widths))
+    print(f"{Colors.BOLD}{header_line}{Colors.END}")
+    print("─" * len(header_line))
+    
+    # Print rows
     for r in rows:
-        print("  ".join(str(r[h]).ljust(w) for h, w in zip(headers, widths)))
+        status = f"{Colors.GREEN}ACTIVE{Colors.END}" if r['active'] else f"{Colors.RED}INACTIVE{Colors.END}"
+        created = format_timestamp(r['created_at']) if r['created_at'] else "N/A"
+        
+        row_data = [
+            r['meter_id'].ljust(widths[0]),
+            r['address'][:40].ljust(widths[1]),
+            status,
+            created.ljust(widths[2]),
+            str(r['rotations']).ljust(widths[3])
+        ]
+        print("  ".join(row_data))
+    
+    print(f"\n{Colors.BOLD}Total Meters: {len(rows)}{Colors.END}")
+    active_count = sum(1 for r in rows if r['active'])
+    print(f"{Colors.GREEN}Active: {active_count}{Colors.END} | {Colors.RED}Inactive: {len(rows) - active_count}{Colors.END}\n")
 
 def main():
     parser = argparse.ArgumentParser(description="Key Manager for multi-meter simulation")
@@ -180,18 +258,40 @@ def main():
     args = parser.parse_args()
 
     if args.cmd == "init":
+        print_banner("INITIALIZING METER KEYS", Colors.CYAN)
         meter_ids = [m.strip() for m in args.meters.split(",") if m.strip()]
+        print_info(f"Processing {len(meter_ids)} meter(s)...")
+        
         created = ensure_keys_for(meter_ids)
-        print(f"Initialized/ensured {len(created)} meters.")
+        
+        print_success(f"Successfully initialized {len(created)} meters")
+        print()
+        
         for mid, k in created.items():
-            print(f"- {mid}: {k['address']}")
+            print_box(f"Meter: {mid}", {
+                "Address": k['address'],
+                "Private Key": k['private_key'][:20] + "..." + k['private_key'][-10:],
+                "Keyfile": _keyfile_path(mid),
+                "Status": "ACTIVE"
+            }, Colors.GREEN)
         return
 
     if args.cmd == "new":
+        print_banner("GENERATING NEW KEY", Colors.CYAN)
+        print_info(f"Creating keypair for meter: {args.meter}")
+        
         k = generate_keypair(args.meter)
         path = save_keypair(k)
-        print(f"Created key for {args.meter}: {k['address']}")
-        print(f"Saved to: {path}")
+        
+        print_success("Key generation successful!")
+        print_box(f"Meter: {args.meter}", {
+            "Ethereum Address": k['address'],
+            "Private Key": k['private_key'][:20] + "..." + k['private_key'][-10:],
+            "Full Private Key": k['private_key'],
+            "Keyfile Location": path,
+            "Status": "ACTIVE",
+            "Created": format_timestamp(int(time.time()))
+        }, Colors.GREEN)
         return
 
     if args.cmd == "list":
@@ -200,24 +300,48 @@ def main():
         return
 
     if args.cmd == "rotate":
+        print_banner("KEY ROTATION", Colors.YELLOW)
+        print_info(f"Rotating key for meter: {args.meter}")
+        
         out = rotate_key(args.meter)
-        print(f"Rotated key for {args.meter}: new address {out['address']}")
-        print(f"Saved to: {out['path']}")
+        
+        print_success("Key rotation successful!")
+        print_box(f"Meter: {args.meter}", {
+            "Old Address": out.get('old_address', 'N/A'),
+            "New Address": out['address'],
+            "Keyfile": out['path'],
+            "Archive": f"Old key archived with timestamp"
+        }, Colors.YELLOW)
         return
 
     if args.cmd == "deactivate":
+        print_banner("DEACTIVATING METER", Colors.YELLOW)
         ok = deactivate_meter(args.meter)
-        print("Deactivated." if ok else "Meter not found.")
+        if ok:
+            print_success(f"Meter '{args.meter}' deactivated successfully")
+        else:
+            print_error(f"Meter '{args.meter}' not found in registry")
         return
 
     if args.cmd == "activate":
+        print_banner("ACTIVATING METER", Colors.GREEN)
         ok = activate_meter(args.meter)
-        print("Activated." if ok else "Meter not found.")
+        if ok:
+            print_success(f"Meter '{args.meter}' activated successfully")
+        else:
+            print_error(f"Meter '{args.meter}' not found in registry")
         return
 
     if args.cmd == "remove":
+        print_banner("REMOVING METER", Colors.RED)
+        action = "and deleting keyfile" if args.delete_keyfile else "but keeping keyfile"
+        print_info(f"Removing meter '{args.meter}' from registry {action}")
+        
         ok = remove_meter(args.meter, keep_keyfile=not args.delete_keyfile)
-        print("Removed." if ok else "Meter not found.")
+        if ok:
+            print_success(f"Meter '{args.meter}' removed successfully")
+        else:
+            print_error(f"Meter '{args.meter}' not found in registry")
         return
 
     parser.print_help()

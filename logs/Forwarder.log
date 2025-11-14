@@ -1,46 +1,897 @@
-=== Forwarder started at 2025-10-31 21:55:01 ===
+=== Forwarder started at 2025-10-31 22:44:48 ===
 
-/home/rameswar-panda/Desktop/minor/minor-project/concentrator/forwarder.py:34: DeprecationWarning: Callback API version 1 is deprecated, update to latest version
+D:\minor\minor-project\concentrator\forwarder.py:34: DeprecationWarning: Callback API version 1 is deprecated, update to latest version
   client = mqtt.Client()
 Connected to broker with code: 0
 Subscribed to topic: grid/readings
-Received reading: {'meterID': '0x7e994d1943D223587E713ecBabf9ca1a79cf251b', 'seq': 1, 'ts': 1761927904, 'value': 1097.63, 'signature': '0xd379e5276dffb20053f7552808f8ac6b25e0396194cfd9c0d9022fc9b1415c7d04192dc8e3a135d6bc936fe7d0f7813e71492572cd378e70e1c62daefa44960e1b'}
-Forwarded to backend: 409 {"error":"non-increasing-seq","last_seq":8,"ok":false}
+Received reading: {'meterID': '0x7e994d1943D223587E713ecBabf9ca1a79cf251b', 'seq': 1, 'ts': 1761930892, 'value': 984.72, 'signature': '0xf2c2c764960ba11fd402516c024688fb1111633a38f816b12b952dda396e8932594f3ba0c1f84400f7a90bc759483c0b2f0514d2912aff9833850fca87a0a4401b'}
+Forwarded to backend: 200 {"confidence":0.997,"forensic_analysis":{"anomaly_detected":false,"anomaly_reasons":[],"anomaly_score":0.0,"attack_patterns":[],"evidence_count":0,"risk_level":"NORMAL"},"ok":true,"processing_time":0.068,"reasons":["value-anomaly (1.000)","sequence-anomaly (0.800)"],"request_id":"1761930892301_2485988552708708808","score":0.6,"stored_seq":1,"suspicious":true}
 
-Received reading: {'meterID': '0x4b0a1764c7F3726d128D7cED59680Dcf0153b72f', 'seq': 1, 'ts': 1761927906, 'value': 1699.01, 'signature': '0xad2f3910a35c5cedd5774db05de98e8abd84291c7e9b45fae51d6d58cbecc08f3651f9c458ba96a09fcdb2171c3ab92029f7068e7d3531ffa33e7e5dc93591e41b'}
+Received reading: {'meterID': '0x4b0a1764c7F3726d128D7cED59680Dcf0153b72f', 'seq': 1, 'ts': 1761930894, 'value': 2330.03, 'signature': '0xc50081eda8149ba984fc26270ded1bc3f5bfa22334955cb53b2a1d0532d05fba2a4729ec7a21e605cd04015b1bdb59568445538f9aae4954d0d44abbd39f582e1c'}
+Forwarded to backend: 200 {"confidence":0.902,"forensic_analysis":{"anomaly_detected":false,"anomaly_reasons":[],"anomaly_score":0.0,"attack_patterns":[],"evidence_count":0,"risk_level":"NORMAL"},"ok":true,"processing_time":0.053,"reasons":["value-anomaly (1.000)","sequence-anomaly (0.800)"],"request_id":"1761930894223_2485988552708708808","score":0.6,"stored_seq":1,"suspicious":true}
+
+Received reading: {'meterID': '0x7e994d1943D223587E713ecBabf9ca1a79cf251b', 'seq': 2, 'ts': 1761930902, 'value': 1100.05, 'signature': '0x4cee094c3fdc5f06b5ed2406e27abcb66de9c1fddda20829f31757d73c6321b3234f80cbbca2d4e6bb61f30fc801561fc87f202a59f9ac893375d790472b861b1b'}
+Forwarded to backend: 200 {"confidence":0.997,"forensic_analysis":{"anomaly_detected":false,"anomaly_reasons":[],"anomaly_score":0.0,"attack_patterns":[],"evidence_count":0,"risk_level":"NORMAL"},"ok":true,"processing_time":0.056,"reasons":["value-anomaly (1.000)"],"request_id":"1761930902311_2485988552708708808","score":0.345,"stored_seq":2,"suspicious":false}
+
+Received reading: {'meterID': '0x7e994d1943D223587E713ecBabf9ca1a79cf251b', 'seq': 3, 'ts': 1761930912, 'value': 991.67, 'signature': '0x2eb467dc47502feac0b99abc2106053e9de45e7ba2d585eacf8407fa11587ffd150bd4d8571551c75c9760467ba62621a9daa5296122d5c171d6392fcc8efca71b'}
+Forwarded to backend: 200 {"confidence":0.997,"forensic_analysis":{"anomaly_detected":false,"anomaly_reasons":[],"anomaly_score":0.0,"attack_patterns":[],"evidence_count":0,"risk_level":"NORMAL"},"ok":true,"processing_time":0.081,"reasons":["value-anomaly (1.000)"],"request_id":"1761930912334_2485988552708708808","score":0.345,"stored_seq":3,"suspicious":false}
+
+Received reading: {'meterID': '0x4b0a1764c7F3726d128D7cED59680Dcf0153b72f', 'seq': 2, 'ts': 1761930914, 'value': 1985.97, 'signature': '0xd3a3b022d58163143634c2a001503aa33096dbfe0628e0d22a5e57fad703a6fb5fc5422c3f096d46ea72208d6c910d75c8490e1d7c0906a5a0f6b3b84e7750c31b'}
+Forwarded to backend: 200 {"confidence":0.907,"forensic_analysis":{"anomaly_detected":false,"anomaly_reasons":[],"anomaly_score":0.0,"attack_patterns":[],"evidence_count":0,"risk_level":"NORMAL"},"ok":true,"processing_time":0.097,"reasons":["value-anomaly (1.000)"],"request_id":"1761930914248_2485988552708708808","score":0.345,"stored_seq":2,"suspicious":false}
+
+Received reading: {'meterID': '0x7e994d1943D223587E713ecBabf9ca1a79cf251b', 'seq': 4, 'ts': 1761930922, 'value': 911.03, 'signature': '0xbc75056e47af26bde461b660670d0a05a4f6487530ee76476917a2c0ede4f426485c3c05e88396bc8a6ecb54d05f856b33e483d8d1e0da924f9ace1a321200971b'}
+Forwarded to backend: 200 {"confidence":0.997,"forensic_analysis":{"anomaly_detected":false,"anomaly_reasons":[],"anomaly_score":0.0,"attack_patterns":[],"evidence_count":0,"risk_level":"NORMAL"},"ok":true,"processing_time":0.055,"reasons":["value-anomaly (1.000)"],"request_id":"1761930922340_2485988552708708808","score":0.345,"stored_seq":4,"suspicious":false}
+
+Received reading: {'meterID': '0x7e994d1943D223587E713ecBabf9ca1a79cf251b', 'seq': 5, 'ts': 1761930932, 'value': 1023.87, 'signature': '0xf53d742aacd2bd5fdef84eca5917080ceda71dcd8751a4308df23ceab5b81c4d0084b4549799b46fbcbc9aed49b33fc37603a958e12139acc5105499f4383a6e1c'}
+Forwarded to backend: 200 {"confidence":0.997,"forensic_analysis":{"anomaly_detected":false,"anomaly_reasons":["Regular timing pattern: 10s intervals"],"anomaly_score":0.3,"attack_patterns":[],"evidence_count":1,"risk_level":"LOW"},"ok":true,"processing_time":0.082,"reasons":["value-anomaly (1.000)"],"request_id":"1761930932360_2485988552708708808","score":0.345,"stored_seq":5,"suspicious":false}
+
+Received reading: {'meterID': '0x4b0a1764c7F3726d128D7cED59680Dcf0153b72f', 'seq': 3, 'ts': 1761930934, 'value': 2244.83, 'signature': '0x119de5536172ea702dfcbdca922130cd6954147270d8857406429ced67092cef326270b33d88e9b2853d957321f8f920a5d7ff171829adbda0775c535cb2f1d31b'}
+Forwarded to backend: 200 {"confidence":0.912,"forensic_analysis":{"anomaly_detected":false,"anomaly_reasons":[],"anomaly_score":0.0,"attack_patterns":[],"evidence_count":0,"risk_level":"NORMAL"},"ok":true,"processing_time":0.077,"reasons":["value-anomaly (1.000)"],"request_id":"1761930934265_2485988552708708808","score":0.345,"stored_seq":3,"suspicious":false}
+
+Received reading: {'meterID': '0x7e994d1943D223587E713ecBabf9ca1a79cf251b', 'seq': 6, 'ts': 1761930942, 'value': 1175.53, 'signature': '0x1776557302d560961f4b500fc7433b7d5497a70d48115ec5eb63c4cd52a29eda2633eba9dfce811f38b87029b9b4c11010e76439069538d1c3f0cbe7903ad2d21b'}
+Forwarded to backend: 200 {"confidence":0.997,"forensic_analysis":{"anomaly_detected":false,"anomaly_reasons":["Regular timing pattern: 10s intervals"],"anomaly_score":0.3,"attack_patterns":[],"evidence_count":1,"risk_level":"LOW"},"ok":true,"processing_time":0.071,"reasons":["value-anomaly (1.000)"],"request_id":"1761930942376_2485988552708708808","score":0.345,"stored_seq":6,"suspicious":false}
+
+Received reading: {'meterID': '0x7e994d1943D223587E713ecBabf9ca1a79cf251b', 'seq': 7, 'ts': 1761930952, 'value': 990.08, 'signature': '0xc8c9fc053c27948406e00eb4f6c8d4498a9cd0f2eddcc36f53736ae40f107af92d848dacd03dbc2702a313144e5e9c90d7e426bcba91ea5af483caeee4c7bf251c'}
+Forwarded to backend: 200 {"confidence":0.997,"ok":true,"processing_time":0.074,"reasons":["value-anomaly (1.000)"],"request_id":"1761930952392_2485988552708708808","score":0.345,"stored_seq":7,"suspicious":false}
+
+Received reading: {'meterID': '0x4b0a1764c7F3726d128D7cED59680Dcf0153b72f', 'seq': 4, 'ts': 1761930954, 'value': 1594.3, 'signature': '0xc425064bd9040af482f453e20445a0d7302559bedf9736a81dda524869767b1c6cef8482b528e2ba24e3eff807555c58b48b076cb4aed3fe49a9f54a70b4bfa81c'}
+Forwarded to backend: 200 {"confidence":0.917,"forensic_analysis":{"anomaly_detected":false,"anomaly_reasons":[],"anomaly_score":0.0,"attack_patterns":[],"evidence_count":0,"risk_level":"NORMAL"},"ok":true,"processing_time":0.079,"reasons":["value-anomaly (1.000)"],"request_id":"1761930954273_2485988552708708808","score":0.345,"stored_seq":4,"suspicious":false}
+
+Received reading: {'meterID': '0x7e994d1943D223587E713ecBabf9ca1a79cf251b', 'seq': 8, 'ts': 1761930962, 'value': 987.26, 'signature': '0x8d3e6115714f1260611cd1a0bc6424b82f71dbda5ce1dab1b97d2e696a1b81814cf9b369e93c35f67c4e04583461cbb528869dfd3ae153d98407a449dd4852fb1b'}
+Forwarded to backend: 200 {"confidence":0.997,"ok":true,"processing_time":0.078,"reasons":["value-anomaly (1.000)"],"request_id":"1761930962409_2485988552708708808","score":0.345,"stored_seq":8,"suspicious":false}
+
+Received reading: {'meterID': '0x7e994d1943D223587E713ecBabf9ca1a79cf251b', 'seq': 9, 'ts': 1761930972, 'value': 990.06, 'signature': '0xadfb5e2224c071b29e16294e178f62ba1e2fb00d6a040f2e20c23a82b10832c74f0b9c40a227ccc450ff8db0794cbee4d8a1d6d9d577d4a671d6ce8b86dcc5c81c'}
+Forwarded to backend: 200 {"confidence":0.997,"ok":true,"processing_time":0.075,"reasons":["value-anomaly (1.000)"],"request_id":"1761930972427_2485988552708708808","score":0.345,"stored_seq":9,"suspicious":false}
+
+Received reading: {'meterID': '0x4b0a1764c7F3726d128D7cED59680Dcf0153b72f', 'seq': 5, 'ts': 1761930974, 'value': 2480.72, 'signature': '0x71e561abc468d87487fab37353325347886666e14751eb526d0967506a0d66736c306654cf2bf4cdbfc50dd85428a4d1f65fdbe8e2088404ae26cb5c4d63db481c'}
+Forwarded to backend: 200 {"confidence":0.922,"forensic_analysis":{"anomaly_detected":false,"anomaly_reasons":["Regular timing pattern: 20s intervals"],"anomaly_score":0.3,"attack_patterns":[],"evidence_count":1,"risk_level":"LOW"},"ok":true,"processing_time":0.07,"reasons":["value-anomaly (1.000)"],"request_id":"1761930974290_2485988552708708808","score":0.375,"stored_seq":5,"suspicious":false}
+
+Received reading: {'meterID': '0x7e994d1943D223587E713ecBabf9ca1a79cf251b', 'seq': 10, 'ts': 1761930982, 'value': 970.87, 'signature': '0x71ebf36ac2d3bc4be8da42211d04f4c8e88cad6488e1c1cff62c5a9e899e5e4a34178be104f3f667cdb72cce42a70973772ee1cfd227a9dfe5c0e7bad4c2d10b1b'}
+Forwarded to backend: 200 {"confidence":0.997,"ok":true,"processing_time":0.075,"reasons":["value-anomaly (1.000)"],"request_id":"1761930982438_2485988552708708808","score":0.345,"stored_seq":10,"suspicious":false}
+
+Received reading: {'meterID': '0x7e994d1943D223587E713ecBabf9ca1a79cf251b', 'seq': 11, 'ts': 1761930992, 'value': 996.58, 'signature': '0x2b8c49b03094693a995526220b74c95bd295e2a41e4a80c0837c9b292e51e34c60bdfd1bd006c86327d60bfaa4a6b27336853f04115be0117607b801f086632e1c'}
+Forwarded to backend: 200 {"confidence":1.0,"ok":true,"processing_time":0.059,"reasons":["value-anomaly (1.000)"],"request_id":"1761930992455_2485988552708708808","score":0.345,"stored_seq":11,"suspicious":false}
+
+Received reading: {'meterID': '0x4b0a1764c7F3726d128D7cED59680Dcf0153b72f', 'seq': 6, 'ts': 1761930994, 'value': 1513.99, 'signature': '0x0155baa96f7d31c6f2cd24da6942687a9267a810dc9a388954363d6d7b6332ce4f289c2f2d6d6dc1e350a8f0636f7ac49109fe10fc039712dfd88d885903d9541b'}
+Forwarded to backend: 200 {"confidence":0.927,"forensic_analysis":{"anomaly_detected":false,"anomaly_reasons":["Regular timing pattern: 20s intervals"],"anomaly_score":0.3,"attack_patterns":[],"evidence_count":1,"risk_level":"LOW"},"ok":true,"processing_time":0.042,"reasons":["value-anomaly (1.000)"],"request_id":"1761930994299_2485988552708708808","score":0.345,"stored_seq":6,"suspicious":false}
+
+Received reading: {'meterID': '0x7e994d1943D223587E713ecBabf9ca1a79cf251b', 'seq': 12, 'ts': 1761931002, 'value': 1067.07, 'signature': '0xcb7dc4a5f4a72a848387f8fedb10698fe080b3b1c97847b8b636b15bb7c26b856211853614d28c56375d79f063cb38f294b99fe042d000f32e40f269bcfbbf651c'}
+Forwarded to backend: 200 {"confidence":1.0,"ok":true,"processing_time":0.074,"reasons":["value-anomaly (1.000)"],"request_id":"1761931002473_2485988552708708808","score":0.345,"stored_seq":12,"suspicious":false}
+
+Received reading: {'meterID': '0x7e994d1943D223587E713ecBabf9ca1a79cf251b', 'seq': 13, 'ts': 1761931012, 'value': 1046.36, 'signature': '0x4b66679617fcb38aadac6444e583e44a047948d40e2c6e30031a79e47e7fe6e608345e5863fe90a6e4a67edf17d9a5766970701207d63f0c7199e5902510733f1c'}
+Forwarded to backend: 200 {"confidence":1.0,"ok":true,"processing_time":0.05,"reasons":["value-anomaly (1.000)"],"request_id":"1761931012481_2485988552708708808","score":0.345,"stored_seq":13,"suspicious":false}
+
+Received reading: {'meterID': '0x4b0a1764c7F3726d128D7cED59680Dcf0153b72f', 'seq': 7, 'ts': 1761931014, 'value': 2529.95, 'signature': '0x6820e3129d801c5faab3f8e23e1640b49dd197f8bfe76315cf2a7a54e6ceeaaa0cc6feae0eb48e49e808f42dd788f603c39aab6da83644e439dd3919e91e7cbe1b'}
+Forwarded to backend: 200 {"confidence":0.932,"ok":true,"processing_time":0.063,"reasons":["value-anomaly (1.000)"],"request_id":"1761931014311_2485988552708708808","score":0.375,"stored_seq":7,"suspicious":false}
+
+Received reading: {'meterID': '0x7e994d1943D223587E713ecBabf9ca1a79cf251b', 'seq': 14, 'ts': 1761931022, 'value': 1108.75, 'signature': '0x73c7c22b91ba4381c4b3179f4b589c3075e7cb6738b87eab65f9f506580a832d0c4c1c2a14f5e08f26205be5eabd38d1b67de74754f9caf4dc9ed16f9b49e7d21b'}
+Forwarded to backend: 200 {"confidence":1.0,"ok":true,"processing_time":0.056,"reasons":["value-anomaly (1.000)"],"request_id":"1761931022489_2485988552708708808","score":0.345,"stored_seq":14,"suspicious":false}
+
+Received reading: {'meterID': '0x7e994d1943D223587E713ecBabf9ca1a79cf251b', 'seq': 15, 'ts': 1761931032, 'value': 1031.92, 'signature': '0x6306c3150bd7631db2302a93296fda489d2006c9717f4b05e8d1ae53fd4de2e9548921e84f0e59f626686f51e13d6ec0bde72d351b59d5d7543404602f1c032e1c'}
+Forwarded to backend: 200 {"confidence":1.0,"ok":true,"processing_time":0.035,"reasons":["value-anomaly (1.000)"],"request_id":"1761931032497_2485988552708708808","score":0.345,"stored_seq":15,"suspicious":false}
+
+Received reading: {'meterID': '0x4b0a1764c7F3726d128D7cED59680Dcf0153b72f', 'seq': 8, 'ts': 1761931034, 'value': 1346.48, 'signature': '0x056ce4bb3a56be7142e5465312190f8899e1d6b7d768f886db3e740022a6d145025b7fd3c9f15e7c861fe2dcc51602bb8836e6db4dfc1bc5cc56356628a29f7f1c'}
+Forwarded to backend: 200 {"confidence":0.937,"ok":true,"processing_time":0.046,"reasons":["value-anomaly (1.000)"],"request_id":"1761931034327_2485988552708708808","score":0.345,"stored_seq":8,"suspicious":false}
+
+Received reading: {'meterID': '0x7e994d1943D223587E713ecBabf9ca1a79cf251b', 'seq': 16, 'ts': 1761931042, 'value': 965.65, 'signature': '0xb6d2e470fd79f3baccd46a3ee0698c387467764bd124ef1e85001c0196598138451d5d54a2ab86f7c8118093ee8497f764674c0fa196861b278c1916468ce4ce1b'}
+Forwarded to backend: 200 {"confidence":1.0,"ok":true,"processing_time":0.059,"reasons":["value-anomaly (1.000)"],"request_id":"1761931042512_2485988552708708808","score":0.345,"stored_seq":16,"suspicious":false}
+
+Received reading: {'meterID': '0x7e994d1943D223587E713ecBabf9ca1a79cf251b', 'seq': 17, 'ts': 1761931052, 'value': 1057.0, 'signature': '0x82a0a3c6ce54068a04764adedc26bbc8d6a97420bf1caca505563c872927ce3f3357d7340975f7c97775d5fa42cc3885c30ad199d6368d9a3cb6a6bee08511d51b'}
+Forwarded to backend: 200 {"confidence":1.0,"ok":true,"processing_time":0.037,"reasons":["value-anomaly (1.000)"],"request_id":"1761931052519_2485988552708708808","score":0.345,"stored_seq":17,"suspicious":false}
+
+Received reading: {'meterID': '0x4b0a1764c7F3726d128D7cED59680Dcf0153b72f', 'seq': 9, 'ts': 1761931054, 'value': 2933.77, 'signature': '0x19d3ba4fed5fa423e391c781ad4d998d01e9e6567ccbdf8620f1fb46317d31df0f31792e26fd1f9ddc413b889d7a64afe3957dc4254fed366a45d3c6b72fc71d1b'}
+Forwarded to backend: 200 {"confidence":0.942,"ok":true,"processing_time":0.073,"reasons":["value-anomaly (1.000)"],"request_id":"1761931054348_2485988552708708808","score":0.375,"stored_seq":9,"suspicious":false}
+
+Received reading: {'meterID': '0x7e994d1943D223587E713ecBabf9ca1a79cf251b', 'seq': 18, 'ts': 1761931062, 'value': 1046.03, 'signature': '0xef8182fe19a804509f6ae3335b863b5617babfb84576099bc88100d446ca11c510dd06ae8c0c5f1f8c30ac0bbfd64727bd4c108f4864cb0c7aa54b6eb616b8cc1b'}
+Forwarded to backend: 200 {"confidence":1.0,"ok":true,"processing_time":0.121,"reasons":["value-anomaly (1.000)"],"request_id":"1761931062541_2485988552708708808","score":0.345,"stored_seq":18,"suspicious":false}
+
+Received reading: {'meterID': '0x7e994d1943D223587E713ecBabf9ca1a79cf251b', 'seq': 19, 'ts': 1761931072, 'value': 1094.75, 'signature': '0xb302793416375d3ae0d4b25cbf90651035ca3ae4669e39c6404eb3c6d81e16a45488275a78fa63f469582454f88e8df816810e832e5ad5361b300a5fc5a7020f1b'}
+Forwarded to backend: 200 {"confidence":1.0,"ok":true,"processing_time":0.034,"reasons":["value-anomaly (1.000)"],"request_id":"1761931072549_2485988552708708808","score":0.345,"stored_seq":19,"suspicious":false}
+
+Received reading: {'meterID': '0x4b0a1764c7F3726d128D7cED59680Dcf0153b72f', 'seq': 10, 'ts': 1761931074, 'value': 2876.78, 'signature': '0x93f5deedfb7aa7c50d78ab071cb002d6ce8eb8ebd8de0540b036d5eebd3e9b274768326bac1f0065b14da107ad5046475cee0fdad262166e9e737ba2167ed86b1b'}
+Forwarded to backend: 200 {"confidence":0.947,"ok":true,"processing_time":0.081,"reasons":["value-anomaly (1.000)"],"request_id":"1761931074364_2485988552708708808","score":0.345,"stored_seq":10,"suspicious":false}
+
+Received reading: {'meterID': '0x7e994d1943D223587E713ecBabf9ca1a79cf251b', 'seq': 20, 'ts': 1761931082, 'value': 998.69, 'signature': '0xf10c944a8e3c8188b154a399e3eefe6e5aed430229f17878b3c00619f92c1cf413e7f46bce34c99c045dd8c2e9ebccdf4f4ba9f616fd64c40a3d8f633e8b893c1c'}
+Forwarded to backend: 200 {"confidence":1.0,"ok":true,"processing_time":0.041,"reasons":["value-anomaly (1.000)"],"request_id":"1761931082563_2485988552708708808","score":0.345,"stored_seq":20,"suspicious":false}
+
+Received reading: {'meterID': '0x7e994d1943D223587E713ecBabf9ca1a79cf251b', 'seq': 21, 'ts': 1761931092, 'value': 1098.25, 'signature': '0xd0d03b340b95ecbd37883363ac43165a03fcc474f49d3fa120292259c48dc4cf6af1400e9205a131dd5a5efdb53ed307aa4a5a923b529e62b2d63a1833c2cbb11c'}
+Forwarded to backend: 200 {"confidence":1.0,"ok":true,"processing_time":0.097,"reasons":["value-anomaly (1.000)"],"request_id":"1761931092586_2485988552708708808","score":0.345,"stored_seq":21,"suspicious":false}
+
+Received reading: {'meterID': '0x4b0a1764c7F3726d128D7cED59680Dcf0153b72f', 'seq': 11, 'ts': 1761931094, 'value': 1673.87, 'signature': '0x6fcff935c4107a1f48625cb5c6573103e191b827959a85e3d39973aead23b25a4129516c8ff89992cd7151308a8ac8d450ef25acfcedc4a4e1369d31368af1df1b'}
+Forwarded to backend: 200 {"confidence":0.955,"ok":true,"processing_time":0.1,"reasons":["value-anomaly (1.000)"],"request_id":"1761931094385_2485988552708708808","score":0.345,"stored_seq":11,"suspicious":false}
+
+Received reading: {'meterID': '0x7e994d1943D223587E713ecBabf9ca1a79cf251b', 'seq': 22, 'ts': 1761931102, 'value': 931.12, 'signature': '0x276e5a291334ebd5557134c88fe9d2a3f85ec615f0b56f5d6e8ce61c6bf70bf8218b87df2084f1fc247c1de8d02452b6bc8af1cfaa5b14ab495aba8699a12d971b'}
+Forwarded to backend: 200 {"confidence":1.0,"ok":true,"processing_time":0.098,"reasons":["value-anomaly (1.000)"],"request_id":"1761931102605_2485988552708708808","score":0.345,"stored_seq":22,"suspicious":false}
+
+Received reading: {'meterID': '0x7e994d1943D223587E713ecBabf9ca1a79cf251b', 'seq': 23, 'ts': 1761931112, 'value': 899.85, 'signature': '0x9b46fcb959719954bc030d2852d8802557dbdda3802d3e5e28a47e0010497461371137aa52f6d674fcdde3d8b77a6156ea3e8625a3add1b04079d77294159a491c'}
+Forwarded to backend: 200 {"confidence":1.0,"ok":true,"processing_time":0.099,"reasons":["value-anomaly (1.000)"],"request_id":"1761931112626_2485988552708708808","score":0.345,"stored_seq":23,"suspicious":false}
+
+Received reading: {'meterID': '0x4b0a1764c7F3726d128D7cED59680Dcf0153b72f', 'seq': 12, 'ts': 1761931114, 'value': 2119.25, 'signature': '0xb310550e4fb2610da85c060d7e89c05d97b76760552b7ddfd50c845c97dad13a0dfb372049f156e259e85d592c60a7f6716d0c5cf7b1f1ca9396750097fc43991b'}
+Forwarded to backend: 200 {"confidence":0.96,"ok":true,"processing_time":0.089,"reasons":["value-anomaly (1.000)"],"request_id":"1761931114403_2485988552708708808","score":0.345,"stored_seq":12,"suspicious":false}
+
+Received reading: {'meterID': '0x7e994d1943D223587E713ecBabf9ca1a79cf251b', 'seq': 24, 'ts': 1761931122, 'value': 1059.25, 'signature': '0x0996a7b20a88e9ec32f89f4f41fa564e8f026d9eb8ce1ee78f2de2e3e6a118021f8e7f6eaaee7bb646bb0f57e553c32cf28e59d1239dc64cc0b82f23e8b08f0a1c'}
+Forwarded to backend: 200 {"confidence":1.0,"ok":true,"processing_time":0.083,"reasons":["value-anomaly (1.000)"],"request_id":"1761931122640_2485988552708708808","score":0.345,"stored_seq":24,"suspicious":false}
+
+Received reading: {'meterID': '0x7e994d1943D223587E713ecBabf9ca1a79cf251b', 'seq': 25, 'ts': 1761931132, 'value': 1039.52, 'signature': '0x4f87039b1d276dad8dd096c8f07dcaefef1626cbed4d783641cb366aff80a00e1e858c5a943635920eb6be98f5b7e88f199684ca881b269c96bc94cf6cb4bc3b1c'}
+Forwarded to backend: 200 {"confidence":1.0,"ok":true,"processing_time":0.077,"reasons":["value-anomaly (1.000)"],"request_id":"1761931132654_2485988552708708808","score":0.345,"stored_seq":25,"suspicious":false}
+
+Received reading: {'meterID': '0x4b0a1764c7F3726d128D7cED59680Dcf0153b72f', 'seq': 13, 'ts': 1761931134, 'value': 1437.78, 'signature': '0x10eb586244e5be93d8086314f3a155d171fb80027bbdafed6e83edfbb6f023a466ed72aaf45e062fe6528b422c4695b3a043bbf96fd14ed92ab08c0cf58a14111c'}
+Forwarded to backend: 200 {"confidence":0.965,"ok":true,"processing_time":0.039,"reasons":["value-anomaly (1.000)"],"request_id":"1761931134418_2485988552708708808","score":0.345,"stored_seq":13,"suspicious":false}
+
+Received reading: {'meterID': '0x7e994d1943D223587E713ecBabf9ca1a79cf251b', 'seq': 26, 'ts': 1761931142, 'value': 1036.17, 'signature': '0x50de40c7fa7e8f679d661e52f3969d88eebe1c14110a0fc2fdbdabf3ba7fee5642ad03aa1cbe2e9fd0d01c057ef5d20fec9a590bd95fc986f9f3edb50f65f6811c'}
+Forwarded to backend: 200 {"confidence":1.0,"ok":true,"processing_time":0.083,"reasons":["value-anomaly (1.000)"],"request_id":"1761931142669_2485988552708708808","score":0.345,"stored_seq":26,"suspicious":false}
+
+Received reading: {'meterID': '0x7e994d1943D223587E713ecBabf9ca1a79cf251b', 'seq': 27, 'ts': 1761931152, 'value': 1098.16, 'signature': '0x6592055cb8b5b7710758ab8fdb07a4c90127e66c21ef329eb9b29cef0628b24f0452335b375bb7274f0792a5bc26ae574b030ec992d9541e47950f47f19232941c'}
+Forwarded to backend: 200 {"confidence":1.0,"ok":true,"processing_time":0.054,"reasons":["value-anomaly (1.000)"],"request_id":"1761931152684_2485988552708708808","score":0.345,"stored_seq":27,"suspicious":false}
+
+Received reading: {'meterID': '0x4b0a1764c7F3726d128D7cED59680Dcf0153b72f', 'seq': 14, 'ts': 1761931154, 'value': 1443.14, 'signature': '0xc4db8e0b234b0f53032cb14b904a44b894bb1010a4045cb411eebf714cfff4fd71fef3b19d0f6552052da835f872d79a0ab0ee7b17b238f2e0a85c48ce146b6d1c'}
+Forwarded to backend: 200 {"confidence":0.97,"ok":true,"processing_time":0.072,"reasons":["value-anomaly (1.000)"],"request_id":"1761931154435_2485988552708708808","score":0.345,"stored_seq":14,"suspicious":false}
+
+Received reading: {'meterID': '0x7e994d1943D223587E713ecBabf9ca1a79cf251b', 'seq': 28, 'ts': 1761931162, 'value': 930.46, 'signature': '0x581ffbd16b0e72a088067ac556a32af104200a81772ed1d82e47c48a1eff532a0209383d48a4542d799717dadf9f1616c319745bd173dddf0a283ceaf6346e281b'}
+Forwarded to backend: 200 {"confidence":1.0,"ok":true,"processing_time":0.078,"reasons":["value-anomaly (1.000)"],"request_id":"1761931162699_2485988552708708808","score":0.345,"stored_seq":28,"suspicious":false}
+
+Received reading: {'meterID': '0x7e994d1943D223587E713ecBabf9ca1a79cf251b', 'seq': 29, 'ts': 1761931172, 'value': 934.99, 'signature': '0x08ded653cefaf3953702120271045f680d2c850d4d6aacd1db35284dfb5820e364174c0f7c11395540c4102003c637f179c2ee0b646bcc3c1108bf32ce0328bb1b'}
+Forwarded to backend: 200 {"confidence":1.0,"ok":true,"processing_time":0.071,"reasons":["value-anomaly (1.000)"],"request_id":"1761931172713_2485988552708708808","score":0.345,"stored_seq":29,"suspicious":false}
+
+Received reading: {'meterID': '0x4b0a1764c7F3726d128D7cED59680Dcf0153b72f', 'seq': 15, 'ts': 1761931174, 'value': 1988.12, 'signature': '0xadfedcb28b7ec12fabb72095768925ab4d1a1d66e6ac705e3912083b3d25f934335e1f2c382cbe79c20f33fe886d2d64ca0af8352751a965f9858e2995bf07831c'}
+Forwarded to backend: 200 {"confidence":0.975,"ok":true,"processing_time":0.034,"reasons":["value-anomaly (1.000)"],"request_id":"1761931174443_2485988552708708808","score":0.345,"stored_seq":15,"suspicious":false}
+
+Received reading: {'meterID': '0x7e994d1943D223587E713ecBabf9ca1a79cf251b', 'seq': 30, 'ts': 1761931182, 'value': 1097.44, 'signature': '0xafd62cdff847748db0678198f2d28e0a75470f807dbce7e79e1ec536befa938a28e6bf912dca2cc5cb5cb89ec874f020402e2a6872542c92687e9570cf911f591b'}
+Forwarded to backend: 200 {"confidence":1.0,"ok":true,"processing_time":0.047,"reasons":["value-anomaly (1.000)"],"request_id":"1761931182719_2485988552708708808","score":0.345,"stored_seq":30,"suspicious":false}
+
+Received reading: {'meterID': '0x7e994d1943D223587E713ecBabf9ca1a79cf251b', 'seq': 31, 'ts': 1761931192, 'value': 979.84, 'signature': '0xc134d7ab3548f5f751fa319abfd2451d2b664136844972dc62fdcc246b4c0c570312c4842b6fa3edd5128f843b379aebefefc5b391519f1a7a0851d8250166741c'}
+Forwarded to backend: 200 {"confidence":1.0,"ok":true,"processing_time":0.036,"reasons":["value-anomaly (1.000)"],"request_id":"1761931192727_2485988552708708808","score":0.345,"stored_seq":31,"suspicious":false}
+
+Received reading: {'meterID': '0x4b0a1764c7F3726d128D7cED59680Dcf0153b72f', 'seq': 16, 'ts': 1761931194, 'value': 1893.45, 'signature': '0x1751a9d8de5656dea2898a802246ce71063ab0289b350165155958915e4e96b3775af205089527b789ef70edaee5c6b56d3a27d4fee01703446bf7cce2a0c83d1c'}
+Forwarded to backend: 200 {"confidence":0.98,"ok":true,"processing_time":0.041,"reasons":["value-anomaly (1.000)"],"request_id":"1761931194451_2485988552708708808","score":0.345,"stored_seq":16,"suspicious":false}
+
+Received reading: {'meterID': '0x7e994d1943D223587E713ecBabf9ca1a79cf251b', 'seq': 32, 'ts': 1761931202, 'value': 1057.17, 'signature': '0x18870145ed396600de96e5c617d0872491e65c166526e706a6997fabe420c6491b23c9c70e8f8349e9942cdd90fcb1de83f29416c9f02045c16123c73da694601b'}
+Forwarded to backend: 200 {"confidence":1.0,"ok":true,"processing_time":0.039,"reasons":["value-anomaly (1.000)"],"request_id":"1761931202735_2485988552708708808","score":0.345,"stored_seq":32,"suspicious":false}
+
+Received reading: {'meterID': '0x7e994d1943D223587E713ecBabf9ca1a79cf251b', 'seq': 33, 'ts': 1761931212, 'value': 1067.7, 'signature': '0x4540ca9d86ecb5484b661ffd309395bc58a53d13a0c0b0579fa161e2c18a9c7e04c020f8f9b9955e69c2b73c8df5acffd0f9530156f71b302dc1f191e0162ce11c'}
+Forwarded to backend: 200 {"confidence":1.0,"ok":true,"processing_time":0.044,"reasons":["value-anomaly (1.000)"],"request_id":"1761931212743_2485988552708708808","score":0.345,"stored_seq":33,"suspicious":false}
+
+Received reading: {'meterID': '0x4b0a1764c7F3726d128D7cED59680Dcf0153b72f', 'seq': 17, 'ts': 1761931214, 'value': 2687.89, 'signature': '0xf5a4ca3248b46ae18a939783aa74757be2317b7188f80225bdd90b91c3664dce51a98e468ff41ef79447b7fa911bfebf53bf4d6cdd2be0c63a942a7558c5595e1b'}
+Forwarded to backend: 200 {"confidence":0.985,"ok":true,"processing_time":0.043,"reasons":["value-anomaly (1.000)"],"request_id":"1761931214457_2485988552708708808","score":0.345,"stored_seq":17,"suspicious":false}
+
+Received reading: {'meterID': '0x7e994d1943D223587E713ecBabf9ca1a79cf251b', 'seq': 34, 'ts': 1761931222, 'value': 1037.47, 'signature': '0x997ae7d8374c925d8c87967152729ec52afad4ba5a44bae5af10a20654637f1374038aabe8e4f6b5766090e6fc47af6621f916ef988745d16a4841f56d00c7d21c'}
+Forwarded to backend: 200 {"confidence":1.0,"ok":true,"processing_time":0.04,"reasons":["value-anomaly (1.000)"],"request_id":"1761931222751_2485988552708708808","score":0.345,"stored_seq":34,"suspicious":false}
+
+Received reading: {'meterID': '0x7e994d1943D223587E713ecBabf9ca1a79cf251b', 'seq': 35, 'ts': 1761931232, 'value': 1043.01, 'signature': '0x9f4c8bb29d5dc090a7fadeced748d9bbb4490c74682516dcef2cd16f0f82cd9173657a77a7cba04e4d117003db495bc9ea5e4094c185ba3c7ea57240df65ae061b'}
+Forwarded to backend: 200 {"confidence":1.0,"ok":true,"processing_time":0.04,"reasons":["value-anomaly (1.000)"],"request_id":"1761931232756_2485988552708708808","score":0.345,"stored_seq":35,"suspicious":false}
+
+Received reading: {'meterID': '0x4b0a1764c7F3726d128D7cED59680Dcf0153b72f', 'seq': 18, 'ts': 1761931234, 'value': 1941.09, 'signature': '0xfe6e91c940ba6947431e49652da1b4d0a41a666d4db686631620bdf2d0c5422f0095f424647cad3a469233e72e6fe337a2863b7f662f9275767f609a589d4c6c1c'}
+Forwarded to backend: 200 {"confidence":0.99,"ok":true,"processing_time":0.046,"reasons":["value-anomaly (1.000)"],"request_id":"1761931234462_2485988552708708808","score":0.345,"stored_seq":18,"suspicious":false}
+
+Received reading: {'meterID': '0x7e994d1943D223587E713ecBabf9ca1a79cf251b', 'seq': 36, 'ts': 1761931242, 'value': 1158.65, 'signature': '0xce2352b0101f607e09e8a2b03286d05261da8284fb2b60372ed2d8db048d8a824bdb35d2cf95b3a672c20e37ace5d5c343ca91fe3a35268454fd8b58074faaa61c'}
+Forwarded to backend: 200 {"confidence":1.0,"ok":true,"processing_time":0.043,"reasons":["value-anomaly (1.000)"],"request_id":"1761931242761_2485988552708708808","score":0.345,"stored_seq":36,"suspicious":false}
+
+Received reading: {'meterID': '0x7e994d1943D223587E713ecBabf9ca1a79cf251b', 'seq': 37, 'ts': 1761931252, 'value': 1164.43, 'signature': '0xdf3d71a0e719809052df01c908cf6e486d4bae435e4d22206ed5463ac3726d902f16c7c6d0f644aa988e6d77e1d7c29622023908034caf709c084a95cf6d870f1b'}
+Forwarded to backend: 200 {"confidence":1.0,"ok":true,"processing_time":0.049,"reasons":["value-anomaly (1.000)"],"request_id":"1761931252766_2485988552708708808","score":0.345,"stored_seq":37,"suspicious":false}
+
+Received reading: {'meterID': '0x4b0a1764c7F3726d128D7cED59680Dcf0153b72f', 'seq': 19, 'ts': 1761931254, 'value': 1213.42, 'signature': '0x30edcb011ffcefdfe0ada755729ee5fe2e94c0a24831dd3e6edd96f30cffa6504e5ffcd8506295682f2bded45c3e7e949e7c7293886a91e457a334997ffc52be1c'}
+Forwarded to backend: 200 {"confidence":0.995,"ok":true,"processing_time":0.051,"reasons":["value-anomaly (1.000)"],"request_id":"1761931254470_2485988552708708808","score":0.345,"stored_seq":19,"suspicious":false}
+
+Received reading: {'meterID': '0x7e994d1943D223587E713ecBabf9ca1a79cf251b', 'seq': 38, 'ts': 1761931262, 'value': 919.53, 'signature': '0xd8be09ef73a3a0b4b403c3f9ca2e9bbc04c37effb5b7043d959325f80af1c83d40a515c258527cc8f246c8a40ab42a2ffd87207f1c3f2b5e5dd1fb9d3759def81b'}
+Forwarded to backend: 200 {"confidence":1.0,"ok":true,"processing_time":0.038,"reasons":["value-anomaly (1.000)"],"request_id":"1761931262775_2485988552708708808","score":0.345,"stored_seq":38,"suspicious":false}
+
+Received reading: {'meterID': '0x7e994d1943D223587E713ecBabf9ca1a79cf251b', 'seq': 39, 'ts': 1761931272, 'value': 1108.55, 'signature': '0x1c560c8a68996bdef259f98085eb40eeea2ef04e87b667fff35fb70b4b54b8e87773ee23435ff23143f09a3598986bcb12ff58de689bead7f6d2ef3399b4325b1b'}
+Forwarded to backend: 200 {"confidence":1.0,"ok":true,"processing_time":0.04,"reasons":["value-anomaly (1.000)"],"request_id":"1761931272780_2485988552708708808","score":0.345,"stored_seq":39,"suspicious":false}
+
+Received reading: {'meterID': '0x4b0a1764c7F3726d128D7cED59680Dcf0153b72f', 'seq': 20, 'ts': 1761931274, 'value': 2557.08, 'signature': '0xe68f76e024e40865cf9c33c5ecbb3c3c2adc709a5911b77a0bb4d8d8289f40e6098c8185ccd2c4ecaf108ef5e41ab0f30ca5dd0d17ff93cca24c1e680420ba5e1b'}
+Forwarded to backend: 200 {"confidence":1.0,"ok":true,"processing_time":0.051,"reasons":["value-anomaly (1.000)"],"request_id":"1761931274475_2485988552708708808","score":0.375,"stored_seq":20,"suspicious":false}
+
+Received reading: {'meterID': '0x7e994d1943D223587E713ecBabf9ca1a79cf251b', 'seq': 40, 'ts': 1761931282, 'value': 961.51, 'signature': '0x4a8f3d65e1dd74cafc266275b7d7286a790f06839df23e00c876e749343be34c3bf5bbb6e0c124541048e07cd3304a7aa2844de026edbacc165a8cdf36880ae51c'}
+Forwarded to backend: 200 {"confidence":1.0,"ok":true,"processing_time":0.038,"reasons":["value-anomaly (1.000)"],"request_id":"1761931282789_2485988552708708808","score":0.345,"stored_seq":40,"suspicious":false}
+
+Received reading: {'meterID': '0x7e994d1943D223587E713ecBabf9ca1a79cf251b', 'seq': 41, 'ts': 1761931292, 'value': 1013.76, 'signature': '0xa4f084a394f1cbb82916a89c03e354e6352cf1efcdee0db529ecbd90c849c368787611de96a6533c2e5f5472f327d09f483d1cf91d5f4f3eea52aeed421c09621b'}
+Forwarded to backend: 200 {"confidence":1.0,"ok":true,"processing_time":0.046,"reasons":["value-anomaly (1.000)"],"request_id":"1761931292796_2485988552708708808","score":0.345,"stored_seq":41,"suspicious":false}
+
+Received reading: {'meterID': '0x4b0a1764c7F3726d128D7cED59680Dcf0153b72f', 'seq': 21, 'ts': 1761931294, 'value': 1236.68, 'signature': '0xaca88b50ab42a36435e8796ef4d58255cb0f1364ecfaf63b95384da44f5e0bff4dae5a1bbf820f39f83ee9c4a3ea36ffadcee295f924f2d0672cc954d764a9bf1c'}
+Forwarded to backend: 200 {"confidence":1.0,"ok":true,"processing_time":0.042,"reasons":["value-anomaly (1.000)"],"request_id":"1761931294481_2485988552708708808","score":0.375,"stored_seq":21,"suspicious":false}
+
+Received reading: {'meterID': '0x7e994d1943D223587E713ecBabf9ca1a79cf251b', 'seq': 42, 'ts': 1761931302, 'value': 1058.48, 'signature': '0x50b61c81af597b918b3d6f3375c184cb907b3ebfc7381d44c8a612dc88b1e63666286d17efae0c1eed9e7eb322c33178eea1a1b3c468a79f648fcca8ac5221a71b'}
+Forwarded to backend: 200 {"confidence":1.0,"ok":true,"processing_time":0.047,"reasons":["value-anomaly (1.000)"],"request_id":"1761931302803_2485988552708708808","score":0.345,"stored_seq":42,"suspicious":false}
+
+Received reading: {'meterID': '0x7e994d1943D223587E713ecBabf9ca1a79cf251b', 'seq': 43, 'ts': 1761931312, 'value': 1066.32, 'signature': '0x0406c8f86b7a92200e5235ea64184e8c37cae929515d06a31d0e82a6784ad4fc5f6f9e8724c4423ff517e14d20a6f0a69477f5d5614296b39fe0b51e05687ee01c'}
+Forwarded to backend: 200 {"confidence":1.0,"ok":true,"processing_time":0.043,"reasons":["value-anomaly (1.000)"],"request_id":"1761931312807_2485988552708708808","score":0.345,"stored_seq":43,"suspicious":false}
+
+Received reading: {'meterID': '0x4b0a1764c7F3726d128D7cED59680Dcf0153b72f', 'seq': 22, 'ts': 1761931314, 'value': 1293.62, 'signature': '0xa32c62f8c4c6c3015b4c582418dfa6adb44a73530f6d6548da5e6c5daeae6e41199d686532a5b09e422b7db6aae67d390b869aba18b32289a1cc344da498b0461b'}
+Forwarded to backend: 200 {"confidence":1.0,"ok":true,"processing_time":0.038,"reasons":["value-anomaly (1.000)"],"request_id":"1761931314489_2485988552708708808","score":0.345,"stored_seq":22,"suspicious":false}
+
+Received reading: {'meterID': '0x7e994d1943D223587E713ecBabf9ca1a79cf251b', 'seq': 44, 'ts': 1761931322, 'value': 1140.6, 'signature': '0xdd92f54b5703957605922a101c7a0a55c772cefebe05691422c4aa3c503492f610b88acefb7a136d9c7d86901b07e58b6cc6380c0920b01b2eba9f46b58de9e81b'}
+Forwarded to backend: 200 {"confidence":1.0,"ok":true,"processing_time":0.047,"reasons":["value-anomaly (1.000)"],"request_id":"1761931322811_2485988552708708808","score":0.345,"stored_seq":44,"suspicious":false}
+
+Received reading: {'meterID': '0x7e994d1943D223587E713ecBabf9ca1a79cf251b', 'seq': 45, 'ts': 1761931332, 'value': 1095.35, 'signature': '0xa7de820097a2b6326da7b8d4c810b64331a4853a59933598008bb4f2a6b8460a485504872b0df262982b61dd4d937574ee78fc42e0953e4d337d2650f60fdfdd1b'}
+Forwarded to backend: 200 {"confidence":1.0,"ok":true,"processing_time":0.048,"reasons":["value-anomaly (1.000)"],"request_id":"1761931332821_2485988552708708808","score":0.345,"stored_seq":45,"suspicious":false}
+
+Received reading: {'meterID': '0x4b0a1764c7F3726d128D7cED59680Dcf0153b72f', 'seq': 23, 'ts': 1761931334, 'value': 1578.48, 'signature': '0xb75b4074c1c5fe3dd070846fd6be0f9323a51deba56e260a08021b0b201f49095400cbe9df83d47b2f92d4f6753ae56803e78f7ebee706a35c44377cb54dd1cc1c'}
+Forwarded to backend: 200 {"confidence":1.0,"ok":true,"processing_time":0.042,"reasons":["value-anomaly (1.000)"],"request_id":"1761931334493_2485988552708708808","score":0.345,"stored_seq":23,"suspicious":false}
+
+Received reading: {'meterID': '0x7e994d1943D223587E713ecBabf9ca1a79cf251b', 'seq': 46, 'ts': 1761931342, 'value': 1145.98, 'signature': '0xb81f15e9fc3edfd1170ce439c8e56e46a832dfffff8cd4b8136338126dc23ba2793dfc9fad3be57e4b871e2dc665b01984a8c5634085c0b5dfc866f35a10ae691b'}
+Forwarded to backend: 200 {"confidence":1.0,"ok":true,"processing_time":0.049,"reasons":["value-anomaly (1.000)"],"request_id":"1761931342829_2485988552708708808","score":0.345,"stored_seq":46,"suspicious":false}
+
+Received reading: {'meterID': '0x7e994d1943D223587E713ecBabf9ca1a79cf251b', 'seq': 47, 'ts': 1761931352, 'value': 1077.53, 'signature': '0x025f182f4490bc32cb2cc4e484cacf948a86e21ff8d4b45ee75e192af729959915d9db08a25c677e51643b36239b477ac150a551153dea842febefc954f411d31c'}
+Forwarded to backend: 200 {"confidence":1.0,"ok":true,"processing_time":0.049,"reasons":["value-anomaly (1.000)"],"request_id":"1761931352837_2485988552708708808","score":0.345,"stored_seq":47,"suspicious":false}
+
+Received reading: {'meterID': '0x4b0a1764c7F3726d128D7cED59680Dcf0153b72f', 'seq': 24, 'ts': 1761931354, 'value': 1578.17, 'signature': '0xdac9c0318b7bb4dc4a7f2711a72f153e201352dd36be77808a8c0aa8097b5d6875920a3802ce485dd0d050c61297b5ac7432dad3eec69588e86225f96789fb141c'}
+Forwarded to backend: 200 {"confidence":1.0,"ok":true,"processing_time":0.043,"reasons":["value-anomaly (1.000)"],"request_id":"1761931354502_2485988552708708808","score":0.345,"stored_seq":24,"suspicious":false}
+
+Received reading: {'meterID': '0x7e994d1943D223587E713ecBabf9ca1a79cf251b', 'seq': 48, 'ts': 1761931362, 'value': 1134.12, 'signature': '0x6fd8da54bc04f869a53e9c373c0255c5f76753ad906d9d5996430daeea6409056315fac7903f8e4742ae63d6871921f4f8992b0b5b87d3b1609ddd35f9fc3b801b'}
+Forwarded to backend: 200 {"confidence":1.0,"ok":true,"processing_time":0.046,"reasons":["value-anomaly (1.000)"],"request_id":"1761931362842_2485988552708708808","score":0.345,"stored_seq":48,"suspicious":false}
+
+Received reading: {'meterID': '0x7e994d1943D223587E713ecBabf9ca1a79cf251b', 'seq': 49, 'ts': 1761931372, 'value': 944.7, 'signature': '0xcb148234e965c6db42ef97fb6d9a627d6718fedb1ae2571739fc94e0242159dd0a251c10417a6e1972bb5eb21ee32983fc0c90481bf468de9b1c8923d65debd91c'}
+Forwarded to backend: 200 {"confidence":1.0,"ok":true,"processing_time":0.044,"reasons":["value-anomaly (1.000)"],"request_id":"1761931372850_2485988552708708808","score":0.345,"stored_seq":49,"suspicious":false}
+
+Received reading: {'meterID': '0x4b0a1764c7F3726d128D7cED59680Dcf0153b72f', 'seq': 25, 'ts': 1761931374, 'value': 1997.08, 'signature': '0xd9509aa5a429e408ae1e7c98fdeccc6861cbf12268754b49a7988c6467a0f80c7a1fc83ce5df76b1e25bbda8d365e23fb0a0acc622f8c2b6021d4d4812249cda1c'}
+Forwarded to backend: 200 {"confidence":1.0,"ok":true,"processing_time":0.043,"reasons":["value-anomaly (1.000)"],"request_id":"1761931374507_2485988552708708808","score":0.345,"stored_seq":25,"suspicious":false}
+
+Received reading: {'meterID': '0x7e994d1943D223587E713ecBabf9ca1a79cf251b', 'seq': 50, 'ts': 1761931382, 'value': 1072.35, 'signature': '0xd1ff4d8cfe4424062f44d61aedc655fc892ccd31e278cad68c793a7c8478708b6bffe1495a11c0e3b1a4f2aa788d739d3991728fee00f839e71e69a3af01358c1b'}
+Forwarded to backend: 200 {"confidence":1.0,"ok":true,"processing_time":0.05,"reasons":["value-anomaly (1.000)"],"request_id":"1761931382860_2485988552708708808","score":0.345,"stored_seq":50,"suspicious":false}
+
+Received reading: {'meterID': '0x7e994d1943D223587E713ecBabf9ca1a79cf251b', 'seq': 51, 'ts': 1761931392, 'value': -1082.96, 'signature': '0x8d46616a3901de2c27a4adf626ca30c82c664464d17dec4273a6bceb46b4947248674ed0e1898c0df6f3bbd67a506ff1422a2f98431836b0337be33cea6ee2df1b'}
+Forwarded to backend: 200 {"confidence":1.0,"ok":true,"processing_time":0.046,"reasons":["value-anomaly (1.000)"],"request_id":"1761931392868_2485988552708708808","score":0.375,"stored_seq":51,"suspicious":true}
+
+Received reading: {'meterID': '0x4b0a1764c7F3726d128D7cED59680Dcf0153b72f', 'seq': 26, 'ts': 1761931394, 'value': 1720.24, 'signature': '0xd03ee94ee5b3a67dcebdc84681edc3a6711a6d60f0ad96be78c90d2f8d6c53a06c52dd3f7576ed413556712197c7b177d783b98ac5de1b9329d632e0753860931c'}
+Forwarded to backend: 200 {"confidence":1.0,"ok":true,"processing_time":0.05,"reasons":["value-anomaly (1.000)"],"request_id":"1761931394512_2485988552708708808","score":0.345,"stored_seq":26,"suspicious":false}
+
+Received reading: {'meterID': '0x7e994d1943D223587E713ecBabf9ca1a79cf251b', 'seq': 52, 'ts': 1761931402, 'value': -1022.4, 'signature': '0x1cd39443e2cb6bdf157d27a78f7b047e7d0325e3392f6499148d664d23f913245d815f3085066ea0c306717a6ecdad696839c1334abebaddcfb5d36aee90c00c1b'}
+Forwarded to backend: 200 {"confidence":1.0,"ok":true,"processing_time":0.049,"reasons":["value-anomaly (1.000)"],"request_id":"1761931402873_2485988552708708808","score":0.345,"stored_seq":52,"suspicious":false}
+
+Received reading: {'meterID': '0x7e994d1943D223587E713ecBabf9ca1a79cf251b', 'seq': 53, 'ts': 1761931412, 'value': -1120.52, 'signature': '0x5187b61017f68c8b88a5757b13c19508266b8de340a00a4a996332bd8e7942b240690c6af5cf487bdd7fc5c53e2d0e5db38ebd27af38f8c3258e0872d670c66e1b'}
+Forwarded to backend: 200 {"confidence":1.0,"ok":true,"processing_time":0.046,"reasons":["value-anomaly (1.000)"],"request_id":"1761931412882_2485988552708708808","score":0.345,"stored_seq":53,"suspicious":false}
+
+Received reading: {'meterID': '0x4b0a1764c7F3726d128D7cED59680Dcf0153b72f', 'seq': 27, 'ts': 1761931414, 'value': 2081.8, 'signature': '0xf4ea4f9d48f20abe32c8bfd7ee9f2e066e91ace759a188cb541de6124ad8a9dd6beb3d96ca3f98415da856ac02bd1e21e4303fc34d1c6e94be16bc9b87b2a22e1b'}
+Forwarded to backend: 200 {"confidence":1.0,"ok":true,"processing_time":0.03,"reasons":["value-anomaly (1.000)"],"request_id":"1761931414516_2485988552708708808","score":0.345,"stored_seq":27,"suspicious":false}
+
+Received reading: {'meterID': '0x7e994d1943D223587E713ecBabf9ca1a79cf251b', 'seq': 54, 'ts': 1761931422, 'value': -1088.33, 'signature': '0x8ac75d472712dbf693564ec7deff2342d7662f54f83192b438c7f02fd94e8630424aa48a97249893c04c98c01600bf534ad45d321806a8092035a9025c2f210b1c'}
+Forwarded to backend: 200 {"confidence":1.0,"ok":true,"processing_time":0.051,"reasons":["value-anomaly (1.000)"],"request_id":"1761931422886_2485988552708708808","score":0.345,"stored_seq":54,"suspicious":false}
+
+Received reading: {'meterID': '0x7e994d1943D223587E713ecBabf9ca1a79cf251b', 'seq': 55, 'ts': 1761931432, 'value': -1035.72, 'signature': '0x9c3df5a20be7497d01f072a7fc7ac0631b8790870221c158b8b25b92405929654dea48d20e13a1c6bfad13f99c8241ddb269fda8f9ea0e7b26df2a4479d021d31b'}
+Forwarded to backend: 200 {"confidence":1.0,"ok":true,"processing_time":0.037,"reasons":["value-anomaly (1.000)"],"request_id":"1761931432892_2485988552708708808","score":0.345,"stored_seq":55,"suspicious":false}
+
+Received reading: {'meterID': '0x4b0a1764c7F3726d128D7cED59680Dcf0153b72f', 'seq': 28, 'ts': 1761931434, 'value': 1833.54, 'signature': '0xaecd41b282190e5d0f1e53eb628ce7b3d899d378c3571fc665efec688d9579ba3448471cee819a7828de7773e28dc36ffb57ffa94f179322ac4bd14efaab8c9f1b'}
+Forwarded to backend: 200 {"confidence":1.0,"ok":true,"processing_time":0.036,"reasons":["value-anomaly (1.000)"],"request_id":"1761931434523_2485988552708708808","score":0.345,"stored_seq":28,"suspicious":false}
+
+Received reading: {'meterID': '0x7e994d1943D223587E713ecBabf9ca1a79cf251b', 'seq': 56, 'ts': 1761931442, 'value': -992.67, 'signature': '0x4c18273fd822958f59199835051fa430438afa4142f1953157b3c211d4779edd5208302cf2c0565bfe473c51eaafc75e760418cef9a033f9d4bf7de4d8f040591b'}
+Forwarded to backend: 200 {"confidence":1.0,"ok":true,"processing_time":0.04,"reasons":["value-anomaly (1.000)"],"request_id":"1761931442896_2485988552708708808","score":0.345,"stored_seq":56,"suspicious":false}
+
+Received reading: {'meterID': '0x7e994d1943D223587E713ecBabf9ca1a79cf251b', 'seq': 57, 'ts': 1761931452, 'value': -1103.5, 'signature': '0xa36bcbdac12598c8ab6b72d1a693e6e178905fb4d6f37d5e44bfb8d4f15fb41e21dd05a09020780d83f48d857dde70accc2ccb1ef56c38c7074b30412be1905d1c'}
+Forwarded to backend: 200 {"confidence":1.0,"ok":true,"processing_time":0.045,"reasons":["value-anomaly (1.000)"],"request_id":"1761931452906_2485988552708708808","score":0.345,"stored_seq":57,"suspicious":false}
+
+Received reading: {'meterID': '0x4b0a1764c7F3726d128D7cED59680Dcf0153b72f', 'seq': 29, 'ts': 1761931454, 'value': 1194.48, 'signature': '0x60c00bea50c2c8653076ff6540b6b3a07241f30a28f68d473fe7727804948a2c116763fd3624785910e82c439d6f29f9ff09f70a3fefaa19e58fed80d83f31f71c'}
+Forwarded to backend: 200 {"confidence":1.0,"ok":true,"processing_time":0.037,"reasons":["value-anomaly (1.000)"],"request_id":"1761931454527_2485988552708708808","score":0.345,"stored_seq":29,"suspicious":false}
+
+Received reading: {'meterID': '0x7e994d1943D223587E713ecBabf9ca1a79cf251b', 'seq': 58, 'ts': 1761931462, 'value': -976.2, 'signature': '0xaddb2d79466f86166c398a48e3d9ddb0b01b0444087e1c1a29ea510f2df2f348082e01cf2f37a8da2a00136a3aa9dfc0b815545d30cd26f5e5aa215e24eef3ec1b'}
+Forwarded to backend: 200 {"confidence":1.0,"ok":true,"processing_time":0.05,"reasons":["value-anomaly (1.000)"],"request_id":"1761931462915_2485988552708708808","score":0.345,"stored_seq":58,"suspicious":false}
+
+Received reading: {'meterID': '0x7e994d1943D223587E713ecBabf9ca1a79cf251b', 'seq': 59, 'ts': 1761931472, 'value': -1204.88, 'signature': '0xf4f681782256634a975de4444488e4750d238fd1b07efa4aa85074634a57c6bb58a1b698d8b0371f3b5973a4ac9894b1944a4f94f9b64a2fcf7a7759a96cb0051c'}
+Forwarded to backend: 200 {"confidence":1.0,"ok":true,"processing_time":0.051,"reasons":["value-anomaly (1.000)"],"request_id":"1761931472922_2485988552708708808","score":0.345,"stored_seq":59,"suspicious":false}
+
+Received reading: {'meterID': '0x7e994d1943D223587E713ecBabf9ca1a79cf251b', 'seq': 60, 'ts': 1761931482, 'value': -1093.82, 'signature': '0x81b1b5cd98e4ee1b35dbafd77d7a11e09c5b71774ee5cb9a3412d9af4dd92808624c1f19ce2ad855ea30e447f0e03981477939b49c16e694674e24ca6e885b911b'}
+Forwarded to backend: 200 {"confidence":1.0,"ok":true,"processing_time":0.053,"reasons":["value-anomaly (1.000)"],"request_id":"1761931482931_2485988552708708808","score":0.345,"stored_seq":60,"suspicious":false}
+
+Received reading: {'meterID': '0x7e994d1943D223587E713ecBabf9ca1a79cf251b', 'seq': 61, 'ts': 1761931492, 'value': -1017.11, 'signature': '0x1d988319ea3eb04f3218eec6c3587c7654e7716dde767d8376da510e8c2fc85052e069be85ea311f4b9c0e2969a9e1cdd2276422a05916ba9d275dad06580dd91c'}
+Forwarded to backend: 200 {"confidence":1.0,"ok":true,"processing_time":0.046,"reasons":["value-anomaly (1.000)"],"request_id":"1761931492937_2485988552708708808","score":0.345,"stored_seq":61,"suspicious":false}
+
+Received reading: {'meterID': '0x7e994d1943D223587E713ecBabf9ca1a79cf251b', 'seq': 62, 'ts': 1761931502, 'value': -1003.06, 'signature': '0x8771567140377ad6ec46979a78fc2ff1a1b94b7113ffb571c67e937240b9b3ff2dfe0265773768244bbb534aaaf2f7dc84ea9f83a8db04bd9b8a0f6b028f620b1c'}
+Forwarded to backend: 200 {"confidence":1.0,"ok":true,"processing_time":0.044,"reasons":["value-anomaly (1.000)"],"request_id":"1761931502943_2485988552708708808","score":0.345,"stored_seq":62,"suspicious":false}
+
+Received reading: {'meterID': '0x7e994d1943D223587E713ecBabf9ca1a79cf251b', 'seq': 63, 'ts': 1761931512, 'value': -1122.82, 'signature': '0xe513993250b1514e79a06507e649decd6c3d08ce76c5bce01261b3a9762d38625674fc0530e7fbde4f552dcc46477e10bd6d3c0666c69c7721fca0cd7fd111101c'}
+Forwarded to backend: 200 {"confidence":1.0,"ok":true,"processing_time":0.05,"reasons":["value-anomaly (1.000)"],"request_id":"1761931512950_2485988552708708808","score":0.345,"stored_seq":63,"suspicious":false}
+
+Received reading: {'meterID': '0x7e994d1943D223587E713ecBabf9ca1a79cf251b', 'seq': 64, 'ts': 1761931522, 'value': -1200.14, 'signature': '0x8e130aa42d3d18848865f051a93abaee27db648b7de491beafcb5741fd76ae7a29482e285a01e992edcd97f40ffd38cd51020baefed2ba919509aa26a0d7943c1b'}
+Forwarded to backend: 200 {"confidence":1.0,"ok":true,"processing_time":0.044,"reasons":["value-anomaly (1.000)"],"request_id":"1761931522957_2485988552708708808","score":0.345,"stored_seq":64,"suspicious":false}
+
+Received reading: {'meterID': '0x7e994d1943D223587E713ecBabf9ca1a79cf251b', 'seq': 65, 'ts': 1761931532, 'value': -1061.14, 'signature': '0x166533f6846d8f9c4952d9a244823571faa9c66ccd095ef825774745852f6eaa2f90e04581f4cdd2ad75112c8477c17ef0577fc0cbadd64fcbe9ed2954cee88e1c'}
+Forwarded to backend: 200 {"confidence":1.0,"ok":true,"processing_time":0.05,"reasons":["value-anomaly (1.000)"],"request_id":"1761931532963_2485988552708708808","score":0.345,"stored_seq":65,"suspicious":false}
+
+Received reading: {'meterID': '0x7e994d1943D223587E713ecBabf9ca1a79cf251b', 'seq': 66, 'ts': 1761931542, 'value': -996.01, 'signature': '0x449658ee1f8007f924b511707c4e8ee86ab4ec6bb9a42018f359c01552b94c1c2ea79eb89dd59fff19e3663898fde37942af8959f8bd494da362e10c40b3f2d31c'}
+Forwarded to backend: 200 {"confidence":1.0,"ok":true,"processing_time":0.044,"reasons":["value-anomaly (1.000)"],"request_id":"1761931542969_2485988552708708808","score":0.345,"stored_seq":66,"suspicious":false}
+
+Received reading: {'meterID': '0x7e994d1943D223587E713ecBabf9ca1a79cf251b', 'seq': 67, 'ts': 1761931552, 'value': -1109.58, 'signature': '0x96cde0573f4af835fc311db7ec04b9f98465d66912b7f80532635301ef0c721d5ba0cdbaaca252cda371852cfb0e475a520901c5bd2a9650a8e3ea412da31c421c'}
+Forwarded to backend: 200 {"confidence":1.0,"ok":true,"processing_time":0.056,"reasons":["value-anomaly (1.000)"],"request_id":"1761931552973_2485988552708708808","score":0.345,"stored_seq":67,"suspicious":false}
+
+Received reading: {'meterID': '0x7e994d1943D223587E713ecBabf9ca1a79cf251b', 'seq': 68, 'ts': 1761931562, 'value': -1008.17, 'signature': '0xf3b7f9521cd170bd30b183bef1eecbcea156ac1a8f81c51f27e284c2a0ecf4a959ff01cc15fe46c03c6cf212d3bccde294d8667d46eb41cc8c1c6fb5368867631c'}
+Forwarded to backend: 200 {"confidence":1.0,"ok":true,"processing_time":0.047,"reasons":["value-anomaly (1.000)"],"request_id":"1761931562980_2485988552708708808","score":0.345,"stored_seq":68,"suspicious":false}
+
+Received reading: {'meterID': '0x7e994d1943D223587E713ecBabf9ca1a79cf251b', 'seq': 69, 'ts': 1761931572, 'value': -1156.64, 'signature': '0xb2f5b6a4e466a679237e556ad99638e97164219276bc93ce962106ced18a3f68088c9b3e31819485fc1ecdd7d12ad52c5bc8f118ebebb9938091fac66ed717f31b'}
+Forwarded to backend: 200 {"confidence":1.0,"ok":true,"processing_time":0.028,"reasons":["value-anomaly (1.000)"],"request_id":"1761931572987_2485988552708708808","score":0.345,"stored_seq":69,"suspicious":false}
+
+Received reading: {'meterID': '0x4b0a1764c7F3726d128D7cED59680Dcf0153b72f', 'seq': 35, 'ts': 1761931574, 'value': 1838.58, 'signature': '0x2029fb760bd92814e323c6e42d61020582545f0f1111e9d5f5a47732da4677b90f3191b307dac6b77d5178345878a9a337de04378b667c1964dc9c3e613acb2f1c'}
+Forwarded to backend: 200 {"confidence":1.0,"ok":true,"processing_time":0.039,"reasons":["value-anomaly (1.000)"],"request_id":"1761931574565_2485988552708708808","score":0.375,"stored_seq":35,"suspicious":true}
+
+Received reading: {'meterID': '0x7e994d1943D223587E713ecBabf9ca1a79cf251b', 'seq': 70, 'ts': 1761931582, 'value': -1010.6, 'signature': '0x26d0b40a7f4023ee65cc24242edace15174af60ea3fd2a41d736b1c25c2757cd2be5d16b29b3d4e016a7c82c33b80125b659732582ed4fea1bc1dbc7dbd50ee41b'}
+Forwarded to backend: 200 {"confidence":1.0,"ok":true,"processing_time":0.038,"reasons":["value-anomaly (1.000)"],"request_id":"1761931582992_2485988552708708808","score":0.345,"stored_seq":70,"suspicious":false}
+
+Received reading: {'meterID': '0x7e994d1943D223587E713ecBabf9ca1a79cf251b', 'seq': 71, 'ts': 1761931592, 'value': -965.26, 'signature': '0xacadf1cb78a5c4f5d02b7a8a30f074073a404dd6985d96741c79e1d3477a6b15045ab076442b5e2b7af73c032e895751002c4667463cf9500e93f72c395cfa1c1c'}
+Forwarded to backend: 200 {"confidence":1.0,"ok":true,"processing_time":0.054,"reasons":["value-anomaly (1.000)"],"request_id":"1761931592997_2485988552708708808","score":0.345,"stored_seq":71,"suspicious":false}
+
+Received reading: {'meterID': '0x4b0a1764c7F3726d128D7cED59680Dcf0153b72f', 'seq': 36, 'ts': 1761931594, 'value': 2744.19, 'signature': '0x2f9630cf87be1f5d4bb54d71ee5934b8a4e71df4f421de9ee3c51f23edf6e6bc69c987e4a3c9f83610e10c4dc6af7de724f816c3a425db3f99bf51d02b03d4101c'}
+Forwarded to backend: 200 {"confidence":1.0,"ok":true,"processing_time":0.039,"reasons":["value-anomaly (1.000)"],"request_id":"1761931594573_2485988552708708808","score":0.345,"stored_seq":36,"suspicious":false}
+
+Received reading: {'meterID': '0x7e994d1943D223587E713ecBabf9ca1a79cf251b', 'seq': 72, 'ts': 1761931603, 'value': -1246.33, 'signature': '0x51294abc7f64e2403cc1107d731f2d12917e4a6cd688061bcc802cf5fb510db71a10ffccb9e0fe51369b763ce1e602bf58ea6ac0da4bd7a155f1bfe6a4d371121b'}
+Forwarded to backend: 400 {"error":"invalid-signature","ok":false}
+
+Received reading: {'meterID': '0x7e994d1943D223587E713ecBabf9ca1a79cf251b', 'seq': 73, 'ts': 1761931613, 'value': -1062.54, 'signature': '0xc713b0f65bb786c996c3c5a6b439093732b0d1ac6cbae4543365b0135caf0d2225b755ba0b56c9df7a973db6bc00e141e4a992151594e06846cc3259a8cdd1af1c'}
+Forwarded to backend: 200 {"confidence":1.0,"ok":true,"processing_time":0.053,"reasons":["value-anomaly (1.000)"],"request_id":"1761931613009_2485988552708708808","score":0.345,"stored_seq":73,"suspicious":false}
+
+Received reading: {'meterID': '0x7e994d1943D223587E713ecBabf9ca1a79cf251b', 'seq': 74, 'ts': 1761931623, 'value': -1213.96, 'signature': '0xf52f704b364cab938bc0a35862d7252448508538c295a22179e4e40a50efbb6c44a804f692f30af89bacb0f00bbc4133d4205541cd4bda499a99f70e20a930171c'}
+Forwarded to backend: 200 {"confidence":1.0,"ok":true,"processing_time":0.038,"reasons":["value-anomaly (1.000)"],"request_id":"1761931623016_2485988552708708808","score":0.345,"stored_seq":74,"suspicious":false}
+
+Received reading: {'meterID': '0x7e994d1943D223587E713ecBabf9ca1a79cf251b', 'seq': 75, 'ts': 1761931633, 'value': -1122.95, 'signature': '0x368cbf12e7299af1f66a8d467b522b1a5278f724b45577ec0c964571f83a210a013fa2e5bef05e446412915ddabf331be2a6d3c4fbfdcabb6e6a7a608e45c8511b'}
+Forwarded to backend: 200 {"confidence":1.0,"ok":true,"processing_time":0.038,"reasons":["value-anomaly (1.000)"],"request_id":"1761931633021_2485988552708708808","score":0.345,"stored_seq":75,"suspicious":false}
+
+Received reading: {'meterID': '0x7e994d1943D223587E713ecBabf9ca1a79cf251b', 'seq': 76, 'ts': 1761931643, 'value': -1127.05, 'signature': '0x632bab2c27e08c454774c7bc7f8bfd40decfd73561ea7852e5be4f60ce85997007f6e72c0ec1eed8f63b9d3aeb9203abebf84037bc8832957fb05cb466274a941b'}
+Forwarded to backend: 200 {"confidence":1.0,"ok":true,"processing_time":0.04,"reasons":["value-anomaly (1.000)"],"request_id":"1761931643026_2485988552708708808","score":0.345,"stored_seq":76,"suspicious":false}
+
+Received reading: {'meterID': '0x7e994d1943D223587E713ecBabf9ca1a79cf251b', 'seq': 77, 'ts': 1761931653, 'value': -1066.5, 'signature': '0xfdc019ba6d0cf7e9e7a10311ab505af6fdc548f2c02d995675e681ec6a476f0363a928d5e3f83fd80f684fc9ea8ea806a4fc3e1aa0209b28b8672b773a19bf361b'}
+Forwarded to backend: 200 {"confidence":1.0,"ok":true,"processing_time":0.039,"reasons":["value-anomaly (1.000)"],"request_id":"1761931653032_2485988552708708808","score":0.345,"stored_seq":77,"suspicious":false}
+
+Received reading: {'meterID': '0x7e994d1943D223587E713ecBabf9ca1a79cf251b', 'seq': 78, 'ts': 1761931663, 'value': -989.95, 'signature': '0xdaa53f745a1bb99ff66bc6937def5bcb7a49a5e2cffab2456c337519b45e628307823a2c66ea02a0c7aed981cc36e3e177447573ddd818a8111077d51479f1be1c'}
+Forwarded to backend: 200 {"confidence":1.0,"ok":true,"processing_time":0.038,"reasons":["value-anomaly (1.000)"],"request_id":"1761931663040_2485988552708708808","score":0.345,"stored_seq":78,"suspicious":false}
+
+Received reading: {'meterID': '0x7e994d1943D223587E713ecBabf9ca1a79cf251b', 'seq': 79, 'ts': 1761931673, 'value': 1176.08, 'signature': '0x13c7d1be145b09f0cea96c6efa207b2a1eef91c7dde9fec473f4aa62b7048eb720d9c9e5ceef61e5fb43debbc0984478014e52c3ff30c2926cc167433e4057811c'}
+Forwarded to backend: 200 {"confidence":1.0,"ok":true,"processing_time":0.045,"reasons":["value-anomaly (1.000)"],"request_id":"1761931673046_2485988552708708808","score":0.345,"stored_seq":79,"suspicious":false}
+
+Received reading: {'meterID': '0x7e994d1943D223587E713ecBabf9ca1a79cf251b', 'seq': 80, 'ts': 1761931683, 'value': -1204.97, 'signature': '0x3cc307fd440c691bdcb0f84a4eb1127721685a5e8fd7b9f2af4136ad315345cf735a66cca9616fc41c7570de5f0396095797f25b953c7c58845781fab4be727a1b'}
+Forwarded to backend: 200 {"confidence":1.0,"ok":true,"processing_time":0.041,"reasons":["value-anomaly (1.000)"],"request_id":"1761931683055_2485988552708708808","score":0.375,"stored_seq":80,"suspicious":true}
+
+Received reading: {'meterID': '0x7e994d1943D223587E713ecBabf9ca1a79cf251b', 'seq': 81, 'ts': 1761931693, 'value': -1006.86, 'signature': '0x869feae1e11bf4370976fd07f55bbd5774eedaa8c76bdaab3b6e6474bc26109730b7f22be1d0758366042fa8c24bd7963666c60647458c167e1a3ff9a8ff6b351b'}
+Forwarded to backend: 200 {"confidence":1.0,"ok":true,"processing_time":0.037,"reasons":["value-anomaly (1.000)"],"request_id":"1761931693063_2485988552708708808","score":0.345,"stored_seq":81,"suspicious":false}
+
+Received reading: {'meterID': '0x7e994d1943D223587E713ecBabf9ca1a79cf251b', 'seq': 82, 'ts': 1761931703, 'value': -1072.61, 'signature': '0xf30e027a426ad059b43a498e4e9b610cdabb2a1c568039b966ba3458b320593e31a2920e942e252f2ff2544c391a35d0129c5a01755e606fe80440ca13fdfe3a1b'}
+Forwarded to backend: 200 {"confidence":1.0,"ok":true,"processing_time":0.038,"reasons":["value-anomaly (1.000)"],"request_id":"1761931703073_2485988552708708808","score":0.345,"stored_seq":82,"suspicious":false}
+
+Received reading: {'meterID': '0x7e994d1943D223587E713ecBabf9ca1a79cf251b', 'seq': 83, 'ts': 1761931713, 'value': -1040.75, 'signature': '0x7319dac2212623ab62e9ddd30081ccd27e5bfa1b505ea326d29dbfed667e2fdc57cb9242ff8e14e0b295f490cc332651b86e6d3e3eafffbcdb2680a9f287b6521c'}
+Forwarded to backend: 200 {"confidence":1.0,"ok":true,"processing_time":0.038,"reasons":["value-anomaly (1.000)"],"request_id":"1761931713081_2485988552708708808","score":0.345,"stored_seq":83,"suspicious":false}
+
+Received reading: {'meterID': '0x7e994d1943D223587E713ecBabf9ca1a79cf251b', 'seq': 84, 'ts': 1761931723, 'value': 1104.08, 'signature': '0xb006c2cbfde78e8ca8924836fc7e62edf5f30cc6d11feaf75b733558584b7175738ec6f2c2f746fcf25f41c3224ea66ed7fa5a8d1891430181dc38a90d72052f1c'}
+Forwarded to backend: 200 {"confidence":1.0,"ok":true,"processing_time":0.043,"reasons":["value-anomaly (1.000)"],"request_id":"1761931723089_2485988552708708808","score":0.345,"stored_seq":84,"suspicious":false}
+
+Received reading: {'meterID': '0x7e994d1943D223587E713ecBabf9ca1a79cf251b', 'seq': 85, 'ts': 1761931733, 'value': 1228.03, 'signature': '0xdc6de0f537dee0e7391b13f72d973edff56568ba0d200db580ffa3479501092c5ba4e3c86fb9eb5d16b8a8a4ebe8381157ff183b5ceb64baf05ecc05d503680a1b'}
+Forwarded to backend: 200 {"confidence":1.0,"ok":true,"processing_time":0.049,"reasons":["value-anomaly (1.000)"],"request_id":"1761931733096_2485988552708708808","score":0.345,"stored_seq":85,"suspicious":false}
+
+Received reading: {'meterID': '0x7e994d1943D223587E713ecBabf9ca1a79cf251b', 'seq': 86, 'ts': 1761931743, 'value': 1180.79, 'signature': '0xf3fc7e326185c9ab5867c6faa0221d81d2124bf2eba728c5aa2c97de33fd80ca1440fce4272d97ce53ee53a92cb2c52090528741220041615adeb497d87f014f1b'}
+Forwarded to backend: 200 {"confidence":1.0,"ok":true,"processing_time":0.038,"reasons":["value-anomaly (1.000)"],"request_id":"1761931743104_2485988552708708808","score":0.345,"stored_seq":86,"suspicious":false}
+
+Received reading: {'meterID': '0x7e994d1943D223587E713ecBabf9ca1a79cf251b', 'seq': 87, 'ts': 1761931753, 'value': 1147.56, 'signature': '0x7d9c4f3f3f682d98670c08ce37a4fbcc95c8531dfd9181b34776e48ad7d19312472821f806d18f1dea9a03c6dd52dd7306c134b665c35033232a24f77be5d4d61b'}
+Forwarded to backend: 200 {"confidence":1.0,"ok":true,"processing_time":0.044,"reasons":["value-anomaly (1.000)"],"request_id":"1761931753111_2485988552708708808","score":0.345,"stored_seq":87,"suspicious":false}
+
+Received reading: {'meterID': '0x7e994d1943D223587E713ecBabf9ca1a79cf251b', 'seq': 88, 'ts': 1761931763, 'value': 972.91, 'signature': '0xf922c9287f2b686902123e590069a835274b9247594857720e0607f0762f3f253cd10aa52de0b73d6539a59ac25f35b5d49eaf70b89205c120034808e2f446d81b'}
+Forwarded to backend: 200 {"confidence":1.0,"ok":true,"processing_time":0.04,"reasons":["value-anomaly (1.000)"],"request_id":"1761931763119_2485988552708708808","score":0.345,"stored_seq":88,"suspicious":false}
+
+Received reading: {'meterID': '0x7e994d1943D223587E713ecBabf9ca1a79cf251b', 'seq': 89, 'ts': 1761931773, 'value': 1183.52, 'signature': '0x726081a3c85ad792f7f2e44d7ede2aa5e3bb34966afd82481dd1f2daf18d398f249ade796d9c489ef5ee71d901408c3703e0bb7949e430a5993ce0bf8822a73a1b'}
+Forwarded to backend: 200 {"confidence":1.0,"ok":true,"processing_time":0.043,"reasons":["value-anomaly (1.000)"],"request_id":"1761931773129_2485988552708708808","score":0.345,"stored_seq":89,"suspicious":false}
+
+Received reading: {'meterID': '0x4b0a1764c7F3726d128D7cED59680Dcf0153b72f', 'seq': 45, 'ts': 1761931774, 'value': 1540.1, 'signature': '0x159382de33258d533ac1db7229cfba67be761f330e1f25c828aed801083c5c4522748b9fbdff6319c2ed702f62b7a5950a0f8613b6d252bf901b1f099bf9ca431b'}
+Forwarded to backend: 200 {"confidence":1.0,"ok":true,"processing_time":0.041,"reasons":["value-anomaly (1.000)"],"request_id":"1761931774642_2485988552708708808","score":0.345,"stored_seq":45,"suspicious":false}
+
+Received reading: {'meterID': '0x7e994d1943D223587E713ecBabf9ca1a79cf251b', 'seq': 90, 'ts': 1761931783, 'value': 1130.01, 'signature': '0xe417500e69f96fcdc26f43e9361c2e46a99715451ed34507593bfc8f17ffa4553e39364fcd886d23ee7cfee56a6d80c4c87ca7fca2f0fe5ce14fb0c58e3326cb1b'}
+Forwarded to backend: 200 {"confidence":1.0,"ok":true,"processing_time":0.048,"reasons":["value-anomaly (1.000)"],"request_id":"1761931783134_2485988552708708808","score":0.345,"stored_seq":90,"suspicious":false}
+
+Received reading: {'meterID': '0x7e994d1943D223587E713ecBabf9ca1a79cf251b', 'seq': 91, 'ts': 1761931793, 'value': 1141.78, 'signature': '0x24a91474bceaa6d4e5caea89e20c18c571379c5b89b7e98c44ee1c7eea9f16a94d7d5688bdcc5a656830bdd72cb98cd928af58926e54fdf6d4bd02bb7168506c1c'}
+Forwarded to backend: 200 {"confidence":1.0,"ok":true,"processing_time":0.043,"reasons":["value-anomaly (1.000)"],"request_id":"1761931793138_2485988552708708808","score":0.345,"stored_seq":91,"suspicious":false}
+
+Received reading: {'meterID': '0x4b0a1764c7F3726d128D7cED59680Dcf0153b72f', 'seq': 46, 'ts': 1761931794, 'value': 2850.74, 'signature': '0x293a13d92856f89215537781298d8de3d4ddb526ce9697ebc381a2f263a6626b6b105d8e0c055c360434c60ecf8162c1935e8dbe494df11ecf98abab5c50c4151b'}
+Forwarded to backend: 200 {"confidence":1.0,"ok":true,"processing_time":0.048,"reasons":["value-anomaly (1.000)"],"request_id":"1761931794650_2485988552708708808","score":0.375,"stored_seq":46,"suspicious":true}
+
+Received reading: {'meterID': '0x7e994d1943D223587E713ecBabf9ca1a79cf251b', 'seq': 92, 'ts': 1761931803, 'value': 681.18, 'signature': '0x9d9fd9d811b3874148ea49f8027cefbf3702e25f92f55549dcf971d3039806072082e88693620cc51457675734015edbb7a85025034bd07934285d8632aa2d5e1b'}
+Forwarded to backend: 200 {"confidence":1.0,"ok":true,"processing_time":0.04,"reasons":["value-anomaly (1.000)"],"request_id":"1761931803143_2485988552708708808","score":0.365,"stored_seq":92,"suspicious":true}
+
+Received reading: {'meterID': '0x7e994d1943D223587E713ecBabf9ca1a79cf251b', 'seq': 93, 'ts': 1761931813, 'value': 736.14, 'signature': '0x6bcfe1ba469fe11c6d7f86b5458a4970f3b012ee6c30ebccd53ddaf0e4a07d5a379d9553bf8f2839ee5ff2dd5b203b395395d645a24e3598698386141efdc2af1c'}
+Forwarded to backend: 200 {"confidence":1.0,"ok":true,"processing_time":0.047,"reasons":["value-anomaly (1.000)"],"request_id":"1761931813150_2485988552708708808","score":0.365,"stored_seq":93,"suspicious":true}
+
+Received reading: {'meterID': '0x7e994d1943D223587E713ecBabf9ca1a79cf251b', 'seq': 94, 'ts': 1761931823, 'value': 773.47, 'signature': '0xc4660d0ce2f1aafa712d1884d15a3593cace5f0f63e0852a6451dd9c4bdd76aa3a92d116d1b083832fc3034338e8ae0afa4922d7e8804b49db271c4372c7233e1c'}
+Forwarded to backend: 200 {"confidence":1.0,"ok":true,"processing_time":0.039,"reasons":["value-anomaly (1.000)"],"request_id":"1761931823157_2485988552708708808","score":0.365,"stored_seq":94,"suspicious":false}
+
+Received reading: {'meterID': '0x7e994d1943D223587E713ecBabf9ca1a79cf251b', 'seq': 95, 'ts': 1761931833, 'value': 492.82, 'signature': '0x1144a104b9fc8a0477c0f98e00fdc5bfc0a709d93630e094d424b5b3cf30319304c1f5b4874ad36919a6cf9bc4ab1d419f53dd2e50bd07f847a5087c75acb82b1b'}
+Forwarded to backend: 200 {"confidence":1.0,"ok":true,"processing_time":0.043,"reasons":["value-anomaly (1.000)"],"request_id":"1761931833165_2485988552708708808","score":0.365,"stored_seq":95,"suspicious":false}
+
+Received reading: {'meterID': '0x7e994d1943D223587E713ecBabf9ca1a79cf251b', 'seq': 96, 'ts': 1761931843, 'value': 339.94, 'signature': '0x57365cfbd091e82c17b034f2a00fa0d095d707080cdabf1f1ff20c338a2cbd680c6136e06b7097a963b9e71bc0c99e2735bd8bdd397f6ef860ef42b3498575051b'}
+Forwarded to backend: 200 {"confidence":1.0,"ok":true,"processing_time":0.035,"reasons":["value-anomaly (1.000)"],"request_id":"1761931843169_2485988552708708808","score":0.365,"stored_seq":96,"suspicious":false}
+
+Received reading: {'meterID': '0x7e994d1943D223587E713ecBabf9ca1a79cf251b', 'seq': 97, 'ts': 1761931853, 'value': 546.19, 'signature': '0xda9243d0eac738d292b6c1b426c675d3936811c10c46221c5f20c5630145520e7e434a766a74a139305d4c341be3fe281c1f0e47a355b271272ddc45391405bb1b'}
+Forwarded to backend: 200 {"confidence":1.0,"ok":true,"processing_time":0.039,"reasons":["value-anomaly (1.000)"],"request_id":"1761931853174_2485988552708708808","score":0.395,"stored_seq":97,"suspicious":true}
+
+Received reading: {'meterID': '0x7e994d1943D223587E713ecBabf9ca1a79cf251b', 'seq': 98, 'ts': 1761931863, 'value': 625.93, 'signature': '0x9d806f4b9ed5dc8118c35c5742b4343a781a54ff26457d7e72f20e470325a45c702cb8950e9ff5addfc69b06e155f919075e3c70fd1dd55f98a817e7c84a817c1c'}
+Forwarded to backend: 200 {"confidence":1.0,"ok":true,"processing_time":0.042,"reasons":["value-anomaly (1.000)"],"request_id":"1761931863178_2485988552708708808","score":0.365,"stored_seq":98,"suspicious":false}
+
+Received reading: {'meterID': '0x7e994d1943D223587E713ecBabf9ca1a79cf251b', 'seq': 99, 'ts': 1761931873, 'value': 590.68, 'signature': '0x1864f83a1542fec7d030e5a13cabed95c34d4e53d28b75a7c05b93682467e791431b4f6a4db28e62954b7f052cd02fadb638d310b49098421949974534f47dfc1b'}
+Forwarded to backend: 200 {"confidence":1.0,"ok":true,"processing_time":0.045,"reasons":["value-anomaly (1.000)"],"request_id":"1761931873187_2485988552708708808","score":0.365,"stored_seq":99,"suspicious":false}
+
+Received reading: {'meterID': '0x7e994d1943D223587E713ecBabf9ca1a79cf251b', 'seq': 100, 'ts': 1761931883, 'value': 536.54, 'signature': '0xed7245f39542eca2c49b5810d6db462c546b36331e657ddab7db525a03a14c265b4a78fbbdf2b97a4be9a2fa5765738ad5de00558c8c8b54c38235503c60a7a91b'}
+Forwarded to backend: 200 {"confidence":1.0,"ok":true,"processing_time":0.051,"reasons":["value-anomaly (1.000)"],"request_id":"1761931883195_2485988552708708808","score":0.365,"stored_seq":100,"suspicious":false}
+
+Received reading: {'meterID': '0x7e994d1943D223587E713ecBabf9ca1a79cf251b', 'seq': 101, 'ts': 1761931893, 'value': 510.06, 'signature': '0x0f9cbc474997077957c56acce8f3684b0c6bd3c839c9dcec3ca7edabf9e43117474774eb6b3bb1a3be8f84226f95da65c520de98cd5faa3cea8af302d92b59d51b'}
+Forwarded to backend: 200 {"confidence":1.0,"ok":true,"processing_time":0.048,"reasons":["value-anomaly (1.000)"],"request_id":"1761931893200_2485988552708708808","score":0.365,"stored_seq":101,"suspicious":false}
+
+Received reading: {'meterID': '0x7e994d1943D223587E713ecBabf9ca1a79cf251b', 'seq': 102, 'ts': 1761931903, 'value': 706.56, 'signature': '0xcda2312b197e079728158bf5f958d1483d68ed46257378a1c4e315327de4ccbf3da0997f50ce5689cc232d161a0333a2dbcc57296fc15cef55a1b24ce82ba13b1c'}
+Forwarded to backend: 200 {"confidence":1.0,"ok":true,"processing_time":0.044,"reasons":["value-anomaly (1.000)"],"request_id":"1761931903207_2485988552708708808","score":0.365,"stored_seq":102,"suspicious":false}
+
+Received reading: {'meterID': '0x7e994d1943D223587E713ecBabf9ca1a79cf251b', 'seq': 103, 'ts': 1761931913, 'value': 598.39, 'signature': '0x253249b470fa89d2a12cb3d944c155fba9567e6d02927f8f7baf873eb14ea7200097064f74da465b2bc942de5933cc27c69860480ab9d069db985a5122defe9a1b'}
+Forwarded to backend: 200 {"confidence":1.0,"ok":true,"processing_time":0.04,"reasons":["value-anomaly (1.000)"],"request_id":"1761931913212_2485988552708708808","score":0.365,"stored_seq":103,"suspicious":false}
+
+Received reading: {'meterID': '0x7e994d1943D223587E713ecBabf9ca1a79cf251b', 'seq': 104, 'ts': 1761931923, 'value': 377.76, 'signature': '0xbd1033cfec183017c4ee6c9b41e2e1a4ef7269022f431a7d1a4328cc4160d04034590a094a5f6720183f82fd978f47c71129f60f8eb7924f91d1419b9054573a1c'}
+Forwarded to backend: 200 {"confidence":1.0,"ok":true,"processing_time":0.047,"reasons":["value-anomaly (1.000)"],"request_id":"1761931923221_2485988552708708808","score":0.365,"stored_seq":104,"suspicious":false}
+
+Received reading: {'meterID': '0x7e994d1943D223587E713ecBabf9ca1a79cf251b', 'seq': 105, 'ts': 1761931933, 'value': 679.18, 'signature': '0x1669b9949743344ecd11b816be86c956a8164157fe7a76e5d609c5a9689cf266140fe6eedea00a59e89214d8cfcd27629270be657166ba452ca6951e11aa402a1c'}
+Forwarded to backend: 200 {"confidence":1.0,"ok":true,"processing_time":0.03,"reasons":["value-anomaly (1.000)"],"request_id":"1761931933226_2485988552708708808","score":0.395,"stored_seq":105,"suspicious":true}
+
+Received reading: {'meterID': '0x7e994d1943D223587E713ecBabf9ca1a79cf251b', 'seq': 106, 'ts': 1761931943, 'value': 812.35, 'signature': '0x42049e71dbe473baf4ec7f8b9b00dd6ce9486aeb63250738a48055251e6ff8676f83504447fe947bce9e83fa43795ead54809f9e145de066f827c1b9bc9be1f41c'}
+Forwarded to backend: 200 {"confidence":1.0,"ok":true,"processing_time":0.05,"reasons":["value-anomaly (1.000)"],"request_id":"1761931943232_2485988552708708808","score":0.365,"stored_seq":106,"suspicious":false}
+
+Received reading: {'meterID': '0x7e994d1943D223587E713ecBabf9ca1a79cf251b', 'seq': 107, 'ts': 1761931953, 'value': 644.1, 'signature': '0xe650818b20af1b938f2d8c89df47f7fcf8947dc6fd4028b9a67e233e039a77714375d27d7a60fa21d5df99fe4bec04fe615b2c75596a4d137d6fd2cbee9587e81c'}
+Forwarded to backend: 200 {"confidence":1.0,"ok":true,"processing_time":0.041,"reasons":["value-anomaly (1.000)"],"request_id":"1761931953240_2485988552708708808","score":0.365,"stored_seq":107,"suspicious":false}
+
+Received reading: {'meterID': '0x7e994d1943D223587E713ecBabf9ca1a79cf251b', 'seq': 108, 'ts': 1761931963, 'value': 527.28, 'signature': '0xaa9f4ee578709b8aa090a6354c386f832263544d07ab721981b08a05cc843c95615739290bd312e62416b2e47f35425c3b07eb3300b2d0a2d3c49ab6f1238d1a1c'}
+Forwarded to backend: 200 {"confidence":1.0,"ok":true,"processing_time":0.048,"reasons":["value-anomaly (1.000)"],"request_id":"1761931963250_2485988552708708808","score":0.365,"stored_seq":108,"suspicious":false}
+
+Received reading: {'meterID': '0x7e994d1943D223587E713ecBabf9ca1a79cf251b', 'seq': 109, 'ts': 1761931973, 'value': 715.74, 'signature': '0x687df38d4b74445e23df1c47425d05164a86c861258be9e344cd2791f7f4be564a6e6c83ea40cf370b7880b043aba4a6316ce4c3b301c438f7c5d47a214988d31b'}
+Forwarded to backend: 200 {"confidence":1.0,"ok":true,"processing_time":0.031,"reasons":["value-anomaly (1.000)"],"request_id":"1761931973257_2485988552708708808","score":0.365,"stored_seq":109,"suspicious":false}
+
+Received reading: {'meterID': '0x7e994d1943D223587E713ecBabf9ca1a79cf251b', 'seq': 110, 'ts': 1761931983, 'value': 523.69, 'signature': '0x69909827644894a75ed9e09a1222709c42adebc0b5e9d222bd17e2460a4e4dcf6daf2fda7480e96dad59073f19dca104dc955bf61a093e495616c3452c6057ae1b'}
+Forwarded to backend: 200 {"confidence":1.0,"ok":true,"processing_time":0.051,"reasons":["value-anomaly (1.000)"],"request_id":"1761931983263_2485988552708708808","score":0.365,"stored_seq":110,"suspicious":false}
+
+Received reading: {'meterID': '0x7e994d1943D223587E713ecBabf9ca1a79cf251b', 'seq': 111, 'ts': 1761931993, 'value': 613.19, 'signature': '0x37d18a37775230274374e1dba26aa1b1be13687666504f331c8b20cdcc652dc7605832a6a9156d15c55d2e5a2cbd2e28fe55512d45f004922d8e98628f1dc0081b'}
+Forwarded to backend: 200 {"confidence":1.0,"ok":true,"processing_time":0.025,"reasons":["value-anomaly (1.000)"],"request_id":"1761931993268_2485988552708708808","score":0.365,"stored_seq":111,"suspicious":false}
+
+Received reading: {'meterID': '0x7e994d1943D223587E713ecBabf9ca1a79cf251b', 'seq': 112, 'ts': 1761932003, 'value': 323.63, 'signature': '0x6ff63a7883d32dd0a443acb7ea7cf1013dce46b1a3f80042f8b5174cb7dce3243f788c90d35a3b3faf7566f6990e35de14bed6ed8da5e30a65797c50374ce8271b'}
+Forwarded to backend: 200 {"confidence":1.0,"ok":true,"processing_time":0.049,"reasons":["value-anomaly (1.000)"],"request_id":"1761932003275_2485988552708708808","score":0.365,"stored_seq":112,"suspicious":false}
+
+Received reading: {'meterID': '0x7e994d1943D223587E713ecBabf9ca1a79cf251b', 'seq': 113, 'ts': 1761932013, 'value': 417.91, 'signature': '0x4b0447152c47367732874ad674915418aa1282d4728a4d41e5fc034e8f5a8cf12bb50733e79ca094615a46e64cd7c80617dc23929583ac4bb87f8fb81bcc43401c'}
+Forwarded to backend: 200 {"confidence":1.0,"ok":true,"processing_time":0.054,"reasons":["value-anomaly (1.000)"],"request_id":"1761932013285_2485988552708708808","score":0.365,"stored_seq":113,"suspicious":false}
+
+Received reading: {'meterID': '0x7e994d1943D223587E713ecBabf9ca1a79cf251b', 'seq': 114, 'ts': 1761932023, 'value': 468.12, 'signature': '0x24b5cbc61785df7cd01a01c03350c136f88a9169317479980f12722c0d5c223600881d468e4d8a7236ff616630ed64e75094281de7a57c52bd571533e5efcb641c'}
+Forwarded to backend: 200 {"confidence":1.0,"ok":true,"processing_time":0.041,"reasons":["value-anomaly (1.000)"],"request_id":"1761932023293_2485988552708708808","score":0.365,"stored_seq":114,"suspicious":false}
+
+Received reading: {'meterID': '0x7e994d1943D223587E713ecBabf9ca1a79cf251b', 'seq': 115, 'ts': 1761932033, 'value': 326.42, 'signature': '0xe312d281e0c6075bbad029d1ea12c3caf16fc22a9b853761aebcb1fbfa1afe846ce87f498be1118a9799298d7d4f8883be04b5a89f2c946daf74e559bc3ee2d81b'}
+Forwarded to backend: 200 {"confidence":1.0,"ok":true,"processing_time":0.043,"reasons":["value-anomaly (1.000)"],"request_id":"1761932033297_2485988552708708808","score":0.365,"stored_seq":115,"suspicious":false}
+
+Received reading: {'meterID': '0x7e994d1943D223587E713ecBabf9ca1a79cf251b', 'seq': 116, 'ts': 1761932043, 'value': 504.71, 'signature': '0x6994d2aa41faa5566451c81bb083260c2a39a14951d8d92196a6fffaf49db40c2992ef87f3e67cf6c088e69752d91a84d92df99f24756e1d582f31166004d6421c'}
+Forwarded to backend: 200 {"confidence":1.0,"ok":true,"processing_time":0.039,"reasons":["value-anomaly (1.000)"],"request_id":"1761932043302_2485988552708708808","score":0.395,"stored_seq":116,"suspicious":true}
+
+Received reading: {'meterID': '0x7e994d1943D223587E713ecBabf9ca1a79cf251b', 'seq': 117, 'ts': 1761932053, 'value': 502.92, 'signature': '0x41b8647e72cc7fdb2f1e24cab337e8fda0425e9f5c54e4fe58727da20227f97832a788a0f3124e4b40590a6e46285d125308757148865ff00d28f368eca53c1f1b'}
+Forwarded to backend: 200 {"confidence":1.0,"ok":true,"processing_time":0.044,"reasons":["value-anomaly (1.000)"],"request_id":"1761932053306_2485988552708708808","score":0.365,"stored_seq":117,"suspicious":false}
+
+Received reading: {'meterID': '0x7e994d1943D223587E713ecBabf9ca1a79cf251b', 'seq': 118, 'ts': 1761932063, 'value': 772.53, 'signature': '0x4ca94371d3ff6d60f35684ceeb0765bcbbfdf364df3d94debd72fc35510143ec0b3d28a37e65bec2eec453ce4ff5952c7467520495b3a753e47d6fc59b5263511b'}
+Forwarded to backend: 200 {"confidence":1.0,"ok":true,"processing_time":0.042,"reasons":["value-anomaly (1.000)"],"request_id":"1761932063313_2485988552708708808","score":0.395,"stored_seq":118,"suspicious":true}
+
+Received reading: {'meterID': '0x7e994d1943D223587E713ecBabf9ca1a79cf251b', 'seq': 119, 'ts': 1761932073, 'value': 680.88, 'signature': '0xf69bb9583c0ea67cfdc0fe2ffb5fbc946ef5658b71df7c0d1acd907c6ea3f7812c4986afc03e08e3384385017dda1919767f006bca8782915f2a42976d591a7c1c'}
+Forwarded to backend: 200 {"confidence":1.0,"ok":true,"processing_time":0.044,"reasons":["value-anomaly (1.000)"],"request_id":"1761932073319_2485988552708708808","score":0.365,"stored_seq":119,"suspicious":false}
+
+Received reading: {'meterID': '0x4b0a1764c7F3726d128D7cED59680Dcf0153b72f', 'seq': 60, 'ts': 1761932074, 'value': -2046.56, 'signature': '0x6c24926a3b470729a459f62e73c7b5f2ac2d74cb86e4e402c1cd4d3e159a8efb1067b4374048efb59ba63215a0977b0c378cd39a254a65b1ef4363dd2eca9c271b'}
+Forwarded to backend: 200 {"confidence":1.0,"ok":true,"processing_time":0.051,"reasons":["value-anomaly (1.000)"],"request_id":"1761932074742_2485988552708708808","score":0.395,"stored_seq":60,"suspicious":true}
+
+Received reading: {'meterID': '0x7e994d1943D223587E713ecBabf9ca1a79cf251b', 'seq': 120, 'ts': 1761932083, 'value': 619.8, 'signature': '0xb9e50503950c37b7c243deb19e42343672639cbe368c12bb5e10fa62c75181443ddcf750e4a384b5beeee80f27b71dc2dab5ffadbe54d1a3f2c8da1306e661161c'}
+Forwarded to backend: 200 {"confidence":1.0,"ok":true,"processing_time":0.039,"reasons":["value-anomaly (1.000)"],"request_id":"1761932083327_2485988552708708808","score":0.365,"stored_seq":120,"suspicious":false}
+
+Received reading: {'meterID': '0x7e994d1943D223587E713ecBabf9ca1a79cf251b', 'seq': 121, 'ts': 1761932093, 'value': 732.13, 'signature': '0x92ac8004ceb2354d84a55c699785517896ebe2d4c0f51ca893f1450e05fd6ba029c2cc7d8ab7f4334a677f43293dce719d73b0dbb5f25f2ebf9d9baf41c97e4d1b'}
+Forwarded to backend: 200 {"confidence":1.0,"ok":true,"processing_time":0.046,"reasons":["value-anomaly (1.000)"],"request_id":"1761932093331_2485988552708708808","score":0.365,"stored_seq":121,"suspicious":false}
+
+Received reading: {'meterID': '0x7e994d1943D223587E713ecBabf9ca1a79cf251b', 'seq': 122, 'ts': 1761932103, 'value': 403.39, 'signature': '0x97f16b9cb45ccb16b53894c21dff91b144f57a02baa44123fcb51d7ea2a220240d5b3880e63e3fc630b219ac2f39d841daa05311476decc01f4b219273df73881c'}
+Forwarded to backend: 200 {"confidence":1.0,"ok":true,"processing_time":0.028,"reasons":["value-anomaly (1.000)"],"request_id":"1761932103336_2485988552708708808","score":0.365,"stored_seq":122,"suspicious":false}
+
+Received reading: {'meterID': '0x7e994d1943D223587E713ecBabf9ca1a79cf251b', 'seq': 123, 'ts': 1761932113, 'value': 429.63, 'signature': '0x3a0ce6059f8418af006e8091de00a84a2ce79ac87087f6a0a0e8881cb11f8d8e4af7779f4f00a8ac4342f3081215507e053f27e7dc27ee3b4b2ab941dd499e561b'}
+Forwarded to backend: 200 {"confidence":1.0,"ok":true,"processing_time":0.038,"reasons":["value-anomaly (1.000)"],"request_id":"1761932113342_2485988552708708808","score":0.365,"stored_seq":123,"suspicious":false}
+
+Received reading: {'meterID': '0x7e994d1943D223587E713ecBabf9ca1a79cf251b', 'seq': 124, 'ts': 1761932123, 'value': 735.34, 'signature': '0x32c67e64814fef7802a04985a8945e0caec49fa701e9fa57cd8b958beda3747733fb55e3d58c6ac469e8850759a8b460ef4bd79008268b85e472ac20569000c81c'}
+Forwarded to backend: 200 {"confidence":1.0,"ok":true,"processing_time":0.036,"reasons":["value-anomaly (1.000)"],"request_id":"1761932123346_2485988552708708808","score":0.395,"stored_seq":124,"suspicious":true}
+
+Received reading: {'meterID': '0x7e994d1943D223587E713ecBabf9ca1a79cf251b', 'seq': 125, 'ts': 1761932133, 'value': 536.78, 'signature': '0xd7f405c46e412beee16b102982347a0aed8bfbde63a420984fd202812f3f9d6740f324631a7c92035f43c4469183ef4f83fe4e47203bce52da055caff07484801c'}
+Forwarded to backend: 200 {"confidence":1.0,"ok":true,"processing_time":0.049,"reasons":["value-anomaly (1.000)"],"request_id":"1761932133352_2485988552708708808","score":0.365,"stored_seq":125,"suspicious":false}
+
+Received reading: {'meterID': '0x7e994d1943D223587E713ecBabf9ca1a79cf251b', 'seq': 126, 'ts': 1761932143, 'value': 663.58, 'signature': '0x1e431c690e9d11f1f74181f6cec4e9401c69ddd5ff4f436bf3b2dc8f2a68202c1dda1c92c121744f94fc310bbdd0e73d21d2c8e79565431312818a1c3c7670831c'}
+Forwarded to backend: 200 {"confidence":1.0,"ok":true,"processing_time":0.054,"reasons":["value-anomaly (1.000)"],"request_id":"1761932143357_2485988552708708808","score":0.365,"stored_seq":126,"suspicious":false}
+
+Received reading: {'meterID': '0x7e994d1943D223587E713ecBabf9ca1a79cf251b', 'seq': 127, 'ts': 1761932153, 'value': 535.0, 'signature': '0x7ee80416aef0f06546adc059a86e41b57ded123ce2df963c21a18911c7165df40e91b61a0a19dd8e837b64e4cbfb4f44d78f4da74d11341682eee9da420c781e1b'}
+Forwarded to backend: 200 {"confidence":1.0,"ok":true,"processing_time":0.051,"reasons":["value-anomaly (1.000)"],"request_id":"1761932153362_2485988552708708808","score":0.365,"stored_seq":127,"suspicious":false}
+
+Received reading: {'meterID': '0x4b0a1764c7F3726d128D7cED59680Dcf0153b72f', 'seq': 64, 'ts': 1761932154, 'value': 1323.85, 'signature': '0x0b71d020965343c49c6968b58d1004e5b0a58f4ba83c2540d48858a42382754062077a14845037a7e9162779ae3e0f2ddf6ce7201e7ddba9755404e982a1b7501c'}
+Forwarded to backend: 200 {"confidence":1.0,"ok":true,"processing_time":0.053,"reasons":["value-anomaly (1.000)"],"request_id":"1761932154763_2485988552708708808","score":0.365,"stored_seq":64,"suspicious":false}
+
+Received reading: {'meterID': '0x7e994d1943D223587E713ecBabf9ca1a79cf251b', 'seq': 128, 'ts': 1761932163, 'value': 634.83, 'signature': '0xd3252f4be468fe1c01ed2cb62828372ed333922e355fa976f29f3859a216934e2efc0401bb91f204ede0ca44275780f209447611b06ccc2e39b71f0248f746cc1b'}
+Forwarded to backend: 200 {"confidence":1.0,"ok":true,"processing_time":0.039,"reasons":["value-anomaly (1.000)"],"request_id":"1761932163369_2485988552708708808","score":0.365,"stored_seq":128,"suspicious":false}
+
+Received reading: {'meterID': '0x7e994d1943D223587E713ecBabf9ca1a79cf251b', 'seq': 129, 'ts': 1761932173, 'value': 417.55, 'signature': '0x3a26c534d9bfed55a616d58132e6dcd5c59499253a964756aae58a66430b740872555561fa9fa4b70a6bd6a5b1c5d46b94554603dfec4dbf05ff5b7d56500c191c'}
+Forwarded to backend: 200 {"confidence":1.0,"ok":true,"processing_time":0.044,"reasons":["value-anomaly (1.000)"],"request_id":"1761932173372_2485988552708708808","score":0.365,"stored_seq":129,"suspicious":false}
+
+Received reading: {'meterID': '0x7e994d1943D223587E713ecBabf9ca1a79cf251b', 'seq': 130, 'ts': 1761932183, 'value': 431.04, 'signature': '0x82028848d6df35e4a3b9c93855b96b3d4721714a7844e31e1f1a5c31bb7ad9bc4f7339fb41b664b4193402dab3f4bd21d23407915619a11cb0ecb0f3077496481b'}
+Forwarded to backend: 200 {"confidence":1.0,"ok":true,"processing_time":0.045,"reasons":["value-anomaly (1.000)"],"request_id":"1761932183377_2485988552708708808","score":0.365,"stored_seq":130,"suspicious":false}
+
+Received reading: {'meterID': '0x7e994d1943D223587E713ecBabf9ca1a79cf251b', 'seq': 131, 'ts': 1761932193, 'value': 596.02, 'signature': '0xe270fce8692ffd357d7fb96abe3029ce1bb0bedd6a82fab3e01346672befc2ff7dd416e30244ff1d32d7cc0d457fc5dc95b0c2d6f4b72b7ad3a92a4f70b427db1b'}
+Forwarded to backend: 200 {"confidence":1.0,"ok":true,"processing_time":0.047,"reasons":["value-anomaly (1.000)"],"request_id":"1761932193386_2485988552708708808","score":0.365,"stored_seq":131,"suspicious":false}
+
+Received reading: {'meterID': '0x7e994d1943D223587E713ecBabf9ca1a79cf251b', 'seq': 132, 'ts': 1761932203, 'value': 812.11, 'signature': '0x834915ee2729d110debdd81ec1e80a4af61f1524a04cac308a7c451c60a7f86173e2b92ba58d177ea7304531a3616a66e6c2a61bbaa19307e9d59bd39cc3377a1b'}
+Forwarded to backend: 200 {"confidence":1.0,"ok":true,"processing_time":0.054,"reasons":["value-anomaly (1.000)"],"request_id":"1761932203393_2485988552708708808","score":0.365,"stored_seq":132,"suspicious":false}
+
+Received reading: {'meterID': '0x7e994d1943D223587E713ecBabf9ca1a79cf251b', 'seq': 133, 'ts': 1761932213, 'value': 595.79, 'signature': '0x17f5793b545e4dca943758b5851aea98cb2ec4f7495d9e13de1d64eea8e7e9cb6e00df7671597d5257d4afc2a5a47e6c62fca969f294f6a61cb04a7f49ea40cd1c'}
+Forwarded to backend: 200 {"confidence":1.0,"ok":true,"processing_time":0.043,"reasons":["value-anomaly (1.000)"],"request_id":"1761932213397_2485988552708708808","score":0.365,"stored_seq":133,"suspicious":false}
+
+Received reading: {'meterID': '0x7e994d1943D223587E713ecBabf9ca1a79cf251b', 'seq': 134, 'ts': 1761932223, 'value': 609.86, 'signature': '0x69cf14f10292cddccbdb9f9a7d8ec55e2a1d96fb2b1105a952f77a63cf782b255925aac4af269d62529a15a8c6d8afd4326a4fc75e092bc3623b8bef5a486c891b'}
+Forwarded to backend: 200 {"confidence":1.0,"ok":true,"processing_time":0.043,"reasons":["value-anomaly (1.000)"],"request_id":"1761932223403_2485988552708708808","score":0.365,"stored_seq":134,"suspicious":false}
+
+Received reading: {'meterID': '0x7e994d1943D223587E713ecBabf9ca1a79cf251b', 'seq': 135, 'ts': 1761932233, 'value': 482.64, 'signature': '0xf9b28fc1fc2d72e176b97092575bcc774d8a23f284dd90785455953748b73ce95278593286bf0955161ce92b1bbfdda81d5794a71e7a308f9f96c14858e596ef1c'}
+Forwarded to backend: 200 {"confidence":1.0,"ok":true,"processing_time":0.027,"reasons":["value-anomaly (1.000)"],"request_id":"1761932233407_2485988552708708808","score":0.365,"stored_seq":135,"suspicious":false}
+
+Received reading: {'meterID': '0x7e994d1943D223587E713ecBabf9ca1a79cf251b', 'seq': 136, 'ts': 1761932243, 'value': 852.05, 'signature': '0xc68541a616c5d239048a5900ed4bd86aee548712a18ae40f6e2c2e643a14678c2c4901733123fb003566bf0dcdc49ad3848b399c307a013378d5f5bb7e3da59e1b'}
+Forwarded to backend: 200 {"confidence":1.0,"ok":true,"processing_time":0.045,"reasons":["value-anomaly (1.000)"],"request_id":"1761932243415_2485988552708708808","score":0.395,"stored_seq":136,"suspicious":true}
+
+Received reading: {'meterID': '0x7e994d1943D223587E713ecBabf9ca1a79cf251b', 'seq': 137, 'ts': 1761932253, 'value': 537.05, 'signature': '0xf5aaaf07e4a4f0802f2f11e443cd40c2966f5c5b90dd48c8b030ca443b6a00985604e3e986a9e5fcd66eda4c892bc83c1674d737618d5d70e88e9f9da90ca1251b'}
+Forwarded to backend: 200 {"confidence":1.0,"ok":true,"processing_time":0.04,"reasons":["value-anomaly (1.000)"],"request_id":"1761932253422_2485988552708708808","score":0.365,"stored_seq":137,"suspicious":false}
+
+Received reading: {'meterID': '0x4b0a1764c7F3726d128D7cED59680Dcf0153b72f', 'seq': 69, 'ts': 1761932254, 'value': 1842.38, 'signature': '0x919bb3629a457d068480188bfb7f63e6b56185269b2ead3bf84d71efc672982f215a792241b3262345dc573f763fd24ab4a7e30e28dad3afaab71dedb54f67e21b'}
+Forwarded to backend: 200 {"confidence":1.0,"ok":true,"processing_time":0.045,"reasons":["value-anomaly (1.000)"],"request_id":"1761932254790_2485988552708708808","score":0.365,"stored_seq":69,"suspicious":false}
+
+Received reading: {'meterID': '0x7e994d1943D223587E713ecBabf9ca1a79cf251b', 'seq': 138, 'ts': 1761932263, 'value': 594.33, 'signature': '0xdadce5b2b2e7f8a2054edfd006e91c4b1fef2fe85d0cbb2feaf743dd9f7f39522729a784f2889aeb3418e84e7d2930bb78284747ecbad3a17892607cf1212ab51b'}
+Forwarded to backend: 200 {"confidence":1.0,"ok":true,"processing_time":0.051,"reasons":["value-anomaly (1.000)"],"request_id":"1761932263427_2485988552708708808","score":0.365,"stored_seq":138,"suspicious":false}
+
+Received reading: {'meterID': '0x7e994d1943D223587E713ecBabf9ca1a79cf251b', 'seq': 139, 'ts': 1761932273, 'value': 699.07, 'signature': '0x6da76312c328feb949625428c39d70d6a47baba60256b058a7a5f6fea029b0420d24bc5d287c0fe7f249c1fc8e2fbb65267d85c651de047753254b1d0bbfc45a1c'}
+Forwarded to backend: 200 {"confidence":1.0,"ok":true,"processing_time":0.048,"reasons":["value-anomaly (1.000)"],"request_id":"1761932273433_2485988552708708808","score":0.365,"stored_seq":139,"suspicious":false}
+
+Received reading: {'meterID': '0x7e994d1943D223587E713ecBabf9ca1a79cf251b', 'seq': 140, 'ts': 1761932283, 'value': 681.86, 'signature': '0x31483b91e6a95ce9e1d7035ddb644288f75e7d44fa9f7b762b7f511d0ddfa12c42bbb33bf13fda6411c54b8d2ff1be3cf96c3b108651633a96c8c78077452d621b'}
+Forwarded to backend: 200 {"confidence":1.0,"ok":true,"processing_time":0.05,"reasons":["value-anomaly (1.000)"],"request_id":"1761932283439_2485988552708708808","score":0.365,"stored_seq":140,"suspicious":false}
+
+Received reading: {'meterID': '0x7e994d1943D223587E713ecBabf9ca1a79cf251b', 'seq': 141, 'ts': 1761932293, 'value': 676.82, 'signature': '0x0fa3653e0e9a3a2ff73aecf416803d6ab7ce12adbbb4fd3c2719e3d05fd9e44a07831f0b993f9669199ae834a62862222ae6d56e8967e2a298411005689fd65c1b'}
+Forwarded to backend: 200 {"confidence":1.0,"ok":true,"processing_time":0.048,"reasons":["value-anomaly (1.000)"],"request_id":"1761932293445_2485988552708708808","score":0.365,"stored_seq":141,"suspicious":false}
+
+Received reading: {'meterID': '0x7e994d1943D223587E713ecBabf9ca1a79cf251b', 'seq': 142, 'ts': 1761932303, 'value': 673.04, 'signature': '0x000d34768cb5c73e8733f456c1c9ed6d64695b05e89c64a005680c993b1f0def42bb6ad6e79fdee3c95f618fe5c4afa1116036206dcb7f756769593b80f26fbc1c'}
+Forwarded to backend: 200 {"confidence":1.0,"ok":true,"processing_time":0.037,"reasons":["value-anomaly (1.000)"],"request_id":"1761932303449_2485988552708708808","score":0.365,"stored_seq":142,"suspicious":false}
+
+Received reading: {'meterID': '0x7e994d1943D223587E713ecBabf9ca1a79cf251b', 'seq': 143, 'ts': 1761932313, 'value': 774.75, 'signature': '0x29e5b89de6e4f8ea1966be56ec1268b08a9223c2bed63e6303fdc811da56826a1321a64513e2a05a9789cafea06a146af600a6b369cb2d3a1a173e8cd04d3f4a1c'}
+Forwarded to backend: 200 {"confidence":1.0,"ok":true,"processing_time":0.045,"reasons":["value-anomaly (1.000)"],"request_id":"1761932313456_2485988552708708808","score":0.365,"stored_seq":143,"suspicious":false}
+
+Received reading: {'meterID': '0x7e994d1943D223587E713ecBabf9ca1a79cf251b', 'seq': 144, 'ts': 1761932323, 'value': 783.01, 'signature': '0x2558fa404fbf93272978791536845a0b25622c3daff96e4399969af5217542520fc991b4715dfb3ad3fd07a96611b817be72fe915faf5f3953d3044cf0d14dbc1b'}
+Forwarded to backend: 200 {"confidence":1.0,"ok":true,"processing_time":0.048,"reasons":["value-anomaly (1.000)"],"request_id":"1761932323465_2485988552708708808","score":0.365,"stored_seq":144,"suspicious":false}
+
+Received reading: {'meterID': '0x7e994d1943D223587E713ecBabf9ca1a79cf251b', 'seq': 145, 'ts': 1761932333, 'value': 648.35, 'signature': '0x647c278ca3ee65842b02073e2a0fabaa9d25d7948503764f55733ebd1bf1bce61317369dabe2d572c83d6fb98584ae3b2624259c32980652ea58ce5d759021ef1b'}
+Forwarded to backend: 200 {"confidence":1.0,"ok":true,"processing_time":0.041,"reasons":["value-anomaly (1.000)"],"request_id":"1761932333471_2485988552708708808","score":0.365,"stored_seq":145,"suspicious":false}
+
+Received reading: {'meterID': '0x7e994d1943D223587E713ecBabf9ca1a79cf251b', 'seq': 146, 'ts': 1761932343, 'value': 641.73, 'signature': '0xa35d536a4c880e63ca46075edd1a4f28b1a023a667d667bbdd9bc7d401147dd51b5435cefa9ac009ab2a0c4df96cdbe37480a496236f46f5835a351477e38baa1c'}
+Forwarded to backend: 200 {"confidence":1.0,"ok":true,"processing_time":0.04,"reasons":["value-anomaly (1.000)"],"request_id":"1761932343476_2485988552708708808","score":0.365,"stored_seq":146,"suspicious":false}
+
+Received reading: {'meterID': '0x7e994d1943D223587E713ecBabf9ca1a79cf251b', 'seq': 147, 'ts': 1761932353, 'value': 712.31, 'signature': '0xde82af2f53c1015adfc6b0889113dba88c5b075dbb9b329679d1d640fe62e42368415659f238839107c94cc7ee03ca327c153ce4ab993713b86daef3068805b11c'}
+Forwarded to backend: 200 {"confidence":1.0,"ok":true,"processing_time":0.044,"reasons":["value-anomaly (1.000)"],"request_id":"1761932353482_2485988552708708808","score":0.365,"stored_seq":147,"suspicious":false}
+
+Received reading: {'meterID': '0x7e994d1943D223587E713ecBabf9ca1a79cf251b', 'seq': 148, 'ts': 1761932363, 'value': 692.3, 'signature': '0x7f6140f20abcbc5e19a38e64bf3bc1e9cf4ea23b5cd1a8cbd067456421d413c73c7c10b83b903021b11838f7a436df6beddf1be2637b1495d6fe9e15f77f2ecf1c'}
+Forwarded to backend: 200 {"confidence":1.0,"ok":true,"processing_time":0.052,"reasons":["value-anomaly (1.000)"],"request_id":"1761932363488_2485988552708708808","score":0.365,"stored_seq":148,"suspicious":false}
+
+Received reading: {'meterID': '0x7e994d1943D223587E713ecBabf9ca1a79cf251b', 'seq': 149, 'ts': 1761932373, 'value': 745.79, 'signature': '0xae1d272ea8c7a2c06fc916eca785eca5a534c039d9a31217cbcfd9c538ff3c2c40fa65f9cdf7cd29483d98fcfc634aeac5855009f6fffcd846c2fb588525886e1c'}
+Forwarded to backend: 200 {"confidence":1.0,"ok":true,"processing_time":0.04,"reasons":["value-anomaly (1.000)"],"request_id":"1761932373493_2485988552708708808","score":0.365,"stored_seq":149,"suspicious":false}
+
+Received reading: {'meterID': '0x7e994d1943D223587E713ecBabf9ca1a79cf251b', 'seq': 150, 'ts': 1761932383, 'value': 441.94, 'signature': '0x964781ff6481a19d854bd20277996ea5f2c8604e22264f219f9b1de0b541d0534ee915d08feef08344fb6894a14525975478a33986985808745543ef6f3a457a1c'}
+Forwarded to backend: 200 {"confidence":1.0,"ok":true,"processing_time":0.044,"reasons":["value-anomaly (1.000)"],"request_id":"1761932383498_2485988552708708808","score":0.365,"stored_seq":150,"suspicious":false}
+
+Received reading: {'meterID': '0x7e994d1943D223587E713ecBabf9ca1a79cf251b', 'seq': 151, 'ts': 1761932393, 'value': 505.21, 'signature': '0x5779573deee84e466eb2220666a824bf9382192d73de9b0580c6ea3de241043f5271420d34584eededfda8614f45388889ff88d6b4bee679dd165fda370e33261c'}
+Forwarded to backend: 200 {"confidence":1.0,"ok":true,"processing_time":0.056,"reasons":["value-anomaly (1.000)"],"request_id":"1761932393505_2485988552708708808","score":0.365,"stored_seq":151,"suspicious":false}
+
+Received reading: {'meterID': '0x7e994d1943D223587E713ecBabf9ca1a79cf251b', 'seq': 152, 'ts': 1761932403, 'value': 404.83, 'signature': '0x09c8a81a74656d816e2fb4f198680f518609d467f531a388c5bd0d31b11a1f3c3c3a483c567f6bafca3621153388eb2f6b6d7f70cddf297cc1e75828b1a6083a1b'}
+Forwarded to backend: 200 {"confidence":1.0,"ok":true,"processing_time":0.044,"reasons":["value-anomaly (1.000)"],"request_id":"1761932403510_2485988552708708808","score":0.365,"stored_seq":152,"suspicious":false}
+
+Received reading: {'meterID': '0x7e994d1943D223587E713ecBabf9ca1a79cf251b', 'seq': 153, 'ts': 1761932413, 'value': 641.57, 'signature': '0xe56413262a2275a6c331c50d0d9c5cf350ae0ce263520031e110a155e47a74090f3eda4e22539b044f6a5ff57699a5d062b89795bc9cf0b4448dcc73d555ef4a1b'}
+Forwarded to backend: 200 {"confidence":1.0,"ok":true,"processing_time":0.049,"reasons":["value-anomaly (1.000)"],"request_id":"1761932413515_2485988552708708808","score":0.395,"stored_seq":153,"suspicious":true}
+
+Received reading: {'meterID': '0x4b0a1764c7F3726d128D7cED59680Dcf0153b72f', 'seq': 77, 'ts': 1761932414, 'value': 1922.38, 'signature': '0x1b2e1736f52fc6cde80ad6142ca9ff56328b9ef6d86774093f474121c642775f1d8c1926698735340a4d39ba4b8c374f179f5226819fa031e15ac24ad88222a71b'}
+Forwarded to backend: 200 {"confidence":1.0,"ok":true,"processing_time":0.049,"reasons":["value-anomaly (1.000)"],"request_id":"1761932414839_2485988552708708808","score":0.365,"stored_seq":77,"suspicious":false}
+
+Received reading: {'meterID': '0x7e994d1943D223587E713ecBabf9ca1a79cf251b', 'seq': 154, 'ts': 1761932423, 'value': 684.63, 'signature': '0xf0d7e0b59e7ae76d873f84788e38ce02f4ea0715327a0041805fc5fc72b406602368a9018919c19bece879042d23279dc71f7ddef60072acbe6c7823acaeb3481c'}
+Forwarded to backend: 200 {"confidence":1.0,"ok":true,"processing_time":0.035,"reasons":["value-anomaly (1.000)"],"request_id":"1761932423524_2485988552708708808","score":0.365,"stored_seq":154,"suspicious":false}
+
+Received reading: {'meterID': '0x7e994d1943D223587E713ecBabf9ca1a79cf251b', 'seq': 155, 'ts': 1761932433, 'value': 739.02, 'signature': '0x6b7c134ec87958297c3ab3538adaa96a0412a92fcd58e82be7af34aebf88b9ae3a45dc043c59bbb3b9cf74631a2924e63a3445a90981d00db1f288fbfd3046411c'}
+Forwarded to backend: 200 {"confidence":1.0,"ok":true,"processing_time":0.046,"reasons":["value-anomaly (1.000)"],"request_id":"1761932433530_2485988552708708808","score":0.365,"stored_seq":155,"suspicious":false}
+
+Received reading: {'meterID': '0x7e994d1943D223587E713ecBabf9ca1a79cf251b', 'seq': 156, 'ts': 1761932443, 'value': 749.82, 'signature': '0x508c6e967e2f1047b3eaf4f656adc502d958c3b0e4c6144380b6014ec46c49af27f77e22831841a6e3fbdb7fefc6c0207888fbd154c9ca6204e84d1ce2bfa9431c'}
+Forwarded to backend: 200 {"confidence":1.0,"ok":true,"processing_time":0.038,"reasons":["value-anomaly (1.000)"],"request_id":"1761932443537_2485988552708708808","score":0.365,"stored_seq":156,"suspicious":false}
+
+Received reading: {'meterID': '0x7e994d1943D223587E713ecBabf9ca1a79cf251b', 'seq': 157, 'ts': 1761932453, 'value': 590.57, 'signature': '0x254cb6e025d24e496e0b6c6c91258eaf4d9c1e7ac0fae1ad4156413877c3b7fe698a7c63281f99161f45c8164a53ee18f6078a02588df6f215251e02f8a099fe1b'}
+Forwarded to backend: 200 {"confidence":1.0,"ok":true,"processing_time":0.041,"reasons":["value-anomaly (1.000)"],"request_id":"1761932453541_2485988552708708808","score":0.365,"stored_seq":157,"suspicious":false}
+
+Received reading: {'meterID': '0x7e994d1943D223587E713ecBabf9ca1a79cf251b', 'seq': 158, 'ts': 1761932463, 'value': 567.25, 'signature': '0x8a477e34a75665025a7c1a2fb7d85776fe6f07f977707d15dee751fe70b1d934222010a526d2362bce1095aaf1ff09e62669e403b66b01a5e343626957649b791c'}
+Forwarded to backend: 200 {"confidence":1.0,"ok":true,"processing_time":0.028,"reasons":["value-anomaly (1.000)"],"request_id":"1761932463546_2485988552708708808","score":0.365,"stored_seq":158,"suspicious":false}
+
+Received reading: {'meterID': '0x7e994d1943D223587E713ecBabf9ca1a79cf251b', 'seq': 159, 'ts': 1761932473, 'value': 729.52, 'signature': '0x2e8706c015fd32fb3aba1e33e84158a5308ab53c53c6c1805f15cb4083ccfd0d353b02574e0a0ffc5c7bfad89e534029b0d5584725ec4fb8a737206db7544cce1c'}
+Forwarded to backend: 200 {"confidence":1.0,"ok":true,"processing_time":0.037,"reasons":["value-anomaly (1.000)"],"request_id":"1761932473551_2485988552708708808","score":0.365,"stored_seq":159,"suspicious":false}
+
+Received reading: {'meterID': '0x7e994d1943D223587E713ecBabf9ca1a79cf251b', 'seq': 160, 'ts': 1761932483, 'value': 336.78, 'signature': '0xed458477b82085b2f487901bc385faf72d44a7fec16945c1198a321dcfed444e1d1dc0fddb01b45268fd11ddfaa1187fb442a33bf1c5e9cbc595795a1a0405a71c'}
+Forwarded to backend: 200 {"confidence":1.0,"ok":true,"processing_time":0.047,"reasons":["value-anomaly (1.000)"],"request_id":"1761932483555_2485988552708708808","score":0.395,"stored_seq":160,"suspicious":true}
+
+Received reading: {'meterID': '0x7e994d1943D223587E713ecBabf9ca1a79cf251b', 'seq': 165, 'ts': 1761932533, 'value': 549.34, 'signature': '0x1ef4d0a405185faad37bb399d864b761fa1036022e57edc85f0fee7581209b753f08627da1f5182986a3671d270621965682be8be90a433723052985e844c4811c'}
+Forwarded to backend: 200 {"confidence":1.0,"ok":true,"processing_time":0.044,"reasons":["value-anomaly (1.000)"],"request_id":"1761932533589_2485988552708708808","score":0.395,"stored_seq":165,"suspicious":true}
+
+Received reading: {'meterID': '0x4b0a1764c7F3726d128D7cED59680Dcf0153b72f', 'seq': 83, 'ts': 1761932534, 'value': 2428.24, 'signature': '0xb209ed02d5cf38128924c4c075aa47fe8e17c0aeca1d4d2a6146a2338ce45ef279b081cbb78c3586755f1bd88abb1570edd605369dbe51c6854e231fbdbea9031b'}
+Forwarded to backend: 200 {"confidence":1.0,"ok":true,"processing_time":0.04,"reasons":["value-anomaly (1.000)"],"request_id":"1761932534870_2485988552708708808","score":0.365,"stored_seq":83,"suspicious":false}
+
+Received reading: {'meterID': '0x7e994d1943D223587E713ecBabf9ca1a79cf251b', 'seq': 167, 'ts': 1761932553, 'value': 598.69, 'signature': '0x71693c500fbf54afb256157be630743b1b34ab1a617923cc01e18ba4c60f9b72598bc4fcf7f1f815bd5121a6ff6a2151dee8a45a9b309fa36b67d8321255665a1c'}
+Forwarded to backend: 200 {"confidence":1.0,"ok":true,"processing_time":0.038,"reasons":["value-anomaly (1.000)"],"request_id":"1761932553599_2485988552708708808","score":0.365,"stored_seq":167,"suspicious":false}
+
+Received reading: {'meterID': '0x7e994d1943D223587E713ecBabf9ca1a79cf251b', 'seq': 173, 'ts': 1761932613, 'value': 627.44, 'signature': '0x9c26f498a74399747c3fb89c2f4bec568c3fe2c5c43ab8b37dda99896f084f92146a78bd4c688c5828bbcafa95419706253c36b3e89b19a9c990877abe8116e91c'}
+Forwarded to backend: 200 {"confidence":1.0,"ok":true,"processing_time":0.051,"reasons":["value-anomaly (1.000)"],"request_id":"1761932613639_2485988552708708808","score":0.365,"stored_seq":173,"suspicious":false}
+
+Received reading: {'meterID': '0x7e994d1943D223587E713ecBabf9ca1a79cf251b', 'seq': 175, 'ts': 1761932633, 'value': 537.6, 'signature': '0x97cf1eda86ec8edbfa41f156dd0e73451c300e1012c1282819c929c7b019ea202496ca99fe7e767300e04b1c238a0c1040cf6255b2b26f956f366912cab9d8831c'}
+Forwarded to backend: 200 {"confidence":1.0,"ok":true,"processing_time":0.045,"reasons":["value-anomaly (1.000)"],"request_id":"1761932633650_2485988552708708808","score":0.365,"stored_seq":175,"suspicious":false}
+
+Received reading: {'meterID': '0x4b0a1764c7F3726d128D7cED59680Dcf0153b72f', 'seq': 88, 'ts': 1761932634, 'value': 2475.21, 'signature': '0xadb32cdd1ba923070a64cde320a4cafb481baea843dc5198077aab6c59aaf1824f7160f1f69e370e2545b80ba4b35c38b263b5ec89760bf647ef4713a60b5eb91b'}
+Forwarded to backend: 200 {"confidence":1.0,"ok":true,"processing_time":0.05,"reasons":["value-anomaly (1.000)"],"request_id":"1761932634899_2485988552708708808","score":0.365,"stored_seq":88,"suspicious":false}
+
+Received reading: {'meterID': '0x7e994d1943D223587E713ecBabf9ca1a79cf251b', 'seq': 177, 'ts': 1761932653, 'value': 817.25, 'signature': '0x148de6a4caa067714878d52fbecc41b1d1c599a1fb07faae7d8ad2ff5d78bef421dad48dde29655c7980a5ef40d5985544b51a69052e0883c46918641f168e431b'}
+Forwarded to backend: 200 {"confidence":1.0,"ok":true,"processing_time":0.042,"reasons":["value-anomaly (1.000)"],"request_id":"1761932653665_2485988552708708808","score":0.395,"stored_seq":177,"suspicious":true}
+
+Received reading: {'meterID': '0x7e994d1943D223587E713ecBabf9ca1a79cf251b', 'seq': 178, 'ts': 1761932663, 'value': 562.38, 'signature': '0x61c3010002a6a06cc11633e9fc833eaac37dd516804d331016424709dbd3e4c04f1e53710be0dfc13ba6ed75675ae63d0050dbbf57b3bb131c68cd877b64177c1c'}
+Forwarded to backend: 200 {"confidence":1.0,"ok":true,"processing_time":0.034,"reasons":["value-anomaly (1.000)"],"request_id":"1761932663671_2485988552708708808","score":0.365,"stored_seq":178,"suspicious":false}
+
+Received reading: {'meterID': '0x4b0a1764c7F3726d128D7cED59680Dcf0153b72f', 'seq': 91, 'ts': 1761932694, 'value': 3048.92, 'signature': '0x0983af4859ff957f94ebdeca99c8c79be49ceae02dc05c1be6d4a5453a3f7a266b3e03cffaeebbf481a181c0b3efb98cca1be96785c0c3ff2f3092bf9329bb151b'}
+Forwarded to backend: 200 {"confidence":1.0,"ok":true,"processing_time":0.045,"reasons":["value-anomaly (1.000)"],"request_id":"1761932694916_2485988552708708808","score":0.365,"stored_seq":91,"suspicious":false}
+
+Received reading: {'meterID': '0x7e994d1943D223587E713ecBabf9ca1a79cf251b', 'seq': 182, 'ts': 1761932703, 'value': 422.0, 'signature': '0x3f6ca820ee68cae9bf1a88e6c60da3680f2c78e441cac6d63315f59e9129c1bc75234fc92a540a3ecf7cf4ba76b95217fef641bab5c7db90fd58004fae9b28271c'}
+Forwarded to backend: 200 {"confidence":1.0,"ok":true,"processing_time":0.049,"reasons":["value-anomaly (1.000)"],"request_id":"1761932703693_2485988552708708808","score":0.365,"stored_seq":182,"suspicious":false}
+
+Received reading: {'meterID': '0x7e994d1943D223587E713ecBabf9ca1a79cf251b', 'seq': 185, 'ts': 1761932733, 'value': -820.61, 'signature': '0x2d248428c829206128d9986f3bfda75823ac03044444e4c725b8b5872b01dfc4546e4a5bb256807fe6d00cf06dc66c8e4f8e9b5203a43b504c5b8254e2235bfd1b'}
+Forwarded to backend: 200 {"confidence":1.0,"ok":true,"processing_time":0.05,"reasons":["value-anomaly (1.000)"],"request_id":"1761932733710_2485988552708708808","score":0.395,"stored_seq":185,"suspicious":false}
+
+Received reading: {'meterID': '0x4b0a1764c7F3726d128D7cED59680Dcf0153b72f', 'seq': 93, 'ts': 1761932734, 'value': 1710.97, 'signature': '0x410380bdbd8934a6cf7c07a0702f13e51dda8e793a9ee1b6ef3505233ee9aff05d37716d10b6149220b184e77701e54ee53b126d5f1426f48269b8a7dd03c2b91b'}
+Forwarded to backend: 200 {"confidence":1.0,"ok":true,"processing_time":0.032,"reasons":["value-anomaly (1.000)"],"request_id":"1761932734938_2485988552708708808","score":0.365,"stored_seq":93,"suspicious":false}
+
+Received reading: {'meterID': '0x7e994d1943D223587E713ecBabf9ca1a79cf251b', 'seq': 190, 'ts': 1761932783, 'value': 752.44, 'signature': '0xe074c317117294094f77602c99c9b914c14924b941d2fedb4b0a49ba4ca48e2829da8961bb1b81539ce1ac3f7749447b3e41e18e02e35de68f92602e9c4761c41c'}
+Forwarded to backend: 200 {"confidence":1.0,"ok":true,"processing_time":0.048,"reasons":["value-anomaly (1.000)"],"request_id":"1761932783736_2485988552708708808","score":0.365,"stored_seq":190,"suspicious":false}
+
+Received reading: {'meterID': '0x7e994d1943D223587E713ecBabf9ca1a79cf251b', 'seq': 195, 'ts': 1761932833, 'value': 580.97, 'signature': '0x05427278fe4bea9937ad232669767891b8c81c58352e3bc4173f500ac2b902b34c848c24b24e32a9cca0eb8add699f8bef8f9e00e4cbd1acc6874985d24a976e1b'}
+Forwarded to backend: 200 {"confidence":1.0,"ok":true,"processing_time":0.025,"reasons":["value-anomaly (1.000)"],"request_id":"1761932833763_2485988552708708808","score":0.365,"stored_seq":195,"suspicious":false}
+
+Received reading: {'meterID': '0x4b0a1764c7F3726d128D7cED59680Dcf0153b72f', 'seq': 98, 'ts': 1761932834, 'value': 1755.14, 'signature': '0xdc44591569c05e72f9491303bb7120f2830339cb2db36f1c969c2d6c3e2a36ee7e671f55fbb05e21ffba99222663bdd8e8306139002181ab652b9162e206189b1c'}
+Forwarded to backend: 200 {"confidence":1.0,"ok":true,"processing_time":0.037,"reasons":["value-anomaly (1.000)"],"request_id":"1761932834959_2485988552708708808","score":0.365,"stored_seq":98,"suspicious":false}
+
+Received reading: {'meterID': '0x7e994d1943D223587E713ecBabf9ca1a79cf251b', 'seq': 197, 'ts': 1761932853, 'value': 768.99, 'signature': '0xe8b61dc343fe140861ac464347884878130b79588fc05908b5cd83f8a7cbea746cebb2e9b8d4c8c1da706c62b8f13d34f211e4358612ce4f1e8ca5ce1f98d2f91b'}
+Forwarded to backend: 200 {"confidence":1.0,"ok":true,"processing_time":0.048,"reasons":["value-anomaly (1.000)"],"request_id":"1761932853774_2485988552708708808","score":0.365,"stored_seq":197,"suspicious":false}
+
+Received reading: {'meterID': '0x4b0a1764c7F3726d128D7cED59680Dcf0153b72f', 'seq': 104, 'ts': 1761932954, 'value': 2187.31, 'signature': '0xa95db2fc6cbe51eae84e11f96b8be0038ff10345f7f2b66decf727e9ea7290cf191d9c9646c575a4b3032d7675099dcc248bc63ed25c101af471e35e6da6383d1c'}
+Forwarded to backend: 200 {"confidence":1.0,"ok":true,"processing_time":0.051,"reasons":["value-anomaly (1.000)"],"request_id":"1761932954990_2485988552708708808","score":0.365,"stored_seq":104,"suspicious":false}
+
+Received reading: {'meterID': '0x7e994d1943D223587E713ecBabf9ca1a79cf251b', 'seq': 208, 'ts': 1761932963, 'value': 756.06, 'signature': '0x1ab564d8d0b8bb852414499fc8241c51a9681727137afc42696dddfc15dc4ee24c3aac458942f8b9fe4b61553730cf573b76d3dba5a59f2e0fc2b91158d904321c'}
+Forwarded to backend: 200 {"confidence":1.0,"ok":true,"processing_time":0.043,"reasons":["value-anomaly (1.000)"],"request_id":"1761932963855_2485988552708708808","score":0.365,"stored_seq":208,"suspicious":false}
+
+Received reading: {'meterID': '0x7e994d1943D223587E713ecBabf9ca1a79cf251b', 'seq': 209, 'ts': 1761932973, 'value': 788.33, 'signature': '0xbe337c1b9ea08a5627c2ba2be8e16288ebf2b531835e57d94a810b336c2af9606d1034b0537c615cf65ce5aefcf93883076c8b47bc16354c7ae8c7a6d54da1941c'}
+Forwarded to backend: 200 {"confidence":1.0,"ok":true,"processing_time":0.028,"reasons":["value-anomaly (1.000)"],"request_id":"1761932973884_2485988552708708808","score":0.365,"stored_seq":209,"suspicious":false}
+
+Received reading: {'meterID': '0x7e994d1943D223587E713ecBabf9ca1a79cf251b', 'seq': 211, 'ts': 1761932993, 'value': 741.91, 'signature': '0x6035d0e88796b28c3c3f035f09387c99dde68906bb4c435fd0ba5886a32ad87a62832dda19245317cc9173992b9f3d6b0306b3f82a529ae6a2b0071e9dc3371c1b'}
+Forwarded to backend: 200 {"confidence":1.0,"ok":true,"processing_time":0.049,"reasons":["value-anomaly (1.000)"],"request_id":"1761932993882_2485988552708708808","score":0.365,"stored_seq":211,"suspicious":false}
+
+Received reading: {'meterID': '0x7e994d1943D223587E713ecBabf9ca1a79cf251b', 'seq': 212, 'ts': 1761933003, 'value': 709.32, 'signature': '0x620b262317b155af3a6b5bb1bcd9594e074b883c03d97d7dc686922e3acea64d273aa52202c341d2f888255dee778056213be226fdaf8da000f97ce97c2b4d2d1c'}
+Forwarded to backend: 200 {"confidence":1.0,"ok":true,"processing_time":0.043,"reasons":["value-anomaly (1.000)"],"request_id":"1761933003889_2485988552708708808","score":0.365,"stored_seq":212,"suspicious":false}
+
+Received reading: {'meterID': '0x7e994d1943D223587E713ecBabf9ca1a79cf251b', 'seq': 213, 'ts': 1761933013, 'value': 404.29, 'signature': '0x2eb79c0491abc828fa8f2c400dc8000ddce5d2a238bf3e607804a0db03c850a645013999764f1a5a6568af70e2ab69fec6a9d8f24efc7a8f524290efe438262b1c'}
+Forwarded to backend: 200 {"confidence":1.0,"ok":true,"processing_time":0.058,"reasons":["value-anomaly (1.000)"],"request_id":"1761933013895_2485988552708708808","score":0.365,"stored_seq":213,"suspicious":false}
+
+Received reading: {'meterID': '0x7e994d1943D223587E713ecBabf9ca1a79cf251b', 'seq': 214, 'ts': 1761933023, 'value': 493.9, 'signature': '0x4dfc0593b09431060ba21d136cced173f110a93a368e0b2a716d589acf23d36852d0f0f19d36417a3d00fef9b8ead3202e4d351d230820a6fda4578ecaf90a8d1c'}
+Forwarded to backend: 200 {"confidence":1.0,"ok":true,"processing_time":0.053,"reasons":["value-anomaly (1.000)"],"request_id":"1761933023901_2485988552708708808","score":0.365,"stored_seq":214,"suspicious":false}
+
+Received reading: {'meterID': '0x4b0a1764c7F3726d128D7cED59680Dcf0153b72f', 'seq': 108, 'ts': 1761933035, 'value': 1974.69, 'signature': '0xab4ef2751ef7dc1c1cf777a03e989fedb9d7fa909912cc840296f26f1aaae12b76ddd9ea681789a4cbc93a6162a802845d03e5338e4b9bfa593266013d688ab01b'}
+Forwarded to backend: 200 {"confidence":1.0,"ok":true,"processing_time":0.039,"reasons":["value-anomaly (1.000)"],"request_id":"1761933035012_2485988552708708808","score":0.365,"stored_seq":108,"suspicious":false}
+
+Received reading: {'meterID': '0x7e994d1943D223587E713ecBabf9ca1a79cf251b', 'seq': 217, 'ts': 1761933053, 'value': 442.27, 'signature': '0xa06df395f4a6a499f0480b361ff654ffc53c9c9a84742311e1f45f108dd2e00e329c441799fd7cfe8974186ac2e64bd230297ea5e5287845815c368f6c5c4f4a1c'}
+Forwarded to backend: 200 {"confidence":1.0,"ok":true,"processing_time":0.043,"reasons":["value-anomaly (1.000)"],"request_id":"1761933053918_2485988552708708808","score":0.365,"stored_seq":217,"suspicious":false}
+
+Received reading: {'meterID': '0x7e994d1943D223587E713ecBabf9ca1a79cf251b', 'seq': 220, 'ts': 1761933083, 'value': 696.47, 'signature': '0x920056883dd068ae155ab494728bd49707ca53d8bdae3dad3f3ad671002182215f28d1c5f7fa7c06caec72b4e68e304f97c5afa5c23404dd637298dc6fa5cea11c'}
+Forwarded to backend: 200 {"confidence":1.0,"ok":true,"processing_time":0.044,"reasons":["value-anomaly (1.000)"],"request_id":"1761933083936_2485988552708708808","score":0.395,"stored_seq":220,"suspicious":false}
+
+Received reading: {'meterID': '0x7e994d1943D223587E713ecBabf9ca1a79cf251b', 'seq': 224, 'ts': 1761933123, 'value': 384.0, 'signature': '0x0f106203f2955f2324702c288928d80727678ebdfb44e769f9529499e01ff2e939de3c77faf5ed5d2096b60ae400a7fc5afbaf18b298245a53d06c88d2eae4a41b'}
+Forwarded to backend: 200 {"confidence":1.0,"ok":true,"processing_time":0.041,"reasons":["value-anomaly (1.000)"],"request_id":"1761933123961_2485988552708708808","score":0.365,"stored_seq":224,"suspicious":false}
+
+Received reading: {'meterID': '0x7e994d1943D223587E713ecBabf9ca1a79cf251b', 'seq': 229, 'ts': 1761933173, 'value': 392.73, 'signature': '0x3a84aec31f9b3217978359e5ac549f698f8696d585bb6ad6cfa8f0a3f1f92d6632fc1d5f8cf2517fbf14bdc1c65e026ee7295ddc9019189d842fc568df4988c41c'}
+Forwarded to backend: 200 {"confidence":1.0,"ok":true,"processing_time":0.049,"reasons":["value-anomaly (1.000)"],"request_id":"1761933173988_2485988552708708808","score":0.365,"stored_seq":229,"suspicious":false}
+
+Received reading: {'meterID': '0x4b0a1764c7F3726d128D7cED59680Dcf0153b72f', 'seq': 116, 'ts': 1761933195, 'value': 2849.26, 'signature': '0x7320de7f24278d6ebb3df811fff45dbe6313e3ee6f148554165e618d63d2b49e47d970092713f117a3b03fc0df5246329c47a8cc4cbc3dda92cc22c6cc5db31b1c'}
+Forwarded to backend: 200 {"confidence":1.0,"ok":true,"processing_time":0.039,"reasons":["value-anomaly (1.000)"],"request_id":"1761933195047_2485988552708708808","score":0.365,"stored_seq":116,"suspicious":false}
+
+Received reading: {'meterID': '0x7e994d1943D223587E713ecBabf9ca1a79cf251b', 'seq': 234, 'ts': 1761933224, 'value': 752.75, 'signature': '0x536c13324836a3370511c1095c3f08fa44faf0eab9a97b4246e288e830131775103f8cfb6f6d8fecc5361c0b67e8ca359f7fd862987a95bc11b8fb630b9795051b'}
+Forwarded to backend: 200 {"confidence":1.0,"ok":true,"processing_time":0.049,"reasons":["value-anomaly (1.000)"],"request_id":"1761933224012_2485988552708708808","score":0.395,"stored_seq":234,"suspicious":true}
+
+Received reading: {'meterID': '0x7e994d1943D223587E713ecBabf9ca1a79cf251b', 'seq': 239, 'ts': 1761933274, 'value': 805.63, 'signature': '0xec8ee7778e71ce75fd6c513fa85adb63d55750ab095f896a957ec1678408124616dc826401d4eb94356e7ac16796ab26dcb5686f945978daf808a3d6d19f4ce41c'}
+Forwarded to backend: 200 {"confidence":1.0,"ok":true,"processing_time":0.029,"reasons":["value-anomaly (1.000)"],"request_id":"1761933274047_2485988552708708808","score":0.365,"stored_seq":239,"suspicious":false}
+
+Received reading: {'meterID': '0x4b0a1764c7F3726d128D7cED59680Dcf0153b72f', 'seq': 120, 'ts': 1761933275, 'value': 1214.4, 'signature': '0xb91dac8865a5ea0c0f412864732952453bcd8c62b8cac8e9ae578d4f364824d121fbdb70f60bb3b912ff6026e1ea90c2b7456151b3ae28b3ce90528f126e17371c'}
+Forwarded to backend: 200 {"confidence":1.0,"ok":true,"processing_time":0.046,"reasons":["value-anomaly (1.000)"],"request_id":"1761933275075_2485988552708708808","score":0.395,"stored_seq":120,"suspicious":true}
+
+Received reading: {'meterID': '0x7e994d1943D223587E713ecBabf9ca1a79cf251b', 'seq': 240, 'ts': 1761933284, 'value': 519.2, 'signature': '0xb521952c2b31500eea0cfd4c57d8a8f6463851a2370bcbb8aa4b5474323a13943d1dbec468614df6812e1133569331c0bfe0df76046b5e2edf1c7e44b82d35f71c'}
+Forwarded to backend: 200 {"confidence":1.0,"ok":true,"processing_time":0.043,"reasons":["value-anomaly (1.000)"],"request_id":"1761933284052_2485988552708708808","score":0.365,"stored_seq":240,"suspicious":false}
+
+Received reading: {'meterID': '0x5c36585508653D3013b93955DfCf06FC1db5ea85', 'seq': 1, 'ts': 1761933315, 'value': 826.53, 'signature': '0x076baf20d0ffe5d568ea7a01cf700704acb75245389b054f6ee4db5bf524b0bc3146bf6a587bc5b4247ec76332cca24f0c8c610863613a2d8f242b62631e60741c'}
+Forwarded to backend: 200 {"confidence":0.5,"forensic_analysis":{"anomaly_detected":false,"anomaly_reasons":[],"anomaly_score":0.0,"attack_patterns":[],"evidence_count":0,"risk_level":"NORMAL"},"ok":true,"processing_time":0.047,"reasons":["sequence-anomaly (0.800)"],"request_id":"1761933315305_2485988552708708808","score":0.21,"stored_seq":1,"suspicious":false}
+
+Received reading: {'meterID': '0x4b0a1764c7F3726d128D7cED59680Dcf0153b72f', 'seq': 123, 'ts': 1761933335, 'value': 2820.74, 'signature': '0x48f0aa59c161f44c0283d8df5208caef44e080d38bc067b57cb41cd5652bcbb35579e9e728e9228d981b6305acb4d19d1b4cc0c9bd819b51b3607dae96681c2a1b'}
+Forwarded to backend: 200 {"confidence":1.0,"ok":true,"processing_time":0.036,"reasons":["value-anomaly (1.000)"],"request_id":"1761933335091_2485988552708708808","score":0.395,"stored_seq":123,"suspicious":true}
+
+Received reading: {'meterID': '0x7e994d1943D223587E713ecBabf9ca1a79cf251b', 'seq': 248, 'ts': 1761933364, 'value': 525.34, 'signature': '0x0688aef242370acfe1a7dfb343e92bd6758c4d0c9ef06fda1213312f8a0402ac0c6ca17e8f09ef3ebb35c777dc25dd7599520f00b0333be9fc3fc7c0e2a1076f1b'}
+Forwarded to backend: 200 {"confidence":1.0,"ok":true,"processing_time":0.052,"reasons":["value-anomaly (1.000)"],"request_id":"1761933364100_2485988552708708808","score":0.365,"stored_seq":248,"suspicious":false}
+
+Received reading: {'meterID': '0x4b0a1764c7F3726d128D7cED59680Dcf0153b72f', 'seq': 126, 'ts': 1761933395, 'value': 2647.19, 'signature': '0xb06af4e40fb324f5ec671fcce6e2d9b138b1c85284a453abfd5f2ec3b9cddb3958d124b90e7733d751e0d061de76d9faaef8cacca4e173a69426cad5601930b91b'}
+Forwarded to backend: 200 {"confidence":1.0,"ok":true,"processing_time":0.044,"reasons":["value-anomaly (1.000)"],"request_id":"1761933395105_2485988552708708808","score":0.365,"stored_seq":126,"suspicious":false}
+
+Received reading: {'meterID': '0x4b0a1764c7F3726d128D7cED59680Dcf0153b72f', 'seq': 127, 'ts': 1761933415, 'value': 2747.71, 'signature': '0xf77c44cd67f7efcdda31e9d52e3768e50ba6348424726d2def20e2625f1dd6dc0a421866cb42b09a450c1861e719364d6221af16f3fccddc860c98463fcb0fe01b'}
+Forwarded to backend: 200 {"confidence":1.0,"ok":true,"processing_time":0.049,"reasons":["value-anomaly (1.000)"],"request_id":"1761933415110_2485988552708708808","score":0.365,"stored_seq":127,"suspicious":false}
+
+Received reading: {'meterID': '0x7e994d1943D223587E713ecBabf9ca1a79cf251b', 'seq': 254, 'ts': 1761933424, 'value': 638.32, 'signature': '0xd6e26843d52b4c38e36e20b1db10a1776e2bcbebbcfd9853ec05f400bf4b1ebd471bcc391a5eb194c2f470becbc28e30b776c5806ba4cdcd3cc20bc2fa8ed7d71b'}
+Forwarded to backend: 200 {"confidence":1.0,"ok":true,"processing_time":0.048,"reasons":["value-anomaly (1.000)"],"request_id":"1761933424129_2485988552708708808","score":0.365,"stored_seq":254,"suspicious":false}
+
+Received reading: {'meterID': '0x5c36585508653D3013b93955DfCf06FC1db5ea85', 'seq': 1, 'ts': 1761933426, 'value': 480.88, 'signature': '0xa9abc2278280a6857191806fb8ee07ba103fe6836fd33f9f114ef3e8c194336c42994b57065b522359412c18162b944b82ff378d61c85e348e055e8cd96ab5ea1c'}
 Forwarded to backend: 409 {"error":"non-increasing-seq","last_seq":1,"ok":false}
 
-Received reading: {'meterID': '0x7e994d1943D223587E713ecBabf9ca1a79cf251b', 'seq': 2, 'ts': 1761927914, 'value': 1056.46, 'signature': '0x6f467da12b34b075e0eb402b02a6c188bb516ebbc4a0ebe3ed8e186047cf4f9b1bf6581d6b1c9647d3c343ac5e30d5e9d01eb8dd3b05e655aacc2e32a11dc6dc1c'}
-Forwarded to backend: 409 {"error":"non-increasing-seq","last_seq":8,"ok":false}
+Received reading: {'meterID': '0x4b0a1764c7F3726d128D7cED59680Dcf0153b72f', 'seq': 129, 'ts': 1761933455, 'value': 1290.27, 'signature': '0xf75fe30297e249d79e5f0e0c6d79b2040b49a2189d735a4fc1a3b382bd2d04bd6a147adc802fb0607a57e0d8d2fb4465cd7f640f9cb01a0a05189f46a485dad91c'}
+Forwarded to backend: 200 {"confidence":1.0,"ok":true,"processing_time":0.051,"reasons":["value-anomaly (1.000)"],"request_id":"1761933455120_2485988552708708808","score":0.395,"stored_seq":129,"suspicious":false}
 
-Received reading: {'meterID': '0x7e994d1943D223587E713ecBabf9ca1a79cf251b', 'seq': 3, 'ts': 1761927924, 'value': 912.27, 'signature': '0x6982b7ab6d0c398f3043ef8ff10d1eb19ba91b3057ac42c77a4876723c3ba77310d12cdfff21e5efaa11fd674baaa40808243e4be5ee0acea1dbfb7b9eef4f1f1b'}
-Forwarded to backend: 409 {"error":"non-increasing-seq","last_seq":8,"ok":false}
+Received reading: {'meterID': '0x7e994d1943D223587E713ecBabf9ca1a79cf251b', 'seq': 258, 'ts': 1761933464, 'value': 648.47, 'signature': '0x7f87bb242b15058ac423bc667d9105a9dbb2362e138508b34454a2c0212d0b161e2bbb8ea5bb060da0f6dc38d073c6aad371e7f6e2f77a01d49b9826fbda77801c'}
+Forwarded to backend: 200 {"confidence":1.0,"ok":true,"processing_time":0.038,"reasons":["value-anomaly (1.000)"],"request_id":"1761933464149_2485988552708708808","score":0.365,"stored_seq":258,"suspicious":false}
 
-Received reading: {'meterID': '0x4b0a1764c7F3726d128D7cED59680Dcf0153b72f', 'seq': 2, 'ts': 1761927926, 'value': 1951.38, 'signature': '0xa89354be592dd0940d078b1e88435a7682be89a67f06bed30732a3ec35a4d0a5215a9fb14be6bf3596d64be1e23f30f22b2609ae907f50f02ef0a8403bf610f81b'}
-Forwarded to backend: 200 {"confidence":0.5,"forensic_analysis":{"anomaly_detected":false,"anomaly_reasons":[],"anomaly_score":0.0,"attack_patterns":[],"evidence_count":0,"risk_level":"NORMAL"},"ok":true,"processing_time":0.075,"reasons":["sequence-anomaly (0.800)"],"request_id":"1761927926667_6745156305024208204","score":0.24,"stored_seq":2,"suspicious":false}
+Received reading: {'meterID': '0x5c36585508653D3013b93955DfCf06FC1db5ea85', 'seq': 1, 'ts': 1761933474, 'value': 398.73, 'signature': '0x27e8b6befd3dc9dd2bc4f8f511a2cdda71ac280aef6d49ed309f47017b4f5f680173e3c01df5ee0fe4fb920896f46dccb4b3a4dc1506b5d590c1a84eb2b620d31c'}
+Forwarded to backend: 409 {"error":"non-increasing-seq","last_seq":1,"ok":false}
 
-Received reading: {'meterID': '0x7e994d1943D223587E713ecBabf9ca1a79cf251b', 'seq': 4, 'ts': 1761927934, 'value': 1047.93, 'signature': '0x0525257e73efec8a9800e345f22961a0bb8f7fe99a330b465e35abec6bd4c593464b8ddd720ae74d3df3518789888683e53f03090821f4a42c26c8ace1252f2c1b'}
-Forwarded to backend: 409 {"error":"non-increasing-seq","last_seq":8,"ok":false}
+Received reading: {'meterID': '0x5c36585508653D3013b93955DfCf06FC1db5ea85', 'seq': 2, 'ts': 1761933479, 'value': 435.03, 'signature': '0x01f1636242028046507334c2c80ddb0648dbb6ba6d32405a5257303d93a8b25c749821bffb9d9128cfa345ab6361de21f38bf7f094eaf37f6061734bbb94f4411b'}
+Forwarded to backend: 200 {"confidence":0.5,"forensic_analysis":{"anomaly_detected":false,"anomaly_reasons":[],"anomaly_score":0.0,"attack_patterns":[],"evidence_count":0,"risk_level":"NORMAL"},"ok":true,"processing_time":0.035,"reasons":[],"request_id":"1761933479433_2485988552708708808","score":0.035,"stored_seq":2,"suspicious":false}
 
-Received reading: {'meterID': '0x7e994d1943D223587E713ecBabf9ca1a79cf251b', 'seq': 5, 'ts': 1761927944, 'value': 1064.54, 'signature': '0xa862a69d628cb95a8198980c5aac86b8860593473cfb1e413df98381059b53b82fc06ad65763f7913c993f1fcb62e63dbcf615c787388d44ce15e2186df570cc1b'}
-Forwarded to backend: 409 {"error":"non-increasing-seq","last_seq":8,"ok":false}
+Received reading: {'meterID': '0x7e994d1943D223587E713ecBabf9ca1a79cf251b', 'seq': 260, 'ts': 1761933484, 'value': 620.52, 'signature': '0x70bb3f758af3c771a2ba1a8453745a8ca7dcb3e63e316d45ce94f2a099539c1379ea4728c4f0fbe20bad0ad0c2f11a95ee0a6c53fafb787121e99cd53451997f1b'}
+Forwarded to backend: 200 {"confidence":1.0,"ok":true,"processing_time":0.029,"reasons":["value-anomaly (1.000)"],"request_id":"1761933484158_2485988552708708808","score":0.365,"stored_seq":260,"suspicious":false}
 
-Received reading: {'meterID': '0x4b0a1764c7F3726d128D7cED59680Dcf0153b72f', 'seq': 3, 'ts': 1761927946, 'value': 2768.5, 'signature': '0x70fcabbe5b0978aff8f5078bbf406ea36960e0aee5ada6c0459a00f52845676c2f6f68b4907bcb647a290337ebe0ad64cd83ecaf2d8160eb141e260b6a999f9f1c'}
-Forwarded to backend: 200 {"confidence":0.5,"forensic_analysis":{"anomaly_detected":false,"anomaly_reasons":[],"anomaly_score":0.0,"attack_patterns":[],"evidence_count":0,"risk_level":"NORMAL"},"ok":true,"processing_time":0.037,"reasons":[],"request_id":"1761927946673_6745156305024208204","score":0.065,"stored_seq":3,"suspicious":false}
+Received reading: {'meterID': '0x7e994d1943D223587E713ecBabf9ca1a79cf251b', 'seq': 263, 'ts': 1761933514, 'value': 476.04, 'signature': '0xbbc39dd1e34549bdca71fb2b8b89cdd670724b3cc71c682aa6c33e3330e4edef2f24d8153d3089795da0eb4adfb9d28aba28505428302463acbb0ef7aa8dfe001c'}
+Forwarded to backend: 200 {"confidence":1.0,"ok":true,"processing_time":0.041,"reasons":["value-anomaly (1.000)"],"request_id":"1761933514176_2485988552708708808","score":0.365,"stored_seq":263,"suspicious":false}
 
-Received reading: {'meterID': '0x7e994d1943D223587E713ecBabf9ca1a79cf251b', 'seq': 6, 'ts': 1761927954, 'value': 1039.29, 'signature': '0x8fb20140cec86c6c00420246e321d16a0efd9cffdfc4f797e0958d63a40cdb4e3c0eaf7cb8cba53ecdd8d2818652d78c377340e0d29d36806d32e2756abba3381b'}
-Forwarded to backend: 409 {"error":"non-increasing-seq","last_seq":8,"ok":false}
+Received reading: {'meterID': '0x7e994d1943D223587E713ecBabf9ca1a79cf251b', 'seq': 265, 'ts': 1761933534, 'value': 633.09, 'signature': '0x51296df1b8ed1a4a03bede1518bfc74be3bcf4051e956c4445d52acc8753ce1e12e457524ac14cbb3b4a78f76104dd3badc3937b503995fd525347279df103c61b'}
+Forwarded to backend: 200 {"confidence":1.0,"ok":true,"processing_time":0.044,"reasons":["value-anomaly (1.000)"],"request_id":"1761933534187_2485988552708708808","score":0.365,"stored_seq":265,"suspicious":false}
 
-Received reading: {'meterID': '0x7e994d1943D223587E713ecBabf9ca1a79cf251b', 'seq': 7, 'ts': 1761927964, 'value': 962.24, 'signature': '0x825f4ac7bff241f0f001ac208b985ba75186330f066a8c6bb41cf10c93a478303d2b6b9de1fa78827c8b470d78979beba9c19824838f5a26afdaf6c9f5fe4a9c1b'}
-Forwarded to backend: 409 {"error":"non-increasing-seq","last_seq":8,"ok":false}
+Received reading: {'meterID': '0x4b0a1764c7F3726d128D7cED59680Dcf0153b72f', 'seq': 133, 'ts': 1761933535, 'value': 1331.13, 'signature': '0xf08baa068e78df974f44699c4ca599238d3790b52f84b9898d87f3f5ba5d8e9e38df224a13318df6f78c9212b322f5419d91a63b240df4f54254e108d158ef851b'}
+Forwarded to backend: 200 {"confidence":1.0,"ok":true,"processing_time":0.051,"reasons":["value-anomaly (1.000)"],"request_id":"1761933535143_2485988552708708808","score":0.365,"stored_seq":133,"suspicious":false}
 
-Traceback (most recent call last):
-  File "/home/rameswar-panda/Desktop/minor/minor-project/concentrator/forwarder.py", line 39, in <module>
-    client.loop_forever()
-  File "/home/rameswar-panda/Desktop/minor/minor-project/venv/lib/python3.12/site-packages/paho/mqtt/client.py", line 2297, in loop_forever
-    rc = self._loop(timeout)
-         ^^^^^^^^^^^^^^^^^^^
-  File "/home/rameswar-panda/Desktop/minor/minor-project/venv/lib/python3.12/site-packages/paho/mqtt/client.py", line 1663, in _loop
-    socklist = select.select(rlist, wlist, [], timeout)
-               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-KeyboardInterrupt
+Received reading: {'meterID': '0x7e994d1943D223587E713ecBabf9ca1a79cf251b', 'seq': 268, 'ts': 1761933564, 'value': 684.13, 'signature': '0x8353d9f7dca6b6d4dff11991a1a6e15dd71ce6ba2f23fc214b543488f8f5fe75763c292d40b3344dd5a0a7d45c7d0563b24081b44e7145640964818e88460e7d1b'}
+Forwarded to backend: 200 {"confidence":1.0,"ok":true,"processing_time":0.05,"reasons":["value-anomaly (1.000)"],"request_id":"1761933564201_2485988552708708808","score":0.365,"stored_seq":268,"suspicious":false}
+
+Received reading: {'meterID': '0x4b0a1764c7F3726d128D7cED59680Dcf0153b72f', 'seq': 135, 'ts': 1761933575, 'value': 1312.48, 'signature': '0x3aaa0659794977f174bb46edf666a950103a89034805e7530756499569a8bb3a2384ddf6c8db456c7606e290bb462fdb011e3b3e6b6a02e7766ec8804b5b0fe51c'}
+Forwarded to backend: 200 {"confidence":1.0,"ok":true,"processing_time":0.055,"reasons":["value-anomaly (1.000)"],"request_id":"1761933575155_2485988552708708808","score":0.365,"stored_seq":135,"suspicious":false}
+
+Received reading: {'meterID': '0x4b0a1764c7F3726d128D7cED59680Dcf0153b72f', 'seq': 136, 'ts': 1761933595, 'value': 1695.84, 'signature': '0xb75d501d2f4d32e2d600b4b549b86cc854ae741f7c6e02346e49fbb92011b4ce279f03be11d8b1854925ba4080d683da78da515bf6c987e11eb0f2f1834773251c'}
+Forwarded to backend: 200 {"confidence":1.0,"ok":true,"processing_time":0.028,"reasons":["value-anomaly (1.000)"],"request_id":"1761933595159_2485988552708708808","score":0.365,"stored_seq":136,"suspicious":false}
+
+Received reading: {'meterID': '0x4b0a1764c7F3726d128D7cED59680Dcf0153b72f', 'seq': 137, 'ts': 1761933615, 'value': 2302.4, 'signature': '0xe46c76d43f75d524e67814752e7d988425448b21064b0c79b43c7d2c522da783596b6e2dcba2229ce6d7aa3cc34d3ec81c0960cc023fd2339545b1c0bda575361b'}
+Forwarded to backend: 200 {"confidence":1.0,"ok":true,"processing_time":0.071,"reasons":["value-anomaly (1.000)"],"request_id":"1761933615164_2485988552708708808","score":0.365,"stored_seq":137,"suspicious":false}
+
+Received reading: {'meterID': '0x7e994d1943D223587E713ecBabf9ca1a79cf251b', 'seq': 274, 'ts': 1761933624, 'value': 362.84, 'signature': '0xf8fcc372226e7b2653ab21efb3fe885a2977740d0dec413e6ef14364f857bc217d23fdc7a699aea8fc0b3461d22e9e0796405b014c814b320dbe5df159b6dfb31b'}
+Forwarded to backend: 200 {"confidence":1.0,"ok":true,"processing_time":0.05,"reasons":["value-anomaly (1.000)"],"request_id":"1761933624229_2485988552708708808","score":0.365,"stored_seq":274,"suspicious":false}
+
+Received reading: {'meterID': '0x5c36585508653D3013b93955DfCf06FC1db5ea85', 'seq': 1, 'ts': 1761933641, 'value': 640.53, 'signature': '0x774d89e7d39a67cc855451a57f03a730b6128c4c7eee7482bca47fab9fab19205838c19c056afa2d47ac730f1f94454091bb497e6a4d21bc62e519dfcf7f3ca41b'}
+Forwarded to backend: 409 {"error":"non-increasing-seq","last_seq":2,"ok":false}
+
+Received reading: {'meterID': '0x5c36585508653D3013b93955DfCf06FC1db5ea85', 'seq': 1, 'ts': 1761933654, 'value': 718.96, 'signature': '0xb2a6428e507aa81c4ef02a0454f5900f828482d2268677540658fed9d8180a0012794d2dc031d40281b287878f3cdc13cbec04c9cb5b07197147093da3a184151c'}
+Forwarded to backend: 409 {"error":"non-increasing-seq","last_seq":2,"ok":false}
+
+Received reading: {'meterID': '0x7e994d1943D223587E713ecBabf9ca1a79cf251b', 'seq': 280, 'ts': 1761933684, 'value': 746.31, 'signature': '0xeb342758f36a565ae16d8ede23e0431114ace8494c8945ff0df613d91abd45613bbf1287d0f5f3aa3204044af3de34f46db27c643da72fd9094979176854ae561b'}
+Forwarded to backend: 200 {"confidence":1.0,"ok":true,"processing_time":0.048,"reasons":["value-anomaly (1.000)"],"request_id":"1761933684259_2485988552708708808","score":0.395,"stored_seq":280,"suspicious":true}
+
+Received reading: {'meterID': '0x7e994d1943D223587E713ecBabf9ca1a79cf251b', 'seq': 281, 'ts': 1761933694, 'value': 500.83, 'signature': '0x442ee1b089848cffd94afc13a0836d80aa45384c17d72be2113931c76500a1380840c4b4feb9ba53893eecfe0d56001d2795692111015850debcbb6fac86e0311c'}
+Forwarded to backend: 200 {"confidence":1.0,"ok":true,"processing_time":0.056,"reasons":["value-anomaly (1.000)"],"request_id":"1761933694265_2485988552708708808","score":0.365,"stored_seq":281,"suspicious":false}
+
+Received reading: {'meterID': '0x7e994d1943D223587E713ecBabf9ca1a79cf251b', 'seq': 282, 'ts': 1761933704, 'value': 733.13, 'signature': '0x3e58d39be9f757a0665c2e81bfc2862a805aa65f656f3d4ff4952064ed58c6fa4b07a847ecf7155089e02ef0a183f06338712399def3bfb1ece24a2d33a3d1b61b'}
+Forwarded to backend: 200 {"confidence":1.0,"ok":true,"processing_time":0.042,"reasons":["value-anomaly (1.000)"],"request_id":"1761933704270_2485988552708708808","score":0.365,"stored_seq":282,"suspicious":false}
+
+Received reading: {'meterID': '0x4b0a1764c7F3726d128D7cED59680Dcf0153b72f', 'seq': 142, 'ts': 1761933715, 'value': 2275.17, 'signature': '0x1e6556f73b44bf6b7db688fc4fa4e452e6566ee873a074379472da3f5028980a6f84255f2e41775de04a18e7a97cc528db9cbcc6179612ccb50cad394c3da7ea1b'}
+Forwarded to backend: 200 {"confidence":1.0,"ok":true,"processing_time":0.046,"reasons":["value-anomaly (1.000)"],"request_id":"1761933715186_2485988552708708808","score":0.365,"stored_seq":142,"suspicious":false}
+
+Received reading: {'meterID': '0x7e994d1943D223587E713ecBabf9ca1a79cf251b', 'seq': 285, 'ts': 1761933734, 'value': 479.33, 'signature': '0x60224ea9af82f9492360cfdc7a77b78a76d01ecef5e75161395ae685742c1ac37c66657519a728940c7d816429fba0e73fd83b758b4bcca1f6bbc260339968731b'}
+Forwarded to backend: 200 {"confidence":1.0,"ok":true,"processing_time":0.044,"reasons":["value-anomaly (1.000)"],"request_id":"1761933734285_2485988552708708808","score":0.365,"stored_seq":285,"suspicious":false}
+
+Received reading: {'meterID': '0x7e994d1943D223587E713ecBabf9ca1a79cf251b', 'seq': 288, 'ts': 1761933764, 'value': 470.24, 'signature': '0xc5ae5fb4dedba1c3a8d853924647e1e67ac602563e366927d5cbcedb288e875938fa41010c0f3eb0d85795c0a30603dcdff8fc0cc13ee145001ff59554606cc51c'}
+Forwarded to backend: 200 {"confidence":1.0,"ok":true,"processing_time":0.047,"reasons":["value-anomaly (1.000)"],"request_id":"1761933764302_2485988552708708808","score":0.365,"stored_seq":288,"suspicious":false}
+
+Received reading: {'meterID': '0x7e994d1943D223587E713ecBabf9ca1a79cf251b', 'seq': 292, 'ts': 1761933804, 'value': -607.21, 'signature': '0xb7d2dd55564975a8fabafbfd139711c2f866a0a233d0de704c4cb01fc5a9c3013d3b534870a33ae20341854de70c54984ea6a149ecaf19e6a9812b9667958c1a1b'}
+Forwarded to backend: 200 {"confidence":1.0,"ok":true,"processing_time":0.041,"reasons":["value-anomaly (1.000)"],"request_id":"1761933804324_2485988552708708808","score":0.395,"stored_seq":292,"suspicious":true}
+
+Received reading: {'meterID': '0x7e994d1943D223587E713ecBabf9ca1a79cf251b', 'seq': 294, 'ts': 1761933824, 'value': -387.28, 'signature': '0x0435d9e200aa0f6ff97003f05d76018b9c5e62d8d2a01000ef66df04c98f42927213eac77a19cae5316f3986a0becbb02ae0a40471751389b97abd171cb7bc951c'}
+Forwarded to backend: 200 {"confidence":1.0,"ok":true,"processing_time":0.038,"reasons":["value-anomaly (1.000)"],"request_id":"1761933824336_2485988552708708808","score":0.365,"stored_seq":294,"suspicious":false}
+
+Received reading: {'meterID': '0x7e994d1943D223587E713ecBabf9ca1a79cf251b', 'seq': 300, 'ts': 1761933884, 'value': 565.74, 'signature': '0x6723ca5103be2b413d0e7f5c7c9f1bc74e7cf4bcb029d9ec1145ceaac859e2160d1954ec83baa8f6f93c253c13e1590a1905d3edf576c4ce6162564ca76f3ac31c'}
+Forwarded to backend: 200 {"confidence":1.0,"ok":true,"processing_time":0.039,"reasons":["value-anomaly (1.000)"],"request_id":"1761933884368_2485988552708708808","score":0.365,"stored_seq":300,"suspicious":false}
+
+Received reading: {'meterID': '0x7e994d1943D223587E713ecBabf9ca1a79cf251b', 'seq': 303, 'ts': 1761933914, 'value': 731.05, 'signature': '0x8189d10d0ae880ea17570e4a5a1645674105e05861cd579e70652c4ae4f6c17a672a696dd04365e6c4da4770982c0abefa3f9ebccc88702c2029f4c887a45bc71b'}
+Forwarded to backend: 200 {"confidence":1.0,"ok":true,"processing_time":0.042,"reasons":["value-anomaly (1.000)"],"request_id":"1761933914382_2485988552708708808","score":0.365,"stored_seq":303,"suspicious":false}
+
+Received reading: {'meterID': '0x7e994d1943D223587E713ecBabf9ca1a79cf251b', 'seq': 305, 'ts': 1761933934, 'value': 761.77, 'signature': '0xb7fe9d425d76e33365fa38d3128896f705e8b930b3b8abf82e6a2a975f5bd64e787f7be1c5d1a2e05becf611c5b5e4b2dc5372ec32315fedc4cbcf58476ae2e51c'}
+Forwarded to backend: 200 {"confidence":1.0,"ok":true,"processing_time":0.051,"reasons":["value-anomaly (1.000)"],"request_id":"1761933934391_2485988552708708808","score":0.365,"stored_seq":305,"suspicious":false}
+
+Received reading: {'meterID': '0x5c36585508653D3013b93955DfCf06FC1db5ea85', 'seq': 2, 'ts': 1761934018, 'value': 421.83, 'signature': '0x4f04569d7309a2b0118d98d3a281c72a23f543eb04e33b40baf4d4fdeae9e69d114f6c1931b57748ded07e4f3242695dd25bb5cb32ed4e879b70f5220d6d87611b'}
+Forwarded to backend: 409 {"error":"non-increasing-seq","last_seq":2,"ok":false}
+
+Received reading: {'meterID': '0x5c36585508653D3013b93955DfCf06FC1db5ea85', 'seq': 3, 'ts': 1761934028, 'value': 686.68, 'signature': '0xd8dff1a50153f6beafb90b8d2e4a2e3a6799fa9c409c690f9efaacf49bf601ed540afdc36801b99c116abfa115108639fdf55036f9709a53108245d556d3272f1b'}
+Forwarded to backend: 200 {"confidence":0.5,"forensic_analysis":{"anomaly_detected":false,"anomaly_reasons":[],"anomaly_score":0.0,"attack_patterns":[],"evidence_count":0,"risk_level":"NORMAL"},"ok":true,"processing_time":0.073,"reasons":[],"request_id":"1761934028104_2485988552708708808","score":0.075,"stored_seq":3,"suspicious":false}
+
+Received reading: {'meterID': '0x5c36585508653D3013b93955DfCf06FC1db5ea85', 'seq': 4, 'ts': 1761934038, 'value': 388.89, 'signature': '0x36b46fac02232863d3aa40732cb8f6c6915f09935389e290217ed6803cbccacf6ff95360521e194d46549ded58a05e0ded946f78a8defd91662d4e188b3394bb1b'}
+Forwarded to backend: 200 {"confidence":0.5,"forensic_analysis":{"anomaly_detected":false,"anomaly_reasons":[],"anomaly_score":0.0,"attack_patterns":[],"evidence_count":0,"risk_level":"NORMAL"},"ok":true,"processing_time":0.041,"reasons":[],"request_id":"1761934038113_2485988552708708808","score":0.035,"stored_seq":4,"suspicious":false}
+
+Received reading: {'meterID': '0x5c36585508653D3013b93955DfCf06FC1db5ea85', 'seq': 5, 'ts': 1761934048, 'value': 673.46, 'signature': '0x1b2d39608c16f3f6cf9a05728a224679956d09f88a43d29b64e045c9556723990b8c89b2d169c50ebc1a5a197ad2248d0708d6dcd4b5906dca107ec1e61f52071c'}
+Forwarded to backend: 200 {"confidence":0.5,"forensic_analysis":{"anomaly_detected":false,"anomaly_reasons":[],"anomaly_score":0.0,"attack_patterns":[],"evidence_count":0,"risk_level":"NORMAL"},"ok":true,"processing_time":0.027,"reasons":[],"request_id":"1761934048121_2485988552708708808","score":0.035,"stored_seq":5,"suspicious":false}
+
+Received reading: {'meterID': '0x5c36585508653D3013b93955DfCf06FC1db5ea85', 'seq': 6, 'ts': 1761934058, 'value': 755.59, 'signature': '0x97077ee88f86a6c13d240f7a18e1fa1a407a271bb0be61d6c77af46c3991b72759b93c6ffc5ac5b949dc1c9acc092534269bc7bbcca072c47f144dcab99643c31b'}
+Forwarded to backend: 200 {"confidence":0.5,"forensic_analysis":{"anomaly_detected":false,"anomaly_reasons":[],"anomaly_score":0.0,"attack_patterns":[],"evidence_count":0,"risk_level":"NORMAL"},"ok":true,"processing_time":0.045,"reasons":[],"request_id":"1761934058128_2485988552708708808","score":0.035,"stored_seq":6,"suspicious":false}
+
+Received reading: {'meterID': '0x4b0a1764c7F3726d128D7cED59680Dcf0153b72f', 'seq': 161, 'ts': 1761934095, 'value': 1618.05, 'signature': '0x212fe6f4d9611c63eafb1d8b6d86fc4d110ca6b6e31f55861faa3c7957dd8797004e8fe273fe63b918014b0b39f44770c8e61b575a4bf03024c97978b2bfb5861b'}
+Forwarded to backend: 200 {"confidence":1.0,"ok":true,"processing_time":0.044,"reasons":["value-anomaly (1.000)"],"request_id":"1761934095294_2485988552708708808","score":0.365,"stored_seq":161,"suspicious":false}
+
+Received reading: {'meterID': '0x4b0a1764c7F3726d128D7cED59680Dcf0153b72f', 'seq': 162, 'ts': 1761934115, 'value': 2873.16, 'signature': '0x6d32a42d1271f16eda633469ee8d785d3e9b09927ea203e7d26a902e13352e3a0b150497bd5d70fc7298aa7a267cfb3a6ce0348259d0ae5869bea0e6915a50ca1c'}
+Forwarded to backend: 200 {"confidence":0.997,"ok":true,"processing_time":0.05,"reasons":["value-anomaly (1.000)"],"request_id":"1761934115299_2485988552708708808","score":0.395,"stored_seq":162,"suspicious":false}
+
+Received reading: {'meterID': '0x5c36585508653D3013b93955DfCf06FC1db5ea85', 'seq': 13, 'ts': 1761934128, 'value': 437.32, 'signature': '0xa550f4c750c1c885be2165352abf6be8a0e6bd7929784fdce1202fcaa761fd301120a6483853efd68b0ad997d590096500cb32d482194c366def374069ad74021c'}
+Forwarded to backend: 200 {"confidence":0.5,"ok":true,"processing_time":0.049,"reasons":[],"request_id":"1761934128202_2485988552708708808","score":0.035,"stored_seq":13,"suspicious":false}
+
+Received reading: {'meterID': '0x5c36585508653D3013b93955DfCf06FC1db5ea85', 'seq': 14, 'ts': 1761934138, 'value': 504.21, 'signature': '0xc4de381d78ff08381ef95ded006424bd06556b0e8f477f1e2515b15be37a9ca93d2f71dba1cfbeee1cdbfaf277953b991169dd7f305f65274032e6692fcbf4651c'}
+Forwarded to backend: 200 {"confidence":0.5,"ok":true,"processing_time":0.028,"reasons":[],"request_id":"1761934138209_2485988552708708808","score":0.035,"stored_seq":14,"suspicious":false}
+
+Received reading: {'meterID': '0x5c36585508653D3013b93955DfCf06FC1db5ea85', 'seq': 15, 'ts': 1761934148, 'value': 429.7, 'signature': '0x414a1d2e700d6f37a2c218d064911a437d59d4ecd9b4901cbebc6cae43ca62a93c23c27399bec2d78cce4ad04ce1de1757288686df8df58c3e832601313e74121c'}
+Forwarded to backend: 200 {"confidence":0.5,"ok":true,"processing_time":0.039,"reasons":[],"request_id":"1761934148218_2485988552708708808","score":0.035,"stored_seq":15,"suspicious":false}
+
+Received reading: {'meterID': '0x5c36585508653D3013b93955DfCf06FC1db5ea85', 'seq': 16, 'ts': 1761934158, 'value': 692.45, 'signature': '0xe2569c66b0135e50802e55e053a3238b2bc4e0cb94b82194f1047c79836e85623a48dd1ae5d5b6cb9cd19fc052ab2d3c4db61d726c0cd90e23c1bf50c05315e91b'}
+Forwarded to backend: 200 {"confidence":0.5,"ok":true,"processing_time":0.048,"reasons":["value-anomaly (1.000)"],"request_id":"1761934158227_2485988552708708808","score":0.395,"stored_seq":16,"suspicious":true}
+
+Received reading: {'meterID': '0x5c36585508653D3013b93955DfCf06FC1db5ea85', 'seq': 17, 'ts': 1761934168, 'value': 440.69, 'signature': '0x8e7b83dbfd47a2fd2eb8af5b2fe7568ad29e29efdf41171d624d624ac3dbca3950fd6d5b38af1e79379d9bd85f5ed6bab90dc4d1f31948b0a269a2b568f6157b1b'}
+Forwarded to backend: 200 {"confidence":0.5,"ok":true,"processing_time":0.028,"reasons":["value-anomaly (1.000)"],"request_id":"1761934168235_2485988552708708808","score":0.365,"stored_seq":17,"suspicious":true}
+
+Received reading: {'meterID': '0x5c36585508653D3013b93955DfCf06FC1db5ea85', 'seq': 18, 'ts': 1761934178, 'value': 615.87, 'signature': '0xc40032f7ac7e3d535677c9b8f1343d781bc943908f165900d60e18c60d7399695d17d3dc7b750a33372e3a063a41f4f81f7819f44248e6bb7c1e0a457114e50b1b'}
+Forwarded to backend: 200 {"confidence":0.5,"ok":true,"processing_time":0.052,"reasons":["value-anomaly (1.000)"],"request_id":"1761934178246_2485988552708708808","score":0.365,"stored_seq":18,"suspicious":false}
+
+Received reading: {'meterID': '0x7e994d1943D223587E713ecBabf9ca1a79cf251b', 'seq': 332, 'ts': 1761934204, 'value': 471.07, 'signature': '0x4d518762c19826a86242cfcce3923b8dfca473286d6e7b34485896522da405b46fe9915a1734f3af1992807d23750136bfc0ba49907a6107bbdf8438f851c57c1c'}
+Forwarded to backend: 200 {"confidence":1.0,"ok":true,"processing_time":0.044,"reasons":["value-anomaly (1.000)"],"request_id":"1761934204544_2485988552708708808","score":0.365,"stored_seq":332,"suspicious":false}
+
+Received reading: {'meterID': '0x7e994d1943D223587E713ecBabf9ca1a79cf251b', 'seq': 335, 'ts': 1761934234, 'value': 344.59, 'signature': '0x09bce3bb2b96f193ed418e601607d8bb7bb4dd0dfe83f3d8166ae8efd2b630695fa9141b882a06f9a04f2c81415862c4745eba848736c18d2629e388d87297291b'}
+Forwarded to backend: 200 {"confidence":1.0,"ok":true,"processing_time":0.041,"reasons":["value-anomaly (1.000)"],"request_id":"1761934234569_2485988552708708808","score":0.365,"stored_seq":335,"suspicious":false}
+
+Received reading: {'meterID': '0x7e994d1943D223587E713ecBabf9ca1a79cf251b', 'seq': 336, 'ts': 1761934244, 'value': 401.58, 'signature': '0x7c54e21f5cce26ba7aecef99df295b96b0f38798f4415e7735a796e7e2543bd17461542ad6cac97ee698bf1a14c4de56bf9f3c173bc66d1360b13b234510ac401c'}
+Forwarded to backend: 200 {"confidence":1.0,"ok":true,"processing_time":0.042,"reasons":["value-anomaly (1.000)"],"request_id":"1761934244578_2485988552708708808","score":0.365,"stored_seq":336,"suspicious":false}
+
+Received reading: {'meterID': '0x5c36585508653D3013b93955DfCf06FC1db5ea85', 'seq': 25, 'ts': 1761934248, 'value': 266.3814538587931, 'signature': '0xfec8a60822ef4bb727f3ba9b3585f56cb2b02541c3848827017f1c7dd3eab0cd0e26ee441e678fca9fa064addb2c7d3c143b125c2095cb3fab3ea738825fb8da1c'}
+Forwarded to backend: 200 {"confidence":0.5,"ok":true,"processing_time":0.05,"reasons":["value-anomaly (1.000)"],"request_id":"1761934248318_2485988552708708808","score":0.395,"stored_seq":25,"suspicious":false}
+
+Received reading: {'meterID': '0x5c36585508653D3013b93955DfCf06FC1db5ea85', 'seq': 26, 'ts': 1761934258, 'value': 107.68817896357542, 'signature': '0xf9e14828490f7e9d042835ec81e132bd8e17523f83994bd97fd5a110faa177ad76f0384812f31cce4ea431dd91e13277705e94500fb344895372b5336dfdb2531b'}
+Forwarded to backend: 200 {"confidence":0.5,"ok":true,"processing_time":0.045,"reasons":["value-anomaly (1.000)"],"request_id":"1761934258332_2485988552708708808","score":0.395,"stored_seq":26,"suspicious":false}
+
+Received reading: {'meterID': '0x5c36585508653D3013b93955DfCf06FC1db5ea85', 'seq': 27, 'ts': 1761934268, 'value': 207.75792653665442, 'signature': '0x52a11258afa486226c5bc80716c85e01f045330bb8fdb777e8784d596aedb3b6071bf0a1b0b2a5a285d71b82dd6a03ad7f87af6db1f93124c606d1c03723f2401c'}
+Forwarded to backend: 200 {"confidence":0.5,"ok":true,"processing_time":0.034,"reasons":["value-anomaly (1.000)"],"request_id":"1761934268349_2485988552708708808","score":0.395,"stored_seq":27,"suspicious":false}
+
+Received reading: {'meterID': '0x5c36585508653D3013b93955DfCf06FC1db5ea85', 'seq': 28, 'ts': 1761934278, 'value': 195.12512199446425, 'signature': '0x5e7c0d177f0a0c5402f0cb2a9690779ef92626a495cb935bb8a37b4af67fd4077f342197036814cfc9248137da66555edd4e26c02e26ca02f164ebe9ad56951b1b'}
+Forwarded to backend: 200 {"confidence":0.5,"ok":true,"processing_time":0.053,"reasons":["value-anomaly (1.000)"],"request_id":"1761934278359_2485988552708708808","score":0.365,"stored_seq":28,"suspicious":false}
+
+Received reading: {'meterID': '0x5c36585508653D3013b93955DfCf06FC1db5ea85', 'seq': 29, 'ts': 1761934288, 'value': 44.97199233534954, 'signature': '0xccb8941b8a91ad9d6d32bf4a80182c653a7ca8fb320abf143ba1f29bf315f5ec5bf3d4327aebf56d067a80074fa2113c2fa7feb019a50d0c940f1665055419b51b'}
+Forwarded to backend: 200 {"confidence":0.5,"ok":true,"processing_time":0.04,"reasons":["value-anomaly (1.000)"],"request_id":"1761934288371_2485988552708708808","score":0.395,"stored_seq":29,"suspicious":false}
+
+Received reading: {'meterID': '0x7e994d1943D223587E713ecBabf9ca1a79cf251b', 'seq': 344, 'ts': 1761934324, 'value': 529.09, 'signature': '0x25c4ba7504a999ff58d789e1758debca4f7606cb9503ecf7d3f4010668f6bf3a5ee8144c977d4ffbd7f7ec7fddd8e10b4f1c80ca56838c3c60ad1b714cc4a6b91b'}
+Forwarded to backend: 200 {"confidence":1.0,"ok":true,"processing_time":0.042,"reasons":["value-anomaly (1.000)"],"request_id":"1761934324638_2485988552708708808","score":0.365,"stored_seq":344,"suspicious":false}
+
+Received reading: {'meterID': '0x7e994d1943D223587E713ecBabf9ca1a79cf251b', 'seq': 346, 'ts': 1761934344, 'value': 457.77, 'signature': '0x750a60002b9f7ebeb286e14fabd423bfff4015208c10395c61e98ff437b9569e7131ec7ed877a952e6bfa409e1510c48427995897cc141b1e08db14ddefe08cb1c'}
+Forwarded to backend: 200 {"confidence":1.0,"ok":true,"processing_time":0.048,"reasons":["value-anomaly (1.000)"],"request_id":"1761934344653_2485988552708708808","score":0.365,"stored_seq":346,"suspicious":false}
+
+Received reading: {'meterID': '0x5c36585508653D3013b93955DfCf06FC1db5ea85', 'seq': 35, 'ts': 1761934348, 'value': 186.26434540168643, 'signature': '0x38d0e7e3792c947e4cbf060ea75432a0d7220c2a346b2bc82dedd46967f7e5482d82523612723e7547b8daaeb8e30e56b0a638c43a45869b00548701dfbf75f71b'}
+Forwarded to backend: 200 {"confidence":0.5,"ok":true,"processing_time":0.045,"reasons":["value-anomaly (1.000)"],"request_id":"1761934348434_2485988552708708808","score":0.395,"stored_seq":35,"suspicious":false}
+
+Received reading: {'meterID': '0x5c36585508653D3013b93955DfCf06FC1db5ea85', 'seq': 36, 'ts': 1761934358, 'value': 258.10551991039534, 'signature': '0xfc83e4f7c13a5283ee5fb3df7c9467f1c6ef154a66a6215613e2ecb19fc05d8e3961cc6b907f9816d4d79cd26de89643679a8ec49562db6cde38069d9a1d9c5c1c'}
+Forwarded to backend: 200 {"confidence":0.6,"ok":true,"processing_time":0.055,"reasons":["value-anomaly (1.000)"],"request_id":"1761934358446_2485988552708708808","score":0.365,"stored_seq":36,"suspicious":false}
+
+Received reading: {'meterID': '0x5c36585508653D3013b93955DfCf06FC1db5ea85', 'seq': 37, 'ts': 1761934368, 'value': 231.1816968417338, 'signature': '0xa5591a0f4d4bd00169409f043fbae1e29cbdc228e8621e0ddb9ea9ee038fd80c4a511827b2a383908baf504342646c0d6982eafd0d96a19d6a57a323b5be57e01b'}
+Forwarded to backend: 200 {"confidence":0.605,"ok":true,"processing_time":0.05,"reasons":["value-anomaly (1.000)"],"request_id":"1761934368460_2485988552708708808","score":0.365,"stored_seq":37,"suspicious":false}
+
+Received reading: {'meterID': '0x4b0a1764c7F3726d128D7cED59680Dcf0153b72f', 'seq': 175, 'ts': 1761934375, 'value': 1546.86, 'signature': '0xc8d516df8c5123c974138815c2976be6d1575ca380ccf36c3a3893e176266fdd6ed41cf5bc22711797b980cf9c0da4029050f971e95017694569e01062c5f52d1c'}
+Forwarded to backend: 200 {"confidence":0.994,"ok":true,"processing_time":0.035,"reasons":["value-anomaly (1.000)"],"request_id":"1761934375402_2485988552708708808","score":0.365,"stored_seq":175,"suspicious":false}
+
+Received reading: {'meterID': '0x5c36585508653D3013b93955DfCf06FC1db5ea85', 'seq': 38, 'ts': 1761934378, 'value': 54.91112442019313, 'signature': '0x5860cd723c8d7b43da769ac8b4b551852cd613b329af68c1d8626adcfce59d002eec15e625adcca4b947e955f9378497c7372373d53213cad13394382fbbe91a1c'}
+Forwarded to backend: 200 {"confidence":0.61,"ok":true,"processing_time":0.042,"reasons":["value-anomaly (1.000)"],"request_id":"1761934378475_2485988552708708808","score":0.395,"stored_seq":38,"suspicious":false}
+
+Received reading: {'meterID': '0x5c36585508653D3013b93955DfCf06FC1db5ea85', 'seq': 39, 'ts': 1761934388, 'value': 723.84, 'signature': '0x23897f6069a2a32af3ce947230084e11f886ca84cc4f6ce2f0b6ec1091b1c9cf356c873d88f3b4bc8a8c932b408b73db0c94942e313112ee3a98abadd2def7651c'}
+Forwarded to backend: 200 {"confidence":0.615,"ok":true,"processing_time":0.053,"reasons":["value-anomaly (1.000)"],"request_id":"1761934388484_2485988552708708808","score":0.395,"stored_seq":39,"suspicious":false}
+
+Received reading: {'meterID': '0x7e994d1943D223587E713ecBabf9ca1a79cf251b', 'seq': 356, 'ts': 1761934444, 'value': 477.15, 'signature': '0x27dce95122b9ef42908992cd811ad872436a6a7e6e666bdbc23159628a95b2ec0f42e313bd62f478ff37e4ed0adde22ff09c956fab954cd9e50dd3b37cc70ec11b'}
+Forwarded to backend: 200 {"confidence":1.0,"ok":true,"processing_time":0.045,"reasons":["value-anomaly (1.000)"],"request_id":"1761934444709_2485988552708708808","score":0.365,"stored_seq":356,"suspicious":false}
+
+Received reading: {'meterID': '0x4b0a1764c7F3726d128D7cED59680Dcf0153b72f', 'seq': 179, 'ts': 1761934455, 'value': 2757.83, 'signature': '0xab482acf2b4daccc6476f5afb20b322ecbc5d9e44e55e3d2094508fb9e6620a2587fb243da6bd802541274e5085048a8dbf2fa17d2c8dfa83a8617b1d1e6fdec1c'}
+Forwarded to backend: 200 {"confidence":0.994,"ok":true,"processing_time":0.046,"reasons":["value-anomaly (1.000)"],"request_id":"1761934455420_2485988552708708808","score":0.395,"stored_seq":179,"suspicious":false}
+
+Received reading: {'meterID': '0x5c36585508653D3013b93955DfCf06FC1db5ea85', 'seq': 46, 'ts': 1761934458, 'value': 623.12, 'signature': '0x8ce6ec05fa9912be3a74b3434b57896c22605c847b429f5ae6827e01b20ff4725c70066dd72c952a92356af59b43382172652485c805e5777616b3e9d17ba33a1c'}
+Forwarded to backend: 200 {"confidence":0.62,"ok":true,"processing_time":0.045,"reasons":["value-anomaly (1.000)"],"request_id":"1761934458540_2485988552708708808","score":0.365,"stored_seq":46,"suspicious":false}
+
+Received reading: {'meterID': '0x5c36585508653D3013b93955DfCf06FC1db5ea85', 'seq': 47, 'ts': 1761934468, 'value': 513.44, 'signature': '0xeec349b46b78e0abe6813f135429a5443a8353549531e95f7020570877df19514736b9c51f5b84cda0d59e77bb52924aa41aaa1b6074eb843516233df558eea71b'}
+Forwarded to backend: 200 {"confidence":0.625,"ok":true,"processing_time":0.052,"reasons":["value-anomaly (1.000)"],"request_id":"1761934468553_2485988552708708808","score":0.365,"stored_seq":47,"suspicious":false}
+
+Received reading: {'meterID': '0x5c36585508653D3013b93955DfCf06FC1db5ea85', 'seq': 48, 'ts': 1761934478, 'value': 497.46, 'signature': '0x8c8ddd9fcbb1b004cfd431eb716cc0d31aa0f1795642d2d1631a5ada36c48abd025f5651e2a536177b49f493313da9ef2690739967b646d30e027863a50068ec1b'}
+Forwarded to backend: 200 {"confidence":0.63,"ok":true,"processing_time":0.04,"reasons":["value-anomaly (1.000)"],"request_id":"1761934478562_2485988552708708808","score":0.365,"stored_seq":48,"suspicious":false}
+

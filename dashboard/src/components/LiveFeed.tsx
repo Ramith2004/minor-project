@@ -4,6 +4,13 @@ import { useReadingsSSE, useAlertsSSE } from "../services/sse";
 import { formatTimestamp, getSeverityColor } from "../utils/helper";
 import type { Reading, Alert } from "../types";
 
+// Helper function to generate consistent meter names
+const getMeterName = (meterId: string): string => {
+  // Use last 4 characters of meter ID
+  const last4 = meterId.slice(-4);
+  return `Meter ${last4}`;
+};
+
 export const LiveFeed: React.FC = () => {
   const [readings, setReadings] = useState<Reading[]>([]);
   const [alerts, setAlerts] = useState<Alert[]>([]);
@@ -48,8 +55,15 @@ export const LiveFeed: React.FC = () => {
                   key={`${reading.meterID}-${reading.seq}`}
                   className="flex items-center justify-between p-3 bg-gray-50 rounded"
                 >
-                  <div>
-                    <p className="font-medium">{reading.meterID}</p>
+                  <div className="flex-1">
+                    <div className="flex items-center gap-2 mb-1">
+                      <p className="font-semibold text-blue-600">
+                        {getMeterName(reading.meterID)}
+                      </p>
+                      <span className="text-xs text-gray-400 font-mono">
+                        ({reading.meterID.slice(0, 8)}...)
+                      </span>
+                    </div>
                     <p className="text-sm text-gray-600">
                       Seq: {reading.seq} | Value: {reading.value.toFixed(2)} kWh
                     </p>
@@ -58,7 +72,7 @@ export const LiveFeed: React.FC = () => {
                     <p className="text-xs text-gray-500">
                       {formatTimestamp(reading.ts)}
                     </p>
-                    {reading.suspicious === 1 && (
+                    {reading.suspicious && (
                       <span
                         className={`text-xs px-2 py-1 rounded ${getSeverityColor(
                           reading.score
@@ -104,7 +118,14 @@ export const LiveFeed: React.FC = () => {
                   className="p-3 bg-red-50 border border-red-200 rounded"
                 >
                   <div className="flex items-center justify-between mb-2">
-                    <p className="font-medium text-red-900">{alert.meterID}</p>
+                    <div className="flex items-center gap-2">
+                      <p className="font-semibold text-red-900">
+                        {getMeterName(alert.meterID)}
+                      </p>
+                      <span className="text-xs text-gray-500 font-mono">
+                        ({alert.meterID.slice(0, 8)}...)
+                      </span>
+                    </div>
                     <span
                       className={`text-xs px-2 py-1 rounded ${getSeverityColor(
                         alert.score

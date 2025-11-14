@@ -33,10 +33,10 @@ export const api = {
     // ========== DASHBOARD ENDPOINTS ==========
 
     // Dashboard Summary
-    getSummary: async (): Promise<DashboardSummary> => {
-        const { data } = await apiClient.get('/api/dashboard/summary');
-        return data.summary;
-    },
+   getSummary: async (): Promise<DashboardSummary> => {
+    const { data } = await apiClient.get('/stats');
+    return data;
+},
 
     // Meters
     getMeters: async (): Promise<Meter[]> => {

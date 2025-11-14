@@ -1,11 +1,11 @@
 {
   "network": "ganache",
   "chainId": 1337,
-  "deployer": "0x31186ddc8571Bc3E6BA60F6779A2f4659a27C11D",
-  "deploymentTime": 1761862015,
+  "deployer": "0x8bA869b649C00462dA53Ff940701EFa7948A1422",
+  "deploymentTime": 1761898868,
   "contracts": {
     "MeterRegistry": {
-      "address": "0x2Ef8AA76fd691079b579D3967b21ADEfe64e7eF2",
+      "address": "0x04fd32bFd9Dc8d74F702058C162304944B5d8648",
       "abi": [
         {
           "inputs": [],
@@ -223,7 +223,7 @@
             },
             {
               "internalType": "bool",
-              "name": "isActive",
+              "name": "active",
               "type": "bool"
             }
           ],
@@ -331,7 +331,7 @@
             },
             {
               "internalType": "address",
-              "name": "owner",
+              "name": "meterOwner",
               "type": "address"
             },
             {
@@ -380,7 +380,7 @@
             },
             {
               "internalType": "bool",
-              "name": "isActive",
+              "name": "active",
               "type": "bool"
             }
           ],
@@ -502,7 +502,7 @@
             },
             {
               "internalType": "bool",
-              "name": "isActive",
+              "name": "isActiveType",
               "type": "bool"
             }
           ],
@@ -536,7 +536,7 @@
             },
             {
               "internalType": "address",
-              "name": "owner",
+              "name": "meterOwner",
               "type": "address"
             },
             {
@@ -546,7 +546,7 @@
             },
             {
               "internalType": "bool",
-              "name": "isActive",
+              "name": "isActiveMeter",
               "type": "bool"
             },
             {
@@ -765,7 +765,7 @@
             },
             {
               "internalType": "bool",
-              "name": "isActive",
+              "name": "active",
               "type": "bool"
             }
           ],
@@ -784,7 +784,7 @@
       ]
     },
     "Consensus": {
-      "address": "0x38D76002A3f2205c23543506d07D7C96Bf9B2feB",
+      "address": "0xe697EC7bFECACF54e54ED7bad479D3C2A1fCcD1d",
       "abi": [
         {
           "inputs": [],
@@ -1567,7 +1567,7 @@
       ]
     },
     "MeterStore": {
-      "address": "0x4298Be86C7C8AE9b3AA351C3928142AE019e0a2b",
+      "address": "0xAFA52f8c94f7839C9321772A9d64414Fa6dC9E0E",
       "abi": [
         {
           "inputs": [

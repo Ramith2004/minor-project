@@ -269,7 +269,7 @@ class ForensicAnalyzer:
                 value_history = profile["value_history"]
                 if len(value_history) > 5:
                     # Check for sudden changes
-                    recent_values = value_history[-5:]
+                    recent_values = list(value_history)[-5:]  # Convert deque to list for slicing
                     if len(recent_values) > 1:
                         changes = [abs(recent_values[i+1] - recent_values[i]) for i in range(len(recent_values)-1)]
                         avg_change = statistics.mean(changes)
@@ -353,6 +353,45 @@ class ForensicAnalyzer:
                 metadata={"similar_count": len(similar_readings), "meters": [r["meterID"] for r in similar_readings]},
                 confidence=0.7
             ))
+        
+        return evidence
+    
+    def _analyze_timing_patterns(self, meter_id: str, timestamp: int) -> List[ForensicEvidence]:
+        """Analyze timing patterns"""
+        evidence = []
+        current_time = time.time()
+        
+        # Check timestamp freshness
+        time_diff = abs(current_time - timestamp)
+        if time_diff > 300:  # 5 minutes
+            evidence.append(ForensicEvidence(
+                evidence_type="stale_timestamp",
+                severity=0.5,
+                description=f"Stale timestamp: {time_diff}s old",
+                timestamp=current_time,
+                metadata={"time_diff": time_diff, "timestamp": timestamp},
+                confidence=0.9
+            ))
+        
+        # Check timing patterns
+        if meter_id in self.meter_profiles:
+            profile = self.meter_profiles[meter_id]
+            if "timing_history" in profile:
+                timing_history = profile["timing_history"]
+                if len(timing_history) > 3:
+                    timing_list = list(timing_history)  # Convert deque to list
+                    intervals = [timing_list[i+1] - timing_list[i] for i in range(len(timing_list)-1)]
+                    
+                    # Check for regular intervals (possible automation)
+                    if len(set(intervals)) == 1 and intervals[0] > 0:
+                        evidence.append(ForensicEvidence(
+                            evidence_type="regular_timing_pattern",
+                            severity=0.3,
+                            description=f"Regular timing pattern: {intervals[0]}s intervals",
+                            timestamp=current_time,
+                            metadata={"interval": intervals[0], "pattern_length": len(intervals)},
+                            confidence=0.6
+                        ))
         
         return evidence
     

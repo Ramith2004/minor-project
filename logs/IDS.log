@@ -1,42 +1,18 @@
-=== IDS started at 2025-10-31 21:54:59 ===
+=== IDS started at 2025-11-10 07:57:20 ===
 
-============================================================
-Smart Meter IDS Service v2.0
-============================================================
 
-Endpoints:
-  POST   http://127.0.0.1:5100/check
-  POST   http://127.0.0.1:5100/analyze_patterns
-  GET    http://127.0.0.1:5100/meter_profile/<meter_id>
-  GET    http://127.0.0.1:5100/health
-  GET    http://127.0.0.1:5100/stats
-  GET    http://127.0.0.1:5100/
+[96m====================================================================================================
+                               SMART METER INTRUSION DETECTION SYSTEM                               
+====================================================================================================[0m
 
-Starting server...
-============================================================
- * Serving Flask app 'ids_service'
- * Debug mode: on
-[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
- * Running on http://127.0.0.1:5100
-[33mPress CTRL+C to quit[0m
- * Restarting with stat
-============================================================
-Smart Meter IDS Service v2.0
-============================================================
-
-Endpoints:
-  POST   http://127.0.0.1:5100/check
-  POST   http://127.0.0.1:5100/analyze_patterns
-  GET    http://127.0.0.1:5100/meter_profile/<meter_id>
-  GET    http://127.0.0.1:5100/health
-  GET    http://127.0.0.1:5100/stats
-  GET    http://127.0.0.1:5100/
-
-Starting server...
-============================================================
- * Debugger is active!
- * Debugger PIN: 428-947-094
-127.0.0.1 - - [31/Oct/2025 21:55:00] "GET /health HTTP/1.1" 200 -
-127.0.0.1 - - [31/Oct/2025 21:55:01] "GET /health HTTP/1.1" 200 -
-127.0.0.1 - - [31/Oct/2025 21:55:26] "POST /check HTTP/1.1" 200 -
-127.0.0.1 - - [31/Oct/2025 21:55:46] "POST /check HTTP/1.1" 200 -
+Traceback (most recent call last):
+  File "D:\minor\minor-project\ids\ids_service.py", line 534, in <module>
+    print_box("Service Configuration", service_config, Colors.BLUE)
+    ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\minor\minor-project\ids\ids_service.py", line 47, in print_box
+    print(f"\n{color}\u250c{'\u2500' * (width - 2)}\u2510")
+    ~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python313\Lib\encodings\cp1252.py", line 19, in encode
+    return codecs.charmap_encode(input,self.errors,encoding_table)[0]
+           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+UnicodeEncodeError: 'charmap' codec can't encode characters in position 7-86: character maps to <undefined>

@@ -1,15 +1,920 @@
-=== Meter1 started at 2025-10-31 21:55:04 ===
+=== Meter1 started at 2025-10-31 22:44:51 ===
 
-/home/rameswar-panda/Desktop/minor/minor-project/meters/meter_sim.py:88: DeprecationWarning: Callback API version 1 is deprecated, update to latest version
+D:\minor\minor-project\meters\meter_sim.py:88: DeprecationWarning: Callback API version 1 is deprecated, update to latest version
   self.client = mqtt.Client(client_id=f"meter_{meter_id}")
 [0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Starting residential meter simulation
-[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Published reading 1: 1097.63W
 [0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Connected to MQTT broker
-[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Published reading 2: 1056.46W
-[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Published reading 3: 912.27W
-[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Published reading 4: 1047.93W
-[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Published reading 5: 1064.54W
-[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Published reading 6: 1039.29W
-[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Published reading 7: 962.24W
-
-[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Stopping meter simulation...
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Published reading 1: 984.72W
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Published reading 2: 1100.05W
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Published reading 3: 991.67W
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Published reading 4: 911.03W
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Published reading 5: 1023.87W
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Published reading 6: 1175.53W
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Published reading 7: 990.08W
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Published reading 8: 987.26W
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Published reading 9: 990.06W
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Published reading 10: 970.87W
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Published reading 11: 996.58W
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Published reading 12: 1067.07W
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Published reading 13: 1046.36W
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Published reading 14: 1108.75W
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Published reading 15: 1031.92W
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Published reading 16: 965.65W
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Published reading 17: 1057.0W
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Published reading 18: 1046.03W
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Published reading 19: 1094.75W
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Published reading 20: 998.69W
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Published reading 21: 1098.25W
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Published reading 22: 931.12W
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Published reading 23: 899.85W
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Published reading 24: 1059.25W
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Published reading 25: 1039.52W
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Published reading 26: 1036.17W
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Published reading 27: 1098.16W
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Published reading 28: 930.46W
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Published reading 29: 934.99W
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Published reading 30: 1097.44W
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Published reading 31: 979.84W
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Published reading 32: 1057.17W
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Published reading 33: 1067.7W
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Published reading 34: 1037.47W
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Published reading 35: 1043.01W
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Published reading 36: 1158.65W
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Published reading 37: 1164.43W
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Published reading 38: 919.53W
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Published reading 39: 1108.55W
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Anomaly: calibration_drift anomaly detected
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Published reading 40: 961.51W
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Published reading 41: 1013.76W
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Published reading 42: 1058.48W
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Published reading 43: 1066.32W
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Published reading 44: 1140.6W
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Published reading 45: 1095.35W
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Published reading 46: 1145.98W
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Published reading 47: 1077.53W
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Published reading 48: 1134.12W
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Published reading 49: 944.7W
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Published reading 50: 1072.35W
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Published reading 51: -1082.96W
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Anomaly: reverse_flow anomaly detected
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Published reading 52: -1022.4W
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Published reading 53: -1120.52W
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Published reading 54: -1088.33W
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Published reading 55: -1035.72W
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Published reading 56: -992.67W
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Published reading 57: -1103.5W
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Published reading 58: -976.2W
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Published reading 59: -1204.88W
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Published reading 60: -1093.82W
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Published reading 61: -1017.11W
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Published reading 62: -1003.06W
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Published reading 63: -1122.82W
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Published reading 64: -1200.14W
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Published reading 65: -1061.14W
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Published reading 66: -996.01W
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Published reading 67: -1109.58W
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Published reading 68: -1008.17W
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Published reading 69: -1156.64W
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Published reading 70: -1010.6W
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Published reading 71: -965.26W
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Published reading 72: -1246.33W
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Published reading 73: -1062.54W
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Published reading 74: -1213.96W
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Published reading 75: -1122.95W
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Published reading 76: -1127.05W
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Published reading 77: -1066.5W
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Published reading 78: -989.95W
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Published reading 79: 1176.08W
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Anomaly: reverse_flow anomaly detected
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Published reading 80: -1204.97W
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Published reading 81: -1006.86W
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Published reading 82: -1072.61W
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Published reading 83: -1040.75W
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Published reading 84: 1104.08W
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Published reading 85: 1228.03W
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Published reading 86: 1180.79W
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Published reading 87: 1147.56W
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Published reading 88: 972.91W
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Published reading 89: 1183.52W
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Published reading 90: 1130.01W
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Published reading 91: 1141.78W
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Published reading 92: 681.18W
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Anomaly: calibration_drift anomaly detected
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Published reading 93: 736.14W
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Published reading 94: 773.47W
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Published reading 95: 492.82W
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Published reading 96: 339.94W
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Published reading 97: 546.19W
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Published reading 98: 625.93W
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Published reading 99: 590.68W
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Published reading 100: 536.54W
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Published reading 101: 510.06W
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Published reading 102: 706.56W
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Published reading 103: 598.39W
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Published reading 104: 377.76W
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Published reading 105: 679.18W
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Published reading 106: 812.35W
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Published reading 107: 644.1W
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Published reading 108: 527.28W
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Published reading 109: 715.74W
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Published reading 110: 523.69W
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Published reading 111: 613.19W
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Published reading 112: 323.63W
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Published reading 113: 417.91W
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Published reading 114: 468.12W
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Published reading 115: 326.42W
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Anomaly: low_voltage anomaly detected
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Published reading 116: 504.71W
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Published reading 117: 502.92W
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Published reading 118: 772.53W
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Published reading 119: 680.88W
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Published reading 120: 619.8W
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Published reading 121: 732.13W
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Published reading 122: 403.39W
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Published reading 123: 429.63W
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Published reading 124: 735.34W
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Published reading 125: 536.78W
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Published reading 126: 663.58W
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Published reading 127: 535.0W
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Published reading 128: 634.83W
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Published reading 129: 417.55W
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Published reading 130: 431.04W
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Published reading 131: 596.02W
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Published reading 132: 812.11W
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Published reading 133: 595.79W
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Published reading 134: 609.86W
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Published reading 135: 482.64W
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Published reading 136: 852.05W
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Published reading 137: 537.05W
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Published reading 138: 594.33W
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Published reading 139: 699.07W
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Published reading 140: 681.86W
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Published reading 141: 676.82W
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Published reading 142: 673.04W
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Published reading 143: 774.75W
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Published reading 144: 783.01W
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Published reading 145: 648.35W
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Published reading 146: 641.73W
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Published reading 147: 712.31W
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Published reading 148: 692.3W
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Published reading 149: 745.79W
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Published reading 150: 441.94W
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Published reading 151: 505.21W
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Published reading 152: 404.83W
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Published reading 153: 641.57W
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Published reading 154: 684.63W
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Published reading 155: 739.02W
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Published reading 156: 749.82W
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Published reading 157: 590.57W
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Published reading 158: 567.25W
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Published reading 159: 729.52W
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Published reading 160: 336.78W
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Failed to publish reading 161
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Anomaly: network_issue anomaly detected
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Failed to publish reading 162
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Failed to publish reading 163
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Failed to publish reading 164
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Published reading 165: 549.34W
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Failed to publish reading 166
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Published reading 167: 598.69W
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Anomaly: high_voltage anomaly detected
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Failed to publish reading 168
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Failed to publish reading 169
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Failed to publish reading 170
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Failed to publish reading 171
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Failed to publish reading 172
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Published reading 173: 627.44W
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Failed to publish reading 174
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Published reading 175: 537.6W
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Failed to publish reading 176
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Published reading 177: 817.25W
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Published reading 178: 562.38W
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Failed to publish reading 179
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Failed to publish reading 180
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Failed to publish reading 181
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Published reading 182: 422.0W
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Failed to publish reading 183
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Failed to publish reading 184
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Anomaly: reverse_flow anomaly detected
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Published reading 185: -820.61W
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Failed to publish reading 186
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Failed to publish reading 187
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Failed to publish reading 188
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Failed to publish reading 189
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Published reading 190: 752.44W
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Failed to publish reading 191
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Failed to publish reading 192
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Anomaly: calibration_drift anomaly detected
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Failed to publish reading 193
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Failed to publish reading 194
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Published reading 195: 580.97W
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Failed to publish reading 196
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Published reading 197: 768.99W
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Failed to publish reading 198
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Failed to publish reading 199
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Failed to publish reading 200
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Failed to publish reading 201
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Failed to publish reading 202
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Failed to publish reading 203
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Failed to publish reading 204
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Failed to publish reading 205
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Failed to publish reading 206
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Failed to publish reading 207
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Published reading 208: 756.06W
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Published reading 209: 788.33W
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Failed to publish reading 210
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Published reading 211: 741.91W
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Published reading 212: 709.32W
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Published reading 213: 404.29W
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Published reading 214: 493.9W
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Failed to publish reading 215
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Failed to publish reading 216
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Published reading 217: 442.27W
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Failed to publish reading 218
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Failed to publish reading 219
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Published reading 220: 696.47W
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Failed to publish reading 221
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Failed to publish reading 222
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Failed to publish reading 223
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Published reading 224: 384.0W
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Failed to publish reading 225
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Failed to publish reading 226
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Failed to publish reading 227
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Failed to publish reading 228
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Published reading 229: 392.73W
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Failed to publish reading 230
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Failed to publish reading 231
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Failed to publish reading 232
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Failed to publish reading 233
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Published reading 234: 752.75W
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Failed to publish reading 235
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Failed to publish reading 236
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Failed to publish reading 237
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Failed to publish reading 238
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Published reading 239: 805.63W
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Published reading 240: 519.2W
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Failed to publish reading 241
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Failed to publish reading 242
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Failed to publish reading 243
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Disconnected from MQTT broker: 7
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Connected to MQTT broker
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Disconnected from MQTT broker: 7
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Connected to MQTT broker
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Disconnected from MQTT broker: 7
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Connected to MQTT broker
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Disconnected from MQTT broker: 7
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Connected to MQTT broker
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Disconnected from MQTT broker: 7
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Failed to publish reading 244
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Connected to MQTT broker
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Disconnected from MQTT broker: 7
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Connected to MQTT broker
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Disconnected from MQTT broker: 7
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Connected to MQTT broker
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Disconnected from MQTT broker: 7
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Connected to MQTT broker
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Disconnected from MQTT broker: 7
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Connected to MQTT broker
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Disconnected from MQTT broker: 7
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Failed to publish reading 245
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Connected to MQTT broker
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Disconnected from MQTT broker: 7
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Connected to MQTT broker
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Disconnected from MQTT broker: 7
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Connected to MQTT broker
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Disconnected from MQTT broker: 7
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Connected to MQTT broker
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Disconnected from MQTT broker: 7
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Connected to MQTT broker
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Disconnected from MQTT broker: 7
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Failed to publish reading 246
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Connected to MQTT broker
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Disconnected from MQTT broker: 7
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Connected to MQTT broker
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Disconnected from MQTT broker: 7
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Connected to MQTT broker
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Disconnected from MQTT broker: 7
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Connected to MQTT broker
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Disconnected from MQTT broker: 7
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Connected to MQTT broker
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Disconnected from MQTT broker: 7
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Failed to publish reading 247
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Connected to MQTT broker
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Disconnected from MQTT broker: 7
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Connected to MQTT broker
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Disconnected from MQTT broker: 7
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Connected to MQTT broker
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Disconnected from MQTT broker: 7
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Connected to MQTT broker
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Disconnected from MQTT broker: 7
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Connected to MQTT broker
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Published reading 248: 525.34W
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Disconnected from MQTT broker: 7
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Connected to MQTT broker
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Failed to publish reading 249
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Failed to publish reading 250
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Failed to publish reading 251
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Failed to publish reading 252
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Failed to publish reading 253
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Published reading 254: 638.32W
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Disconnected from MQTT broker: 7
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Connected to MQTT broker
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Disconnected from MQTT broker: 7
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Connected to MQTT broker
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Failed to publish reading 255
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Failed to publish reading 256
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Failed to publish reading 257
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Published reading 258: 648.47W
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Failed to publish reading 259
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Disconnected from MQTT broker: 7
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Connected to MQTT broker
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Disconnected from MQTT broker: 7
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Connected to MQTT broker
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Disconnected from MQTT broker: 7
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Connected to MQTT broker
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Published reading 260: 620.52W
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Failed to publish reading 261
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Failed to publish reading 262
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Published reading 263: 476.04W
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Failed to publish reading 264
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Published reading 265: 633.09W
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Failed to publish reading 266
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Failed to publish reading 267
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Published reading 268: 684.13W
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Failed to publish reading 269
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Failed to publish reading 270
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Failed to publish reading 271
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Failed to publish reading 272
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Failed to publish reading 273
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Published reading 274: 362.84W
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Failed to publish reading 275
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Disconnected from MQTT broker: 7
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Connected to MQTT broker
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Disconnected from MQTT broker: 7
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Failed to publish reading 276
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Connected to MQTT broker
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Disconnected from MQTT broker: 7
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Connected to MQTT broker
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Disconnected from MQTT broker: 7
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Failed to publish reading 277
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Connected to MQTT broker
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Disconnected from MQTT broker: 7
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Connected to MQTT broker
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Failed to publish reading 278
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Failed to publish reading 279
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Published reading 280: 746.31W
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Published reading 281: 500.83W
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Published reading 282: 733.13W
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Failed to publish reading 283
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Failed to publish reading 284
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Published reading 285: 479.33W
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Failed to publish reading 286
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Failed to publish reading 287
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Published reading 288: 470.24W
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Failed to publish reading 289
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Failed to publish reading 290
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Failed to publish reading 291
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Anomaly: reverse_flow anomaly detected
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Published reading 292: -607.21W
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Failed to publish reading 293
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Published reading 294: -387.28W
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Failed to publish reading 295
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Failed to publish reading 296
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Failed to publish reading 297
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Failed to publish reading 298
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Failed to publish reading 299
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Published reading 300: 565.74W
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Failed to publish reading 301
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Failed to publish reading 302
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Published reading 303: 731.05W
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Failed to publish reading 304
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Published reading 305: 761.77W
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Anomaly: network_issue anomaly detected
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Failed to publish reading 306
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Failed to publish reading 307
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Failed to publish reading 308
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Failed to publish reading 309
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Failed to publish reading 310
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Failed to publish reading 311
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Failed to publish reading 312
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Disconnected from MQTT broker: 7
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Connected to MQTT broker
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Disconnected from MQTT broker: 7
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Connected to MQTT broker
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Disconnected from MQTT broker: 7
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Connected to MQTT broker
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Disconnected from MQTT broker: 7
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Connected to MQTT broker
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Failed to publish reading 313
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Disconnected from MQTT broker: 7
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Connected to MQTT broker
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Disconnected from MQTT broker: 7
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Connected to MQTT broker
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Disconnected from MQTT broker: 7
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Connected to MQTT broker
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Disconnected from MQTT broker: 7
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Connected to MQTT broker
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Disconnected from MQTT broker: 7
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Connected to MQTT broker
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Failed to publish reading 314
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Disconnected from MQTT broker: 7
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Connected to MQTT broker
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Disconnected from MQTT broker: 7
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Connected to MQTT broker
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Disconnected from MQTT broker: 7
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Connected to MQTT broker
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Disconnected from MQTT broker: 7
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Connected to MQTT broker
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Disconnected from MQTT broker: 7
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Failed to publish reading 315
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Connected to MQTT broker
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Disconnected from MQTT broker: 7
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Connected to MQTT broker
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Disconnected from MQTT broker: 7
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Connected to MQTT broker
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Disconnected from MQTT broker: 7
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Connected to MQTT broker
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Disconnected from MQTT broker: 7
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Connected to MQTT broker
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Disconnected from MQTT broker: 7
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Failed to publish reading 316
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Connected to MQTT broker
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Disconnected from MQTT broker: 7
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Connected to MQTT broker
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Disconnected from MQTT broker: 7
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Connected to MQTT broker
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Disconnected from MQTT broker: 7
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Connected to MQTT broker
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Disconnected from MQTT broker: 7
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Connected to MQTT broker
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Disconnected from MQTT broker: 7
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Failed to publish reading 317
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Connected to MQTT broker
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Disconnected from MQTT broker: 7
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Connected to MQTT broker
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Disconnected from MQTT broker: 7
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Connected to MQTT broker
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Disconnected from MQTT broker: 7
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Connected to MQTT broker
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Disconnected from MQTT broker: 7
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Connected to MQTT broker
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Disconnected from MQTT broker: 7
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Failed to publish reading 318
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Connected to MQTT broker
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Disconnected from MQTT broker: 7
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Connected to MQTT broker
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Disconnected from MQTT broker: 7
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Connected to MQTT broker
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Disconnected from MQTT broker: 7
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Connected to MQTT broker
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Disconnected from MQTT broker: 7
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Connected to MQTT broker
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Disconnected from MQTT broker: 7
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Failed to publish reading 319
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Connected to MQTT broker
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Disconnected from MQTT broker: 7
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Connected to MQTT broker
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Disconnected from MQTT broker: 7
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Connected to MQTT broker
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Disconnected from MQTT broker: 7
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Connected to MQTT broker
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Disconnected from MQTT broker: 7
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Connected to MQTT broker
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Disconnected from MQTT broker: 7
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Failed to publish reading 320
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Connected to MQTT broker
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Disconnected from MQTT broker: 7
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Connected to MQTT broker
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Disconnected from MQTT broker: 7
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Connected to MQTT broker
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Disconnected from MQTT broker: 7
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Connected to MQTT broker
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Disconnected from MQTT broker: 7
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Connected to MQTT broker
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Failed to publish reading 321
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Disconnected from MQTT broker: 7
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Connected to MQTT broker
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Disconnected from MQTT broker: 7
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Connected to MQTT broker
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Disconnected from MQTT broker: 7
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Connected to MQTT broker
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Disconnected from MQTT broker: 7
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Connected to MQTT broker
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Disconnected from MQTT broker: 7
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Connected to MQTT broker
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Failed to publish reading 322
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Disconnected from MQTT broker: 7
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Connected to MQTT broker
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Disconnected from MQTT broker: 7
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Connected to MQTT broker
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Disconnected from MQTT broker: 7
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Connected to MQTT broker
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Disconnected from MQTT broker: 7
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Connected to MQTT broker
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Disconnected from MQTT broker: 7
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Connected to MQTT broker
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Failed to publish reading 323
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Disconnected from MQTT broker: 7
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Connected to MQTT broker
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Disconnected from MQTT broker: 7
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Connected to MQTT broker
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Disconnected from MQTT broker: 7
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Connected to MQTT broker
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Disconnected from MQTT broker: 7
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Connected to MQTT broker
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Disconnected from MQTT broker: 7
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Connected to MQTT broker
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Failed to publish reading 324
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Disconnected from MQTT broker: 7
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Connected to MQTT broker
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Disconnected from MQTT broker: 7
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Connected to MQTT broker
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Disconnected from MQTT broker: 7
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Connected to MQTT broker
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Disconnected from MQTT broker: 7
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Connected to MQTT broker
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Disconnected from MQTT broker: 7
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Connected to MQTT broker
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Failed to publish reading 325
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Disconnected from MQTT broker: 7
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Connected to MQTT broker
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Disconnected from MQTT broker: 7
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Connected to MQTT broker
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Disconnected from MQTT broker: 7
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Connected to MQTT broker
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Disconnected from MQTT broker: 7
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Connected to MQTT broker
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Disconnected from MQTT broker: 7
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Failed to publish reading 326
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Connected to MQTT broker
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Disconnected from MQTT broker: 7
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Connected to MQTT broker
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Disconnected from MQTT broker: 7
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Connected to MQTT broker
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Disconnected from MQTT broker: 7
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Connected to MQTT broker
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Disconnected from MQTT broker: 7
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Connected to MQTT broker
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Disconnected from MQTT broker: 7
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Failed to publish reading 327
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Connected to MQTT broker
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Disconnected from MQTT broker: 7
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Connected to MQTT broker
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Disconnected from MQTT broker: 7
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Connected to MQTT broker
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Disconnected from MQTT broker: 7
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Connected to MQTT broker
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Disconnected from MQTT broker: 7
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Connected to MQTT broker
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Disconnected from MQTT broker: 7
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Failed to publish reading 328
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Connected to MQTT broker
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Disconnected from MQTT broker: 7
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Connected to MQTT broker
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Disconnected from MQTT broker: 7
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Connected to MQTT broker
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Disconnected from MQTT broker: 7
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Connected to MQTT broker
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Disconnected from MQTT broker: 7
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Connected to MQTT broker
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Disconnected from MQTT broker: 7
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Failed to publish reading 329
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Connected to MQTT broker
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Disconnected from MQTT broker: 7
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Connected to MQTT broker
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Disconnected from MQTT broker: 7
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Connected to MQTT broker
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Disconnected from MQTT broker: 7
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Connected to MQTT broker
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Disconnected from MQTT broker: 7
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Connected to MQTT broker
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Disconnected from MQTT broker: 7
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Failed to publish reading 330
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Connected to MQTT broker
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Disconnected from MQTT broker: 7
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Connected to MQTT broker
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Disconnected from MQTT broker: 7
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Connected to MQTT broker
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Disconnected from MQTT broker: 7
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Connected to MQTT broker
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Disconnected from MQTT broker: 7
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Connected to MQTT broker
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Disconnected from MQTT broker: 7
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Failed to publish reading 331
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Connected to MQTT broker
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Disconnected from MQTT broker: 7
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Connected to MQTT broker
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Disconnected from MQTT broker: 7
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Connected to MQTT broker
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Disconnected from MQTT broker: 7
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Connected to MQTT broker
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Disconnected from MQTT broker: 7
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Connected to MQTT broker
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Published reading 332: 471.07W
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Disconnected from MQTT broker: 7
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Connected to MQTT broker
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Disconnected from MQTT broker: 7
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Connected to MQTT broker
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Disconnected from MQTT broker: 7
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Connected to MQTT broker
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Disconnected from MQTT broker: 7
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Connected to MQTT broker
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Disconnected from MQTT broker: 7
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Connected to MQTT broker
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Failed to publish reading 333
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Disconnected from MQTT broker: 7
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Connected to MQTT broker
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Disconnected from MQTT broker: 7
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Connected to MQTT broker
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Disconnected from MQTT broker: 7
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Connected to MQTT broker
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Disconnected from MQTT broker: 7
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Connected to MQTT broker
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Disconnected from MQTT broker: 7
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Connected to MQTT broker
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Failed to publish reading 334
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Disconnected from MQTT broker: 7
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Connected to MQTT broker
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Disconnected from MQTT broker: 7
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Connected to MQTT broker
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Disconnected from MQTT broker: 7
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Connected to MQTT broker
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Disconnected from MQTT broker: 7
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Connected to MQTT broker
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Disconnected from MQTT broker: 7
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Connected to MQTT broker
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Published reading 335: 344.59W
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Disconnected from MQTT broker: 7
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Connected to MQTT broker
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Disconnected from MQTT broker: 7
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Connected to MQTT broker
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Disconnected from MQTT broker: 7
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Connected to MQTT broker
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Disconnected from MQTT broker: 7
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Connected to MQTT broker
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Disconnected from MQTT broker: 7
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Connected to MQTT broker
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Published reading 336: 401.58W
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Disconnected from MQTT broker: 7
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Connected to MQTT broker
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Disconnected from MQTT broker: 7
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Connected to MQTT broker
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Disconnected from MQTT broker: 7
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Connected to MQTT broker
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Disconnected from MQTT broker: 7
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Connected to MQTT broker
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Disconnected from MQTT broker: 7
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Failed to publish reading 337
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Connected to MQTT broker
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Disconnected from MQTT broker: 7
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Connected to MQTT broker
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Disconnected from MQTT broker: 7
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Connected to MQTT broker
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Disconnected from MQTT broker: 7
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Connected to MQTT broker
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Disconnected from MQTT broker: 7
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Connected to MQTT broker
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Disconnected from MQTT broker: 7
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Failed to publish reading 338
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Connected to MQTT broker
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Disconnected from MQTT broker: 7
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Connected to MQTT broker
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Disconnected from MQTT broker: 7
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Connected to MQTT broker
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Disconnected from MQTT broker: 7
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Connected to MQTT broker
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Disconnected from MQTT broker: 7
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Connected to MQTT broker
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Disconnected from MQTT broker: 7
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Failed to publish reading 339
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Connected to MQTT broker
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Disconnected from MQTT broker: 7
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Connected to MQTT broker
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Disconnected from MQTT broker: 7
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Connected to MQTT broker
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Disconnected from MQTT broker: 7
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Connected to MQTT broker
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Disconnected from MQTT broker: 7
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Connected to MQTT broker
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Disconnected from MQTT broker: 7
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Failed to publish reading 340
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Connected to MQTT broker
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Disconnected from MQTT broker: 7
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Connected to MQTT broker
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Disconnected from MQTT broker: 7
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Connected to MQTT broker
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Disconnected from MQTT broker: 7
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Connected to MQTT broker
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Disconnected from MQTT broker: 7
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Connected to MQTT broker
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Disconnected from MQTT broker: 7
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Failed to publish reading 341
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Connected to MQTT broker
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Disconnected from MQTT broker: 7
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Connected to MQTT broker
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Disconnected from MQTT broker: 7
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Connected to MQTT broker
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Disconnected from MQTT broker: 7
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Connected to MQTT broker
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Disconnected from MQTT broker: 7
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Connected to MQTT broker
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Failed to publish reading 342
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Disconnected from MQTT broker: 7
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Connected to MQTT broker
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Disconnected from MQTT broker: 7
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Connected to MQTT broker
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Disconnected from MQTT broker: 7
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Connected to MQTT broker
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Disconnected from MQTT broker: 7
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Connected to MQTT broker
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Disconnected from MQTT broker: 7
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Connected to MQTT broker
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Failed to publish reading 343
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Disconnected from MQTT broker: 7
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Connected to MQTT broker
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Disconnected from MQTT broker: 7
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Connected to MQTT broker
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Disconnected from MQTT broker: 7
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Connected to MQTT broker
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Disconnected from MQTT broker: 7
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Connected to MQTT broker
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Disconnected from MQTT broker: 7
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Connected to MQTT broker
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Published reading 344: 529.09W
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Disconnected from MQTT broker: 7
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Connected to MQTT broker
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Disconnected from MQTT broker: 7
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Connected to MQTT broker
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Disconnected from MQTT broker: 7
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Connected to MQTT broker
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Disconnected from MQTT broker: 7
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Connected to MQTT broker
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Disconnected from MQTT broker: 7
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Connected to MQTT broker
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Failed to publish reading 345
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Disconnected from MQTT broker: 7
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Connected to MQTT broker
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Disconnected from MQTT broker: 7
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Connected to MQTT broker
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Disconnected from MQTT broker: 7
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Connected to MQTT broker
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Disconnected from MQTT broker: 7
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Connected to MQTT broker
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Disconnected from MQTT broker: 7
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Connected to MQTT broker
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Published reading 346: 457.77W
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Disconnected from MQTT broker: 7
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Connected to MQTT broker
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Disconnected from MQTT broker: 7
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Connected to MQTT broker
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Disconnected from MQTT broker: 7
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Connected to MQTT broker
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Disconnected from MQTT broker: 7
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Connected to MQTT broker
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Disconnected from MQTT broker: 7
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Failed to publish reading 347
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Connected to MQTT broker
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Disconnected from MQTT broker: 7
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Connected to MQTT broker
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Disconnected from MQTT broker: 7
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Connected to MQTT broker
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Disconnected from MQTT broker: 7
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Connected to MQTT broker
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Disconnected from MQTT broker: 7
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Connected to MQTT broker
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Disconnected from MQTT broker: 7
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Failed to publish reading 348
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Connected to MQTT broker
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Disconnected from MQTT broker: 7
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Connected to MQTT broker
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Disconnected from MQTT broker: 7
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Connected to MQTT broker
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Disconnected from MQTT broker: 7
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Connected to MQTT broker
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Disconnected from MQTT broker: 7
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Connected to MQTT broker
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Disconnected from MQTT broker: 7
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Failed to publish reading 349
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Connected to MQTT broker
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Disconnected from MQTT broker: 7
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Connected to MQTT broker
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Disconnected from MQTT broker: 7
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Connected to MQTT broker
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Disconnected from MQTT broker: 7
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Connected to MQTT broker
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Disconnected from MQTT broker: 7
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Connected to MQTT broker
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Disconnected from MQTT broker: 7
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Failed to publish reading 350
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Connected to MQTT broker
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Disconnected from MQTT broker: 7
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Connected to MQTT broker
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Disconnected from MQTT broker: 7
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Connected to MQTT broker
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Disconnected from MQTT broker: 7
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Connected to MQTT broker
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Disconnected from MQTT broker: 7
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Connected to MQTT broker
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Disconnected from MQTT broker: 7
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Failed to publish reading 351
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Connected to MQTT broker
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Disconnected from MQTT broker: 7
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Connected to MQTT broker
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Disconnected from MQTT broker: 7
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Connected to MQTT broker
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Disconnected from MQTT broker: 7
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Connected to MQTT broker
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Disconnected from MQTT broker: 7
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Connected to MQTT broker
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Failed to publish reading 352
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Anomaly: low_voltage anomaly detected
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Disconnected from MQTT broker: 7
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Connected to MQTT broker
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Disconnected from MQTT broker: 7
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Connected to MQTT broker
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Disconnected from MQTT broker: 7
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Connected to MQTT broker
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Disconnected from MQTT broker: 7
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Connected to MQTT broker
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Disconnected from MQTT broker: 7
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Connected to MQTT broker
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Failed to publish reading 353
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Disconnected from MQTT broker: 7
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Connected to MQTT broker
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Disconnected from MQTT broker: 7
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Connected to MQTT broker
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Disconnected from MQTT broker: 7
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Connected to MQTT broker
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Disconnected from MQTT broker: 7
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Connected to MQTT broker
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Disconnected from MQTT broker: 7
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Connected to MQTT broker
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Failed to publish reading 354
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Disconnected from MQTT broker: 7
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Connected to MQTT broker
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Disconnected from MQTT broker: 7
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Connected to MQTT broker
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Disconnected from MQTT broker: 7
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Connected to MQTT broker
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Disconnected from MQTT broker: 7
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Connected to MQTT broker
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Disconnected from MQTT broker: 7
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Connected to MQTT broker
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Failed to publish reading 355
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Disconnected from MQTT broker: 7
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Connected to MQTT broker
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Disconnected from MQTT broker: 7
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Connected to MQTT broker
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Disconnected from MQTT broker: 7
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Connected to MQTT broker
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Disconnected from MQTT broker: 7
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Connected to MQTT broker
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Disconnected from MQTT broker: 7
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Connected to MQTT broker
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Published reading 356: 477.15W
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Disconnected from MQTT broker: 7
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Connected to MQTT broker
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Disconnected from MQTT broker: 7
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Connected to MQTT broker
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Disconnected from MQTT broker: 7
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Connected to MQTT broker
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Disconnected from MQTT broker: 7
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Connected to MQTT broker
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Disconnected from MQTT broker: 7
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Connected to MQTT broker
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Failed to publish reading 357
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Disconnected from MQTT broker: 7
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Connected to MQTT broker
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Disconnected from MQTT broker: 7
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Connected to MQTT broker
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Disconnected from MQTT broker: 7
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Connected to MQTT broker
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Disconnected from MQTT broker: 7
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Connected to MQTT broker
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Disconnected from MQTT broker: 7
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Failed to publish reading 358
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Connected to MQTT broker
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Disconnected from MQTT broker: 7
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Connected to MQTT broker
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Disconnected from MQTT broker: 7
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Connected to MQTT broker
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Disconnected from MQTT broker: 7
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Connected to MQTT broker
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Disconnected from MQTT broker: 7
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Connected to MQTT broker
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Disconnected from MQTT broker: 7
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Failed to publish reading 359
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Connected to MQTT broker
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Disconnected from MQTT broker: 7
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Connected to MQTT broker
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Disconnected from MQTT broker: 7
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Connected to MQTT broker
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Disconnected from MQTT broker: 7
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Connected to MQTT broker
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Disconnected from MQTT broker: 7
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Connected to MQTT broker
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Disconnected from MQTT broker: 7
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Failed to publish reading 360
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Connected to MQTT broker
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Disconnected from MQTT broker: 7
+[0x7e994d1943D223587E713ecBabf9ca1a79cf251b] Connected to MQTT broker

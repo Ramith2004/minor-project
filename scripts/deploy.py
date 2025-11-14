@@ -7,6 +7,14 @@ import json
 import os
 import sys
 
+
+# Fix Windows console encoding for Unicode
+if sys.platform == 'win32':
+    import io
+    sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8')
+    sys.stderr = io.TextIOWrapper(sys.stderr.buffer, encoding='utf-8')
+
+
 # Get project root
 script_dir = os.path.dirname(os.path.abspath(__file__))
 project_root = os.path.dirname(script_dir)
@@ -38,7 +46,7 @@ print("="*70)
 
 # Connect to Ganache
 RPC_URL = env_vars.get('RPC_URL', 'http://127.0.0.1:8545')
-PRIVATE_KEY = env_vars.get('PRIVATE_KEY', '0x4f3edf983ac636a65a842ce7c78d9aa706d3b113bce9c46f30d7d21715b23b1d')
+PRIVATE_KEY = env_vars.get('PRIVATE_KEY', '0xd7e00e8c62fb83f5d2194b57fe5b1e2f787030c42e9ae8852309a241a0bc21b9')
 
 # Remove quotes if present
 PRIVATE_KEY = PRIVATE_KEY.strip('"').strip("'")

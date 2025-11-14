@@ -1,5 +1,6 @@
 export interface Reading {
     meterID: string;
+    meterName?: string;
     seq: number;
     ts: number;
     value: number;
@@ -13,6 +14,7 @@ export interface Reading {
 
 export interface Alert {
     meterID: string;
+    meterName?: string;
     seq: number;
     ts: number;
     value: number;
@@ -23,7 +25,7 @@ export interface Alert {
 }
 
 export interface Meter {
-    last_update: any;
+    last_update?: number;
     recent_suspicious_count: number;
     average_score: any;
     meterID: string;

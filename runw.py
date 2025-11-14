@@ -183,7 +183,9 @@ class ServiceManager:
                 cwd=self.project_dir,
                 capture_output=True,
                 text=True,
-                timeout=60
+                timeout=60,
+                encoding='utf-8',  # Force UTF-8 encoding
+                errors='replace'   # Replace invalid characters instead of failing
             )
             
             if result.returncode == 0:
@@ -191,12 +193,12 @@ class ServiceManager:
                 
                 # Parse contract addresses from output
                 output = result.stdout
-                if "MeterRegistry:" in output:
+                if output and "MeterRegistry:" in output:
                     for line in output.split('\n'):
                         if "MeterRegistry:" in line:
                             addr = line.split(':')[1].strip()
                             print(f"   {Colors.GREEN}MeterRegistry: {addr}{Colors.END}")
-                        elif "Consensus:" in line:
+                        elif "Consensus:" in line and "MeterRegistry" not in line:
                             addr = line.split(':')[1].strip()
                             print(f"   {Colors.GREEN}Consensus: {addr}{Colors.END}")
                         elif "MeterStore:" in line:

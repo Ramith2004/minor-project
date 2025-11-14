@@ -32,6 +32,56 @@ class AnomalyType(Enum):
     NETWORK_ISSUE = "network_issue"
     CALIBRATION_DRIFT = "calibration_drift"
 
+# ANSI color codes for terminal output
+class Colors:
+    HEADER = '\033[95m'
+    BLUE = '\033[94m'
+    CYAN = '\033[96m'
+    GREEN = '\033[92m'
+    YELLOW = '\033[93m'
+    RED = '\033[91m'
+    BOLD = '\033[1m'
+    UNDERLINE = '\033[4m'
+    END = '\033[0m'
+
+def print_banner(text: str, color=Colors.CYAN):
+    """Print a stylized banner"""
+    width = 100
+    print(f"\n{color}{'=' * width}")
+    print(f"{text.center(width)}")
+    print(f"{'=' * width}{Colors.END}\n")
+
+def print_box(title: str, content: Dict, color=Colors.GREEN):
+    """Print content in a box format"""
+    max_key_len = max(len(str(k)) for k in content.keys()) if content else 0
+    width = max(80, max_key_len + 50)
+    
+    print(f"\n{color}┌{'─' * (width - 2)}┐")
+    print(f"│ {Colors.BOLD}{title}{Colors.END}{color}{' ' * (width - len(title) - 3)}│")
+    print(f"├{'─' * (width - 2)}┤")
+    
+    for key, value in content.items():
+        key_str = f"{key}:".ljust(max_key_len + 2)
+        value_str = str(value)
+        # Handle long values (like signatures)
+        if len(value_str) > width - max_key_len - 8:
+            value_str = value_str[:width - max_key_len - 11] + "..."
+        print(f"│ {Colors.BOLD}{key_str}{Colors.END}{color} {value_str}{' ' * (width - len(key_str) - len(value_str) - 3)}│")
+    
+    print(f"└{'─' * (width - 2)}┘{Colors.END}\n")
+
+def print_success(message: str):
+    print(f"{Colors.GREEN}✓ {message}{Colors.END}")
+
+def print_info(message: str):
+    print(f"{Colors.CYAN}ℹ {message}{Colors.END}")
+
+def print_warning(message: str):
+    print(f"{Colors.YELLOW}⚠ {message}{Colors.END}")
+
+def print_error(message: str):
+    print(f"{Colors.RED}✗ {message}{Colors.END}")
+
 @dataclass
 class MeterProfile:
     """Meter profile configuration"""
@@ -81,11 +131,8 @@ class EnhancedMeterSimulator:
         self.network_delays = []
         self.packet_loss_rate = 0.0
         
-        # Load keys
-        self.keys = self._load_keys()
-        
         # MQTT client
-        self.client = mqtt.Client(client_id=f"meter_{meter_id}")
+        self.client = mqtt.Client(client_id=f"meter_{meter_id}", callback_api_version=mqtt.CallbackAPIVersion.VERSION1)
         self.client.on_connect = self._on_connect
         self.client.on_disconnect = self._on_disconnect
         
@@ -153,13 +200,14 @@ class EnhancedMeterSimulator:
     def _on_connect(self, client, userdata, flags, rc):
         """MQTT connection callback"""
         if rc == 0:
-            print(f"[{self.meter_id}] Connected to MQTT broker")
+            print_success(f"[{self.meter_alias}] Connected to MQTT broker at {self.broker}:{self.port}")
         else:
-            print(f"[{self.meter_id}] Failed to connect to MQTT broker: {rc}")
+            print_error(f"[{self.meter_alias}] Failed to connect to MQTT broker: {rc}")
     
     def _on_disconnect(self, client, userdata, rc):
         """MQTT disconnection callback"""
-        print(f"[{self.meter_id}] Disconnected from MQTT broker: {rc}")
+        if rc != 0:
+            print_warning(f"[{self.meter_alias}] Unexpected disconnection from MQTT broker (code: {rc})")
     
     def _generate_realistic_reading(self) -> Dict[str, float]:
         """Generate realistic meter reading based on profile"""
@@ -306,7 +354,7 @@ class EnhancedMeterSimulator:
             return sig_hex
             
         except Exception as e:
-            print(f"[{self.meter_id}] Signature error: {e}")
+            print_error(f"[{self.meter_alias}] Signature error: {e}")
             return "0x" + "0" * 130  # Fallback signature
     
     def _publish_reading(self, reading_data: Dict[str, Any]) -> bool:
@@ -337,7 +385,7 @@ class EnhancedMeterSimulator:
                 return False
                 
         except Exception as e:
-            print(f"[{self.meter_id}] Publish error: {e}")
+            print_error(f"[{self.meter_alias}] Publish error: {e}")
             self.stats["failed_transmissions"] += 1
             return False
     
@@ -349,16 +397,79 @@ class EnhancedMeterSimulator:
         # Limit drift to reasonable range
         self.calibration_offset = max(-0.05, min(0.05, self.calibration_offset))
     
+    def _print_reading_details(self, reading: Dict[str, Any], signing_payload: Dict[str, Any]):
+        """Print detailed reading information"""
+        # Determine if there are any active anomalies
+        has_anomalies = any(reading["status"].values())
+        box_color = Colors.YELLOW if has_anomalies else Colors.GREEN
+        
+        # Prepare display data
+        display_data = {
+            "Meter ID": self.meter_id,
+            "Meter Alias": self.meter_alias,
+            "Meter Type": self.meter_type.value.upper(),
+            "Sequence": self.sequence,
+            "Timestamp": time.strftime('%Y-%m-%d %H:%M:%S', time.localtime(signing_payload["ts"])),
+            "─── Electrical Readings ───": "",
+            "Voltage": f"{reading['voltage']} V",
+            "Current": f"{reading['current']} A",
+            "Power": f"{reading['power']} W",
+            "Total Energy": f"{reading['energy_kWh']} kWh",
+            "─── Status Flags ───": "",
+            "Tamper": "⚠ YES" if reading["status"]["tamper"] else "✓ NO",
+            "Reverse Flow": "⚠ YES" if reading["status"]["reverse_flow"] else "✓ NO",
+            "Low Voltage": "⚠ YES" if reading["status"]["low_voltage"] else "✓ NO",
+            "High Voltage": "⚠ YES" if reading["status"]["high_voltage"] else "✓ NO",
+            "Equipment Failure": "⚠ YES" if reading["status"]["equipment_failure"] else "✓ NO",
+            "Network Issue": "⚠ YES" if reading["status"]["network_issue"] else "✓ NO",
+            "Calibration Drift": "⚠ YES" if reading["status"]["calibration_drift"] else "✓ NO",
+            "─── Security ───": "",
+            "Signature": reading["signature"][:20] + "..." + reading["signature"][-20:],
+            "Full Signature": reading["signature"]
+        }
+        
+        print_box(f"Reading #{self.sequence}", display_data, box_color)
+        
+        # Print MQTT payload that was sent
+        mqtt_payload = {
+            "meterID": signing_payload["meterID"],
+            "seq": signing_payload["seq"],
+            "ts": signing_payload["ts"],
+            "value": signing_payload["value"],
+            "signature": reading["signature"][:30] + "..." + reading["signature"][-30:]
+        }
+        
+        print(f"{Colors.CYAN}Published MQTT Payload:{Colors.END}")
+        print(f"{Colors.BOLD}{json.dumps(mqtt_payload, indent=2)}{Colors.END}\n")
+    
     def start(self):
         """Start meter simulation"""
-        print(f"[{self.meter_id}] Starting {self.meter_type.value} meter simulation")
+        print_banner(f"SMART METER SIMULATION - {self.meter_type.value.upper()}", Colors.CYAN)
+        
+        # Print meter configuration
+        config_data = {
+            "Meter Alias": self.meter_alias,
+            "Meter ID (Address)": self.meter_id,
+            "Meter Type": self.meter_type.value.upper(),
+            "Base Voltage": f"{self.profile.base_voltage} V",
+            "Base Current": f"{self.profile.base_current} A",
+            "Consumption Pattern": self.profile.consumption_pattern,
+            "Anomaly Rate": f"{self.profile.anomaly_rate * 100:.1f}%",
+            "Network Reliability": f"{self.profile.network_reliability * 100:.1f}%",
+            "MQTT Broker": f"{self.broker}:{self.port}",
+            "MQTT Topic": self.topic,
+            "Publish Interval": f"{self.publish_interval} seconds"
+        }
+        print_box("Meter Configuration", config_data, Colors.BLUE)
         
         # Connect to MQTT broker
         try:
+            print_info(f"Connecting to MQTT broker at {self.broker}:{self.port}...")
             self.client.connect(self.broker, self.port, 60)
             self.client.loop_start()
+            time.sleep(1)  # Give connection time to establish
         except Exception as e:
-            print(f"[{self.meter_id}] Failed to connect to broker: {e}")
+            print_error(f"Failed to connect to broker: {e}")
             return
         
         self.running = True
@@ -398,25 +509,30 @@ class EnhancedMeterSimulator:
                 self.energy_kWh += reading["power"] * (self.publish_interval / 3600000.0)
                 reading["energy_kWh"] = round(max(0, self.energy_kWh), 3)
                 
+                # Print detailed reading
+                self._print_reading_details(reading, signing_payload)
+                
                 # Publish reading
                 success = self._publish_reading(reading)
                 
                 if success:
-                    print(f"[{self.meter_id}] Published reading {self.sequence}: {reading['power']}W")
+                    print_success(f"Reading #{self.sequence} successfully published to MQTT")
                 else:
-                    print(f"[{self.meter_id}] Failed to publish reading {self.sequence}")
+                    print_error(f"Failed to publish reading #{self.sequence}")
                 
                 # Log anomalies
                 for anomaly in new_anomalies:
-                    print(f"[{self.meter_id}] Anomaly: {anomaly.description}")
+                    print_warning(f"New anomaly detected: {anomaly.description} (severity: {anomaly.severity:.2f})")
                 
                 self.stats["total_readings"] += 1
+                
+                print(f"{Colors.CYAN}{'─' * 100}{Colors.END}\n")
                 
                 # Sleep until next reading
                 time.sleep(self.publish_interval)
                 
         except KeyboardInterrupt:
-            print(f"\n[{self.meter_id}] Stopping meter simulation...")
+            print_warning(f"\nStopping meter simulation...")
         finally:
             self.stop()
     
@@ -426,14 +542,23 @@ class EnhancedMeterSimulator:
         self.client.loop_stop()
         self.client.disconnect()
         
-        # Print statistics
-        print(f"\n[{self.meter_id}] Simulation Statistics:")
-        print(f"  Total readings: {self.stats['total_readings']}")
-        print(f"  Successful transmissions: {self.stats['successful_transmissions']}")
-        print(f"  Failed transmissions: {self.stats['failed_transmissions']}")
-        print(f"  Anomalies detected: {self.stats['anomalies_detected']}")
-        print(f"  Network issues: {self.stats['network_issues']}")
-        print(f"  Final calibration offset: {self.calibration_offset:.4f}")
+        # Print final statistics
+        print_banner("SIMULATION COMPLETE - FINAL STATISTICS", Colors.YELLOW)
+        
+        stats_data = {
+            "Meter ID": self.meter_id,
+            "Meter Type": self.meter_type.value.upper(),
+            "Total Readings": self.stats['total_readings'],
+            "Successful Transmissions": f"{self.stats['successful_transmissions']} ({self.stats['successful_transmissions']/max(1,self.stats['total_readings'])*100:.1f}%)",
+            "Failed Transmissions": f"{self.stats['failed_transmissions']} ({self.stats['failed_transmissions']/max(1,self.stats['total_readings'])*100:.1f}%)",
+            "Anomalies Detected": self.stats['anomalies_detected'],
+            "Network Issues": self.stats['network_issues'],
+            "Total Energy Consumed": f"{self.energy_kWh:.3f} kWh",
+            "Final Calibration Offset": f"{self.calibration_offset:.4f}",
+            "Active Anomalies at End": len(self.active_anomalies)
+        }
+        
+        print_box("Final Statistics", stats_data, Colors.YELLOW)
     
     def get_stats(self) -> Dict[str, Any]:
         """Get meter statistics"""

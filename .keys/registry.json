@@ -8,9 +8,9 @@
       "active": true
     },
     "meter1": {
-      "address": "0x7e994d1943D223587E713ecBabf9ca1a79cf251b",
+      "address": "0x5c36585508653D3013b93955DfCf06FC1db5ea85",
       "keyfile": "keys_meter1.json",
-      "created_at": 1761860378,
+      "created_at": 1761932849,
       "rotations": 0,
       "active": true
     },
@@ -25,6 +25,27 @@
       "address": "0x633eC30Ff8b6015D33019EbAdDf24Aa203F9ad93",
       "keyfile": "keys_meter3.json",
       "created_at": 1761860378,
+      "rotations": 0,
+      "active": true
+    },
+    "METER001": {
+      "address": "0x34862b2A9582F72E42b6eA092c62f466F5705601",
+      "keyfile": "keys_METER001.json",
+      "created_at": 1761899226,
+      "rotations": 0,
+      "active": true
+    },
+    "METER_001": {
+      "address": "0x32ccB98f9C6CFbeF4626D81F4f6C8F78e6C733c4",
+      "keyfile": "keys_METER_001.json",
+      "created_at": 1762756602,
+      "rotations": 0,
+      "active": true
+    },
+    "METER1": {
+      "address": "0xd6b18A9C1EeD15028BfE4E9F6f027CC9437035Ae",
+      "keyfile": "keys_METER1.json",
+      "created_at": 1762752912,
       "rotations": 0,
       "active": true
     }
